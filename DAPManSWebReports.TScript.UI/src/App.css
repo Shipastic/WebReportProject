@@ -1,0 +1,163 @@
+﻿#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.footer {
+    background-color: #333; /* Темно-серый цвет */
+    color: #fff; /* Белый цвет для текста */
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #444; /* Верхняя рамка */
+}
+.content {
+    flex: 1;
+    padding: 20px; /* Пространство внутри контента */
+    background:#989CA5 ;
+    
+}
+    .content text {
+        color: #fff
+    }
+.menu-container {
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+query-view-container {
+    padding: 20px;
+    margin: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.query-view-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.clickable-cell {
+    cursor: pointer;
+   
+}
+
+.custom-header {
+    background-color: #263444; /* Темный фон для заголовка */
+    padding: 10px;
+}
+
+    .custom-header .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .custom-header .rs-nav-item {
+        color: #fff;
+    }
+
+        .custom-header .rs-nav-item:hover {
+            color: #f8f9fa;
+            background-color: #495057; /* Фон при наведении */
+        }
+
+    .custom-header .nav-link {
+        color: none;
+        text-decoration: none;
+    }
+
+        .custom-header .nav-link:hover {
+            color: #adb5bb; /* Цвет ссылок при наведении */
+        }
+
+    .custom-header .rs-dropdown-item {
+        color: #D2D5DE;
+        background-color: #1E2633
+    }
+
+        .custom-header .rs-dropdown-item:hover {
+            color: #fff;
+            background-color: #495057; /* Фон при наведении */
+        }
+.custom-dropdown-menu {
+    background-color: 770930; /* Цвет фона меню */
+    border: 1px solid #e5e5e5; /* Граница меню */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.custom-dropdown-item {
+    padding: 10px 20px; /* Отступы для элементов */
+    color: white; /* Цвет текста */
+    font-size: 18px; /* Размер текста */
+}
+
+    .custom-dropdown-item:hover {
+        background-color: #770930; /* Цвет фона при наведении */
+        color: yellow; /* Цвет текста при наведении */
+    }
+.custom-nav-item {
+    position: relative;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .custom-nav-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #007bff;
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .custom-nav-item:hover {
+        color: #007bff;
+    }
+
+        .custom-nav-item:hover::after {
+            width: 100%;
+            left: 0;
+        }
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    
+}
+
+.form-background {
+    background: #fff;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}

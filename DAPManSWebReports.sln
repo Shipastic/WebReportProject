@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAPManSWebReports.API", "DAPManSWebReports.API\DAPManSWebReports.API.csproj", "{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dapmanswebreports.ui", "DAPManSWebReports.UI\dapmanswebreports.ui.esproj", "{0AC655EC-9F18-4784-97FE-1E1A319AF81E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAPManSWebReports.Entities", "DAPManSWebReports.Entities\DAPManSWebReports.Entities.csproj", "{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dapmanswebreports.tscript.ui", "DAPManSWebReports.TScript.UI\dapmanswebreports.tscript.ui.esproj", "{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAPManSWebReports.Domain", "DAPManSWebReports.Domain\DAPManSWebReports.Domain.csproj", "{8889D411-81C0-4739-8A94-F48772C82326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAPManSWebReports.Infrastructure", "DAPManSWebReports.Infrastructure\DAPManSWebReports.Infrastructure.csproj", "{9DDB608D-FB49-4D61-A54C-073A83D87BEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC655EC-9F18-4784-97FE-1E1A319AF81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC655EC-9F18-4784-97FE-1E1A319AF81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC655EC-9F18-4784-97FE-1E1A319AF81E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0AC655EC-9F18-4784-97FE-1E1A319AF81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC655EC-9F18-4784-97FE-1E1A319AF81E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC655EC-9F18-4784-97FE-1E1A319AF81E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D87F6AC-EE3B-418E-BCD2-6080B4BD7DDE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8889D411-81C0-4739-8A94-F48772C82326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8889D411-81C0-4739-8A94-F48772C82326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8889D411-81C0-4739-8A94-F48772C82326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8889D411-81C0-4739-8A94-F48772C82326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B084C11C-F5DA-495A-9DD4-23E2479E33AB}
+	EndGlobalSection
+EndGlobal
