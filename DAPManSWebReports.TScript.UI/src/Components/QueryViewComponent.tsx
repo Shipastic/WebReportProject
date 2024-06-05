@@ -5,9 +5,7 @@ import '../App.scss';
 import { Table, Pagination, TagPicker, Button } from 'rsuite';
 import ViewParametersComponent from '../Components/ViewParametersComponent';
 
-
 const { Column, HeaderCell, Cell } = Table;
-
 interface Props {
     dataviewid: number | null;
     path: string;
@@ -18,7 +16,6 @@ interface ViewParams {
     startDate: string;
     endDate: string 
 }
-
 interface PagedResult<T> {
     items: T[];
     totalCount: number;
@@ -51,9 +48,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const fetchdata = async (dataviewid: number | null, offset: number, limit: number, viewParams: ViewParams) => {
         if (dataviewid === null) return;
         try
-        {                   
-            //const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?limit=${limit}&offset=${offset}`);  
-            const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?limit=${limit}&offset=${offset}&startDate=${viewParams.startDate}&endDate=${viewParams.endDate}`);
+        {                             
+           const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?limit=${limit}&offset=${offset}&startDate=${viewParams.startDate}&endDate=${viewParams.endDate}`);
            if (!response.ok)
            {
                throw new Error(`Error: ${response.status}`);

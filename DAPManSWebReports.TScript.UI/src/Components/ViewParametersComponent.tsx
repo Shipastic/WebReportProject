@@ -34,26 +34,6 @@ const ViewParametersComponent: React.FC<Props> = ({ queryparams, onParamsChange 
         setOpen(true);
         setPlacement(key);
     };
-
-    //const handleStartDateChange = (event) =>
-    //{
-    //    setStartDate(event.target.value);
-    //};
-
-    //const handleEndDateChange = (event) =>
-    //{
-    //    setEndDate(event.target.value);
-    //};
-
-    //const handleConfirm = () =>
-    //{
-    //    queryparams({
-    //        startDate,
-    //        endDate
-    //    });
-    //    setOpen(false);
-    //};
-
   return (
       <div>
           <ButtonToolbar>
