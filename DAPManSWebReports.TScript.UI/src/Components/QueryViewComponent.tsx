@@ -2,8 +2,10 @@
 import { QueryViewDTO } from '../Models/QueryViewDTO';
 import '../App.css';
 import '../App.scss';
-import { Table, Pagination, TagPicker, Button } from 'rsuite';
-import ViewParametersComponent from '../Components/ViewParametersComponent';
+import { FlexboxGrid,Table, Pagination, TagPicker, Button, Row, Col, Grid, IconButton, Panel, Form, Stack, Message } from 'rsuite';
+import FilterComponent from '../Components/FilterComponent';
+import 'rsuite/dist/rsuite.css';
+import 'rsuite-table/dist/css/rsuite-table.css' ;
 
 const { Column, HeaderCell, Cell } = Table;
 interface Props {
@@ -14,7 +16,11 @@ interface Props {
 }
 interface ViewParams {
     startDate: string;
-    endDate: string 
+    endDate: string;
+    presetDate: string; 
+    format: string;
+    sortOrder: string;
+    sortColumnNumber: number;
 }
 interface PagedResult<T> {
     items: T[];
@@ -23,6 +29,10 @@ interface PagedResult<T> {
     pageSize: number;
 }
 
+const CustomHeaderCell = ({ ...props }) => (
+    <HeaderCell {...props} style={{ backgroundColor: '#4CAF50', color: 'white', fontWeight: 'bold', padding: '4px 0 2px 0'}} />
+  );
+  
 const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrumbs, breadcrumbs }) => {
     const [queryviews, setData] = useState<QueryViewDTO | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -34,8 +44,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const [error, setError] = useState<string | null>(null);
     const [columnKeys, setColumnKeys] = useState<string[]>([]);
 
-    const [viewParams, setViewParams] = useState<ViewParams>({ startDate: '', endDate: '' });
-    const [showTable, setShowTable] = useState<boolean>(false);  
+    const [viewParams, setViewParams] = useState<ViewParams>({ startDate: '', endDate: '', presetDate: '', format:'EXCEL', sortOrder:'asc', sortColumnNumber:1 });
+    const [showTable, setShowTable] = useState<boolean>(false); 
 
     useEffect(() => {
         if (viewParams.startDate && viewParams.endDate)
@@ -49,7 +59,17 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         if (dataviewid === null) return;
         try
         {                             
-           const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?limit=${limit}&offset=${offset}&startDate=${viewParams.startDate}&endDate=${viewParams.endDate}`);
+            const params = new URLSearchParams({
+                limit: limit.toString(),
+                offset: offset.toString(),
+                startDate: viewParams.startDate,
+                endDate: viewParams.endDate,
+                presetDate: viewParams.presetDate,
+                format: viewParams.format,
+                sortOrder: viewParams.sortOrder,
+                sortColumnNumber: viewParams.sortColumnNumber.toString()
+            });
+            const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?${params.toString()}`);
            if (!response.ok)
            {
                throw new Error(`Error: ${response.status}`);
@@ -124,21 +144,86 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     };
    
     return (
-        <div className="query-view-container">
-            {!showTable ? (
-                <div style={{ padding: '0px 0px 20px 75px', display: 'flex', alignItems: 'center' }}>
-                    <ViewParametersComponent queryparams={viewParams} onParamsChange={handleParamsChange} />
-                    <span style={{ margin: ' 0 0 0 10px' }}>
-                        <Button onClick={ ()=>setShowTable(true)} appearance="primary" >
-                            Execute Query
-                        </Button>
-                    </span>
-                </div>
-            ) : (
+        <>
+        <Grid fluid>
+        {!showTable ? (
+            <Stack>       
+            <Row style={{ marginBottom: '30px', alignItems: 'center' }}>
+            
+                <Col xs={12}>     
+                    <Stack style={{ marginTop:20 }} > 
+                        <FilterComponent queryparams={viewParams} onParamsChange={handleParamsChange} />
+                    </Stack>
+                </Col>
+                {/*
+                <Col xs={12}>  
+                    <Stack style={{ marginTop:20, marginLeft:40}} >   
+                        <span style={{ marginRight: 10}}>  
+                            <Form.Group>    
+                                <Form.ControlLabel style={{marginRight:4}}>Start Date Time:</Form.ControlLabel>
+                                    <input
+                                      type="date"
+                                      id="startDate"
+                                      name="startDate"
+                                      style={{marginRight:15}}
+                                      //value={params.startDate}
+                                      //onChange={handleChage}
+                                    />                            
+                            </Form.Group>
+                         </span >
+                        <span style={{ marginRight: 8}}>
+                            <Form.Group>
+                                <Form.ControlLabel style={{marginRight:4}}>End Date Time:</Form.ControlLabel>
+                                    <input
+                                          type="date"
+                                          id="endDate"
+                                          name="endDate"
+                                          style={{marginRight:15}}
+                                          //value={params.endDate}
+                                          //onChange={handleChage}
+                                    />                           
+                            </Form.Group>                          
+                        </span>
+                    </Stack>                 
+                </Col>
+                */}
+                <Col xs={6} style={{ textAlign: 'left' }}>
+                    <Stack style={{ marginTop:20 }} >   
+                        <Button appearance="primary" onClick={ ()=>setShowTable(true)} className='custom-button'>Выгрузить отчет</Button>
+                    </Stack>
+                </Col> 
+                <Col xs={12} style={{ textAlign: 'left' }}>
+                    <Stack style={{ marginTop:20 }} > 
+                         <Message type="info" bordered showIcon >Необходимо сначала установить фильтры!</Message> 
+                    </Stack>
+                </Col>                    
+            </Row>
+            
+            </Stack>
+             ) : (
+            <Row>
+           <Col xs={2} >         
+                <Stack style={{ marginTop:20, textAlign: 'left'}} > 
+                   {/* <ViewParametersComponent queryparams={viewParams} onParamsChange={handleParamsChange} />}*/}
+                    <FilterComponent queryparams={viewParams} onParamsChange={handleParamsChange}/>
+                </Stack>
+            </Col>
+            <Col xs={2} > 
+                <Stack style={{ marginTop:20, textAlign: 'left'}} > 
+                    <Button appearance="primary" onClick={ ()=>setShowTable(true)} className='custom-button'>
+                        Выгрузить  отчет
+                    </Button>
+                </Stack>
+            </Col>
+            <Col xs={4} > 
+                <Stack style={{ marginTop:10, textAlign: 'center', marginLeft:350}} > 
+                {error && <Notification type="error" header="Operation failed" closable>{error}</Notification>}
+                </Stack>
+            </Col>              
+           <Col>   
                 <>
-                    {error && <p style={{ color: 'red' }}>{error}</p>}
-                    <h2 className="query-view-title">{queryviews.title}</h2>
-                    <div style={{ padding: '0px 0px 20px 75px' }}>
+                    <h2 className="query-view-title">{queryviews.title} с {viewParams.startDate} по {viewParams.endDate}</h2>
+                    <div style={{ margin: '10px 5px 0px 5px' }}>
                         <TagPicker
                             data={headers.map(header => ({ label: header, value: header }))}
                             value={columnKeys}
@@ -149,7 +234,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                             placeholder="Select columns to display"
                         />
                     </div>
-                    <div style={{ padding: '0px 0px 20px 75px' }}>
+                    <div style={{ margin: '0px 5px 0px 5px' }}>
                         {data && data.length > 0 ? (
                             <Table
                                 height={500}
@@ -166,7 +251,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                     .filter(header => columnKeys.includes(header))
                                     .map((header, index) => (
                                         <Column key={index} width={200} align="center" resizable sortable>
-                                            <HeaderCell>{header}</HeaderCell>
+                                            <CustomHeaderCell>{header}</CustomHeaderCell>
                                             <Cell dataKey={header} />
                                         </Column>
                                     ))}
@@ -174,8 +259,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                         ) : (
                             <p>No data available</p>
                         )}
-                    </div>
-                    <div style={{ padding: '0px 0px 20px 75px' }}>
+                    </div>                                     
                         <Pagination
                             prev
                             next
@@ -184,20 +268,23 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                             ellipsis
                             boundaryLinks
                             maxButtons={5}
-                            size="xs"
+                            size="sm"
                             layout={['total', '-', 'limit', '|', 'pager', 'skip']}
                             total={totalCount}
-                            limitOptions={[10, 30, 50]}
+                            limitOptions={[10, 20, 30]}
                             limit={limit}
-                             activePage={offset}
+                            activePage={offset}
                             onChangePage={handlePageChange}
                             onChangeLimit={handleChangeLimit}
+                            style={{marginTop: '10px'}}
                             //onChangeLength={handleChangeLimit}
-                        />
-                    </div>
-                </>
+                        />                                
+                </>         
+                </Col>
+            </Row>
             )}
-        </div>
+            </Grid>
+        </>
     );
 };
 export default QueryViewComponent;

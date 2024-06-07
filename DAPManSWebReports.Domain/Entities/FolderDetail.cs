@@ -10,6 +10,7 @@ namespace DAPManSWebReports.Domain.Entities
     {
         public int FolderId { get; set; }
         public string FolderName { get; set; }
+        public int TotalCount { get; set; }
         public IEnumerable<FolderModel> ChildFolders { get; set; }
         public IEnumerable<DataViewModel> Dataviews { get; set; }
     }

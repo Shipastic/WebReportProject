@@ -5,4 +5,7 @@ export interface FolderDetail {
     name         : string;
     childFolders : FolderDTO[];
     dataviews    : DataViewDTO[];
+    totalCount: number;
+    offset: number;
+    pageSize: number;
 }

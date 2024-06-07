@@ -1,7 +1,10 @@
-﻿using DAPManSWebReports.Domain.Entities;
+﻿using DAPManSWebReports.API.Services.QueryParamService;
+using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
+
+using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -42,7 +45,7 @@ namespace DAPManSWebReports.API.Controllers
         {
             IEnumerable<FolderModel> foldersById     =  _folderDtoService.GetChildDtos(parentid);
             IEnumerable<DataViewModel> dataViewsById =  _dataViewDtoService.GetChildDtos(parentid);
-            FolderDetail menuEntities                = await  _menuService.GetListDtos(foldersById, dataViewsById);
+            FolderDetail menuEntities = await _menuService.GetListDtos(foldersById, dataViewsById);
             if (menuEntities != null)
                 return Ok(menuEntities);
             else

@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import CogIcon from '@rsuite/icons/legacy/Cog';
 import CharacterAuthorizeIcon from '@rsuite/icons/CharacterAuthorize';
-import { Container, Header, Content, Navbar, Nav, Dropdown} from 'rsuite';
+import { Container, Header, Content, Navbar, Nav, Dropdown, Sidebar, Footer} from 'rsuite';
 import './App.css';
-import './App.scss';
-//import 'rsuite/dist/rsuite.min.css';
+//import './App.scss';
+//import 'rsuite/dist/rsuite.css';
 import ChildFolderComponent from './Components/ChildFolderComponent';
 import QueryViewComponent from './Components/QueryViewComponent';
+import SideBarComponent from './Components/SidebarComponent';
 import Breadcrumbs  from './Models/Breadcrumbs';
 import { FolderDetail } from './Models/FolderDetail';
 import { Outlet, BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home         from './pages/Home';
 import About from './pages/About';
-import Footer from './pages/Footer';
+import FooterPage from './pages/FooterPage';
 import Settings from './pages/Settings';
 import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
 import logo from './assets/css/logo.jpg';
-import Background from './assets/Background_theme.jpg';
 import ExcelIcon from './assets/icons-excel-48.png';
 import FolderIcon from './assets/icons-folder-32.png';
 
@@ -31,20 +31,14 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
 {
     const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
     const [items, setItems] = useState<FolderDetail | null>(null);
-    const [isFolderComponentVisible, setFolderComponentVisible] = useState<boolean>(false);
+    const [isFolderComponentVisible, setFolderComponentVisible] = useState<boolean>(true);
     const [selectedDataViewId, setSelectedDataViewId] = useState<number | null>(null);
 
     const [breadcrumbs, setBreadcrumbs] = useState<string[]>(['Main']);
 
-    const contentStyle = {
-        backgroundImage: `url(${Background})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-Repeat',
-        backgroundPosition: 'center',
-        width: '100vw',
-        height: '100vh', // ”бедитесь, что высота достаточно больша€, чтобы отображать картинку
-        color: 'white', // ƒл€ контрастного текста на фоне
-    };
+    const [activeKeySideBar, setActiveKey] = useState('1');
+    const [openKeys, setOpenKeys] = useState(['1', '2']);
+    const [expanded, setExpand] = useState(true);
 
     useEffect(() => {
         fetch('https://localhost:7263/api/menu/parents')
@@ -59,13 +53,12 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
     }, []);
    
     const handleDropdownSelect = () => {
-        setFolderComponentVisible(!isFolderComponentVisible);
         setActiveFolderId(null);  
         setBreadcrumbs(['Main']);
     };
 
     const handleItemClick = (id: number) => {
-        setActiveFolderId(id);   
+        setActiveFolderId(id);     
     };
     const handleDataViewClick = (dataviewid: number) => {
         setSelectedDataViewId(dataviewid);
@@ -77,80 +70,80 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
     const handlePageClick = () => {
         setBreadcrumbs(['Main']);
     };
+   
     return (
-        <BrowserRouter>          
-        <div id="root">          
-            <Container >
-                    <Header className="custom-header" style={{ padding: '5px 5px 60px 0px', height: '30px' }}>
+        <BrowserRouter>     
+         <div id="root">                     
+            <Container className='container'>          
+                    <Header className="custom-header">
                         <Navbar {...props} appearance="subtle">
-                            <Navbar.Header>
                                 <Navbar.Brand className="navbar-brand logo" href="#" >
                                     <img
                                         src={logo}
                                         alt="logo"
                                         style={{ padding: '0px 0px 15px 5px', height: '30px' }} />
-                                </Navbar.Brand>
-                                <Navbar.Brand href="/" className="custom-nav-item">Main</Navbar.Brand>
-                            </Navbar.Header>
-                            <Navbar.Body>
-                            <Nav onSelect={onSelect} activeKey={activeKey}>
-
-                                    <Nav.Item onClick={handlePageClick} className="custom-nav-item"><Link to="/home">Home</Link></Nav.Item> 
+                                </Navbar.Brand>                           
+                                <Nav onSelect={onSelect} activeKey={activeKey} >
+                                    <Nav.Item onClick={handlePageClick} className="custom-nav-item">
+                                        <Link to="/">
+                                        Main
+                                        </Link>
+                                    </Nav.Item>
+                                    <Nav.Item onClick={handlePageClick} className="custom-nav-item"><Link to="/home" >Home</Link></Nav.Item> 
                                     <Nav.Item onClick={handlePageClick} className="custom-nav-item"><Link to="/about">About</Link></Nav.Item>
-                                    <Dropdown.Menu onSelect={handleDropdownSelect} title={"Select Plant"} className="custom-dropdown-menu">
-                                        <Dropdown.Item className="custom-dropdown-item">Plants name:</Dropdown.Item>
-                                {items?.childFolders.map(childFolder => (
-                                    <Dropdown.Item
-                                        key={childFolder.id}
-                                        eventKey={childFolder.id}
-                                        onSelect={() => handleItemClick(childFolder.id)}
-                                    >
-                                        <img
-                                            src={FolderIcon}
-                                            alt="foldericon"
-
-                                            style={{ padding: '0px 10px 5px 15px', height: '30px', cursor: 'pointer', margin: '0px 10px 1px 15px' }}                                          
-                                        />   
+                                    <Dropdown title={"Select Plant"} onSelect={handleDropdownSelect} className='custom-dropdown-title'>                                   
+                                        <Dropdown.Item className="custom-dropdown-item-static" disabled style={{ pointerEvents: 'none' }}>
+                                            Plants name:
+                                        </Dropdown.Item>
+                                    {items?.childFolders.map(childFolder => (
+                                        <Dropdown.Item
+                                            key={childFolder.id}
+                                            eventKey={childFolder.id}
+                                            onSelect={() => {handleItemClick(childFolder.id), updateBreadcrumbs([childFolder.name])}}
+                                            className="custom-dropdown-item"
+                                        >                                           
                                         {childFolder.name}
                                     </Dropdown.Item>
                                 ))}
-                                    <Dropdown.Item>Reports:</Dropdown.Item>
-                                {items?.dataviews.map(dataview => (
-                                    <Dropdown.Item
-                                        key={dataview.id}
-                                        onClick={() => handleDataViewClick(dataview.id)}
-                                        className="custom-dropdown-item"
-                                    >
-                                        <img
-                                            src={ExcelIcon}
-                                            alt="excelicon"
-
-                                            style={{ padding: '0px 10px 5px 15px', height: '30px', cursor: 'pointer', margin: '0px 10px 1px 15px' }}
-                                            onClick={() => console.log('Download clicked')} // ƒобавить логику здесь
-                                        />    
+                                    <Dropdown.Item className="custom-dropdown-item-static" disabled style={{ pointerEvents: 'none' }}>
+                                        Reports:
+                                     </Dropdown.Item>
+                                    {items?.dataviews.map(dataview => (
+                                        <Dropdown.Item
+                                            key={dataview.id}
+                                            onClick={() => {handleDataViewClick(dataview.id),updateBreadcrumbs(['Main',dataview.name])}}
+                                            className="custom-dropdown-item"
+                                        >                                          
                                         {dataview.name}
                                     </Dropdown.Item>
                                 ))}
-                                    </Dropdown.Menu> 
-                        </Nav>
-                            <Nav pullRight>
-                                <Nav.Item
-                                    onClick={handlePageClick}
-                                        icon={<CharacterAuthorizeIcon />} className="custom-nav-item">
-                                        <Link to="/login" className="nav-link">
-                                        LogIn
-                                    </Link>
-                                </Nav.Item>
-                                    <Nav.Item icon={<CogIcon />} className="custom-nav-item">
-                                    <Link to="/settings" className="nav-link">
-                                        Settings
-                                    </Link>
-                                </Nav.Item>
+                                    </Dropdown>
+                                </Nav>
+                                <Nav pullRight>
+                                    <Nav.Item
+                                            onClick={handlePageClick}
+                                            icon={<CharacterAuthorizeIcon color='#1E90FF'/>} className="custom-nav-item">
+                                                <Link to="/login" className="nav-link">
+                                                    <span style={{padding:'0 0 0 4px', marginRight:'20px'}}>
+                                                        LogIn
+                                                    </span>
+                                                </Link>
+                                    </Nav.Item>                                   
                                 </Nav> 
-                            </Navbar.Body>
                         </Navbar >                      
                     </Header>
-                    <Content className="content" >
+                    <Container className='container'>
+                        <Sidebar className='sidebar' style={{flex:'0 1'}}>
+                            <SideBarComponent                            
+                                  activeKeySideBar={setActiveKey}
+                                  openKeys={openKeys}
+                                  onSelect={setActiveKey}
+                                  onOpenChange={setOpenKeys}
+                                  expanded={expanded}
+                                  onExpand={setExpand}
+                                  appearance="subtle"/>
+                        </Sidebar>
+                        <Content className="content" >
                         <Breadcrumbs breadcrumbs={breadcrumbs} />
                         {selectedDataViewId !== null && (
                             <div className="query-view-container">
@@ -174,10 +167,10 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                                                             path="NotFoundPAge"
                                                             updateBreadcrumbs={updateBreadcrumbs}
                                                             breadcrumbs={breadcrumbs}            />} />
-                            <Route path="/"      element={activeFolderId !== null && (
-                                                     <ChildFolderComponent
+                            <Route path="/"      element={activeFolderId !== null && isFolderComponentVisible && (
+                                                          <ChildFolderComponent
                                                             parentid={activeFolderId}
-                                                            path=""
+                                                            path={'/activeFolderId'}
                                                             updateBreadcrumbs={updateBreadcrumbs}
                                                             breadcrumbs={breadcrumbs} />)} />
                             <Route path="/settings" element={<Settings
@@ -186,10 +179,13 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                                                                 breadcrumbs={breadcrumbs}        />} />
                         </Routes>    
                         <Outlet />
-                    </Content>
-                    <Footer/>
-            </Container>                   
-            </div>
+                        </Content>
+                    </Container>
+                    <Footer className='footer'>
+                        <FooterPage/>
+                    </Footer>                   
+            </Container> 
+            </div>                             
         </BrowserRouter>
     );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IconButton, Icon } from 'rsuite';
+import { IconButton,  Pagination } from 'rsuite';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import { FolderDetail       } from '../Models/FolderDetail';
 import { defaultColumns     } from '../constants/ColumnsBrowseTable';
@@ -20,6 +20,11 @@ interface Props
     breadcrumbs: string[];
 }
 
+const CustomHeaderCell = ({ ...props }) => (
+    <HeaderCell {...props} style={{ backgroundColor: '#8B4513', color: 'white', fontWeight: 'bold', padding: '4px 0 4px 10', position: 'sticky', top: 0, zIndex: 10}} />
+  );
+  
+
 const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrumbs, breadcrumbs }) =>
 {
     const [childItems, setItems] = useState<FolderDetail | null>(null);
@@ -28,6 +33,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [loading, setLoading] = useState<boolean>(false);
     const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
+
     let pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
 
@@ -40,7 +46,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
             if (response.ok)
             {
                 const data = await response.json();
-                setItems(data);              
+                setItems(data);            
             }
             else
             {
@@ -68,7 +74,6 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     {     
         fetchData();
     };
-
     const handleSortColumn = (sortColumn: string, sortType: 'asc' | 'desc') =>
     {
         setLoading(true);
@@ -186,8 +191,14 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
     const data = getSortedData(combinedArray, sortColumn, sortType);   
 
+    const tableStyle = {
+        maxHeight: '770px', //высота
+        maxWidth: '1850px',
+        overflowY: 'auto', // вертикальная прокрутка
+      };
+
     return (
-        <div style={{ margin: '10px 10px 0px 75px' }} >
+        <div style={{ margin: '10px 10px 0px 15px' }} className="query-view-container">
             <Table
                     data={data}
                     bordered
@@ -196,32 +207,33 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                     sortType={sortType}
                     onSortColumn={handleSortColumn}
                     loading={loading}
-                    autoHeight
+                    autoHeight                  
                     autoFocus={true}
                     autoCorrect="true"
+                    style={tableStyle}
                     
                 >
                 {defaultColumns.map(column =>
                 (
-                    <Column key={column.key} width={column.width} sortable resizable fullText>
-                        <HeaderCell>{column.label}</HeaderCell>
+                    <Column key={column.key} sortable resizable fullText flexGrow={1}>
+                        <CustomHeaderCell >{column.label}</CustomHeaderCell >
                         <Cell
                             className={column.key === 'name' ? "clickable-cell" : ''}
                             dataKey={column.key}
-                            style={{ padding:'15px 0px 0px 5px' }}
+                            style={{ padding:'5px 0px 0px 5px' }}
                         >
                             {rowData => {
                                 if (column.key === 'download' && rowData.type === 'dataview')
                                 {
                                     return (
-                                        <IconButton
-                                            icon={<FileExcelO />}
+                                        <a
                                             onClick={() => console.log('Download clicked')} // Добавить логику здесь
                                             
-                                            style={{ padding: '5px 0px 0px 0px' }}
-                                            />
-                                    );
-                                }
+                                            style={{ padding: '5px 0px 0px 0px' , textAlign:'right'}}
+                                            href='#' >
+                                                Скачать
+                                        </a>                                       
+                                );}
                                 return (
                                     <div
                                         className={column.key === 'name' ? "clickable-cell" : ''}
@@ -236,7 +248,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                     </Column>
                 )
                 )}                               
-            </Table>
+            </Table>           
         </div>
     );
 };

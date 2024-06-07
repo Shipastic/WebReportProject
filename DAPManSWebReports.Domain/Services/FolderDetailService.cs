@@ -20,6 +20,6 @@ namespace DAPManSWebReports.Domain.Services
             };
 
             return entityDTOs;
-        }       
+        }
     }
 }

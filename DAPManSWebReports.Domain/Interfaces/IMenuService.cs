@@ -12,6 +12,7 @@ namespace DAPManSWebReports.Domain.Interfaces
                                             where T2 : class
                                             where T3 : class
     {
-        Task<T1> GetListDtos(IEnumerable<T2> folderDtoList, IEnumerable<T3> dataViewDtoList);      
+       // Task<T1> GetListDtosWithParams(IEnumerable<T2> folderDtoList, IEnumerable<T3> dataViewDtoList, int limit, int offset);
+        Task<T1> GetListDtos(IEnumerable<T2> folderDtoList, IEnumerable<T3> dataViewDtoList);
     }
 }

@@ -47,7 +47,11 @@ namespace DAPManSWebReports.API.Controllers
             {
                 Dictionary<string, object> queryParams = _queryParamService.GetDictionaryFromQueryString(settingsModel);
                 queryViewById = await _queryViewService.GetQueryViewWithParam(dataviewId, queryParams);
-                var pagedResult = PagingParametersHelper.ToPagedResult(queryViewById, settingsModel);
+                if (queryViewById.TotalCount == 0)
+                {
+                    return NoContent();
+                }
+                    var pagedResult = PagingParametersHelper.ToPagedResult(queryViewById, settingsModel);
                 var result = new
                 {
                     PagedItems = pagedResult.ItemResult,

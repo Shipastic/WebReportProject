@@ -2,10 +2,10 @@ import React from 'react';
 import { Icon } from '@rsuite/icons';
 import { FaHeart } from 'react-icons/fa';
 
-const Footer = () => {
+const FooterPage = () => {
     return (
         <footer className="custom-header">
-            <div style={{ textAlign: 'center', color: '#fff' }}>
+            <div style={{ textAlign: 'center', color: '#fff', padding:'10px', margin:'10px', width:'100%' }} >
                 <p>Developed by [Shipelov]
                     <Icon as={FaHeart} style={{ color: 'red', marginLeft: '5px' }} />
                 </p>
@@ -13,4 +13,4 @@ const Footer = () => {
         </footer>
     );
 };
-export default Footer;
+export default FooterPage;

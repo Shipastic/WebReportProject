@@ -10,13 +10,15 @@ interface BreadcrumbsProps {
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbs }) => {
     const navigate = useNavigate();
 
+
+    
     const handleClick = (index: number) => {
         const path = `/${breadcrumbs.slice(1, index + 1).join('/')}`;
         navigate(path);
     };
 
     return (
-        <Breadcrumb className="custom-breadcrumb" style={{ margin: '0px 10px 0px 75px', padding:'0px 0px 0px 10px' }}>
+        <Breadcrumb className="custom-breadcrumb" style={{ margin: '0px 10px 0px 5px', padding:'0px 0px 0px 10px' }} separator="→">
             {breadcrumbs.map((breadcrumb, index) => (
                 <Breadcrumb.Item
                     key={index}

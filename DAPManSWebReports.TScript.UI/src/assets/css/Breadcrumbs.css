@@ -1,23 +1,33 @@
 
 .custom-breadcrumb .breadcrumb-item {
-    color: #007bff;
+
+    padding: 5px;
+    margin-right: 5px;
+    display: inline-block;
     cursor: pointer;
+    color: #007bff;
     text-decoration: underline;
+    background-color: #FFF5EE;
 }
 
     .custom-breadcrumb .breadcrumb-item:hover {
-        text-decoration: underline;
+        text-decoration: dashed;
     }
 
 .custom-breadcrumb .breadcrumb-item-active {
-    color: #6c757d;
+    border:  thick #007bff;
+    padding: 5px;
+    margin-right: 5px;
+    display: inline-block;
     cursor: default;
-    pointer-events: none;
+    color: #63c75f;
+    background-color: #FFF5EE;
 }
 
 .custom-breadcrumb {
-    background-color: #f8f9fa;
+
     border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
-    background-color:
 }
+.custom-breadcrumb .breadcrumb-separator {
+    margin: '0 5px',
+  };

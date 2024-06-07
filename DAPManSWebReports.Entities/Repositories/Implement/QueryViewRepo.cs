@@ -106,7 +106,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                                 && queryparams.TryGetValue("limit", out var limit))
                             {
                                 
-                                whereClause = $" WHERE {dvRes.StartDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD') AND {dvRes.StopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD') OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY";
+                                whereClause = $" WHERE {dvRes.StartDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND {dvRes.StopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS') OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY";
                                 cmd.Parameters.Add(new OracleParameter("startDate", (string)startDate));
                                 cmd.Parameters.Add(new OracleParameter("endDate", (string)endDate));
                                 cmd.Parameters.Add(new OracleParameter("offset", (int)offset));
@@ -171,7 +171,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                                 && queryparams.TryGetValue("endDate", out var endDate))
                             {
 
-                                whereClause = $" WHERE {dvRes.StartDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD') AND {dvRes.StopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD')";
+                                whereClause = $" WHERE {dvRes.StartDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND {dvRes.StopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')";
                                 cmd.Parameters.Add(new OracleParameter("startDate", (string)startDate));
                                 cmd.Parameters.Add(new OracleParameter("endDate", (string)endDate));                            
                             }
