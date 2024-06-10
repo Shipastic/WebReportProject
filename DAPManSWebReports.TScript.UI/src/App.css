@@ -208,3 +208,9 @@ html, body {
 .rs-btn .rs-btn-subtle {
   background-color: #2980b9;
 }
+
+.scrollable-dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;  
+  width: 200px;
+}

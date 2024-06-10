@@ -2,10 +2,12 @@
 import { QueryViewDTO } from '../Models/QueryViewDTO';
 import '../App.css';
 import '../App.scss';
-import { FlexboxGrid,Table, Pagination, TagPicker, Button, Row, Col, Grid, IconButton, Panel, Form, Stack, Message } from 'rsuite';
-import FilterComponent from '../Components/FilterComponent';
+import { Placeholder,Table, Pagination, TagPicker, Button, Row, Col, Grid, Stack, Message, Loader } from 'rsuite';
+import QueryparamsComponent from './QueryParamsComponent'; 
+import FilterComponent from './FilterComponent';
 import 'rsuite/dist/rsuite.css';
 import 'rsuite-table/dist/css/rsuite-table.css' ;
+import Filter from '@rsuite/icons/legacy/Filter';
 
 const { Column, HeaderCell, Cell } = Table;
 interface Props {
@@ -36,6 +38,7 @@ const CustomHeaderCell = ({ ...props }) => (
 const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrumbs, breadcrumbs }) => {
     const [queryviews, setData] = useState<QueryViewDTO | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
+    const [loadingTabe, setLoadingTable] = useState<boolean>(false);
     const [offset, setPage] = useState(1);
     const [limit, setLimit] = useState(10);
     const [totalCount, setTotalCount] = useState(0);
@@ -47,6 +50,12 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const [viewParams, setViewParams] = useState<ViewParams>({ startDate: '', endDate: '', presetDate: '', format:'EXCEL', sortOrder:'asc', sortColumnNumber:1 });
     const [showTable, setShowTable] = useState<boolean>(false); 
 
+    const [filterValue, setFilterValue] = useState('');
+    const [filteredData, setFilteredData] = useState( Array<{ [key: string]: any }>);
+    const [selectedColumn, setSelectedColumn] = useState('');
+
+    const [showFilter, setShowFilter] = useState(false);
+
     useEffect(() => {
         if (viewParams.startDate && viewParams.endDate)
         {
@@ -55,7 +64,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         }
     }, [dataviewid, offset, limit, viewParams]);
 
-    const fetchdata = async (dataviewid: number | null, offset: number, limit: number, viewParams: ViewParams) => {
+    const fetchdata = async (dataviewid: number | null, offset: number, limit: number, viewParams: ViewParams) => {   
         if (dataviewid === null) return;
         try
         {                             
@@ -81,8 +90,11 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             setPage(result.offset);
             setLimit(result.pageSize);
            const headers = result.result.length> 0 ? Object.keys(result.result[0]) : [];
+            //const headers = useMemo(() => result.result.length > 0 ? Object.keys(result.result[0]) : [], [result.result]);
             setColumnKeys(headers);
             setShowTable(result.result.length > 0);
+
+            setFilteredData(result.result);
         }
         catch (error: any)
         {
@@ -91,6 +103,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         finally
         {
             setLoading(false);
+            setLoadingTable(false);
         }   
     };
     const handlePageChange = (page) => {
@@ -143,99 +156,103 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         }, 500);
     };
    
+    const handleApplyFilter = () => {
+        let filtered =  getData(sortColumn, sortType);
+        if (selectedColumn && filterValue) {
+            filtered = filtered.filter(item => {
+                const value = item[selectedColumn];
+                if (typeof value === 'number') {
+                    return value.toString() === filterValue;
+                }
+                return value !== undefined && value.toString().toLowerCase().includes(filterValue.toLowerCase());
+            });
+        }
+        setFilteredData(filtered);
+    };
+    
+      const resetFilter = () => {
+        setFilterValue('');
+        setSelectedColumn('');
+        setFilteredData(queryviews?.result || []);
+      };
+
     return (
         <>
         <Grid fluid>
-        {!showTable ? (
-            <Stack>       
-            <Row style={{ marginBottom: '30px', alignItems: 'center' }}>
-            
-                <Col xs={12}>     
-                    <Stack style={{ marginTop:20 }} > 
-                        <FilterComponent queryparams={viewParams} onParamsChange={handleParamsChange} />
-                    </Stack>
-                </Col>
-                {/*
-                <Col xs={12}>  
-                    <Stack style={{ marginTop:20, marginLeft:40}} >   
-                        <span style={{ marginRight: 10}}>  
-                            <Form.Group>    
-                                <Form.ControlLabel style={{marginRight:4}}>Start Date Time:</Form.ControlLabel>
-                                    <input
-                                      type="date"
-                                      id="startDate"
-                                      name="startDate"
-                                      style={{marginRight:15}}
-                                      //value={params.startDate}
-                                      //onChange={handleChage}
-                                    />                            
-                            </Form.Group>
-                         </span >
-                        <span style={{ marginRight: 8}}>
-                            <Form.Group>
-                                <Form.ControlLabel style={{marginRight:4}}>End Date Time:</Form.ControlLabel>
-                                    <input
-                                          type="date"
-                                          id="endDate"
-                                          name="endDate"
-                                          style={{marginRight:15}}
-                                          //value={params.endDate}
-                                          //onChange={handleChage}
-                                    />                           
-                            </Form.Group>                          
-                        </span>
-                    </Stack>                 
-                </Col>
-                */}
-                <Col xs={6} style={{ textAlign: 'left' }}>
-                    <Stack style={{ marginTop:20 }} >   
-                        <Button appearance="primary" onClick={ ()=>setShowTable(true)} className='custom-button'>Выгрузить отчет</Button>
-                    </Stack>
+        {!showTable  ? 
+        (
+         <>       
+            <Row> 
+                <Col xs={12}>
+                <Stack style={{ textAlign: 'left' , marginTop:'20px'}}>
+                        <Message type="info" bordered showIcon closable><strong>INFO!</strong> Необходимо настроить параметры запроса!</Message>
+                </Stack> 
                 </Col> 
-                <Col xs={12} style={{ textAlign: 'left' }}>
+             </Row>  
+             <Row style={{ marginBottom: '30px', alignItems: 'center' }}>         
+                <Col xs={4}>     
                     <Stack style={{ marginTop:20 }} > 
-                         <Message type="info" bordered showIcon >Необходимо сначала установить фильтры!</Message> 
+                        <QueryparamsComponent queryparams={viewParams} onParamsChange={handleParamsChange} setLoadingTable={setLoadingTable}/>                                  
                     </Stack>
-                </Col>                    
+                </Col>                                
             </Row>
-            
-            </Stack>
-             ) : (
-            <Row>
-           <Col xs={2} >         
-                <Stack style={{ marginTop:20, textAlign: 'left'}} > 
-                   {/* <ViewParametersComponent queryparams={viewParams} onParamsChange={handleParamsChange} />}*/}
-                    <FilterComponent queryparams={viewParams} onParamsChange={handleParamsChange}/>
-                </Stack>
-            </Col>
-            <Col xs={2} > 
-                <Stack style={{ marginTop:20, textAlign: 'left'}} > 
-                    <Button appearance="primary" onClick={ ()=>setShowTable(true)} className='custom-button'>
-                        Выгрузить  отчет
-                    </Button>
-                </Stack>
-            </Col>
+            {loadingTabe === true ?
+                (
+                   <div className="loading-container">
+                        <Placeholder.Paragraph rows={8} />
+                       <Loader center content="Загрузка отчета..." vertical size='lg'/>
+                   </div>
+                ):
+                (
+                    <div>
+                    </div>
+                )
+            }           
+         </>
+        ) : (
+            <Row>  
+                {/*     
             <Col xs={4} > 
                 <Stack style={{ marginTop:10, textAlign: 'center', marginLeft:350}} > 
                 {error && <Notification type="error" header="Operation failed" closable>{error}</Notification>}
                 </Stack>
-            </Col>              
-           <Col>   
+            </Col>    
+            */}          
+            <Col xs={24}>   
                 <>
-                    <h2 className="query-view-title">{queryviews.title} с {viewParams.startDate} по {viewParams.endDate}</h2>
+                    <h2 className="query-view-title">{queryviews.title} с {viewParams.startDate} по {viewParams.endDate}</h2>                   
+                    <Stack style={{ marginTop:20, textAlign: 'left'}} > 
+                            <QueryparamsComponent queryparams={viewParams} onParamsChange={handleParamsChange} setLoadingTable={setLoadingTable}/>
+                            <div style={{ marginLeft:50}} >
+                                <Button appearance="primary" onClick={ ()=>setShowTable(true)} className='custom-button'>
+                                    Выгрузить  отчет
+                                </Button>
+                            </div>
+                           
+                    </Stack>
+                    <FilterComponent
+                            headers={columnKeys}
+                            selectedColumn={selectedColumn}
+                            setSelectedColumn={setSelectedColumn}
+                            filterValue={filterValue}
+                            setFilterValue={setFilterValue}
+                            handleApplyFilter={handleApplyFilter}
+                            resetFilter={resetFilter}
+                        />  
                     <div style={{ margin: '10px 5px 0px 5px' }}>
-                        <TagPicker
-                            data={headers.map(header => ({ label: header, value: header }))}
-                            value={columnKeys}
-                            onChange={setColumnKeys}
-                            block
-                            style={{ marginBottom: 20 }}
-                            cleanable={false}
-                            placeholder="Select columns to display"
-                        />
-                    </div>
+                                <TagPicker
+                                    data={headers.map(header => ({ label: header, value: header }))}
+                                    value={columnKeys}
+                                    onChange={setColumnKeys}
+                                    block
+                                    style={{ marginBottom: 20 }}
+                                    cleanable={false}
+                                    placeholder="Select columns to display"
+                                />
+                    </div>                  
                     <div style={{ margin: '0px 5px 0px 5px' }}>
-                        {data && data.length > 0 ? (
+                            {data && data.length > 0 ? 
+                            (
                             <Table
                                 height={500}
                                 data={data}
@@ -256,34 +273,42 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                         </Column>
                                     ))}
                             </Table>
-                        ) : (
-                            <p>No data available</p>
-                        )}
-                    </div>                                     
-                        <Pagination
-                            prev
-                            next
-                            first
-                            last
-                            ellipsis
-                            boundaryLinks
-                            maxButtons={5}
-                            size="sm"
-                            layout={['total', '-', 'limit', '|', 'pager', 'skip']}
-                            total={totalCount}
-                            limitOptions={[10, 20, 30]}
-                            limit={limit}
-                            activePage={offset}
-                            onChangePage={handlePageChange}
-                            onChangeLimit={handleChangeLimit}
-                            style={{marginTop: '10px'}}
-                            //onChangeLength={handleChangeLimit}
-                        />                                
-                </>         
-                </Col>
+                            ) : (
+                            <Row>
+                                    <div className="loading-container">
+                                        <p>Нет данных для отображения</p>
+                                    </div>
+                            </Row>
+                            )
+                            } 
+                    </div> 
+                    <div style={{ margin: '50px 10px 0px 15px' }}>                                   
+                    <Pagination
+                                prev
+                                next
+                                first
+                                last
+                                ellipsis
+                                boundaryLinks
+                                maxButtons={5}
+                                size="sm"
+                                layout={['total', '-', 'limit', '|', 'pager', 'skip']}
+                                total={totalCount}
+                                limitOptions={[10, 30, 50]}
+                                limit={limit}
+                                activePage={offset}
+                                onChangePage={handlePageChange}
+                                onChangeLimit={handleChangeLimit}
+                                style={{marginTop: '10px'}}
+                    //onChangeLength={handleChangeLimit}
+                    /> 
+                    </div>  
+                    </>   
+            </Col>
             </Row>
-            )}
-            </Grid>
+        )
+        }
+        </Grid>
         </>
     );
 };

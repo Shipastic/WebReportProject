@@ -63,10 +63,7 @@ namespace DAPManSWebReports.API.Controllers
                     Title        = queryViewById.Title,
                     DataSourceId = queryViewById.DataSourceId,
                     Result       = queryViewById.Result
-                };
-
-                if(queryViewById != null)
-                return Ok(result);
+                };              
             }
             if (queryViewById != null)
                 return Ok(queryViewById);
