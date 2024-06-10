@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\source\\repos\\GitLab\\mes-smart-report\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.api\\controllers\\queryviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|solutionrelative:dapmanswebreports.api\\controllers\\queryviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.domain\\services\\querymodelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|solutionrelative:dapmanswebreports.domain\\services\\querymodelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}|DAPManSWebReports.Entities\\DAPManSWebReports.Entities.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.entities\\repositories\\implement\\queryviewrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C60563C-1ADF-4989-B3F3-1CFE7477D16E}|DAPManSWebReports.Entities\\DAPManSWebReports.Entities.csproj|solutionrelative:dapmanswebreports.entities\\repositories\\implement\\queryviewrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.api\\controllers\\folderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|solutionrelative:dapmanswebreports.api\\controllers\\folderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.domain\\entities\\folderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|solutionrelative:dapmanswebreports.domain\\entities\\folderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.domain\\services\\folderdetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|solutionrelative:dapmanswebreports.domain\\services\\folderdetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|d:\\source\\repos\\gitlab\\mes-smart-report\\dapmanswebreports.domain\\interfaces\\imenuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|solutionrelative:dapmanswebreports.domain\\interfaces\\imenuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QueryViewRepo.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Entities\\Repositories\\Implement\\QueryViewRepo.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.Entities\\Repositories\\Implement\\QueryViewRepo.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Entities\\Repositories\\Implement\\QueryViewRepo.cs",
+              "RelativeToolTip": "DAPManSWebReports.Entities\\Repositories\\Implement\\QueryViewRepo.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAlwIEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T11:14:29.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FolderDetail.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Entities\\FolderDetail.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Entities\\FolderDetail.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Entities\\FolderDetail.cs",
+              "RelativeToolTip": "DAPManSWebReports.Domain\\Entities\\FolderDetail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:31:25.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FolderDetailService.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Services\\FolderDetailService.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Services\\FolderDetailService.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Services\\FolderDetailService.cs",
+              "RelativeToolTip": "DAPManSWebReports.Domain\\Services\\FolderDetailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:30:05.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMenuService.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Interfaces\\IMenuService.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Interfaces\\IMenuService.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Interfaces\\IMenuService.cs",
+              "RelativeToolTip": "DAPManSWebReports.Domain\\Interfaces\\IMenuService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:28:07.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QueryModelService.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
+              "RelativeToolTip": "DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAtwC8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:23:56.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FolderDetailController.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.API\\Controllers\\FolderDetailController.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.API\\Controllers\\FolderDetailController.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.API\\Controllers\\FolderDetailController.cs",
+              "RelativeToolTip": "DAPManSWebReports.API\\Controllers\\FolderDetailController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwBcAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:21:34.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QueryViewController.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
+              "RelativeToolTip": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAwwEMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:19:25.678Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

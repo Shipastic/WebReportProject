@@ -1,238 +1,95 @@
-###################
+# От глобальных вещей:
 
-# compiled source #
-
-###################
-
-*.com
-
-*.class
-
-*.dll
-
-*.exe
-
-*.pdb
-
-*.dll.config
-
-*.cache
-
-*.suo
-
-# Include dlls if they’re in the NuGet packages directory
-
-!/packages/*/lib/*.dll
-
-!/packages/*/lib/*/*.dll
-
-# Include dlls if they're in the CommonReferences directory
-
-!*CommonReferences/*.dll
-
-####################
-
-# VS Upgrade stuff #
-
-####################
-
-UpgradeLog.XML
-
-_UpgradeReport_Files/
-
-###############
-
-# Directories #
-
-###############
-
-bin/
-
-obj/
-
-Migrations/
-
-TestResults/
-
-.vs/
-
-###################
-
-# Web publish log #
-
-###################
-
-*.Publish.xml
-
-#############
-
-# Packages #
-
-############
-
-# it’s better to unpack these files and commit the raw source
-
-# git has its own built in compression methods
-
-*.7z
-
-*.dmg
-
-*.gz
-
-*.iso
-
-*.jar
-
-*.rar
-
-*.tar
-
-*.zip
-
-######################
-
-# OS generated files #
-
-######################
-
-.DS_Store?
-
-ehthumbs.db
-
-Icon?
-
+# ОС и Редакторы IDE
+.DS_Store
 Thumbs.db
-
-[Bb]in
-
-[Oo]bj
-
-[Tt]est[Rr]esults
-
-*.suo
-
-*.user
-
-*.[Cc]ache
-
-*[Rr]esharper*
-
-packages
-
-NuGet.exe
-
-_[Ss]cripts
-
-*.exe
-
-*.dll
-
-*.nupkg
-
-*.ncrunchsolution
-
-*.dot[Cc]over
-
-###############################
-
-# React files
-
-
-build/
-
-dist/
-
-out/
-
-# Env 
-
-.env
-
-.env.local
-
-.env.development.local
-
-.env.test.local
-
-.env.production.local
-
-############ ASP.NET Core
-
-# Build results
-
-[Dd]ebug/
-
-[Dd]ebugPublic/
-
-[Rr]elease/
-
-[Rr]eleases/
-
-x64/
-
-x86/
-
-[Aa][Rr][Mm]/
-
-[Aa][Rr][Mm]64/
-
-bld/
-
-[Bb]in/
-
-[Oo]bj/
-
-[Ll]og/
-
-[Ll]ogs/
-
-# Published files
-
-[Pp]ublish/
-
-project.lock.json
-
-project.fragment.lock.json
-
-artifacts/
-
-# VS Code directories
-
 .vscode/
-
-.vscode-test/
-
-# Log files
-
 *.log
 
-# Binaries
+# ASP.NET Core общие
+bin/
+obj/
+*.user
+*.vspscc
+*.vssscc
 
-*.dll
+# Модули и прочие зависимости
+**/bin/
+**/obj/
 
-*.exe
+# Конфигурационные файлы, данные и лог-файлы
+*.db
+*.jfm
+*.ide
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-*.so
+# npm
+*.npmrc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-*.dylib
+# Кэш
+**/.pnp/
+.pnp.js
+.parcel-cache
 
-*.pyc
+# Сборка
+dist/
 
-# Packages
+# Generated files from npm and yarn
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
+# Далее проекты .NET:
+# Visual Studio
+.vscode/
+.vscode/*.*
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# vssver.scc
+vssver2.scc
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Workaround for https://github.com/dotnet/aspnetcore/issues/23005
+.vscode/*.*
+
+# Тестирование
+TestResults
+
+# NuGet
 *.nupkg
 
-*.az
+# Azure Pipelines
+libman.json
 
-*.bar
+# Visual Studio 2019 (MSBuild?) bug
+force.warning.output.binlog
 
-# databases 
-
-*.sqlite
-
+# Crash and error reports
+**/npm-debug.log
 *.dat
-
-*.sqbpro
-
-*.npmrc
+*.0
+*.tlog
+*.err
+error.log
+_debug.log
