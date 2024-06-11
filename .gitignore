@@ -7,14 +7,12 @@ Thumbs.db
 *.log
 
 # ASP.NET Core общие
-bin/
 obj/
 *.user
 *.vspscc
 *.vssscc
 
 # Модули и прочие зависимости
-**/bin/
 **/obj/
 
 # Конфигурационные файлы, данные и лог-файлы
