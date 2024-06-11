@@ -8,6 +8,7 @@ import FilterComponent from './FilterComponent';
 import 'rsuite/dist/rsuite.css';
 import 'rsuite-table/dist/css/rsuite-table.css' ;
 import Filter from '@rsuite/icons/legacy/Filter';
+import StepsTutorialComponent from './StepsTutorialComponent';
 
 const { Column, HeaderCell, Cell } = Table;
 interface Props {
@@ -186,13 +187,14 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                 <Col xs={12}>
                 <Stack style={{ textAlign: 'left' , marginTop:'20px'}}>
                         <Message type="info" bordered showIcon closable><strong>INFO!</strong> Необходимо настроить параметры запроса!</Message>
+                       {/* <StepsTutorialComponent/>*/}
                 </Stack> 
                 </Col> 
              </Row>  
              <Row style={{ marginBottom: '30px', alignItems: 'center' }}>         
                 <Col xs={4}>     
-                    <Stack style={{ marginTop:20 }} > 
-                        <QueryparamsComponent queryparams={viewParams} onParamsChange={handleParamsChange} setLoadingTable={setLoadingTable}/>                                  
+                    <Stack className='queryparamscomponentStyle' > 
+                        <QueryparamsComponent queryparams={viewParams} onParamsChange={handleParamsChange} setLoadingTable={setLoadingTable} />                                  
                     </Stack>
                 </Col>                                
             </Row>

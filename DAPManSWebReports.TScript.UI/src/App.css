@@ -214,3 +214,11 @@ html, body {
   overflow-y: auto;  
   width: 200px;
 }
+
+/********************************STEPS_TUTORIAL****************************/
+.queryparamscomponentStyle {
+  margin-top: 20px;
+}
+.queryparamsStyle {
+  margin-top: 20px;
+}

@@ -26,8 +26,6 @@ obj/
 *.userosscache
 *.sln.docstates
 
-# npm
-*.npmrc
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -42,7 +40,6 @@ pnpm-debug.log*
 dist/
 
 # Generated files from npm and yarn
-package-lock.json
 yarn.lock
 pnpm-lock.yaml
 

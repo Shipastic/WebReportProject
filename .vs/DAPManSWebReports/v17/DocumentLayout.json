@@ -100,9 +100,10 @@
               "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
               "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
               "RelativeToolTip": "DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAtwC8AAAAIAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAlwC8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T22:23:56.74Z"
+              "WhenOpened": "2024-06-05T22:23:56.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -124,7 +125,7 @@
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "ToolTip": "D:\\source\\repos\\GitLab\\mes-smart-report\\DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "RelativeToolTip": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAwwEMAAAAMAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAlwEMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T22:19:25.678Z",
               "EditorCaption": ""
