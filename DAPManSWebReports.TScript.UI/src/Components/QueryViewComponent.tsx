@@ -7,7 +7,6 @@ import QueryparamsComponent from './QueryParamsComponent';
 import FilterComponent from './FilterComponent';
 import 'rsuite/dist/rsuite.css';
 import 'rsuite-table/dist/css/rsuite-table.css' ;
-import Filter from '@rsuite/icons/legacy/Filter';
 import StepsTutorialComponent from './StepsTutorialComponent';
 
 const { Column, HeaderCell, Cell } = Table;
@@ -16,6 +15,7 @@ interface Props {
     path: string;
     updateBreadcrumbs: (breadcrumbs: string[]) => void;
     breadcrumbs: string[];
+    needsDateParams: boolean;
 }
 interface ViewParams {
     startDate: string;
@@ -24,6 +24,7 @@ interface ViewParams {
     format: string;
     sortOrder: string;
     sortColumnNumber: number;
+    
 }
 interface PagedResult<T> {
     items: T[];
@@ -36,26 +37,24 @@ const CustomHeaderCell = ({ ...props }) => (
     <HeaderCell {...props} style={{ backgroundColor: '#4CAF50', color: 'white', fontWeight: 'bold', padding: '4px 0 2px 0'}} />
   );
   
-const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrumbs, breadcrumbs }) => {
-    const [queryviews, setData] = useState<QueryViewDTO | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [loadingTabe, setLoadingTable] = useState<boolean>(false);
-    const [offset, setPage] = useState(1);
-    const [limit, setLimit] = useState(10);
-    const [totalCount, setTotalCount] = useState(0);
-    const [sortColumn, setSortColumn] = useState<string | null>(null);
-    const [sortType, setSortType] = useState<'asc' | 'desc' | undefined>();
-    const [error, setError] = useState<string | null>(null);
-    const [columnKeys, setColumnKeys] = useState<string[]>([]);
+const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrumbs, breadcrumbs, needsDateParams }) => {
+    const [queryviews,     setData          ] = useState<QueryViewDTO | null>(null);
+    const [loading,        setLoading       ] = useState<boolean>(false);
+    const [loadingTabe,    setLoadingTable  ] = useState<boolean>(false);
+    const [offset,         setPage          ] = useState(1);
+    const [limit,          setLimit         ] = useState(10);
+    const [totalCount,     setTotalCount    ] = useState(0);
+    const [sortColumn,     setSortColumn    ] = useState<string | null>(null);
+    const [sortType,       setSortType      ] = useState<'asc' | 'desc' | undefined>();
+    const [error,          setError         ] = useState<string | null>(null);
+    const [columnKeys,     setColumnKeys    ] = useState<string[]>([]);
 
-    const [viewParams, setViewParams] = useState<ViewParams>({ startDate: '', endDate: '', presetDate: '', format:'EXCEL', sortOrder:'asc', sortColumnNumber:1 });
-    const [showTable, setShowTable] = useState<boolean>(false); 
+    const [viewParams,     setViewParams    ] = useState<ViewParams>({ startDate: '', endDate: '', presetDate: '', format:'EXCEL', sortOrder:'asc', sortColumnNumber:1 });
+    const [showTable,      setShowTable     ] = useState<boolean>(false); 
 
-    const [filterValue, setFilterValue] = useState('');
-    const [filteredData, setFilteredData] = useState( Array<{ [key: string]: any }>);
+    const [filterValue,    setFilterValue   ] = useState('');
+    const [filteredData,   setFilteredData  ] = useState( Array<{ [key: string]: any }>);
     const [selectedColumn, setSelectedColumn] = useState('');
-
-    const [showFilter, setShowFilter] = useState(false);
 
     useEffect(() => {
         if (viewParams.startDate && viewParams.endDate)
@@ -64,6 +63,19 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             fetchdata(dataviewid, offset, limit, viewParams);
         }
     }, [dataviewid, offset, limit, viewParams]);
+
+    {/*
+    const checkColumnPresence = async (dataviewid: number) => {
+        try {
+            const response = await fetch(`https://localhost:7263/api/dataview/${dataviewid}`);
+            const result = await response.json();
+            if (result.StartDate != '' && result.EndDate != '')
+            setNeedsDateParams(true);
+        } catch (error: any) {
+            setError(error.message);
+        }
+    };
+*/}
 
     const fetchdata = async (dataviewid: number | null, offset: number, limit: number, viewParams: ViewParams) => {   
         if (dataviewid === null) return;
@@ -85,13 +97,12 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                throw new Error(`Error: ${response.status}`);
            }
            const result = await response.json();
-            //setData(result);
             setData(result);
             setTotalCount(result.totalCount);
             setPage(result.offset);
             setLimit(result.pageSize);
            const headers = result.result.length> 0 ? Object.keys(result.result[0]) : [];
-            //const headers = useMemo(() => result.result.length > 0 ? Object.keys(result.result[0]) : [], [result.result]);
+           
             setColumnKeys(headers);
             setShowTable(result.result.length > 0);
 
@@ -194,7 +205,11 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
              <Row style={{ marginBottom: '30px', alignItems: 'center' }}>         
                 <Col xs={4}>     
                     <Stack className='queryparamscomponentStyle' > 
-                        <QueryparamsComponent queryparams={viewParams} onParamsChange={handleParamsChange} setLoadingTable={setLoadingTable} />                                  
+                        <QueryparamsComponent 
+                            queryparams={viewParams} 
+                            onParamsChange={handleParamsChange} 
+                            setLoadingTable={setLoadingTable} 
+                            needsDateParams={needsDateParams} />                                  
                     </Stack>
                 </Col>                                
             </Row>
@@ -212,19 +227,16 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             }           
          </>
         ) : (
-            <Row>  
-                {/*     
-            <Col xs={4} > 
-                <Stack style={{ marginTop:10, textAlign: 'center', marginLeft:350}} > 
-                {error && <Notification type="error" header="Operation failed" closable>{error}</Notification>}
-                </Stack>
-            </Col>    
-            */}          
+            <Row>             
             <Col xs={24}>   
                 <>
                     <h2 className="query-view-title">{queryviews.title} с {viewParams.startDate} по {viewParams.endDate}</h2>                   
                     <Stack style={{ marginTop:20, textAlign: 'left'}} > 
-                            <QueryparamsComponent queryparams={viewParams} onParamsChange={handleParamsChange} setLoadingTable={setLoadingTable}/>
+                            <QueryparamsComponent 
+                                queryparams={viewParams} 
+                                onParamsChange={handleParamsChange} 
+                                setLoadingTable={setLoadingTable}
+                                needsDateParams={needsDateParams}/>
                             <div style={{ marginLeft:50}} >
                                 <Button appearance="primary" onClick={ ()=>setShowTable(true)} className='custom-button'>
                                     Выгрузить  отчет

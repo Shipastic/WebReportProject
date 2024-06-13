@@ -4,7 +4,6 @@ using DAPManSWebReports.Infrastructure.DbBuilder;
 using DAPManSWebReports.Infrastructure.Interfaces;
 
 using Oracle.ManagedDataAccess.Client;
-
 using System.Data;
 
 namespace DAPManSWebReports.Entities.Repositories.Implement
@@ -99,21 +98,30 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                         await con.OpenAsync();
                         using (OracleCommand cmd = con.CreateCommand())
                         {
-                            string whereClause = "";
-                            if (queryparams.TryGetValue("startDate", out var startDate) 
-                                && queryparams.TryGetValue("endDate", out var endDate)
-                                && queryparams.TryGetValue("offset", out var offset)
-                                && queryparams.TryGetValue("limit", out var limit))
+                            QueryBuilder queryBuilder = new QueryBuilder(dvRes.Query);
+
+                            if (!string.IsNullOrEmpty(dvRes.StartDateField) && !string.IsNullOrEmpty(dvRes.StopDateField)
+                                && queryparams.TryGetValue("startDate", out var startDate)
+                                && queryparams.TryGetValue("endDate", out var endDate))
                             {
-                                
-                                whereClause = $" WHERE {dvRes.StartDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND {dvRes.StopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS') OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY";
-                                cmd.Parameters.Add(new OracleParameter("startDate", (string)startDate));
-                                cmd.Parameters.Add(new OracleParameter("endDate", (string)endDate));
-                                cmd.Parameters.Add(new OracleParameter("offset", (int)offset));
-                                cmd.Parameters.Add(new OracleParameter("limit", (int)limit));
+
+                                queryBuilder.AddDateFilter(dvRes.StartDateField, dvRes.StopDateField, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate));
                             }
+
+                            if (queryparams.TryGetValue("offset", out var offset) && queryparams.TryGetValue("limit", out var limit))
+                            {
+                                queryBuilder.AddOffsetLimit(Convert.ToInt32(offset), Convert.ToInt32(limit));
+                            }
+
+                            string query = queryBuilder.BuildQuery();
                             
-                            cmd.CommandText = $"{dvRes.Query} {whereClause}";
+                            cmd.CommandText = query;
+                            var parameters = queryBuilder.GetParameters();
+                            foreach (var parameter in parameters)
+                            {
+                                cmd.Parameters.Add(parameter);
+                            }
+
                             using var adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
                             try
                             {
@@ -167,7 +175,8 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                         using (OracleCommand cmd = con.CreateCommand())
                         {
                             string whereClause = "";
-                            if (queryparams.TryGetValue("startDate", out var startDate)
+                            if (!string.IsNullOrEmpty(dvRes.StartDateField) && !string.IsNullOrEmpty(dvRes.StopDateField)
+                                && queryparams.TryGetValue("startDate", out var startDate)
                                 && queryparams.TryGetValue("endDate", out var endDate))
                             {
 

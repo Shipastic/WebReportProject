@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import CogIcon from '@rsuite/icons/legacy/Cog';
-import CharacterAuthorizeIcon from '@rsuite/icons/CharacterAuthorize';
-import { Container, Header, Content, Navbar, Nav, Dropdown, Sidebar, Footer} from 'rsuite';
-import './App.css';
-//import './App.scss';
-//import 'rsuite/dist/rsuite.css';
-import ChildFolderComponent from './Components/ChildFolderComponent';
+import React, { useState, useEffect         } from 'react';
+import { Container, Content, Sidebar, Footer} from 'rsuite';
+import { Outlet, BrowserRouter              } from 'react-router-dom';
+
 import QueryViewComponent from './Components/QueryViewComponent';
-import SideBarComponent from './Components/SidebarComponent';
-import Breadcrumbs  from './Models/Breadcrumbs';
-import { FolderDetail } from './Models/FolderDetail';
-import { Outlet, BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home         from './pages/Home';
-import About from './pages/About';
-import FooterPage from './pages/FooterPage';
-import Settings from './pages/Settings';
-import LogIn from './pages/LogIn';
-import NotFound from './pages/NotFound';
-import logo from './assets/css/logo.jpg';
-import ExcelIcon from './assets/icons-excel-48.png';
-import FolderIcon from './assets/icons-folder-32.png';
+import SideBarComponent   from './Components/SidebarComponent';
+import HeaderComponent    from './Components/HeaderComponent';
+import AppRoutes          from './Components/AppRoutes';
+
+import Breadcrumbs        from './Models/Breadcrumbs';
+import { FolderDetail }   from './Models/FolderDetail';
+
+import FooterPage         from './pages/FooterPage';
+
+import logo               from './assets/css/logo.jpg';
+
+import './App.css';
 
 interface HomePageProps {
     onSelect?: (eventKey: any) => void;
@@ -75,63 +70,18 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
         <BrowserRouter>     
          <div id="root">                     
             <Container className='container'>          
-                    <Header className="custom-header">
-                        <Navbar {...props} appearance="subtle">
-                                <Navbar.Brand className="navbar-brand logo" href="#" >
-                                    <img
-                                        src={logo}
-                                        alt="logo"
-                                        style={{ padding: '0px 0px 15px 5px', height: '30px' }} />
-                                </Navbar.Brand>                           
-                                <Nav onSelect={onSelect} activeKey={activeKey} >
-                                    <Nav.Item onClick={handlePageClick} className="custom-nav-item">
-                                        <Link to="/">
-                                        Main
-                                        </Link>
-                                    </Nav.Item>
-                                    <Nav.Item onClick={handlePageClick} className="custom-nav-item"><Link to="/home" >Home</Link></Nav.Item> 
-                                    <Nav.Item onClick={handlePageClick} className="custom-nav-item"><Link to="/about">About</Link></Nav.Item>
-                                    <Dropdown title={"Select Plant"} onSelect={handleDropdownSelect} className='custom-dropdown-title'>                                   
-                                        <Dropdown.Item className="custom-dropdown-item-static" disabled style={{ pointerEvents: 'none' }}>
-                                            Plants name:
-                                        </Dropdown.Item>
-                                    {items?.childFolders.map(childFolder => (
-                                        <Dropdown.Item
-                                            key={childFolder.id}
-                                            eventKey={childFolder.id}
-                                            onSelect={() => {handleItemClick(childFolder.id), updateBreadcrumbs([childFolder.name])}}
-                                            className="custom-dropdown-item"
-                                        >                                           
-                                        {childFolder.name}
-                                    </Dropdown.Item>
-                                ))}
-                                    <Dropdown.Item className="custom-dropdown-item-static" disabled style={{ pointerEvents: 'none' }}>
-                                        Reports:
-                                     </Dropdown.Item>
-                                    {items?.dataviews.map(dataview => (
-                                        <Dropdown.Item
-                                            key={dataview.id}
-                                            onClick={() => {handleDataViewClick(dataview.id),updateBreadcrumbs(['Main',dataview.name])}}
-                                            className="custom-dropdown-item"
-                                        >                                          
-                                        {dataview.name}
-                                    </Dropdown.Item>
-                                ))}
-                                    </Dropdown>
-                                </Nav>
-                                <Nav pullRight>
-                                    <Nav.Item
-                                            onClick={handlePageClick}
-                                            icon={<CharacterAuthorizeIcon color='#1E90FF'/>} className="custom-nav-item">
-                                                <Link to="/login" className="nav-link">
-                                                    <span style={{padding:'0 0 0 4px', marginRight:'20px'}}>
-                                                        LogIn
-                                                    </span>
-                                                </Link>
-                                    </Nav.Item>                                   
-                                </Nav> 
-                        </Navbar >                      
-                    </Header>
+                     <HeaderComponent 
+                            className="custom-header"
+                            props={props}
+                            activeKey={activeKey}
+                            handlePageClick={handlePageClick}
+                            handleDropdownSelect={handleDropdownSelect}
+                            handleItemClick={handleItemClick}
+                            updateBreadcrumbs={updateBreadcrumbs}
+                            handleDataViewClick={handleDataViewClick}
+                            onSelect={onSelect}
+                            items={items} 
+                            logo={logo}/>
                     <Container className='container'>
                         <Sidebar className='sidebar' style={{flex:'0 1'}}>
                             <SideBarComponent                            
@@ -145,39 +95,19 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                         </Sidebar>
                         <Content className="content" >
                         <Breadcrumbs breadcrumbs={breadcrumbs} />
+                        {/*
                         {selectedDataViewId !== null && (
                             <div className="query-view-container">
                                 <QueryViewComponent dataviewid={selectedDataViewId} path={'/'} updateBreadcrumbs={updateBreadcrumbs} breadcrumbs={breadcrumbs} />
                             </div>
                         )}
-                        <Routes>
-                            <Route path="/home" element={<Home
-                                                            path=""
-                                                            updateBreadcrumbs={updateBreadcrumbs}
-                                                            breadcrumbs={breadcrumbs}            />} />
-                            <Route path="/login" element={<LogIn
-                                                            path="/login"
-                                                            updateBreadcrumbs={updateBreadcrumbs}
-                                                            breadcrumbs={breadcrumbs}            />} />     
-                            <Route path="/about" element={<About
-                                                            path="/about"
-                                                            updateBreadcrumbs={updateBreadcrumbs}
-                                                            breadcrumbs={breadcrumbs}            />} />
-                            <Route path="*"      element={<NotFound
-                                                            path="NotFoundPAge"
-                                                            updateBreadcrumbs={updateBreadcrumbs}
-                                                            breadcrumbs={breadcrumbs}            />} />
-                            <Route path="/"      element={activeFolderId !== null && isFolderComponentVisible && (
-                                                          <ChildFolderComponent
-                                                            parentid={activeFolderId}
-                                                            path={'/activeFolderId'}
-                                                            updateBreadcrumbs={updateBreadcrumbs}
-                                                            breadcrumbs={breadcrumbs} />)} />
-                            <Route path="/settings" element={<Settings
-                                                                path=""
-                                                                updateBreadcrumbs={updateBreadcrumbs}
-                                                                breadcrumbs={breadcrumbs}        />} />
-                        </Routes>    
+                            */}
+                       <AppRoutes
+                                updateBreadcrumbs={updateBreadcrumbs}
+                                breadcrumbs={breadcrumbs}
+                                activeFolderId={activeFolderId}
+                                isFolderComponentVisible={isFolderComponentVisible}
+                        />   
                         <Outlet />
                         </Content>
                     </Container>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { IconButton,  Pagination } from 'rsuite';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import { FolderDetail       } from '../Models/FolderDetail';
 import { defaultColumns     } from '../constants/ColumnsBrowseTable';
@@ -7,9 +6,6 @@ import { addItemType        } from '../Utils/addItemType';
 import { splitItemType      } from '../Utils/splitItemType';
 import { getSortedData } from '../Utils/sortUtils';
 import QueryViewComponent from '../Components/QueryViewComponent';
-import FileDownloadIcon from '@rsuite/icons/FileDownload';
-import FileExcelO from '@rsuite/icons/legacy/FileExcelO';
-import AttachmentIcon from '@rsuite/icons/Attachment';
 import '../App.css';
 import '../App.scss';
 interface Props
@@ -33,6 +29,10 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [loading, setLoading] = useState<boolean>(false);
     const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
+
+    const [error,          setError         ] = useState<string | null>(null);
+
+    const [needsDateParams, setNeedsDateParams] = useState(false);
 
     let pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
@@ -106,8 +106,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                         const res: FolderDetail = splitItemType(combinedArray);
                         setItems(res);
                         parentid = tempParentId;                       
-                        setActiveFolderId(tempParentId);  
-                        //addBreadcrumb(rowData.name); 
+                        setActiveFolderId(tempParentId); 
                         updateUI();  
                     }                                    
                 }
@@ -121,8 +120,8 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                 if (dataKey === 'name')
                 {                  
                     const tempDataViewId = findDataviewByName(rowData.name, combinedArray);
-                    setActiveDataviewId(tempDataViewId);  
-                    //addBreadcrumb(rowData.name);                  
+                    checkColumnPresence(tempDataViewId);
+                    setActiveDataviewId(tempDataViewId);                                
                 }
             }
         }
@@ -170,6 +169,17 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
         return false;
     };
 
+    const checkColumnPresence = async (dataviewid: number) => {
+        try {
+            const response = await fetch(`https://localhost:7263/api/dataview/${dataviewid}`);
+            const result = await response.json();
+            if (result.startDateField != null && result.endDateField != null)
+            setNeedsDateParams(true);
+        } catch (error: any) {
+            setError(error.message);
+        }
+    };
+
     if (loading) {
         return <div>Loading...</div>;
     };
@@ -180,6 +190,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                         path={pathArray[1]}
                         updateBreadcrumbs={updateBreadcrumbs}
                         breadcrumbs={newBreadcrumbs}
+                        needsDateParams={needsDateParams}
                 />;       
     };   
 

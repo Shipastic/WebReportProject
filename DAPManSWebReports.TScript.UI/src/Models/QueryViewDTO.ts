@@ -7,4 +7,5 @@ export interface QueryViewDTO {
     totalCount: number;
     offset: number;
     pageSize: number;
+    
 }

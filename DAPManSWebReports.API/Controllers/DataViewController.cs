@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DAPManSWebReports.API.Controllers
 {
-    [Route("api/dataviews")]
+    [Route("api/dataview")]
     [ApiController]
     public class DataViewController : ControllerBase
     {
@@ -49,12 +49,12 @@ namespace DAPManSWebReports.API.Controllers
         }
 
         // GET api/<DataViewController>/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetDataViewById(int id)
+        [HttpGet("{dataviewid}")]
+        public async Task<IActionResult> GetDataViewById(int dataviewid)
         {
-            DataViewModel dvById = await _dataviewDtoService.GetDtoById(id);
-            if(dvById != null)
-                return Ok(dvById);
+            DataViewModel dataView = await _dataviewDtoService.GetDtoById(dataviewid);
+            if(dataView != null)
+                return Ok(dataView);
             else
             {
                 return NotFound(); 

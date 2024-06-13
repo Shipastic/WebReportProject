@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconButton, ButtonToolbar, DatePicker, SelectPicker, InputNumber, Button, Form, Drawer, DateRangePicker } from 'rsuite'; 
+import { IconButton, ButtonToolbar, SelectPicker, InputNumber, Button, Form, Drawer, DateRangePicker , Message} from 'rsuite'; 
 import SettingIcon from '@rsuite/icons/Setting';
 import '../App.css';
 import CalendarIcon from '@rsuite/icons/Calendar';
@@ -16,6 +16,8 @@ interface ViewParams {
 interface Props {
     queryparams: ViewParams;
     onParamsChange: (params: ViewParams) => void;
+    setLoadingTable: (loading: boolean) => void;
+    needsDateParams: boolean;
 }
 
 const getPresetDates = (preset: string) => {
@@ -56,7 +58,7 @@ const getPresetDates = (preset: string) => {
   };
 };
 
-const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, setLoadingTable }) => {
+const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange,setLoadingTable, needsDateParams}) => {
     const [params, setParams] = useState<ViewParams>(queryparams);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -81,7 +83,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
         {
           onParamsChange(params);
           setDrawerOpen(false);
-          setLoadingTable(true);
+
           console.log(params);
         };
         
@@ -131,6 +133,8 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
           </Drawer.Header>
           <Drawer.Body>
             <Form layout="vertical" onSubmit={handleSubmit} autoCorrect='true' >
+            {needsDateParams ? (
+             <>
             <Form.Group>
               <Form.ControlLabel>Preset date filters:</Form.ControlLabel>
               <SelectPicker data={presetDates} onChange={handlePresetDateChange} placeholder="Select a date preset" value={params.presetDate} />
@@ -151,7 +155,13 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                     placeholder="Select Date Range"
                     showOneCalendar
                     />
-              </Form.Group>             
+              </Form.Group>
+              </>
+                        ) : (
+                            <Form.Group>
+                                <Message type="info">Для данного DataView выбор дат недоступен!</Message>
+                            </Form.Group>
+                        )}             
               <Form.Group>
                 <Form.ControlLabel>Format:</Form.ControlLabel>
                 <SelectPicker data={formats} value={params.format} onChange={(value) => handleChange('format', value)}  />

@@ -24,7 +24,7 @@ const Home: React.FC<Props> = ({ path, updateBreadcrumbs, breadcrumbs }) =>
         }
         catch (error)
         {
-            console.error("Ошибка при формировании breadcrumbs", error);
+            console.error("breadcrumbs", error);
         }
     };
 

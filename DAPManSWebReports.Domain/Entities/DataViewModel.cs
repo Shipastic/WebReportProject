@@ -23,6 +23,8 @@ namespace DAPManSWebReports.Domain.Entities
         public string RemotePassword { get; set; }
         public string Query { get; set; }
         public string DataviewNote { get; set; }
+        public string startDateField {  get; set; }
+        public string endDateField { get; set; }
        
     }
 }

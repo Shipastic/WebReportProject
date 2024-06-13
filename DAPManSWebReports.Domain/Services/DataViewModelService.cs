@@ -71,7 +71,9 @@ namespace DAPManSWebReports.Domain.Services
                 RemotePassword = dataViewEntity.RemotePassword,
                 id             = dataViewEntity.id,
                 Query          = dataViewEntity.Query,
-                DataviewNote   = dataViewEntity.DataViewNote
+                DataviewNote   = dataViewEntity.DataViewNote,
+                startDateField = dataViewEntity.StartDateField,
+                endDateField   = dataViewEntity.StopDateField
             };
         }
 

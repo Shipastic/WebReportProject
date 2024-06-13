@@ -3,4 +3,6 @@ export interface DataViewDTO {
     name        : string;
     parentid    : number;
     dataviewNote: string;
+    startDateField   : string;
+    endDateField     : string;
 }
