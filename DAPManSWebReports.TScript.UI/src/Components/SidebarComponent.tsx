@@ -7,40 +7,53 @@ import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
 
 const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange, onExpand, ...navProps })=>{
     const styles = {
-        width: 60,
+        width: 'auto',
         display: 'inline-table',
       };
 
       const sidenavStyles = {
         backgroundColor: '#4e6b8b',
         color: '#ecf0f1',
-        height: '80vh',
+        height: 'auto',
         
     };
 
-    const itemStyles = {
-        padding: '0px 0px',
-        backgroundColor: '#4e6b8b',
-        color: '#ecf0f1',
+    const itemAppsStyles = {
+        backgroundColor: '#821ba1',
+        marginTop: '2px',
+        marginLeft: '10px',
+        padding: '0px 10px 0 10px',
+
+    };
+    const itemProfileStyles = {
+        backgroundColor: '#9710c9',
+        marginTop: '2px',
+        marginLeft: '10px',
+        padding: '0px 10px 0 10px',
 
     };
 
     const titleStyles = {
         color: '#ecf0f1',
-        padding: '10px 0px',
-
+        padding: '0px 0px'
     };
 
     const linkStyles = {
-        color: '#FFF0F5',
+        color: '#ecf0f1',    
         fontWeight: 'bold',
         textDecoration: 'none',
         
     };
 
     const iconStyles = {
-        fontSize: '32px',
-        color:'#1E90FF'
+        marginLeft: '5px',
+        fontSize: '36px',
+        color:'#11d0ed'
+    };
+    const iconItemStyles = {
+        marginLeft: '10px',
+        fontSize: '36px',
+        color: '#11d0ed'
     };
       return(
         <div style={styles}>
@@ -53,30 +66,25 @@ const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange
             >
                 <Sidenav.Body >
                     <Nav {...navProps}>
-                        <Nav.Item eventKey="1"  active icon={<GearCircleIcon  style={iconStyles}/>}>
-                            <Link to="/settings">
-                                <span style={itemStyles}>
-                                    Settings
-                                 </span>
-                            </Link>
-                        </Nav.Item>
-                        <Nav.Item eventKey="2" icon={<DashboardIcon  style={iconStyles}/>}>
-                            <Link to="/settings">
-                                <span style={itemStyles}>
-                                    Applications
-                                </span>
-                            </Link>
-                        </Nav.Item>
-                        <Nav.Item eventKey="3" icon={<GroupIcon  style={iconStyles}/>}>
-                            <Link to="/profile">
-                                <span style={itemStyles}>
-                                    Profile
-                                </span>
-                            </Link>
-                        </Nav.Item>
+                          <Nav.Menu     eventKey="1"   icon={<GearCircleIcon style={iconStyles}     />} title="Settings" style={titleStyles}>
+                              <Nav.Item eventKey="1-1" icon={<DashboardIcon  style={iconItemStyles} />} style={itemAppsStyles}>
+                                  <Link to="/settings" style={linkStyles}>
+                                      <span style={{marginLeft:'10px'} }>
+                                          Apps
+                                      </span>
+                                  </Link>
+                              </Nav.Item>
+                              <Nav.Item eventKey="1-2" icon={<GroupIcon      style={iconItemStyles} />} style={itemProfileStyles}>
+                                  <Link to="/profile" style={linkStyles }>
+                                      <span style={{ marginLeft: '10px' }}>
+                                          Profile
+                                      </span>
+                                  </Link>
+                              </Nav.Item>
+                        </Nav.Menu>                     
                     </Nav>
-                </Sidenav.Body>
-                <Sidenav.Toggle onToggle={onExpand} style={{background:'#1E90FF'}} >
+                  </Sidenav.Body>
+                  <Sidenav.Toggle onToggle={onExpand} style={{ background: '#1E90FF', marginTop: '-5px', height:'20px' }}>
                 </Sidenav.Toggle>
             </Sidenav>
         </div>

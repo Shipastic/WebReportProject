@@ -90,7 +90,7 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                                   onOpenChange={setOpenKeys}
                                   expanded={expanded}
                                   onExpand={setExpand}
-                                  appearance="subtle"/>
+                                appearance="inverse"/>
                         </Sidebar>
                         <Content className="content" >
                         <Breadcrumbs breadcrumbs={breadcrumbs} />

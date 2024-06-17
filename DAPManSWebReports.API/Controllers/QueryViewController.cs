@@ -36,14 +36,20 @@ namespace DAPManSWebReports.API.Controllers
             {
                 return BadRequest("Invalid limit or offset value.");
             }
-            string cacheKey = $"QueryData_{dataviewId}_FullResult";
 
-            QuerySettingsModel settingsModel = new QuerySettingsModel();
+            string cacheKey = null;
 
+            QuerySettingsModel settingsModel = _queryParamService.GetQueryStringParam(HttpContext);
+            if (string.IsNullOrEmpty(settingsModel.startDate) && string.IsNullOrEmpty(settingsModel.endDate))
+            {
+                cacheKey = $"QueryData_{dataviewId}_FullResult";
+            }
+            else
+            {
+                cacheKey = $"QueryData_{dataviewId}_{settingsModel.startDate}_{settingsModel.endDate}_FullResult";
+            }
             if (!_cache.TryGetValue(cacheKey, out QueryModel queryViewById))
             {
-                settingsModel = _queryParamService.GetQueryStringParam(HttpContext);
-
                 var queryParams = _queryParamService.GetDictionaryFromQueryString(settingsModel);
                 queryViewById = await _queryViewService.GetQueryViewWithParam(dataviewId, queryParams);
                 if (queryViewById?.TotalCount == 0)
@@ -57,7 +63,6 @@ namespace DAPManSWebReports.API.Controllers
 
                 _cache.Set(cacheKey, queryViewById, cacheEntryOptions);
             }
-            //var pagedResult = PagingParametersHelper.ToPagedResult(queryViewById, settingsModel);
             var pagedItems = queryViewById.Result
             .Skip(offset)
             .Take(limit)

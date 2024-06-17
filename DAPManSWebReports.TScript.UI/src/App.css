@@ -93,13 +93,13 @@ html, body {
 
     }
     /**********************SIDEBAR*******************************/
-    .sidebar {
-        background-color: #4e6b8b;
-        height: auto;
-        width: auto;
-        margin-right: 10px;
-        margin-left: -15px;
-    }
+.sidebar {
+    background-color: #09334a;
+    height: auto;
+    width: auto;
+    margin-right: 15px;
+    margin-left: -25px;
+}
 
 /**********************TABLE*******************************/
 .query-view-container {
