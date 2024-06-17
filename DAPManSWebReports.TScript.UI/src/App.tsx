@@ -2,7 +2,6 @@ import React, { useState, useEffect         } from 'react';
 import { Container, Content, Sidebar, Footer} from 'rsuite';
 import { Outlet, BrowserRouter              } from 'react-router-dom';
 
-import QueryViewComponent from './Components/QueryViewComponent';
 import SideBarComponent   from './Components/SidebarComponent';
 import HeaderComponent    from './Components/HeaderComponent';
 import AppRoutes          from './Components/AppRoutes';

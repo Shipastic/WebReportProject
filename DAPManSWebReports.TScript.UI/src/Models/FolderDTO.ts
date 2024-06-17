@@ -1,5 +1,6 @@
 export interface FolderDTO {
     id          : number;
     name        : string;
-    parentid    : number;
+    parentid: number;
+    type: any;
 }

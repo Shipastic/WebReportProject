@@ -18,8 +18,6 @@ const ViewParametersComponent: React.FC<Props> = ({ queryparams, onParamsChange 
     const [size, setSize]           = useState('xs');
     const [open, setOpen]           = useState(true);
     const [placement, setPlacement] = useState('top');
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate]     = useState('');
 
     const handleChage = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;

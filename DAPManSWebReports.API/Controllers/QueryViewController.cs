@@ -4,6 +4,7 @@ using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,10 +16,12 @@ namespace DAPManSWebReports.API.Controllers
     {
         private IQueryViewService<QueryModel> _queryViewService;
         private IQueryParamService<QuerySettingsModel> _queryParamService;
-        public QueryViewController(IQueryViewService<QueryModel> queryViewService, IQueryParamService<QuerySettingsModel> queryParamService)
+        private readonly IMemoryCache _cache;
+        public QueryViewController(IQueryViewService<QueryModel> queryViewService, IQueryParamService<QuerySettingsModel> queryParamService, IMemoryCache cache)
         {
             _queryViewService = queryViewService;
             _queryParamService = queryParamService;
+            _cache = cache;
         }
         [HttpGet]
         public IEnumerable<string> Get()
@@ -33,38 +36,47 @@ namespace DAPManSWebReports.API.Controllers
             {
                 return BadRequest("Invalid limit or offset value.");
             }
+            string cacheKey = $"QueryData_{dataviewId}_FullResult";
 
-            QuerySettingsModel settingsModel = _queryParamService.GetQueryStringParam(HttpContext);
-            QueryModel queryViewById = new QueryModel();
+            QuerySettingsModel settingsModel = new QuerySettingsModel();
 
-            //if (string.IsNullOrEmpty(settingsModel.startDate) && string.IsNullOrEmpty(settingsModel.endDate))
-            //{
-            //    queryViewById = await _queryViewService.GetQueryView(dataviewId, limit, offset);
-            //    if (queryViewById == null)
-            //    {
-            //        return NotFound();
-            //    }
-            //    return Ok(queryViewById);
-            //}
-            var queryParams = _queryParamService.GetDictionaryFromQueryString(settingsModel);
-            queryViewById = await _queryViewService.GetQueryViewWithParam(dataviewId, queryParams);
-            if (queryViewById?.TotalCount == 0)
+            if (!_cache.TryGetValue(cacheKey, out QueryModel queryViewById))
             {
-                return NoContent();
+                settingsModel = _queryParamService.GetQueryStringParam(HttpContext);
+
+                var queryParams = _queryParamService.GetDictionaryFromQueryString(settingsModel);
+                queryViewById = await _queryViewService.GetQueryViewWithParam(dataviewId, queryParams);
+                if (queryViewById?.TotalCount == 0)
+                {
+                    return NoContent();
+                }
+                // Установка кэша
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(10)) // пример скользящего времени жизни (опционально)
+                    .SetAbsoluteExpiration(TimeSpan.FromHours(1)); // пример абсолютного времени жизни (опционально)
+
+                _cache.Set(cacheKey, queryViewById, cacheEntryOptions);
             }
-            var pagedResult = PagingParametersHelper.ToPagedResult(queryViewById, settingsModel);
+            //var pagedResult = PagingParametersHelper.ToPagedResult(queryViewById, settingsModel);
+            var pagedItems = queryViewById.Result
+            .Skip(offset)
+            .Take(limit)
+            .ToList();
             var result = new
             {
-                PagedItems = pagedResult.ItemResult,
+                pagedItems,
                 queryViewById.TotalCount,
-                settingsModel.offset,
-                pagedResult.PageSize,
+                offset,
+                PageSize = limit,
                 queryViewById.id,
                 queryViewById.Name,
                 queryViewById.Title,
                 queryViewById.DataSourceId,
-                queryViewById.Result
+                queryViewById.Result,
+                queryViewById.QueryResult
             };
+
+               
 
             return Ok(result);
         }

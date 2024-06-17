@@ -23,11 +23,13 @@ builder.Services.AddCors(options =>
                             .AllowAnyMethod()
                             .AllowAnyHeader());
 });
+builder.Services.AddMemoryCache();
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+//builder.Services.AddResponseCaching();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,5 +49,5 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 //app.MapControllers();
-
+//app.UseResponseCaching();
 app.Run();

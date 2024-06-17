@@ -14,7 +14,7 @@ namespace DAPManSWebReports.Entities.Repositories.Interfaces
         IEnumerable<T> GetAll();
         Task<T> ReadById(int id, int limit, int offset);
         Task<T> ReadById(int dataviewId, Dictionary<string, object> queryparams);
-        Task<int> GetCountById(int dataviewId, Dictionary<string, object> queryparams);
+        //Task<int> GetCountById(int dataviewId, Dictionary<string, object> queryparams, string queryString, int dataSourceId);
         //T1 ExecuteById(int dataViewId);
     }
 }

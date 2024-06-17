@@ -84,5 +84,6 @@ namespace DAPManSWebReports.Entities.Models
             }
             TableResultQuery = new DataTable();
         }
+        public string ResultQuery { get; set; }
     }
 }

@@ -17,7 +17,7 @@ interface Props
 }
 
 const CustomHeaderCell = ({ ...props }) => (
-    <HeaderCell {...props} style={{ backgroundColor: '#8B4513', color: 'white', fontWeight: 'bold', padding: '4px 0 4px 10', position: 'sticky', top: 0, zIndex: 10}} />
+    <HeaderCell children={undefined} {...props} style={{ backgroundColor: '#8B4513', color: 'white', fontWeight: 'bold', padding: '4px 0 4px 10', position: 'sticky', top: 0, zIndex: 10 }} />
   );
   
 
@@ -31,8 +31,6 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
 
     const [error,          setError         ] = useState<string | null>(null);
-
-    const [needsDateParams, setNeedsDateParams] = useState(false);
 
     let pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
@@ -120,7 +118,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                 if (dataKey === 'name')
                 {                  
                     const tempDataViewId = findDataviewByName(rowData.name, combinedArray);
-                    checkColumnPresence(tempDataViewId);
+                    
                     setActiveDataviewId(tempDataViewId);                                
                 }
             }
@@ -169,17 +167,6 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
         return false;
     };
 
-    const checkColumnPresence = async (dataviewid: number) => {
-        try {
-            const response = await fetch(`https://localhost:7263/api/dataview/${dataviewid}`);
-            const result = await response.json();
-            if (result.startDateField != null && result.endDateField != null)
-            setNeedsDateParams(true);
-        } catch (error: any) {
-            setError(error.message);
-        }
-    };
-
     if (loading) {
         return <div>Loading...</div>;
     };
@@ -190,7 +177,6 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                         path={pathArray[1]}
                         updateBreadcrumbs={updateBreadcrumbs}
                         breadcrumbs={newBreadcrumbs}
-                        needsDateParams={needsDateParams}
                 />;       
     };   
 

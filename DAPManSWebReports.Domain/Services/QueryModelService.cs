@@ -35,22 +35,39 @@ namespace DAPManSWebReports.Domain.Services
 
         public async Task<QueryModel> GetQueryViewWithParam(int dataviewId, Dictionary<string, object> queryparams)
         {
-            var queryView = await _queryRepository.ReadById(dataviewId, queryparams);
+            var queryView    = await _queryRepository.ReadById(dataviewId, queryparams);
             return new QueryModel
             {
-                Name = queryView.Name,
+                Name         = queryView.Name,
                 DataSourceId = queryView.DatasourceId,
-                Result = ConvertDataTableToList(queryView.TableResultQuery),
-                id = queryView.Id,
-                Title = queryView.Title,
-                TotalCount = await _queryRepository.GetCountById(dataviewId, queryparams)
+                Result       = ConvertDataTableToList(queryView.TableResultQuery),
+                id           = queryView.Id,
+                Title        = queryView.Title,
+                TotalCount   = queryView.TotalCount,
+                QueryResult  = queryView.ResultQuery
             };
         }
 
         private List<Dictionary<string, object>> ConvertDataTableToList(DataTable dt)
         {
             var columns = dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
-            var result = dt.AsEnumerable().Select(row => columns.ToDictionary(column => column, column => row[column])).ToList();
+
+            var result = dt.AsEnumerable().Select(row =>
+            {
+                var dictionary = columns.ToDictionary(column => column,
+                                                       column => row[column] is DBNull ? null : row[column]);
+                // Проверка на пустой объект
+                foreach (var key in dictionary.Keys.ToList())
+                {
+                    if (dictionary[key] is Dictionary<string, object> dict && dict.Count == 0)
+                    {
+                        dictionary[key] = null;
+                    }
+                }
+
+                return dictionary;
+            }).ToList();
+
             return result;
         }
     }
