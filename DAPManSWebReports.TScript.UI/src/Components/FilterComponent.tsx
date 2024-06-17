@@ -73,7 +73,7 @@ const FilterComponent: React.FC<FilterProps>= ({
                         />
                         </div>
                         <div style={{ margin: '10px 0' }}>
-                        <label>Введите значение</label>
+                        <Form.ControlLabel>Введите значение</Form.ControlLabel>
                         <Input value={filterValue} onChange={setFilterValue} />
                             </div>
                         </Form.Group>

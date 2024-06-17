@@ -181,7 +181,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
 
     const handleChangeLimit = (limit) => {
         // Resetting to first page when limit changes
-        setPage((offset - 1) * limit);
+        setPage(offset );
         setLimit(limit);
     };
 
@@ -280,64 +280,64 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                         {queryviews.title}
                                         {viewParams.startDate && viewParams.endDate && ` с ${viewParams.startDate} по ${viewParams.endDate}`}
                                     </h2>
-                                    <Stack style={{ marginTop: 20, textAlign: 'left' }} >
-                                        <QueryparamsComponent
-                                            queryparams={viewParams}
-                                            onParamsChange={handleParamsChange}
-                                            setLoadingTable={setLoadingTable}
-                                            needsDateParams={needsDateParams}
-                                        />
-                                        <div style={{ marginLeft: 50 }} >
-                                            <Button appearance="primary" onClick={() => setShowTable(true)} className='custom-button'>
-                                                Выгрузить  отчет
-                                            </Button>
-                                        </div>
-                                       
-                                    </Stack>
-
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop:20 }}>
-                                        <FilterComponent
-                                            headers={headers}
-                                            selectedColumn={selectedColumn}
-                                            setSelectedColumn={setSelectedColumn}
-                                            filterValue={filterValue}
-                                            setFilterValue={setFilterValue}
-                                            handleApplyFilter={handleApplyFilter}
-                                            resetFilter={resetFilter}
+                                    <Stack style={{ marginTop: 20, justifyContent: 'space-between', alignItems: 'center' }} >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexGrow: 1 }}>
+                                            <QueryparamsComponent
+                                                queryparams={viewParams}
+                                                onParamsChange={handleParamsChange}
+                                                setLoadingTable={setLoadingTable}
+                                                needsDateParams={needsDateParams}
+                                            />   
+                                            <FilterComponent
+                                                headers={headers}
+                                                selectedColumn={selectedColumn}
+                                                setSelectedColumn={setSelectedColumn}
+                                                filterValue={filterValue}
+                                                setFilterValue={setFilterValue}
+                                                handleApplyFilter={handleApplyFilter}
+                                                resetFilter={resetFilter}
                                             />
-                                        <div>
-                                        <label>Выбор отображаемых столбцов</label>
-                                        <CheckPicker
-                                            value={columnKeys}
-                                            onChange={setColumnKeys}
-                                            block
-                                            style={{ marginBottom: 20, width: 300 }}
-                                            menuStyle={{ width: 300 }}
-                                            placeholder="Select columns to display"
-                                            cleanable={false}
-                                            data={availableColumns}
-                                            searchable={true}
-                                            ref={picker}
-                                            renderExtraFooter={() => (
-                                                    <div style={{ marginBottom: 20 }}>
-                                                        <Checkbox onChange={(value, checked) => toggleSelectAll(checked)}>
-                                                            Select All
-                                                        </Checkbox>
-                                                        <Button
-                                                            style={footerButtonStyle}
-                                                            appearance="primary"
-                                                            size="sm"
-                                                            onClick={() => {
-                                                                picker.current.close();
-                                                            }}
-                                                        >
-                                                            Ok
-                                                        </Button>
-                                                </div>
-                                                )}
+                                            <div>
+                                                <label style={{marginLeft:'20px', fontSize:'16px'} }>Выбор отображаемых столбцов</label>
+                                                <CheckPicker
+                                                    value={columnKeys}
+                                                    onChange={setColumnKeys}
+                                                    block
+                                                    style={{ marginBottom: 20, width: 300 }}
+                                                    menuStyle={{ width: 300 }}
+                                                    placeholder="Select columns to display"
+                                                    cleanable={false}
+                                                    data={availableColumns}
+                                                    searchable={true}
+                                                    ref={picker}
+                                                    renderExtraFooter={() => (
+                                                        <div style={{ marginBottom: 20 }}>
+                                                            <Checkbox onChange={(value, checked) => toggleSelectAll(checked)}>
+                                                                Select All
+                                                            </Checkbox>
+                                                            <Button
+                                                                style={footerButtonStyle}
+                                                                appearance="primary"
+                                                                size="sm"
+                                                                onClick={() => {
+                                                                    picker.current.close();
+                                                                }}
+                                                            >
+                                                                Ok
+                                                            </Button>
+                                                        </div>
+                                                    )}
                                                 />
                                             </div>
+                                            <div style={{ marginLeft: 50, textAlign:'right' }} >
+                                            <Button appearance="primary" onClick={() => setShowTable(true)} className='custom-button' >
+                                                Скачать  отчет
+                                            </Button>
+                                            </div>
                                         </div>
+                                    </Stack>
+
+                                    
                                     <div style={{ margin: '0px 5px 0px 5px' }}>
                                         {isFilterApplied && (
                                             <div style={{ margin: '10px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

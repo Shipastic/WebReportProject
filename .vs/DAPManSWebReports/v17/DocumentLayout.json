@@ -151,7 +151,7 @@
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "ToolTip": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "RelativeToolTip": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAgwFYAAAAJAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAgwFUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T22:19:25.678Z",
               "EditorCaption": ""
@@ -166,8 +166,7 @@
               "RelativeToolTip": "DAPManSWebReports.TScript.UI\\src\\pages\\LogIn.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-06-14T06:16:18.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-14T06:16:18.18Z"
             },
             {
               "$type": "Document",
@@ -227,8 +226,7 @@
               "RelativeToolTip": "DAPManSWebReports.API\\Services\\Paging\\PagingParametersHelper.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T07:05:17.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T07:05:17.951Z"
             },
             {
               "$type": "Document",
