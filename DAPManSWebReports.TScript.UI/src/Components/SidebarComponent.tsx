@@ -19,14 +19,14 @@ const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange
     };
 
     const itemAppsStyles = {
-        backgroundColor: '#821ba1',
+        backgroundColor: '#27db9c',
         marginTop: '2px',
         marginLeft: '10px',
         padding: '0px 10px 0 10px',
 
     };
     const itemProfileStyles = {
-        backgroundColor: '#9710c9',
+        backgroundColor: '#27db9c',
         marginTop: '2px',
         marginLeft: '10px',
         padding: '0px 10px 0 10px',
@@ -53,7 +53,7 @@ const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange
     const iconItemStyles = {
         marginLeft: '10px',
         fontSize: '36px',
-        color: '#11d0ed'
+        color: '#d8f2ef'
     };
       return(
         <div style={styles}>
@@ -84,7 +84,7 @@ const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange
                         </Nav.Menu>                     
                     </Nav>
                   </Sidenav.Body>
-                  <Sidenav.Toggle onToggle={onExpand} style={{ background: '#1E90FF', marginTop: '-5px', height:'20px' }}>
+                  <Sidenav.Toggle onToggle={onExpand} style={{ background: '#1E90FF', marginTop: '-5px', height:'22px' }}>
                 </Sidenav.Toggle>
             </Sidenav>
         </div>

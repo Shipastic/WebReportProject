@@ -66,7 +66,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
 
     useEffect(() => {
         if (!needsDateParams) {
-            // Reset startDate and endDate when needsDateParams is false
+
             setParams((prevParams) => ({
                 ...prevParams,
                 startDate: '',

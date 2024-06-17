@@ -14,29 +14,23 @@ namespace DAPManSWebReports.Entities.Models
     public class QueryBuilder
     {
         private string _baseQuery;
-        private string _whereClause;
+        private List<string> _additionalConditions;
         private string _paginationClause;
         private List<OracleParameter> _parameters;
 
         public QueryBuilder(string baseQuery)
         {
             _baseQuery = baseQuery;
-            _whereClause = "";
+            _additionalConditions = new List<string>();
             _paginationClause = "";
             _parameters = new List<OracleParameter>();
         }
 
         public QueryBuilder AddDateFilter(string startDateField, string stopDateField, DateTime startDate, DateTime endDate)
         {
-            if (!string.IsNullOrEmpty(_whereClause))
-            {
-                _whereClause += " AND";
-            }
-            else
-            {
-                _whereClause = " WHERE";
-            }
-            _whereClause += $" {startDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND {stopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')";
+            string condition = $"{startDateField} >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND {stopDateField} <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')";
+            _additionalConditions.Add(condition);
+
             _parameters.Add(new OracleParameter("startDate", startDate.ToString("yyyy-MM-dd HH:mm:ss")));
             _parameters.Add(new OracleParameter("endDate", endDate.ToString("yyyy-MM-dd HH:mm:ss")));
             return this;
@@ -52,24 +46,42 @@ namespace DAPManSWebReports.Entities.Models
 
         public string BuildQuery()
         {
-            // Проверка наличия ORDER BY
-            int orderByIndex = _baseQuery.IndexOf(" order by", StringComparison.OrdinalIgnoreCase);
-            string query;
+            string mainQuery = _baseQuery;
 
-            if (orderByIndex >= 0)
+            // Собираем итоговый WHERE из базового запроса и новых условий
+            string finalWhereClause = string.Join(" AND ", _additionalConditions);
+            // Вставляем финальное условие WHERE
+            if (!string.IsNullOrEmpty(finalWhereClause))
             {
-                // Разделяем запрос на основную часть и часть с ORDER BY
-                string mainQuery = _baseQuery.Substring(0, orderByIndex);
-                string orderByClause = _baseQuery.Substring(orderByIndex);
-
-                query = $"{mainQuery} {_whereClause} {orderByClause}{_paginationClause}";
+                int lastWhereIndex = mainQuery.LastIndexOf("where", StringComparison.OrdinalIgnoreCase);
+                if (lastWhereIndex != -1)
+                {
+                    // Подразумеваем, что базовый запрос уже имеет WHERE
+                    int insertPosition = lastWhereIndex + "where".Length;
+                    mainQuery = mainQuery.Insert(insertPosition, $" {finalWhereClause} AND ");
+                }
+                else
+                {
+                    // Базовый запрос не имеет WHERE
+                    int orderByIndex = mainQuery.IndexOf("order by", StringComparison.OrdinalIgnoreCase);
+                    if (orderByIndex != -1)
+                    {
+                        mainQuery = mainQuery.Insert(orderByIndex, $" WHERE {finalWhereClause}");
+                    }
+                    else
+                    {
+                        mainQuery += $" WHERE {finalWhereClause}";
+                    }
+                }
             }
-            else
+
+            // Добавляем пагинацию, если есть
+            if (!string.IsNullOrEmpty(_paginationClause))
             {
-                query = $"{_baseQuery} {_whereClause}{_paginationClause}";
+                mainQuery += _paginationClause;
             }
 
-            return query;
+            return mainQuery;
         }
 
         public IEnumerable<OracleParameter> GetParameters()
