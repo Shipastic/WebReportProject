@@ -12,7 +12,7 @@ import ChildFolderComponent from './ChildFolderComponent';
 interface AppRoutesProps {
   updateBreadcrumbs: (breadcrumbs: string[]) => void;
   breadcrumbs: string[];
-  activeFolderId: string | null;
+  activeFolderId: number | null;
   isFolderComponentVisible: boolean;
 }
 

@@ -11,6 +11,7 @@ namespace DAPManSWebReports.API.Services.Paging
                 .Take(pagingParameters.PageSize)
                 .ToList();
 
+            
             return new PagePaging(items, totalCount, pagingParameters.offset, pagingParameters.PageSize);
         }     
     }

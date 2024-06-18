@@ -7,7 +7,6 @@ import { splitItemType      } from '../Utils/splitItemType';
 import { getSortedData } from '../Utils/sortUtils';
 import QueryViewComponent from '../Components/QueryViewComponent';
 import '../App.css';
-import '../App.scss';
 interface Props
 {
     parentid: number | null;
@@ -20,7 +19,6 @@ const CustomHeaderCell = ({ ...props }) => (
     <HeaderCell children={undefined} {...props} style={{ backgroundColor: '#8B4513', color: 'white', fontWeight: 'bold', padding: '4px 0 4px 10', position: 'sticky', top: 0, zIndex: 10 }} />
   );
   
-
 const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrumbs, breadcrumbs }) =>
 {
     const [childItems, setItems] = useState<FolderDetail | null>(null);
@@ -30,9 +28,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
 
-    const [error,          setError         ] = useState<string | null>(null);
-
-    let pathArray     : string[] = [];
+    const pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
 
     const fetchData = async () =>
@@ -173,11 +169,11 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
     if (activeDataviewId) {
         return <QueryViewComponent
-                        dataviewid={activeDataviewId}
-                        path={pathArray[1]}
-                        updateBreadcrumbs={updateBreadcrumbs}
-                        breadcrumbs={newBreadcrumbs}
-                />;       
+                    dataviewid={activeDataviewId}
+                    path={pathArray[1]}
+                    updateBreadcrumbs={updateBreadcrumbs}
+                    breadcrumbs={newBreadcrumbs}               
+            />;       
     };   
 
     if (childItems === null) {

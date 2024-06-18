@@ -1,6 +1,6 @@
 import './Modal.css';
 import React, { useState } from 'react';
-import { Modal, Form } from 'rsuite';
+import { Modal, Form, Button } from 'rsuite';
 
 
 const AddEditReportModal: React.FC<{ show: boolean, report: any, onSave: (report: any) => void, onClose: () => void }> = ({ show, report, onSave, onClose }) => {
@@ -52,14 +52,14 @@ const AddEditReportModal: React.FC<{ show: boolean, report: any, onSave: (report
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <ButtonToolbar>
+                <Button.Toolbar>
                     <Button onClick={handleSubmit} appearance="primary">
                         Сохранить
                     </Button>
                     <Button onClick={onClose} appearance="subtle">
                         Отмена
                     </Button>
-                </ButtonToolbar>
+                </Button.Toolbar>
             </Modal.Footer>
         </Modal>
     );

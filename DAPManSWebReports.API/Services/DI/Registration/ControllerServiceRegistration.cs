@@ -1,4 +1,5 @@
-﻿using DAPManSWebReports.API.Services.DI.Interfaces;
+﻿using DAPManSWebReports.API.Services.Caching;
+using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.QueryParamService;
 using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
@@ -11,6 +12,8 @@ namespace DAPManSWebReports.API.Services.DI.Registration
         public void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IQueryParamService<QuerySettingsModel>, QueryParamServices>();
+
+            services.AddScoped<ICacheService, CacheService>();
         }
     }
 }

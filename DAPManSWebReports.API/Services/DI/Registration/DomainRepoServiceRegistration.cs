@@ -20,6 +20,8 @@ namespace DAPManSWebReports.API.Services.DI.Registration
             services.AddScoped<IQueryViewService<QueryModel>, QueryModelService>();
 
             services.AddScoped<IDataViewService<DataViewModel>, DataViewModelService>();
+
+            services.AddScoped<IExcelService, ExcelService> ();
         }
     }
 }

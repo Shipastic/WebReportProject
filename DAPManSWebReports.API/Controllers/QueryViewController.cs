@@ -1,4 +1,5 @@
-﻿using DAPManSWebReports.API.Services.Paging;
+﻿using DAPManSWebReports.API.Services.Caching;
+using DAPManSWebReports.API.Services.Paging;
 using DAPManSWebReports.API.Services.QueryParamService;
 using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
@@ -14,19 +15,22 @@ namespace DAPManSWebReports.API.Controllers
     [ApiController]
     public class QueryViewController : ControllerBase
     {
-        private IQueryViewService<QueryModel> _queryViewService;
-        private IQueryParamService<QuerySettingsModel> _queryParamService;
+        private readonly IQueryViewService<QueryModel> _queryViewService;
+        private readonly IQueryParamService<QuerySettingsModel> _queryParamService;
+        private readonly IExcelService _excelService;
         private readonly IMemoryCache _cache;
-        public QueryViewController(IQueryViewService<QueryModel> queryViewService, IQueryParamService<QuerySettingsModel> queryParamService, IMemoryCache cache)
+        private readonly ICacheService _cacheService;
+        public QueryViewController(IQueryViewService<QueryModel> queryViewService, 
+                                   IQueryParamService<QuerySettingsModel> queryParamService, 
+                                   IMemoryCache cache,
+                                   IExcelService excelService,
+                                    ICacheService cacheService)
         {
             _queryViewService = queryViewService;
             _queryParamService = queryParamService;
             _cache = cache;
-        }
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+            _excelService = excelService;
+            _cacheService = cacheService;
         }
 
         [HttpGet("{dataviewId}")]
@@ -36,37 +40,25 @@ namespace DAPManSWebReports.API.Controllers
             {
                 return BadRequest("Invalid limit or offset value.");
             }
+            GenerateCache generateCache = new GenerateCache(_cacheService);
 
             string cacheKey = null;
 
             QuerySettingsModel settingsModel = _queryParamService.GetQueryStringParam(HttpContext);
-            if (string.IsNullOrEmpty(settingsModel.startDate) && string.IsNullOrEmpty(settingsModel.endDate))
-            {
-                cacheKey = $"QueryData_{dataviewId}_FullResult";
-            }
-            else
-            {
-                cacheKey = $"QueryData_{dataviewId}_{settingsModel.startDate}_{settingsModel.endDate}_FullResult";
-            }
-            if (!_cache.TryGetValue(cacheKey, out QueryModel queryViewById))
-            {
-                var queryParams = _queryParamService.GetDictionaryFromQueryString(settingsModel);
-                queryViewById = await _queryViewService.GetQueryViewWithParam(dataviewId, queryParams);
-                if (queryViewById?.TotalCount == 0)
-                {
-                    return NoContent();
-                }
-                // Установка кэша
-                var cacheEntryOptions = new MemoryCacheEntryOptions()
-                    .SetSlidingExpiration(TimeSpan.FromMinutes(10)) // пример скользящего времени жизни (опционально)
-                    .SetAbsoluteExpiration(TimeSpan.FromHours(1)); // пример абсолютного времени жизни (опционально)
 
-                _cache.Set(cacheKey, queryViewById, cacheEntryOptions);
+            cacheKey = generateCache.GenerateCacheKey(dataviewId, settingsModel);
+
+            var queryViewById = await generateCache.GetQueryModelAsync(dataviewId, cacheKey, settingsModel, _queryParamService, _queryViewService);
+
+            if (queryViewById?.TotalCount == 0)
+            {
+                return NoContent();
             }
+
             var pagedItems = queryViewById.Result
-            .Skip(offset)
-            .Take(limit)
-            .ToList();
+                                            .Skip(offset)
+                                            .Take(limit)
+                                            .ToList();
             var result = new
             {
                 pagedItems,
@@ -80,9 +72,6 @@ namespace DAPManSWebReports.API.Controllers
                 queryViewById.Result,
                 queryViewById.QueryResult
             };
-
-               
-
             return Ok(result);
         }
 

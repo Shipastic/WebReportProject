@@ -19,6 +19,10 @@ interface Props {
     setLoadingTable: (loading: boolean) => void;
     needsDateParams: boolean;
     queryTitle: string;
+    fetchdata: (dataviewid: number | null, offset: number, limit: number, viewParams: ViewParams) => void;
+    dataviewid: number | null;
+    offset: number;
+    limit: number;
 }
 
 const getPresetDates = (preset: string) => {
@@ -59,14 +63,13 @@ const getPresetDates = (preset: string) => {
     };
 };
 
-const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, setLoadingTable, needsDateParams, queryTitle }) => {
+const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, setLoadingTable, needsDateParams, queryTitle, fetchdata, dataviewid, offset, limit }) => {
     const [params, setParams] = useState<ViewParams>(queryparams);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     useEffect(() => {
         if (!needsDateParams) {
-
             setParams((prevParams) => ({
                 ...prevParams,
                 startDate: '',
@@ -85,20 +88,9 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
         });
     };
 
-    const handleStartDateChange = (date: Date | null) => {
-        if (date) {
-            setParams({ ...params, startDate: formatDateForOracle(date.toISOString()) });
-        }
-    };
-
-    const handleEndDateChange = (date: Date | null) => {
-        if (date) {
-            setParams({ ...params, endDate: formatDateForOracle(date.toISOString()) });
-        }
-    };
-
     const handleSubmit = () => {
         onParamsChange(params);
+        fetchdata(dataviewid, offset, limit, params); 
         setDrawerOpen(false);
         setLoadingTable(true);
         console.log(params);
@@ -176,7 +168,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                             </>
                         ) : (
                             <Form.Group>
-                                <Message type="info">Для данного представления "{queryTitle}" выбор дат недоступен!</Message>
+                                <Message type="info">Для данного представления выбор дат недоступен!</Message>
 
                             </Form.Group>
                         )}
