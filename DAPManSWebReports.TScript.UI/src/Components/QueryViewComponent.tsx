@@ -152,17 +152,22 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         setSortType(sortType);
 
     };
-    const handleApplyFilter = () => {
+  
+    const handleApplyFilter = (filters) => {
         let filtered = queryviews?.result;
-        if (selectedColumn && filterValue) {
-            filtered = filtered?.filter(item => {
-                const value = item[selectedColumn];
-                if (typeof value === 'number') {
-                    return value.toString() === filterValue;
-                }
-                return value !== undefined && value.toString().toLowerCase().includes(filterValue.toLowerCase());
-            });
-        }
+    
+        filters.forEach(filter => {
+            if (filter.column && filter.value) {
+                filtered = filtered?.filter(item => {
+                    const value = item[filter.column];
+                    if (typeof value === 'number') {
+                        return value.toString() === filter.value;
+                    }
+                    return value !== undefined && value.toString().toLowerCase().includes(filter.value.toLowerCase());
+                });
+            }
+        });
+    
         setFilteredData(filtered);
         setIsFilterApplied(true);
     };

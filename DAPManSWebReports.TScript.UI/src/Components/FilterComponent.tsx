@@ -11,7 +11,7 @@ interface FilterProps
   setSelectedColumn: (column: string) => void;
   filterValue: string;
   setFilterValue: (value: string) => void;
-  handleApplyFilter: () => void;
+  handleApplyFilter: (filters) => void;
   resetFilter: () => void;
 }
 
@@ -24,13 +24,25 @@ const FilterComponent: React.FC<FilterProps>= ({
     handleApplyFilter,
     resetFilter
 }) => {
+    const [filters, setFilters] = useState([{ column: '', value: '' }]);
+
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const openDrawer = () => setDrawerOpen(true);
     const closeDrawer = () => setDrawerOpen(false);
 
+    const addFilter = () => {
+        setFilters([...filters, { column: '', value: '' }]);
+      };
+
+      const updateFilter = (index, key, value) => {
+        const newFilters = filters.slice();
+        newFilters[index][key] = value;
+        setFilters(newFilters);
+      };
+
     const applyFilterAndClose = () => {
-        handleApplyFilter();
+        handleApplyFilter(filters);
         closeDrawer();
     };
 
@@ -61,12 +73,13 @@ const FilterComponent: React.FC<FilterProps>= ({
                 </Drawer.Header>
                 <Drawer.Body>
                     <Form layout="vertical" onSubmit={applyFilterAndClose} autoCorrect='true' >
-                        <Form.Group>
+                    {filters.map((filter, index) => (
+                        <Form.Group key={index}>
                         <div style={{ margin: '10px 0' }}>
                         <InputPicker
                             data={headers.map(header => ({ label: header, value: header }))}
                             value={selectedColumn}
-                            onChange={value => setSelectedColumn(value)}
+                            onChange={value => updateFilter(index, 'column', value)}
                             style={{ width: '100%' }}
                             placeholder="Выберите столбец"
                             className='scrollable-dropdown-menu'
@@ -74,7 +87,13 @@ const FilterComponent: React.FC<FilterProps>= ({
                         </div>
                         <div style={{ margin: '10px 0' }}>
                         <Form.ControlLabel>Введите значение</Form.ControlLabel>
-                        <Input value={filterValue} onChange={setFilterValue} />
+                        <Input value={filter.value} onChange={value => updateFilter(index, 'value', value)} />
+                            </div>
+                        </Form.Group>
+                        ))}
+                         <Form.Group>
+                            <div style={{ margin: '10px 0' }}>
+                                <Button onClick={addFilter}>Добавить фильтр</Button>
                             </div>
                         </Form.Group>
                         <Form.Group>
