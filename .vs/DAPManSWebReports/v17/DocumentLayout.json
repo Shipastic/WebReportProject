@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\source\\repos\\GitLab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|d:\\source\\repos\\gitlab\\dapmanswebreports.api\\services\\sorting\\sortingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|solutionrelative:dapmanswebreports.api\\services\\sorting\\sortingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|d:\\source\\repos\\gitlab\\dapmanswebreports.api\\controllers\\queryviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|solutionrelative:dapmanswebreports.api\\controllers\\queryviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|d:\\source\\repos\\gitlab\\dapmanswebreports.domain\\services\\excelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8889D411-81C0-4739-8A94-F48772C82326}|DAPManSWebReports.Domain\\DAPManSWebReports.Domain.csproj|solutionrelative:dapmanswebreports.domain\\services\\excelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|d:\\source\\repos\\gitlab\\dapmanswebreports.api\\services\\sorting\\sortingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|solutionrelative:dapmanswebreports.api\\services\\sorting\\sortingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{376CAC5B-D0B9-4444-B54D-CF8B2E3D6476}|DAPManSWebReports.API\\DAPManSWebReports.API.csproj|d:\\source\\repos\\gitlab\\dapmanswebreports.api\\services\\sorting\\isortingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,7 +117,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -121,7 +125,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "ExcelService.cs",
+              "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Domain\\Services\\ExcelService.cs",
+              "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Services\\ExcelService.cs",
+              "ToolTip": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Domain\\Services\\ExcelService.cs",
+              "RelativeToolTip": "DAPManSWebReports.Domain\\Services\\ExcelService.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAmwGkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T11:25:12.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "QueryParamServices.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Services\\QueryParamService\\QueryParamServices.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Services\\QueryParamService\\QueryParamServices.cs",
@@ -133,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "QueryParamsComponent.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Components\\QueryParamsComponent.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Components\\QueryParamsComponent.tsx",
@@ -145,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "QueryViewComponent.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Components\\QueryViewComponent.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Components\\QueryViewComponent.tsx",
@@ -157,19 +174,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "QueryViewController.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "ToolTip": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
               "RelativeToolTip": "DAPManSWebReports.API\\Controllers\\QueryViewController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAewF0AAAAAAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAewFcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T22:19:25.678Z"
+              "WhenOpened": "2024-06-05T22:19:25.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ISortingService.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Services\\Sorting\\ISortingService.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Services\\Sorting\\ISortingService.cs",
@@ -181,20 +199,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SortingService.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Services\\Sorting\\SortingService.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Services\\Sorting\\SortingService.cs",
               "ToolTip": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Services\\Sorting\\SortingService.cs",
               "RelativeToolTip": "DAPManSWebReports.API\\Services\\Sorting\\SortingService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T08:11:05.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "QuerySettingsModel.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Domain\\Entities\\QuerySettingsModel.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Entities\\QuerySettingsModel.cs",
@@ -206,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "QueryModelService.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Services\\QueryModelService.cs",
@@ -218,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "DataViewModelService.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Domain\\Services\\DataViewModelService.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Services\\DataViewModelService.cs",
@@ -230,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "FilterComponent.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Components\\FilterComponent.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Components\\FilterComponent.tsx",
@@ -242,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ExcelDataComponent.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Components\\ExcelDataComponent.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Components\\ExcelDataComponent.tsx",
@@ -250,11 +268,12 @@
               "RelativeToolTip": "DAPManSWebReports.TScript.UI\\src\\Components\\ExcelDataComponent.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-06-18T08:15:36.376Z"
+              "WhenOpened": "2024-06-18T08:15:36.376Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "PagingParametersHelper.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Services\\Paging\\PagingParametersHelper.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Services\\Paging\\PagingParametersHelper.cs",
@@ -266,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "DataViewDTO.ts",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Models\\DataViewDTO.ts",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Models\\DataViewDTO.ts",
@@ -278,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "QueryView.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Entities\\Models\\QueryView.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.Entities\\Models\\QueryView.cs",
@@ -290,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ViewParametersComponent.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Components\\ViewParametersComponent.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Components\\ViewParametersComponent.tsx",
@@ -302,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SidebarComponent.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Components\\SidebarComponent.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Components\\SidebarComponent.tsx",
@@ -314,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "LogIn.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\pages\\LogIn.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\pages\\LogIn.tsx",
@@ -326,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Program.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Program.cs",
@@ -338,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "QueryViewDTO.ts",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Models\\QueryViewDTO.ts",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Models\\QueryViewDTO.ts",
@@ -350,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Sdk.targets",
               "DocumentMoniker": "C:\\Users\\shipelov_de\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\0.5.271090-alpha\\Sdk\\Sdk.targets",
               "ToolTip": "C:\\Users\\shipelov_de\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\0.5.271090-alpha\\Sdk\\Sdk.targets",
@@ -360,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "splitItemType.ts",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Utils\\splitItemType.ts",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Utils\\splitItemType.ts",
@@ -372,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "FolderDTO.ts",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\Models\\FolderDTO.ts",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\Models\\FolderDTO.ts",
@@ -384,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "App.tsx",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.TScript.UI\\src\\App.tsx",
               "RelativeDocumentMoniker": "DAPManSWebReports.TScript.UI\\src\\App.tsx",
@@ -396,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "FolderDetail.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Domain\\Entities\\FolderDetail.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.Domain\\Entities\\FolderDetail.cs",
@@ -408,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "QueryBuilder.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.Entities\\Models\\QueryBuilder.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.Entities\\Models\\QueryBuilder.cs",
@@ -420,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "DataViewController.cs",
               "DocumentMoniker": "D:\\source\\repos\\GitLab\\DAPManSWebReports.API\\Controllers\\DataViewController.cs",
               "RelativeDocumentMoniker": "DAPManSWebReports.API\\Controllers\\DataViewController.cs",

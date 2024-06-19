@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.IO;
+using NPOI.SS.Util;
 
 namespace DAPManSWebReports.Domain.Services
 {
@@ -28,17 +29,36 @@ namespace DAPManSWebReports.Domain.Services
             }
 
             var headers = data[0].Keys;
-            // Создаем строку для заголовков (первая строка)
+            // Создаем строку для заголовков
             IRow headerRow = sheet.CreateRow(0);
+
+            ICellStyle headerStyle = workbook.CreateCellStyle();
+            headerStyle.FillForegroundColor = IndexedColors.Blue.Index;
+            headerStyle.FillPattern = FillPattern.SolidForeground;
+
+            IFont font = workbook.CreateFont();
+            font.Color = IndexedColors.White.Index;
+            headerStyle.SetFont(font);
+
             int colIndex = 0;
             foreach (var header in headers)
             {
                 // Добавляем заголовки в первую строку
-                headerRow.CreateCell(colIndex).SetCellValue(header);
+                ICell cell = headerRow.CreateCell(colIndex);
+                cell.SetCellValue(header);
+                cell.CellStyle = headerStyle;
                 colIndex++;
             }
 
             colIndex = FillData(data, sheet, headers, colIndex);
+
+            // Автоматическое выставление ширины столбцов по их содержимому
+            for (int i = 0; i < colIndex; i++)
+            {
+                sheet.AutoSizeColumn(i);
+            }
+
+            sheet.SetAutoFilter(new CellRangeAddress(0, 0, 0, colIndex - 1));
 
             using (var ms = new MemoryStream())
             {
@@ -57,10 +77,10 @@ namespace DAPManSWebReports.Domain.Services
                 IRow excelRow = sheet.CreateRow(rowIndex + 1);  
                 colIndex = 0;
 
-                
-                    foreach (var header in headers)
-                    {
-                        var cellValue = row[header];
+
+                foreach (var header in headers)
+                {
+                    var cellValue = row[header];
                     try
                     {
                         // Обработка null значений
@@ -88,8 +108,8 @@ namespace DAPManSWebReports.Domain.Services
                                     excelRow.CreateCell(colIndex).SetCellValue(cellValue.ToString());
                                     break;
                             }
-                            colIndex++;
                         }
+                        colIndex++;
                     }
                     catch (Exception e)
                     {
