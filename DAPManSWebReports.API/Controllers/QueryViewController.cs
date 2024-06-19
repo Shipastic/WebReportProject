@@ -1,6 +1,7 @@
 ﻿using DAPManSWebReports.API.Services.Caching;
 using DAPManSWebReports.API.Services.Paging;
 using DAPManSWebReports.API.Services.QueryParamService;
+using DAPManSWebReports.API.Services.Sorting;
 using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
 
@@ -20,21 +21,27 @@ namespace DAPManSWebReports.API.Controllers
         private readonly IExcelService _excelService;
         private readonly IMemoryCache _cache;
         private readonly ICacheService _cacheService;
+        private readonly ISortingService _sortingService;
         public QueryViewController(IQueryViewService<QueryModel> queryViewService, 
                                    IQueryParamService<QuerySettingsModel> queryParamService, 
                                    IMemoryCache cache,
                                    IExcelService excelService,
-                                    ICacheService cacheService)
+                                   ICacheService cacheService,
+                                   ISortingService sortingService)
         {
             _queryViewService = queryViewService;
             _queryParamService = queryParamService;
             _cache = cache;
             _excelService = excelService;
             _cacheService = cacheService;
+            _sortingService = sortingService;
         }
 
         [HttpGet("{dataviewId}")]
-        public async Task<IActionResult> Get(int dataviewId, [FromQuery] int limit = 10, [FromQuery] int offset = 0)
+        public async Task<IActionResult> Get(int dataviewId, 
+                                             [FromQuery] int limit = 10, 
+                                             [FromQuery] int offset = 0,
+                                             [FromQuery] string sortColumn = null)
         {
             if (limit <= 0 || offset < 0)
             {
@@ -55,10 +62,13 @@ namespace DAPManSWebReports.API.Controllers
                 return NoContent();
             }
 
-            var pagedItems = queryViewById.Result
-                                            .Skip(offset)
-                                            .Take(limit)
-                                            .ToList();
+            var sortedResult = _sortingService
+                                        .ApplySorting(queryViewById.Result.AsQueryable(), settingsModel.sortColumnNumber, settingsModel.SortOrder);
+
+            var pagedItems = sortedResult
+                                         .Skip(offset)
+                                         .Take(limit)
+                                         .ToList();
             var result = new
             {
                 pagedItems,

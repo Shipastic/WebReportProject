@@ -10,6 +10,7 @@ namespace DAPManSWebReports.Domain.Entities
     {
         public int DataviewId { get; set; }
         public string Filter { get; set; }
+        public string sortColumnNumber { get; set; }
         public string SortOrder { get; set; }
         public string startDate { get; set; }
         public string endDate { get; set; }

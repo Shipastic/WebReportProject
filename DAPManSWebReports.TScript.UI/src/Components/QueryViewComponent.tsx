@@ -72,7 +72,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             setLoading(true);
             fetchdata(dataviewid, offset, limit, viewParams);
         }
-    }, [viewParams, offset, limit, dataviewid]);
+    }, [viewParams, offset, limit, dataviewid, sortColumn, sortType]);
 
     const checkColumnPresence = async (dataviewid: number | null) => {
         try {
@@ -98,8 +98,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                 endDate: viewParams.endDate,
                 presetDate: viewParams.presetDate,
                 format: viewParams.format,
-                sortOrder: viewParams.sortOrder,
-                sortColumnNumber: viewParams.sortColumnNumber.toString(),              
+                sortOrder: sortType,
+                sortColumnNumber: sortColumn,              
             });
             const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?${params.toString()}`);
             if (!response.ok) {
@@ -132,30 +132,12 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         setViewParams(params);
     };
 
-    const getData = (sortColumn: string | null, sortType: 'asc' | 'desc' | undefined) => {
-        if (!queryviews || !queryviews.result)
-            return [];
-        if (sortColumn && sortType) {
-            return [...filteredData].sort((a, b) => {
-                const x = a[sortColumn];
-                const y = b[sortColumn];
-
-                if (typeof x === 'number' && typeof y === 'number') {
-                    return sortType === 'asc' ? x - y : y - x;
-                }
-
-                if (typeof x === 'string' && typeof y === 'string') {
-                    return sortType === 'asc' ? x.localeCompare(y) : y.localeCompare(x);
-                }
-
-                console.warn('Unsupported sort type or values', x, y);
-                return 0;
-            });
-        }
-        return filteredData;
+    const getData = () => {
+        if (!queryviews || !filteredData) return [];
+        return queryviews.result;
     };
 
-    const data = getData(sortColumn, sortType);
+    const data = getData();
 
     const headers = data.length > 0 ? Object.keys(data[0]) : [];
 
@@ -166,14 +148,10 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     };
 
     const handleSortColumn = (sortColumn: string, sortType: 'asc' | 'desc') => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-            setSortColumn(sortColumn);
-            setSortType(sortType);
-        }, 500);
-    };
+        setSortColumn(sortColumn);
+        setSortType(sortType);
 
+    };
     const handleApplyFilter = () => {
         let filtered = queryviews?.result;
         if (selectedColumn && filterValue) {
