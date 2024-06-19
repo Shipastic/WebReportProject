@@ -67,6 +67,12 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         }
     }, [dataviewid]);
 
+    useEffect(() => {
+        if (viewParams.startDate && viewParams.endDate) {
+            setLoading(true);
+            fetchdata(dataviewid, offset, limit, viewParams);
+        }
+    }, [viewParams, offset, limit, dataviewid]);
 
     const checkColumnPresence = async (dataviewid: number | null) => {
         try {
@@ -153,7 +159,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
 
     const headers = data.length > 0 ? Object.keys(data[0]) : [];
 
-    const handleChangeLimit = (limit: React.SetStateAction<number>) => {
+    const handleChangeLimit = (limit) => {
         // Resetting to first page when limit changes
         setPage(offset );
         setLimit(limit);
