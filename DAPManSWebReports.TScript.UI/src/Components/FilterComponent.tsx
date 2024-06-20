@@ -15,6 +15,8 @@ interface FilterProps
   resetFilter: () => void;
 }
 
+const initialFilterState = [{ column: '', value: '' }];
+
 const FilterComponent: React.FC<FilterProps>= ({
     headers,
     selectedColumn,
@@ -24,7 +26,7 @@ const FilterComponent: React.FC<FilterProps>= ({
     handleApplyFilter,
     resetFilter
 }) => {
-    const [filters, setFilters] = useState([{ column: '', value: '' }]);
+    const [filters, setFilters] = useState(initialFilterState);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -47,6 +49,7 @@ const FilterComponent: React.FC<FilterProps>= ({
     };
 
     const resetFilterAndClose = () => {
+        setFilters(initialFilterState);
         resetFilter();
         closeDrawer();
     };
@@ -78,7 +81,7 @@ const FilterComponent: React.FC<FilterProps>= ({
                         <div style={{ margin: '10px 0' }}>
                         <InputPicker
                             data={headers.map(header => ({ label: header, value: header }))}
-                            value={selectedColumn}
+                            value={filter.column}
                             onChange={value => updateFilter(index, 'column', value)}
                             style={{ width: '100%' }}
                             placeholder="Выберите столбец"
