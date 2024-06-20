@@ -1,5 +1,6 @@
 # От глобальных вещей:
-
+# Ignore Visual Studio folder
+.vs/
 # ОС и Редакторы IDE
 .DS_Store
 Thumbs.db

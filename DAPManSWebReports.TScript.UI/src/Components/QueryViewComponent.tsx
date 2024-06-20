@@ -68,10 +68,10 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     }, [dataviewid]);
 
     useEffect(() => {
-        if (viewParams.startDate && viewParams.endDate) {
+       
             setLoading(true);
             fetchdata(dataviewid, offset, limit, viewParams);
-        }
+
     }, [viewParams, offset, limit, dataviewid, sortColumn, sortType]);
 
     const checkColumnPresence = async (dataviewid: number | null) => {
@@ -173,8 +173,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     };
 
     const resetFilter = () => {
-        setFilterValue('');
-        setSelectedColumn('');
         setFilteredData(queryviews?.pagedItems || []);
         setIsFilterApplied(false);
     };
