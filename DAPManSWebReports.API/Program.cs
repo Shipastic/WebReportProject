@@ -1,7 +1,12 @@
 using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.DI.Registration;
+using LoggingLibrary.Service;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging
+           .ClearProviders()
+           .AddConsole()
+           .AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
 
 // Add services to the container.
 
@@ -11,11 +16,13 @@ var serviceRegistration = new List<IServiceRegistration>
     new EntityRepoServiceRegistration(),
     new DomainRepoServiceRegistration(),
     new InfrastructureRepoServiceRegistration()
+    //new LoggerLibraryServiceRegistration()
 };
 foreach (var registration in serviceRegistration)
 {
     registration.RegisterServices(builder.Services);
 }
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",

@@ -1,7 +1,7 @@
 ﻿using DAPManSWebReports.Infrastructure.Interfaces;
-using DAPManSWebReports.Infrastructure.Models;
-
+using LoggingLibrary.Service;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace DAPManSWebReports.Infrastructure.DbBuilder
 {
@@ -9,7 +9,7 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
     {
         private IDataSource _dataSource;
         private IConfiguration _configuration;
-        public PostgreSqlDbBuilder(IDataSource dataSource, IConfiguration configuration) : base(configuration)
+        public PostgreSqlDbBuilder(IDataSource dataSource, IConfiguration configuration, ILogger<BaseConBuilder> logger) : base(configuration, logger)
         {
             _configuration = configuration;
             _dataSource = dataSource;

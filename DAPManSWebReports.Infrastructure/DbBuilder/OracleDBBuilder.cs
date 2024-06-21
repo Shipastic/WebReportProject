@@ -1,6 +1,7 @@
 ﻿using DAPManSWebReports.Infrastructure.Interfaces;
-
+using LoggingLibrary.Service;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace DAPManSWebReports.Infrastructure.DbBuilder
 {
@@ -9,7 +10,8 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
         private IDataSource _dataSource;
 
         private IConfiguration _configuration;
-        public OracleDBBuilder(IDataSource dataSource, IConfiguration configuration) :base(configuration)
+
+        public OracleDBBuilder(IDataSource dataSource, IConfiguration configuration, ILogger<BaseConBuilder> oracleLogger) : base(configuration, oracleLogger)
         {
             _configuration = configuration;
             _dataSource = dataSource;
@@ -23,7 +25,7 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
             
             string oracleConnString = string.Join(";", [dataBase, user, password]);
 
-            return oracleConnString;
+            return oracleConnString;           
         }
         
     }
