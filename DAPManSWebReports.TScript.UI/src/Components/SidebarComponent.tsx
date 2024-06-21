@@ -1,90 +1,99 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sidenav, Nav} from 'rsuite';
+import { Sidenav, Nav, IconButton, Icon} from 'rsuite';
 import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
 import GroupIcon from '@rsuite/icons/legacy/Group';
 import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
 
 const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange, onExpand, ...navProps })=>{
+
     const styles = {
-        width: 'auto',
-        display: 'inline-table',
-      };
-
-      const sidenavStyles = {
-        backgroundColor: '#4e6b8b',
-        color: '#ecf0f1',
-        height: 'auto',
-        
+      width:180,
+      display: 'inline-table',
+      marginRight: 10
     };
-
+      const sidenavStyles = {
+        background: 'black',
+        color: '#ecf0f1',
+        height: 'auto',    
+    };
     const itemAppsStyles = {
-        backgroundColor: '#27db9c',
+        backgroundColor: 'black',
         marginTop: '2px',
-        marginLeft: '10px',
-        padding: '0px 10px 0 10px',
+        marginLeft: '0px',
+        padding: '0px 10px 0 0px',
 
     };
     const itemProfileStyles = {
-        backgroundColor: '#27db9c',
+        backgroundColor: 'black',
         marginTop: '2px',
-        marginLeft: '10px',
-        padding: '0px 10px 0 10px',
+        marginLeft: '0px',
+        padding: '0px 10px 0 0px',
+        
 
     };
-
     const titleStyles = {
         color: '#ecf0f1',
-        padding: '0px 0px'
+        padding: '0px 2px 0px 2px',
+        margin:'5px',
+        background: 'black',
     };
-
-    const linkStyles = {
+    const linkStylesApps = {
         color: '#ecf0f1',    
         fontWeight: 'bold',
+        fontSize:'16px',
         textDecoration: 'none',
-        
+        backgroundColor: 'black',
+        marginLeft:'-25px'
     };
-
+    const linkStylesProfile = {
+        color: '#ecf0f1',    
+        fontWeight: 'bold',
+        fontSize:'16px',
+        textDecoration: 'none',
+        backgroundColor: 'black',
+        marginLeft:'-12px'
+    };
     const iconStyles = {
+        color:'#11d0ed',
+        fontSize: '32px',
         marginLeft: '5px',
-        fontSize: '36px',
-        color:'#11d0ed'
+        marginTop: '2px',
     };
     const iconItemStyles = {
-        marginLeft: '10px',
-        fontSize: '36px',
-        color: '#d8f2ef'
+       marginLeft: '5px', 
+       marginTop: '3px', 
+       color:'#11d0ed',
+       fontSize: '26px'
     };
       return(
         <div style={styles}>
             <Sidenav 
-                appearance={appearance}
+                appearance={'subtle'}
                 expanded={expanded}
                 openKeys={openKeys}
-                onOpenChange={onOpenChange}
-                style={{backgroundColor: '#4e6b8b'}}           
+                onOpenChange={onOpenChange}  
+                style={sidenavStyles}          
             >
                 <Sidenav.Body >
                     <Nav {...navProps}>
-                          <Nav.Menu     eventKey="1"   icon={<GearCircleIcon style={iconStyles}     />} title="Settings" style={titleStyles}>
-                              <Nav.Item eventKey="1-1" icon={<DashboardIcon  style={iconItemStyles} />} style={itemAppsStyles}>
-                                  <Link to="/settings" style={linkStyles}>
-                                      <span style={{marginLeft:'10px'} }>
-                                          Apps
-                                      </span>
-                                  </Link>
+                          <Nav.Menu     eventKey="1"   icon={<GearCircleIcon style={iconItemStyles}/>} title="Настройки" style={titleStyles}>
+                              <Nav.Item eventKey="1-1">
+                                <div style={{marginLeft:'0px'}}>
+                                <DashboardIcon style={iconStyles}/>
+                                </div>
+                                <Link to="/settings" style={linkStylesApps}>Приложение</Link>
                               </Nav.Item>
-                              <Nav.Item eventKey="1-2" icon={<GroupIcon      style={iconItemStyles} />} style={itemProfileStyles}>
-                                  <Link to="/profile" style={linkStyles }>
-                                      <span style={{ marginLeft: '10px' }}>
-                                          Profile
-                                      </span>
-                                  </Link>
+                              <Nav.Item eventKey="1-2">
+                              <div style={{marginLeft:'0px'}}>
+                                <GroupIcon style={iconStyles}/>
+                                </div>
+                                <Link to="/profile" style={linkStylesProfile }>Профиль</Link>
                               </Nav.Item>
                         </Nav.Menu>                     
                     </Nav>
                   </Sidenav.Body>
-                  <Sidenav.Toggle onToggle={onExpand} style={{ background: '#1E90FF', marginTop: '-5px', height:'22px' }}>
+                  <Sidenav.Toggle onToggle={onExpand} style={{ background: '#6747dd', marginTop: '-8px', height:'1px' }} title='Свернуть' >
                 </Sidenav.Toggle>
             </Sidenav>
         </div>

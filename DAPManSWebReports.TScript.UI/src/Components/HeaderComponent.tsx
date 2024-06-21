@@ -34,36 +34,36 @@ const HeaderComponent: React.FC<HeaderProps> = ({
   return (
     <Header className={className}>
       <Navbar {...props} appearance="subtle">
-        <Navbar.Brand className="navbar-brand logo" href="#">
+        <Navbar.Brand className="navbar-brand logo" href="https://omk-job.ru/">
           <img
             src={logo}
             alt="logo"
             style={{ padding: '0px 0px 15px 5px', height: '30px' }}
           />
         </Navbar.Brand>
-        <Nav onSelect={onSelect} activeKey={activeKey}>
+        <Nav onSelect={onSelect} activeKey={activeKey} style={{marginLeft:'115px'}}>
           <Nav.Item onClick={handlePageClick} className="custom-nav-item">
-            <Link to="/">Main</Link>
+            <Link to="/">Главная</Link>
           </Nav.Item>
           <Nav.Item
             onClick={handlePageClick}
             className="custom-nav-item"
           >
-            <Link to="/home">Home</Link>
+            <Link to="/home">Домашняя</Link>
           </Nav.Item>
           <Nav.Item
             onClick={handlePageClick}
             className="custom-nav-item"
           >
-            <Link to="/about">About</Link>
+            <Link to="/about">О портале</Link>
           </Nav.Item>
           <Dropdown
-            title={"Select Plant"}
+            title={"Выбор цеха"}
             onSelect={handleDropdownSelect}
             className="custom-dropdown-title"
           >
-            <Dropdown.Item className="custom-dropdown-item">
-              Plants name:
+            <Dropdown.Item className="custom-dropdown-item-static">
+              Название Цеха:
             </Dropdown.Item>
             {items?.childFolders.map((childFolder: any) => (
               <Dropdown.Item
@@ -80,8 +80,8 @@ const HeaderComponent: React.FC<HeaderProps> = ({
                 {childFolder.name}
               </Dropdown.Item>
             ))}
-            <Dropdown.Item className="custom-dropdown-item">
-              Reports:
+            <Dropdown.Item className="custom-dropdown-item-static" style={{backgroundColor:"yellow", color:"black"}}>
+              Отчеты:
             </Dropdown.Item>
             {items?.dataviews.map((dataview: any) => (
               <Dropdown.Item
@@ -101,7 +101,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
             icon={<CharacterAuthorizeIcon color="#1E90FF" />}
           >
             <Link to="/login" className="nav-link">
-              <span style={{ padding: '0 0 0 5px' }}>LogIn</span>
+              <span style={{ padding: '0 0 0 5px' }}>Вход</span>
             </Link>
           </Nav.Item>
         </Nav>

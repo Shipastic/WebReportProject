@@ -94,13 +94,6 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                         </Sidebar>
                         <Content className="content" >
                         <Breadcrumbs breadcrumbs={breadcrumbs} />
-                        {/*
-                        {selectedDataViewId !== null && (
-                            <div className="query-view-container">
-                                <QueryViewComponent dataviewid={selectedDataViewId} path={'/'} updateBreadcrumbs={updateBreadcrumbs} breadcrumbs={breadcrumbs} />
-                            </div>
-                        )}
-                            */}
                        <AppRoutes
                                 updateBreadcrumbs={updateBreadcrumbs}
                                 breadcrumbs={breadcrumbs}
