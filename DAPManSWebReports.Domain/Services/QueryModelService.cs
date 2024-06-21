@@ -3,6 +3,8 @@ using DAPManSWebReports.Domain.Interfaces;
 using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Entities.Repositories.Interfaces;
 
+using Microsoft.Extensions.Logging;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,9 +18,11 @@ namespace DAPManSWebReports.Domain.Services
     {
         private IQueryRepo<QueryView> _queryRepository;
 
-        public QueryModelService(IQueryRepo<QueryView> queryRepository)
+        private readonly ILogger<QueryModelService> _logger;
+        public QueryModelService(IQueryRepo<QueryView> queryRepository, ILogger<QueryModelService> logger)
         {
             _queryRepository = queryRepository;
+            _logger = logger;
         }
 
         public async Task<QueryModel> GetQueryView(int dataviewId, int limit = 10, int offset = 0)
@@ -35,6 +39,7 @@ namespace DAPManSWebReports.Domain.Services
 
         public async Task<QueryModel> GetQueryViewWithParam(int dataviewId, Dictionary<string, object> queryparams)
         {
+            _logger.LogInformation($"{DateTime.Now}|\t GetQueryViewWithParam dataviewId -{dataviewId}");
             var queryView    = await _queryRepository.ReadById(dataviewId, queryparams);
             return new QueryModel
             {

@@ -66,7 +66,7 @@ const getPresetDates = (preset: string) => {
 const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, setLoadingTable, needsDateParams, queryTitle, fetchdata, dataviewid, offset, limit }) => {
     const [params, setParams] = useState<ViewParams>(queryparams);
 
-    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [drawerOpen, setDrawerOpen] = useState(true);
 
     useEffect(() => {
         if (!needsDateParams) {
@@ -125,7 +125,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
 
     return (
         <>
-            <ButtonToolbar>
+           <ButtonToolbar>
                 <IconButton icon={<SettingIcon color='#0000CD' />} onClick={() => setDrawerOpen(true)} className='menu-icon-button' style={{ backgroundColor: '#4e6b8b', color: 'white' }}>
                     Параметры запроса
                 </IconButton>

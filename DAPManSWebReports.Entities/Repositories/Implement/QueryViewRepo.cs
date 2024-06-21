@@ -5,7 +5,8 @@ using DAPManSWebReports.Infrastructure.Interfaces;
 
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
-using System.Windows.Input;
+using LoggingLibrary.Service;
+using Microsoft.Extensions.Logging;
 
 namespace DAPManSWebReports.Entities.Repositories.Implement
 {
@@ -14,11 +15,13 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         private readonly IBaseConBuilder _baseConBuilder;
 
         private readonly IBaseRepo<Models.DataView> _dataViewRepo;
+        private readonly ILogger<QueryViewRepo> _logger;
 
-        public QueryViewRepo(IBaseConBuilder baseConBuilder, IBaseRepo<Models.DataView> dataViewRepo)
+        public QueryViewRepo(IBaseConBuilder baseConBuilder, IBaseRepo<Models.DataView> dataViewRepo, ILogger<QueryViewRepo> logger)
         {
             _baseConBuilder = baseConBuilder ?? throw new ArgumentNullException(nameof(baseConBuilder));
             _dataViewRepo   = dataViewRepo   ?? throw new ArgumentNullException(nameof(dataViewRepo));
+            _logger         = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public async Task<QueryView> ReadById(int dataviewId, int limit, int offset)
@@ -34,14 +37,23 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             if (dtSource is OracleDBBuilder builder)
             {
                 string dbOrclstring = builder.GetConnectionStringDb();
+
+                _logger.LogInformation($" Create connection string  to db: {dbOrclstring}");
+
                 using (OracleConnection con = new OracleConnection(dbOrclstring))
                 {
                     try
                     {
                         await con.OpenAsync();
+
+                        _logger.LogInformation($" Open connection to db");
+
                         using (OracleCommand cmd = con.CreateCommand())
                         {
                             cmd.CommandText = $"{dvRes.Query}";
+
+                            _logger.LogInformation($" Formed Query:{cmd.CommandText}");
+
                             using var adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
                             try
                             {
@@ -51,6 +63,9 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                             catch (InvalidCastException ex)
                             {
                                 Console.WriteLine($"An error occurred during mapping: {ex.Message}");
+
+                                _logger.LogError($"An error occurred during mapping: {ex.Message}");
+
                                 foreach (var er in dt.GetErrors())
                                 {
                                     Console.WriteLine($"{er.GetType()}");
@@ -59,12 +74,16 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                             catch (Exception ex)
                             {
                                 Console.WriteLine($"{ex.Message}\t{ex.InnerException}");
+                                _logger.LogError($"{ex.Message}\t{ex.InnerException}");
                             }
                         }
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine($"An error occurred: {ex.Message}");
+
+                        _logger.LogError($"An error occurred: {ex.Message}");
+
                         throw new Exception($"An error occurred while reading data: {ex.Message}", ex);
                     }
                 }
@@ -88,12 +107,18 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             var dvRes = await _dataViewRepo.ReadById(dataviewId);
             if (dvRes == null)
             {
-                throw new KeyNotFoundException($"DataView with ID {dataviewId} not found.");
+                _logger.LogError($"{DateTime.Now}|\t DataView with ID {dataviewId} not found.");
+
+                throw new KeyNotFoundException($"DataView with ID {dataviewId} not found.");               
             }
             var dtSource = await _baseConBuilder.GetDbBuilder(dvRes.DataSourceId);
+
             if (dtSource is OracleDBBuilder builder)
             {
                 string dbOrclstring = builder.GetConnectionStringDb();
+
+                _logger.LogInformation($"{DateTime.Now}|\t  Create connection string  to db: {dbOrclstring}");
+
                 using (OracleConnection con = new OracleConnection(dbOrclstring))
                 {
                     try
@@ -115,6 +140,8 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                             query = queryBuilder.BuildQuery();
 
                             cmd.CommandText = query;
+                            _logger.LogInformation($"{DateTime.Now}|\t  Create Query to db: {query}");
+
                             var parameters = queryBuilder.GetParameters();
                             foreach (var parameter in parameters)
                             {
@@ -129,21 +156,22 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                             }
                             catch (InvalidCastException ex)
                             {
-                                Console.WriteLine($"An error occurred during mapping: {ex.Message}");
+                               _logger.LogError($"{DateTime.Now}|\t An error occurred during mapping: {ex.Message}");
+
                                 foreach (var er in dt.GetErrors())
                                 {
-                                    Console.WriteLine($"{er.GetType()}");
+                                    _logger.LogError($"{er.GetType()}");
                                 }
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine($"{ex.Message}\t{ex.InnerException}");
+                                _logger.LogError($"{DateTime.Now}|\t {ex.Message}\t{ex.InnerException}");
                             }
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"An error occurred: {ex.Message}");
+                        _logger.LogError($"{DateTime.Now}|\t An error occurred: {ex.Message}");
                         throw new Exception($"An error occurred while reading data: {ex.Message}", ex);
                     }
                 }
@@ -156,44 +184,5 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                 TotalCount = totalCount
             };
         }
-
-        //public async Task<int> GetCountById(int dataviewId, Dictionary<string, object> queryparams, string queryString, int dataSourceId)
-        //{
-        //    int rowCount = 0;
-        //    var dtSource = await _baseConBuilder.GetDbBuilder(dataSourceId);
-        //    if (dtSource is OracleDBBuilder builder)
-        //    {
-        //        string dbOrclstring = builder.GetConnectionStringDb();
-        //        using (OracleConnection con = new OracleConnection(dbOrclstring))
-        //        {
-        //            try
-        //            {
-        //                await con.OpenAsync();
-        //                using (OracleCommand cmd = con.CreateCommand())
-        //                {
-        //                    QueryBuilder queryBuilder = new QueryBuilder(queryString);
-        //                    cmd.CommandText = $"SELECT COUNT(*) FROM ({queryString})";
-        //                    cmd.Parameters. Add(new OracleParameter("startDate", queryparams["startDate"].ToString()));
-        //                    cmd.Parameters.Add(new OracleParameter("endDate", queryparams["endDate"].ToString()));
-        //                    try
-        //                    {
-        //                        rowCount = Convert.ToInt32(await cmd.ExecuteScalarAsync());
-        //                    }                            
-        //                    catch (Exception ex)
-        //                    {
-        //                        Console.WriteLine($"{ex.Message}\t{ex.InnerException}");
-        //                        return 0;
-        //                    }
-        //                }
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                Console.WriteLine($"An error occurred: {ex.Message}");
-        //                throw new Exception($"An error occurred while reading data: {ex.Message}", ex);
-        //            }
-        //        }
-        //    }
-        //    return rowCount;
-        //}
     }
 }

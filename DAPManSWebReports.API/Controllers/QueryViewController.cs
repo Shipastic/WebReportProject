@@ -5,6 +5,8 @@ using DAPManSWebReports.API.Services.Sorting;
 using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
 
+using LoggingLibrary.Service;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -22,12 +24,14 @@ namespace DAPManSWebReports.API.Controllers
         private readonly IMemoryCache _cache;
         private readonly ICacheService _cacheService;
         private readonly ISortingService _sortingService;
+        private  readonly ILogger<QueryViewController> _logger;
         public QueryViewController(IQueryViewService<QueryModel> queryViewService, 
                                    IQueryParamService<QuerySettingsModel> queryParamService, 
                                    IMemoryCache cache,
                                    IExcelService excelService,
                                    ICacheService cacheService,
-                                   ISortingService sortingService)
+                                   ISortingService sortingService,
+                                   ILogger<QueryViewController> logger)
         {
             _queryViewService = queryViewService;
             _queryParamService = queryParamService;
@@ -35,6 +39,7 @@ namespace DAPManSWebReports.API.Controllers
             _excelService = excelService;
             _cacheService = cacheService;
             _sortingService = sortingService;
+            _logger = logger;
         }
 
         [HttpGet("{dataviewId}")]
@@ -52,19 +57,30 @@ namespace DAPManSWebReports.API.Controllers
             string cacheKey = null;
 
             QuerySettingsModel settingsModel = _queryParamService.GetQueryStringParam(HttpContext);
-
+            //для лога
+            _logger.LogInformation($"{DateTime.Now}|\tShow params query:",ConsoleColor.Blue);
+            var queryCollection = HttpContext.Request.Query;
+            foreach (var queryParameter in queryCollection)
+            {
+                var key = queryParameter.Key;
+                var values = string.Join(",", queryParameter.Value);
+                _logger.LogInformation($"{DateTime.Now}|\t Query params:\n{key} - {values}\n");
+            }
+            //
             cacheKey = generateCache.GenerateCacheKey(dataviewId, settingsModel);
 
             var queryViewById = await generateCache.GetQueryModelAsync(dataviewId, cacheKey, settingsModel, _queryParamService, _queryViewService);
 
             if (queryViewById?.TotalCount == 0)
             {
-                return NoContent();
+                _logger.LogError($"{DateTime.Now}|\t queryViewById:{queryViewById}| TotalCount = {queryViewById?.TotalCount}");
+                return NoContent();              
             }
 
             var sortedResult = _sortingService
                                         .ApplySorting(queryViewById.Result.AsQueryable(), settingsModel.sortColumnNumber, settingsModel.SortOrder);
 
+            _logger.LogInformation($"{DateTime.Now}|\t Column name for sorting:{settingsModel.sortColumnNumber}| Sort order:{settingsModel.SortOrder}");
             var pagedItems = sortedResult
                                          .Skip(offset)
                                          .Take(limit)
@@ -82,6 +98,7 @@ namespace DAPManSWebReports.API.Controllers
                 queryViewById.Result,
                 queryViewById.QueryResult
             };
+            _logger.LogInformation($"{DateTime.Now}|\t  ID:{queryViewById.id}| Name:{queryViewById.Name}| Title:{queryViewById.Title}| TotalCount:{queryViewById.TotalCount} | limit:{limit}| Query Result:{queryViewById.QueryResult}");
             return Ok(result);
         }
 

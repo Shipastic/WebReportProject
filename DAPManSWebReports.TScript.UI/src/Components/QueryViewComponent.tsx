@@ -51,12 +51,14 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const [last, setLast                      ] = useState(true);
     const [ellipsis, setEllipsis              ] = useState(true);
     const [layout, setLayout                  ] = useState(['total', '-', 'limit', '|', 'pager', 'skip']);
-    const [limit, setLimit                    ] = useState(10);
+    const [limit, setLimit                    ] = useState(12);
     const [offset, setPage                    ] = useState(1);
     const [size, setSize                      ] = useState('sm');
     const [maxButtons, setMaxButtons          ] = useState(5);
     const [totalCount, setTotalCount          ] = useState(0);
     const [boundaryLinks, setBoundaryLinks    ] = useState(true);
+
+    const [queryparamsComponentCalls, setQueryparamsComponentCalls] = useState(0);
 
     const picker = useRef();
 
@@ -66,13 +68,13 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             checkColumnPresence(dataviewid);
         }
     }, [dataviewid]);
-
+    
     useEffect(() => {
-       
-            setLoading(true);
-            fetchdata(dataviewid, offset, limit, viewParams);
-
-    }, [viewParams, offset, limit, dataviewid, sortColumn, sortType]);
+       if(queryparamsComponentCalls > 0){
+        setLoading(true);
+        fetchdata(dataviewid, offset, limit, viewParams);
+       }
+}, [offset, limit, sortColumn, sortType, dataviewid, viewParams]);
 
     const checkColumnPresence = async (dataviewid: number | null) => {
         try {
@@ -130,6 +132,9 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     };
     const handleParamsChange = (params: ViewParams) => {
         setViewParams(params);
+        setQueryparamsComponentCalls(queryparamsComponentCalls + 1)
+        fetchdata(dataviewid, offset, limit, params);
+
     };
 
     const getData = () => {
@@ -142,7 +147,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const headers = data.length > 0 ? Object.keys(data[0]) : [];
 
     const handleChangeLimit = (limit) => {
-        // Resetting to first page when limit changes
         setPage(offset );
         setLimit(limit);
     };
@@ -171,7 +175,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         setFilteredData(filtered);
         setIsFilterApplied(true);
     };
-
     const resetFilter = () => {
         setFilteredData(queryviews?.pagedItems || []);
         setIsFilterApplied(false);
@@ -208,8 +211,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                         </Row>
                         <Row style={{ marginBottom: '30px', alignItems: 'center' }}>
                             <Col xs={4}>
-                                <Stack className='queryparamscomponentStyle' >
-                                    <QueryparamsComponent
+                                <Stack className='queryparamscomponentStyle' >                                
+                                <QueryparamsComponent
                                         queryparams={viewParams}
                                         onParamsChange={handleParamsChange}
                                         setLoadingTable={setLoadingTable}
@@ -218,8 +221,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                         fetchdata={fetchdata}  
                                         dataviewid={dataviewid}          
                                         offset={offset}              
-                                        limit={limit}                                              
-                                        />
+                                        limit={limit}
+                                        />   
                                 </Stack>
                             </Col>
                         </Row>
@@ -251,8 +254,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                                 fetchdata={fetchdata}  
                                                 dataviewid={dataviewid}          
                                                 offset={offset}              
-                                                limit={limit}                                             
-                                            />   
+                                                limit={limit}                                          
+                                            /> 
                                             <FilterComponent
                                                 headers={headers}
                                                 selectedColumn={selectedColumn}
@@ -351,7 +354,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                             size={size}
                                             layout={layout}
                                             total={totalCount}
-                                            limitOptions={[10, 30, 50]}
+                                            limitOptions={[12, 30, 50]}
                                             limit={limit}
                                             activePage={offset}
                                             onChangePage={handlePageChange}

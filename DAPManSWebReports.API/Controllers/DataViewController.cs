@@ -14,11 +14,16 @@ namespace DAPManSWebReports.API.Controllers
         private IMappingService<DataViewModel> _dataViewRepository;
         private IMenuTreeService<DataViewModel> _dataviewDtoService;
         private IDataViewService<DataViewModel> _dataViewService;
-        public DataViewController(IMappingService<DataViewModel> dataViewRepository, IMenuTreeService<DataViewModel> dataviewDtoService, IDataViewService<DataViewModel> dataViewService)
+        private readonly ILogger<DataViewController> _logger;
+        public DataViewController(IMappingService<DataViewModel> dataViewRepository, 
+                                  IMenuTreeService<DataViewModel> dataviewDtoService, 
+                                  IDataViewService<DataViewModel> dataViewService,
+                                  ILogger<DataViewController> logger)
         {
             _dataViewRepository = dataViewRepository;
             _dataviewDtoService = dataviewDtoService;
             _dataViewService = dataViewService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -52,7 +57,10 @@ namespace DAPManSWebReports.API.Controllers
         [HttpGet("{dataviewid}")]
         public async Task<IActionResult> GetDataViewById(int dataviewid)
         {
+            _logger.LogInformation($"{DateTime.Now}|\t GetDataViewById:{dataviewid}");
+
             DataViewModel dataView = await _dataviewDtoService.GetDtoById(dataviewid);
+
             if(dataView != null)
                 return Ok(dataView);
             else

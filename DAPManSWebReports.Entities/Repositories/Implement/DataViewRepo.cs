@@ -3,6 +3,7 @@ using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Entities.Repositories.Interfaces;
 
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 using System.Data.SQLite;
 
@@ -11,9 +12,13 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
     public class DataViewRepo : IBaseRepo<DataView>, IDataViewRepo<DataView>
     {
         private readonly string _connectionString;
-        public DataViewRepo(IConfiguration configuration)
+
+        private readonly ILogger<DataViewRepo> _logger;
+
+        public DataViewRepo(IConfiguration configuration, ILogger<DataViewRepo> logger)
         {
             _connectionString = configuration.GetConnectionString("LocalConnection");
+            _logger = logger;
         }
         public async Task<DataView> Create(DataView dv)
         {
@@ -46,6 +51,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         }
         public async Task<IEnumerable<DataView>> GetAll()
         {
+            _logger.LogInformation($"{DateTime.Now}|\t Get All DataView Calls");
             var items = new List<DataView>();
             using (var connection = new SQLiteConnection(_connectionString))
             {
@@ -81,6 +87,8 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                 command.CommandText = "SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id";
                 command.Parameters.AddWithValue("$id", id);
 
+                _logger.LogInformation($"{DateTime.Now}|\t Get DataView by id:{id}");
+                _logger.LogInformation($"{DateTime.Now}|\t With SQL QUERY: {command.CommandText}");
                 using (var reader = await command.ExecuteReaderAsync())
                 {
                     if (await reader.ReadAsync())
@@ -106,7 +114,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             var items = new List<DataView>();
             using (var connection = new SQLiteConnection(_connectionString))
             {
-                 connection.Open();
+                connection.Open();
                 var command = connection.CreateCommand();
                 command.CommandText = "SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE FOLDERID  = $id";
                 command.Parameters.AddWithValue("$id", parentID);

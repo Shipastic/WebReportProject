@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAPManSWebReports.Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAPManSWebReports.Infrastructure", "DAPManSWebReports.Infrastructure\DAPManSWebReports.Infrastructure.csproj", "{9DDB608D-FB49-4D61-A54C-073A83D87BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAPManSWebReports.Infrastructure.Test", "DAPManSWebReports.Infrastructure.Test\DAPManSWebReports.Infrastructure.Test.csproj", "{926B4894-7279-4C6A-B772-323E5CE90309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingLibrary", "LoggingLibrary\LoggingLibrary.csproj", "{AC9E97B5-07F1-4F34-9910-FE531DDB4FB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DDB608D-FB49-4D61-A54C-073A83D87BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926B4894-7279-4C6A-B772-323E5CE90309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926B4894-7279-4C6A-B772-323E5CE90309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926B4894-7279-4C6A-B772-323E5CE90309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926B4894-7279-4C6A-B772-323E5CE90309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9E97B5-07F1-4F34-9910-FE531DDB4FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9E97B5-07F1-4F34-9910-FE531DDB4FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9E97B5-07F1-4F34-9910-FE531DDB4FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9E97B5-07F1-4F34-9910-FE531DDB4FB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
