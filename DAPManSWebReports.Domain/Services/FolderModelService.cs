@@ -102,5 +102,10 @@ namespace DAPManSWebReports.Domain.Services
             }
             return dtoList;
         }
+
+        public Task<bool> UpdateDataAsync(FolderModel obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

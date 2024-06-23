@@ -114,5 +114,15 @@ namespace DAPManSWebReports.Domain.Services
             return dtoList;
 
         }
+
+        public async Task<bool> UpdateDataAsync(DataViewModel dataViewModel)
+        {
+            var existingDataView = await _dataViewRepository.ReadById(dataViewModel.id);
+            if (existingDataView == null)
+            {
+                return false;
+            }
+            return await _dataViewRepository.UpdateDataAsync(existingDataView);
+        }
     }
 }

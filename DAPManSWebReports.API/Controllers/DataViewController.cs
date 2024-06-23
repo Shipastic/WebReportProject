@@ -76,9 +76,21 @@ namespace DAPManSWebReports.API.Controllers
         }
 
         // PUT api/<DataViewController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{dataviewid}")]
+        public async Task<IActionResult> Put(int dataviewid, [FromBody] DataViewModel dataView)
         {
+            if (dataviewid != dataView.id)
+            {
+                return BadRequest("ID mismatch.");
+            }
+
+            var updated = await _dataviewDtoService.UpdateDataAsync(dataView);
+            if (!updated)
+            {
+                return StatusCode(500, "A problem occurred while handling your request.");
+            }
+
+            return NoContent();
         }
 
         // DELETE api/<DataViewController>/5

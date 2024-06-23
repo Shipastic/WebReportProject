@@ -159,5 +159,10 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         {
             throw new NotImplementedException();
         }
+
+        public Task<bool> UpdateDataAsync(Folder obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

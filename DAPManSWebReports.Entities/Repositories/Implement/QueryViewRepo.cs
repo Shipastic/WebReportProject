@@ -98,7 +98,6 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         {
             throw new NotImplementedException();
         }
-
         public async Task<QueryView> ReadById(int dataviewId, Dictionary<string, object> queryparams)
         {
             DataTable dt = new DataTable();

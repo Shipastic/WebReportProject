@@ -9,5 +9,6 @@
         Task<T> Create(T obj);
         Task<T> ReadById(int id);
         void Update(T obj);
+        Task<bool> UpdateDataAsync(T obj);
     }
 }

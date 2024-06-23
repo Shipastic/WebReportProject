@@ -7,6 +7,7 @@ import { splitItemType      } from '../Utils/splitItemType';
 import { getSortedData } from '../Utils/sortUtils';
 import QueryViewComponent from '../Components/QueryViewComponent';
 import '../App.css';
+import AddEditReportModal from '../Modals/AddEditModalWindow';
 interface Props
 {
     parentid: number | null;
@@ -27,6 +28,9 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [loading, setLoading] = useState<boolean>(false);
     const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
+
+    const [showModal, setShowModal] = useState(false);
+    const [currentReport, setCurrentReport] = useState(null);
 
     const pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
@@ -56,6 +60,58 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
             setLoading(false);
         }
     };
+
+    const handleEditClick = async ({rowData}) => 
+        {
+            try 
+            {
+                const dataviewid = rowData.id;                           
+                const response = await fetch(`https://localhost:7263/api/dataview/${dataviewid}`);            
+              if (response.ok) 
+                {
+                    console.log('Response Status:', response.status);
+                    const data = await response.json();
+                    console.log('Response Text:', response);
+                    setCurrentReport(data);
+                    setShowModal(true);
+                } 
+                else 
+                {
+                    console.error('Error fetching report data:', response.statusText);
+                }
+            } 
+            catch (error) 
+            {
+              console.error('Error fetching report data:', error);
+            }
+        };
+
+      const handleSave = async (report) => 
+        {
+            try 
+            {
+              const response = await fetch('/api/dataview/save', 
+                {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json',
+                        },
+                    body: JSON.stringify(report),
+                });
+              if (response.ok) 
+                {
+                    setShowModal(false);
+                } 
+                else 
+                {
+                    console.error('Error saving report:', response.statusText);
+                }
+            } 
+            catch (error) 
+            {
+              console.error('Error saving report:', error);
+            }
+        };
 
     useEffect(() =>
     {
@@ -216,15 +272,16 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                             style={{ padding:'5px 0px 0px 5px' }}
                         >
                             {rowData => {
-                                if (column.key === 'download' && rowData.type === 'dataview')
+                                if (column.key === 'edit' && rowData.type === 'dataview')
                                 {
                                     return (
                                         <a
-                                            onClick={() => console.log('Download clicked')} // Добавить логику здесь
+                                            onClick={() => handleEditClick({rowData})} // Добавить логику здесь
                                             
                                             style={{ padding: '5px 0px 0px 0px' , textAlign:'right'}}
-                                            href='#' >
-                                                Скачать
+                                            href='#' 
+                                        >
+                                                Редактировать | Удалить
                                         </a>                                       
                                 );}
                                 return (
@@ -241,7 +298,13 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                     </Column>
                 )
                 )}                               
-            </Table>           
+            </Table>
+            <AddEditReportModal
+                show={showModal}
+                report={currentReport}
+                onSave={handleSave}
+                onClose={() => setShowModal(false)}
+      />           
         </div>
     );
 };

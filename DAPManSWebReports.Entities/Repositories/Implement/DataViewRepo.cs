@@ -5,7 +5,10 @@ using DAPManSWebReports.Entities.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
+using Oracle.ManagedDataAccess.Client;
+
 using System.Data.SQLite;
+using System.Data.SqlTypes;
 
 namespace DAPManSWebReports.Entities.Repositories.Implement
 {
@@ -212,6 +215,47 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                 command.Parameters.AddWithValue("$id", dv.id);
 
                 await command.ExecuteNonQueryAsync();
+            }
+        }
+
+        public async Task<bool> UpdateDataAsync(DataView dataView)
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // Проверка, существует ли DataView
+                        var selectCommand = new SQLiteCommand("SELECT Id FROM DataViews WHERE Id = @Id", connection, transaction);
+                        selectCommand.Parameters.AddWithValue("@Id", dataView.id);
+
+                        var selectResult = await selectCommand.ExecuteScalarAsync();
+                        if (selectResult == null)
+                        {
+                            return false;
+                        }
+
+                        // Обновление DataView
+                        var updateCommand = new SQLiteCommand("UPDATE DATAVIEW SET DataSourceID = $datasourceId, FolderID = $folderId, Name = $name, Query = $query WHERE Id = $id", connection, transaction);
+                        selectCommand.Parameters.AddWithValue("$datasourceId", dataView.DataSourceId);
+                        selectCommand.Parameters.AddWithValue("$folderId", dataView.FolderId);
+                        selectCommand.Parameters.AddWithValue("$name", dataView.Name);
+                        selectCommand.Parameters.AddWithValue("$query", dataView.Query);
+                        selectCommand.Parameters.AddWithValue("$id", dataView.id);
+
+                        var rowsAffected = await updateCommand.ExecuteNonQueryAsync();
+
+                        transaction.Commit();
+                        return rowsAffected > 0;
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }                    
             }
         }
     }

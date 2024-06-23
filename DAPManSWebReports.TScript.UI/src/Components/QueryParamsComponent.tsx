@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IconButton, ButtonToolbar, SelectPicker, InputNumber, Button, Form, Drawer, DateRangePicker, Message } from 'rsuite';
+import { IconButton, ButtonToolbar, SelectPicker, InputNumber, Button, Form, Drawer, DateRangePicker, Message, FlexboxGrid } from 'rsuite';
 import SettingIcon from '@rsuite/icons/Setting';
 import '../App.css';
 import CalendarIcon from '@rsuite/icons/Calendar';
@@ -106,10 +106,10 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
     };
 
     const presetDates = [
-        { label: 'Today', value: 'Today' },
-        { label: 'Yesterday', value: 'Yesterday' },
-        { label: 'Week', value: 'week' },
-        { label: 'Month', value: 'month' }
+        { label: 'Сегодня', value: 'Today' },
+        { label: 'Вчера', value: 'Yesterday' },
+        { label: 'Прошлая неделя', value: 'week' },
+        { label: 'Прошлый месяц', value: 'month' }
     ];
 
     const formats = [
@@ -119,14 +119,14 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
     ];
 
     const sortOrders = [
-        { label: 'Ascending', value: 'Ascending' },
-        { label: 'Descending', value: 'Descending' },
+        { label: 'По возрастанию', value: 'Ascending' },
+        { label: 'По убыванию', value: 'Descending' },
     ];
 
     return (
         <>
            <ButtonToolbar>
-                <IconButton icon={<SettingIcon color='#0000CD' />} onClick={() => setDrawerOpen(true)} className='menu-icon-button' style={{ backgroundColor: '#4e6b8b', color: 'white' }}>
+                <IconButton icon={<SettingIcon className='menu-icon-button'/>} onClick={() => setDrawerOpen(true)} style={{ backgroundColor: '#4e6b8b', color: 'white' }} className='menu-icon-button'>
                     Параметры запроса
                 </IconButton>
             </ButtonToolbar>
@@ -146,7 +146,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                             <>
                                 <Form.Group>
                                     <Form.ControlLabel>Предустановленные фильтры дат:</Form.ControlLabel>
-                                    <SelectPicker data={presetDates} onChange={handlePresetDateChange} placeholder="Select a date preset" value={params.presetDate} />
+                                    <SelectPicker data={presetDates} onChange={handlePresetDateChange} placeholder="Выберите предустановленную дату" value={params.presetDate} />
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.ControlLabel>Диапазон дат:</Form.ControlLabel>
@@ -161,7 +161,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                                         appearance="subtle"
                                         style={{ width: 130 }}
                                         size="sm"
-                                        placeholder="Select Date Range"
+                                        placeholder="Выберите диапазон дат"
                                         showOneCalendar
                                     />
                                 </Form.Group>
@@ -173,18 +173,25 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                             </Form.Group>
                         )}
                         <Form.Group>
-                            <Form.ControlLabel>Формат:</Form.ControlLabel>
-                            <SelectPicker data={formats} value={params.format} onChange={(value) => handleChange('format', value)} />
+                            <FlexboxGrid>
+                                <span>
+                                <Form.ControlLabel>Формат:</Form.ControlLabel>
+                                <SelectPicker data={formats} value={params.format} onChange={(value) => handleChange('format', value)} />
+                                </span>
+                                <span style={{marginLeft:'80px'}}>
+                                <Form.ControlLabel >Порядок сортировки:</Form.ControlLabel>
+                                <SelectPicker data={sortOrders} value={params.sortOrder} onChange={(value) => handleChange('sortOrder', value)} />
+                                </span>
+                                </FlexboxGrid>
                         </Form.Group>
                         <Form.Group>
-                            <Form.ControlLabel>Порядок сортировки:</Form.ControlLabel>
-                            <SelectPicker data={sortOrders} value={params.sortOrder} onChange={(value) => handleChange('sortOrder', value)} />
+                          
                         </Form.Group>
                         <Form.Group>
                             <Form.ControlLabel>Столбец для сортировки:</Form.ControlLabel>
                             <InputNumber min={1} value={params.sortColumnNumber} onChange={(value) => handleChange('sortColumnNumber', value)} className="custom-input-number" />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group style={{width:'360px'}}>
                             <Button appearance="primary" onClick={handleSubmit} className="custom-button">Вывести результат</Button>
                         </Form.Group>
                     </Form>

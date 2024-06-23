@@ -2431,3 +2431,662 @@ Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
 21.06.2024 15:16:08|	 GetDataViewById:293
 21.06.2024 15:16:08|	 Get DataView by id:293
 21.06.2024 15:16:08|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+23.06.2024 18:37:31|	 GetDataViewById:268
+23.06.2024 18:37:31|	 Get DataView by id:268
+23.06.2024 18:37:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:37:31|	 GetDataViewById:268
+23.06.2024 18:37:31|	 Get DataView by id:268
+23.06.2024 18:37:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:37:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:37:45|	Show params query:
+23.06.2024 18:37:45|	 Query params:
+limit - 12
+
+23.06.2024 18:37:45|	 Query params:
+offset - 1
+
+23.06.2024 18:37:45|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:37:45|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:37:45|	 Query params:
+presetDate - 
+
+23.06.2024 18:37:45|	 Query params:
+format - EXCEL
+
+23.06.2024 18:37:45|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:37:45|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:37:45|	 GetQueryViewWithParam dataviewId -268
+23.06.2024 18:37:46|	 Get DataView by id:268
+23.06.2024 18:37:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:37:46|	 Getting DB builder for datasource ID: 17
+23.06.2024 18:37:46|	 Executing query to get DB type for datasource ID: 17
+23.06.2024 18:37:46|	 Creating OracleDBBuilder for datasource ID: 17
+23.06.2024 18:37:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:37:46|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+23.06.2024 18:37:46|	  Create Query to db: select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:37:48|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:37:48|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:37:48|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:37:48|	Show params query:
+23.06.2024 18:37:48|	 Query params:
+limit - 12
+
+23.06.2024 18:37:48|	 Query params:
+offset - 1
+
+23.06.2024 18:37:48|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:37:48|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:37:48|	 Query params:
+presetDate - 
+
+23.06.2024 18:37:48|	 Query params:
+format - EXCEL
+
+23.06.2024 18:37:48|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:37:48|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:37:48|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:37:48|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:37:48|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:37:48|	Show params query:
+23.06.2024 18:37:48|	 Query params:
+limit - 12
+
+23.06.2024 18:37:48|	 Query params:
+offset - 1
+
+23.06.2024 18:37:48|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:37:48|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:37:48|	 Query params:
+presetDate - 
+
+23.06.2024 18:37:48|	 Query params:
+format - EXCEL
+
+23.06.2024 18:37:48|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:37:48|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:37:48|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:37:48|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:40:01|	 GetDataViewById:268
+23.06.2024 18:40:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:40:02|	Show params query:
+23.06.2024 18:40:02|	 Get DataView by id:268
+23.06.2024 18:40:02|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:40:02|	 Query params:
+limit - 12
+
+23.06.2024 18:40:02|	 Query params:
+offset - 1
+
+23.06.2024 18:40:02|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:40:02|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:40:02|	 Query params:
+presetDate - 
+
+23.06.2024 18:40:02|	 Query params:
+format - EXCEL
+
+23.06.2024 18:40:02|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:40:02|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:40:02|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:40:02|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:40:30|	 GetDataViewById:268
+23.06.2024 18:40:30|	 Get DataView by id:268
+23.06.2024 18:40:30|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:40:30|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:40:30|	Show params query:
+23.06.2024 18:40:30|	 Query params:
+limit - 12
+
+23.06.2024 18:40:30|	 Query params:
+offset - 1
+
+23.06.2024 18:40:30|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:40:30|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:40:30|	 Query params:
+presetDate - 
+
+23.06.2024 18:40:30|	 Query params:
+format - EXCEL
+
+23.06.2024 18:40:30|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:40:30|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:40:30|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:40:30|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:40:40|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:40:40|	Show params query:
+23.06.2024 18:40:40|	 Query params:
+limit - 12
+
+23.06.2024 18:40:40|	 Query params:
+offset - 1
+
+23.06.2024 18:40:40|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:40:40|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:40:40|	 Query params:
+presetDate - 
+
+23.06.2024 18:40:40|	 Query params:
+format - EXCEL
+
+23.06.2024 18:40:40|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:40:40|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:40:40|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:40:40|	 GetDataViewById:268
+23.06.2024 18:40:40|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:40:40|	 Get DataView by id:268
+23.06.2024 18:40:40|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:41:09|	 GetDataViewById:268
+23.06.2024 18:41:09|	 Get DataView by id:268
+23.06.2024 18:41:09|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:41:09|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:41:09|	Show params query:
+23.06.2024 18:41:09|	 Query params:
+limit - 12
+
+23.06.2024 18:41:09|	 Query params:
+offset - 1
+
+23.06.2024 18:41:09|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:41:09|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:41:09|	 Query params:
+presetDate - 
+
+23.06.2024 18:41:09|	 Query params:
+format - EXCEL
+
+23.06.2024 18:41:09|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:41:09|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:41:09|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:41:09|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 18:41:18|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 18:41:18|	 GetDataViewById:268
+23.06.2024 18:41:18|	Show params query:
+23.06.2024 18:41:18|	 Get DataView by id:268
+23.06.2024 18:41:18|	 Query params:
+limit - 12
+
+23.06.2024 18:41:18|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 18:41:18|	 Query params:
+offset - 1
+
+23.06.2024 18:41:18|	 Query params:
+startDate - 2024-06-01 18:37:41
+
+23.06.2024 18:41:18|	 Query params:
+endDate - 2024-06-08 18:37:41
+
+23.06.2024 18:41:18|	 Query params:
+presetDate - 
+
+23.06.2024 18:41:18|	 Query params:
+format - EXCEL
+
+23.06.2024 18:41:18|	 Query params:
+sortOrder - undefined
+
+23.06.2024 18:41:18|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 18:41:18|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 18:41:18|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:445 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:05:16|	 GetDataViewById:268
+23.06.2024 19:05:16|	 Get DataView by id:268
+23.06.2024 19:05:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:05:16|	 GetDataViewById:268
+23.06.2024 19:05:16|	 Get DataView by id:268
+23.06.2024 19:05:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:07:16|	 GetDataViewById:268
+23.06.2024 19:07:16|	 Get DataView by id:268
+23.06.2024 19:07:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:07:16|	 GetDataViewById:268
+23.06.2024 19:07:16|	 Get DataView by id:268
+23.06.2024 19:07:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:10:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:10:50|	Show params query:
+23.06.2024 19:10:50|	 Query params:
+limit - 12
+
+23.06.2024 19:10:50|	 Query params:
+offset - 1
+
+23.06.2024 19:10:50|	 Query params:
+startDate - 2024-06-02 19:10:46
+
+23.06.2024 19:10:50|	 Query params:
+endDate - 2024-06-04 19:10:46
+
+23.06.2024 19:10:50|	 Query params:
+presetDate - 
+
+23.06.2024 19:10:50|	 Query params:
+format - EXCEL
+
+23.06.2024 19:10:50|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:10:50|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:10:50|	 GetQueryViewWithParam dataviewId -268
+23.06.2024 19:10:50|	 Get DataView by id:268
+23.06.2024 19:10:50|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:10:50|	 Getting DB builder for datasource ID: 17
+23.06.2024 19:10:50|	 Executing query to get DB type for datasource ID: 17
+23.06.2024 19:10:50|	 Creating OracleDBBuilder for datasource ID: 17
+23.06.2024 19:10:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:10:50|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+23.06.2024 19:10:50|	  Create Query to db: select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:10:51|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:10:51|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:139 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:10:51|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:10:51|	Show params query:
+23.06.2024 19:10:51|	 Query params:
+limit - 12
+
+23.06.2024 19:10:51|	 Query params:
+offset - 1
+
+23.06.2024 19:10:51|	 Query params:
+startDate - 2024-06-02 19:10:46
+
+23.06.2024 19:10:51|	 Query params:
+endDate - 2024-06-04 19:10:46
+
+23.06.2024 19:10:51|	 Query params:
+presetDate - 
+
+23.06.2024 19:10:51|	 Query params:
+format - EXCEL
+
+23.06.2024 19:10:51|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:10:51|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:10:51|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:10:51|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:139 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:10:51|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:10:51|	Show params query:
+23.06.2024 19:10:51|	 Query params:
+limit - 12
+
+23.06.2024 19:10:51|	 Query params:
+offset - 1
+
+23.06.2024 19:10:51|	 Query params:
+startDate - 2024-06-02 19:10:46
+
+23.06.2024 19:10:51|	 Query params:
+endDate - 2024-06-04 19:10:46
+
+23.06.2024 19:10:51|	 Query params:
+presetDate - 
+
+23.06.2024 19:10:51|	 Query params:
+format - EXCEL
+
+23.06.2024 19:10:51|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:10:51|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:10:51|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:10:51|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:139 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:24:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:24:26|	 GetDataViewById:268
+23.06.2024 19:24:26|	Show params query:
+23.06.2024 19:24:26|	 Query params:
+limit - 12
+
+23.06.2024 19:24:26|	 Query params:
+offset - 1
+
+23.06.2024 19:24:26|	 Query params:
+startDate - 2024-06-02 19:10:46
+
+23.06.2024 19:24:26|	 Query params:
+endDate - 2024-06-04 19:10:46
+
+23.06.2024 19:24:26|	 Query params:
+presetDate - 
+
+23.06.2024 19:24:26|	 Query params:
+format - EXCEL
+
+23.06.2024 19:24:26|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:24:26|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:24:26|	 GetQueryViewWithParam dataviewId -268
+23.06.2024 19:24:26|	 Get DataView by id:268
+23.06.2024 19:24:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:24:26|	 Get DataView by id:268
+23.06.2024 19:24:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:24:26|	 Getting DB builder for datasource ID: 17
+23.06.2024 19:24:26|	 Executing query to get DB type for datasource ID: 17
+23.06.2024 19:24:26|	 Creating OracleDBBuilder for datasource ID: 17
+23.06.2024 19:24:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:24:26|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+23.06.2024 19:24:26|	  Create Query to db: select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:24:26|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:24:26|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:139 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:24:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:24:45|	 GetDataViewById:268
+23.06.2024 19:24:45|	Show params query:
+23.06.2024 19:24:45|	 Query params:
+limit - 12
+
+23.06.2024 19:24:45|	 Query params:
+offset - 1
+
+23.06.2024 19:24:45|	 Query params:
+startDate - 2024-06-02 19:10:46
+
+23.06.2024 19:24:45|	 Get DataView by id:268
+23.06.2024 19:24:45|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:24:45|	 Query params:
+endDate - 2024-06-04 19:10:46
+
+23.06.2024 19:24:45|	 Query params:
+presetDate - 
+
+23.06.2024 19:24:45|	 Query params:
+format - EXCEL
+
+23.06.2024 19:24:45|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:24:45|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:24:45|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:24:45|	  ID:268| Name:select * from V_AOMKREP_SECTION_SAMPLES| Title:Журнал отбора проб| TotalCount:139 | limit:12| Query Result:select * from V_AOMKREP_SECTION_SAMPLES WHERE "Дата" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "Дата" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+23.06.2024 19:54:23|	 GetDataViewById:272
+23.06.2024 19:54:23|	 Get DataView by id:272
+23.06.2024 19:54:23|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:54:23|	 GetDataViewById:272
+23.06.2024 19:54:23|	 Get DataView by id:272
+23.06.2024 19:54:23|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:54:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:26|	Show params query:
+23.06.2024 19:54:26|	 Query params:
+limit - 12
+
+23.06.2024 19:54:26|	 Query params:
+offset - 1
+
+23.06.2024 19:54:26|	 Query params:
+startDate - 
+
+23.06.2024 19:54:26|	 Query params:
+endDate - 
+
+23.06.2024 19:54:26|	 Query params:
+presetDate - 
+
+23.06.2024 19:54:26|	 Query params:
+format - EXCEL
+
+23.06.2024 19:54:26|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:54:26|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:54:26|	 GetQueryViewWithParam dataviewId -272
+23.06.2024 19:54:26|	 Get DataView by id:272
+23.06.2024 19:54:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:54:26|	 Getting DB builder for datasource ID: 17
+23.06.2024 19:54:26|	 Executing query to get DB type for datasource ID: 17
+23.06.2024 19:54:26|	 Creating OracleDBBuilder for datasource ID: 17
+23.06.2024 19:54:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:26|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+23.06.2024 19:54:26|	  Create Query to db: select * from v_aomkrep_residue_billets
+23.06.2024 19:54:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:46|	Show params query:
+23.06.2024 19:54:46|	 Query params:
+limit - 12
+
+23.06.2024 19:54:46|	 Query params:
+offset - 1
+
+23.06.2024 19:54:46|	 Query params:
+startDate - 
+
+23.06.2024 19:54:46|	 Query params:
+endDate - 
+
+23.06.2024 19:54:46|	 Query params:
+presetDate - 
+
+23.06.2024 19:54:46|	 Query params:
+format - EXCEL
+
+23.06.2024 19:54:46|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:54:46|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:54:46|	 GetQueryViewWithParam dataviewId -272
+23.06.2024 19:54:46|	 Get DataView by id:272
+23.06.2024 19:54:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:54:46|	 Getting DB builder for datasource ID: 17
+23.06.2024 19:54:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:46|	 Executing query to get DB type for datasource ID: 17
+23.06.2024 19:54:46|	Show params query:
+23.06.2024 19:54:46|	 Query params:
+limit - 12
+
+23.06.2024 19:54:46|	 Query params:
+offset - 1
+
+23.06.2024 19:54:46|	 Query params:
+startDate - 
+
+23.06.2024 19:54:46|	 Query params:
+endDate - 
+
+23.06.2024 19:54:46|	 Query params:
+presetDate - 
+
+23.06.2024 19:54:46|	 Query params:
+format - EXCEL
+
+23.06.2024 19:54:46|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:54:46|	 Creating OracleDBBuilder for datasource ID: 17
+23.06.2024 19:54:46|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:54:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:46|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+23.06.2024 19:54:46|	 GetQueryViewWithParam dataviewId -272
+23.06.2024 19:54:46|	 Get DataView by id:272
+23.06.2024 19:54:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:54:46|	 Getting DB builder for datasource ID: 17
+23.06.2024 19:54:46|	 Executing query to get DB type for datasource ID: 17
+23.06.2024 19:54:46|	 Creating OracleDBBuilder for datasource ID: 17
+23.06.2024 19:54:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:46|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+23.06.2024 19:54:46|	  Create Query to db: select * from v_aomkrep_residue_billets
+23.06.2024 19:54:46|	  Create Query to db: select * from v_aomkrep_residue_billets
+23.06.2024 19:54:47|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:54:47|	  ID:272| Name:select * from v_aomkrep_residue_billets| Title:Отчет по остаткам заготовки| TotalCount:8447 | limit:12| Query Result:select * from v_aomkrep_residue_billets
+23.06.2024 19:54:57|	 GetDataViewById:272
+23.06.2024 19:54:57|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:54:57|	Show params query:
+23.06.2024 19:54:57|	 Query params:
+limit - 12
+
+23.06.2024 19:54:57|	 Query params:
+offset - 1
+
+23.06.2024 19:54:57|	 Query params:
+startDate - 
+
+23.06.2024 19:54:57|	 Query params:
+endDate - 
+
+23.06.2024 19:54:57|	 Query params:
+presetDate - 
+
+23.06.2024 19:54:57|	 Query params:
+format - EXCEL
+
+23.06.2024 19:54:57|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:54:57|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:54:57|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:54:57|	 Get DataView by id:272
+23.06.2024 19:54:57|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 19:54:57|	  ID:272| Name:select * from v_aomkrep_residue_billets| Title:Отчет по остаткам заготовки| TotalCount:8447 | limit:12| Query Result:select * from v_aomkrep_residue_billets
+23.06.2024 19:55:14|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:55:14|	  ID:272| Name:select * from v_aomkrep_residue_billets| Title:Отчет по остаткам заготовки| TotalCount:8447 | limit:12| Query Result:select * from v_aomkrep_residue_billets
+23.06.2024 19:55:15|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:55:15|	  ID:272| Name:select * from v_aomkrep_residue_billets| Title:Отчет по остаткам заготовки| TotalCount:8447 | limit:12| Query Result:select * from v_aomkrep_residue_billets
+23.06.2024 19:56:36|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 19:56:36|	Show params query:
+23.06.2024 19:56:36|	 Query params:
+limit - 50
+
+23.06.2024 19:56:36|	 Query params:
+offset - 1
+
+23.06.2024 19:56:36|	 Query params:
+startDate - 
+
+23.06.2024 19:56:36|	 Query params:
+endDate - 
+
+23.06.2024 19:56:36|	 Query params:
+presetDate - 
+
+23.06.2024 19:56:36|	 Query params:
+format - EXCEL
+
+23.06.2024 19:56:36|	 Query params:
+sortOrder - undefined
+
+23.06.2024 19:56:36|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 19:56:36|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 19:56:36|	  ID:272| Name:select * from v_aomkrep_residue_billets| Title:Отчет по остаткам заготовки| TotalCount:8447 | limit:50| Query Result:select * from v_aomkrep_residue_billets
+23.06.2024 20:01:20|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+23.06.2024 20:01:20|	Show params query:
+23.06.2024 20:01:20|	 Query params:
+limit - 12
+
+23.06.2024 20:01:20|	 Query params:
+offset - 1
+
+23.06.2024 20:01:20|	 Query params:
+startDate - 
+
+23.06.2024 20:01:20|	 Query params:
+endDate - 
+
+23.06.2024 20:01:20|	 Query params:
+presetDate - 
+
+23.06.2024 20:01:20|	 Query params:
+format - EXCEL
+
+23.06.2024 20:01:20|	 Query params:
+sortOrder - undefined
+
+23.06.2024 20:01:20|	 Query params:
+sortColumnNumber - null
+
+23.06.2024 20:01:20|	 Column name for sorting:null| Sort order:undefined
+23.06.2024 20:01:20|	  ID:272| Name:select * from v_aomkrep_residue_billets| Title:Отчет по остаткам заготовки| TotalCount:8447 | limit:12| Query Result:select * from v_aomkrep_residue_billets
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+23.06.2024 22:33:47|	 GetDataViewById:268
+23.06.2024 22:33:47|	 Get DataView by id:268
+23.06.2024 22:33:47|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 22:33:48|	 GetDataViewById:268
+23.06.2024 22:33:48|	 Get DataView by id:268
+23.06.2024 22:33:48|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 22:35:22|	 GetDataViewById:268
+23.06.2024 22:35:22|	 Get DataView by id:268
+23.06.2024 22:35:22|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 22:36:25|	 GetDataViewById:268
+23.06.2024 22:36:26|	 Get DataView by id:268
+23.06.2024 22:36:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+23.06.2024 22:39:58|	 GetDataViewById:272
+23.06.2024 22:39:58|	 Get DataView by id:272
+23.06.2024 22:39:58|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id

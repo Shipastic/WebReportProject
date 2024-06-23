@@ -70,9 +70,9 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
         }
     };
     return (
-        <div style={{ marginLeft: 50, textAlign: 'right' }} >
+        <div style={{ marginLeft: 50, textAlign: 'center' }} >
             {error && <div style={{ color: 'red' }}>{error}</div>}
-            <Button appearance="primary" onClick={handleGenerateExcelFile} className='custom-button' loading={isLoading}>
+            <Button appearance="primary" onClick={handleGenerateExcelFile} className='custom-button' loading={isLoading} style={{width:'150px'}}>
                 {isLoading ? 'Загружаем данные...' : 'Скачать отчет'}
           </Button>
       </div>

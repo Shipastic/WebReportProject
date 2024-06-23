@@ -9,14 +9,14 @@ export const defaultColumns = [
     },
     {
         key: 'type',
-        label: 'Type',
+        label: 'TYPE',
         fixed: true,
         width: 100,
         height: 20
     },
     {
         key: 'name',
-        label: 'Name',
+        label: 'NAME',
         fixed: true,
         width: 470,
         height: 20
@@ -29,10 +29,10 @@ export const defaultColumns = [
         height: 20
     },
     {
-        key: 'download',
-        label: 'Download ',
+        key: 'edit',
+        label: 'OPERATION',
         fixed: true,
-        width: 100,
+        width: 500,
         height: 20
     }
 

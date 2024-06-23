@@ -67,7 +67,7 @@ const FilterComponent: React.FC<FilterProps>= ({
 
     return (
         <div>
-            <IconButton icon={<Filter className='menu-icon-button' style={{ backgroundColor: '#263444' }} />} onClick={openDrawer} style={{ backgroundColor: '#4e6b8b', color: 'white' }} className='menu-icon-button'>
+            <IconButton icon={<Filter className='menu-icon-button' />} onClick={openDrawer} style={{ backgroundColor: '#4e6b8b', color: 'white' }} className='menu-icon-button'>
                 Фильтр
             </IconButton>
             <Drawer open={drawerOpen} onClose={closeDrawer} placement="right" className="custom-drawer" style={{ width:400 }}>

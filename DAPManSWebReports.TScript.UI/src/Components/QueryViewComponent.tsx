@@ -199,7 +199,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     };
     return (
         <>
-            <Grid fluid>
+            <Grid fluid style={{marginRight:'5px'}}>
                 {!showTable ?
                     (<>
                         <Row>
@@ -229,7 +229,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                         {loadingTable === true ?
                             (
                                 <div className="loading-container">
-                                    <Placeholder.Paragraph rows={8} />
                                     <Loader center content="Загрузка отчета..." vertical size='lg' />
                                 </div>
                             ) :(<div></div>)
@@ -266,14 +265,14 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                                 resetFilter={resetFilter}
                                             />
                                             <div>
-                                                <label style={{marginLeft:'20px', fontSize:'16px'} }>Выбор отображаемых столбцов</label>
+                                                <label style={{marginLeft:'20px', fontSize:'16px', color:'white'} }>Выбор отображаемых столбцов</label>
                                                 <CheckPicker
                                                     value={columnKeys}
                                                     onChange={setColumnKeys}
                                                     block
                                                     style={{ marginBottom: 20, width: 300 }}
                                                     menuStyle={{ width: 300 }}
-                                                    placeholder="Select columns to display"
+                                                    placeholder="Выбор столбцлв для вывода в таблице"
                                                     cleanable={false}
                                                     data={availableColumns}
                                                     searchable={true}
