@@ -36,58 +36,15 @@ html, body {
             background-color: #495057; /* Фон при наведении */
         }
 
-    .custom-header .nav-link {
-        color: none;
-        text-decoration: none;
-    }
+    
 
         .custom-header .nav-link:hover {
             color: #7ce2f1; /* Цвет ссылок при наведении */
         }
-.custom-dropdown-title {
-            color: #1dc4ee; /* Белый цвет для заголовка */
-          
-        }
+
         
- .custom-nav-item .a {
-            text-decoration: none;
-        }
-        .custom-nav-item a:hover {
-          text-decoration: none;
-      }
-      .custom-nav-item a .navbar-item:hover{
-        background-color:#1dc4ee ;
-      }
-        /*****************************DROPDOWN_ITEM******************************/
-        .custom-header .custom-dropdown-item {
-    padding: 5px 40px; /* Отступы для элементов */
-    background-color: #1E2633;
-    font-size: 14px; /* Размер текста */
-    color: #1abbe4; 
-
-}
-.custom-header .custom-dropdown-item:hover {
-  color: #fff;
-  background-color: #13599e; /* Фон при наведении */
-  font-size: 18px;
-}
-
-.custom-header .custom-dropdown-item-static {
-  padding: 5px 150px; /* Отступы для элементов */
-  background-color: #2163cc;
-  font-size: 14px; /* Размер текста */
-  color: #ecf0f1; 
-  cursor:auto;
-
-}
-.custom-header .custom-dropdown-item-static:hover,
-.custom-header .custom-dropdown-item-static:active {
-  padding: 5px 150px; /* Отступы для элементов */
-  background-color: #14d3c3; 
-  font-size: 14px; /* Размер текста */
-  cursor:default;
-}
-
+ 
+       
  /**********************CONTAINER*******************************/
 .container {
     display: flex;
@@ -101,6 +58,16 @@ html, body {
     align-items: center;
     height: 100vh;
     background-color: #f5f5f5;  
+}
+
+#outer-container {
+  width: 100%;
+  height: 100%;
+}
+
+#page-wrap {
+  text-align: center;
+  padding: 2em;
 }
     /**********************CONTENT*******************************/
     .content 
@@ -121,27 +88,7 @@ html, body {
     margin-left: px;
 }
 
-/**********************TABLE*******************************/
-.query-view-container {
-    padding: 2px;
-    margin: 0 0 0 20px;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    height: auto;
-}
 
-.query-view-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 2px;
-    text-align: center;
-    color: #ebe1e3;
-}
-
-.clickable-cell {
-    cursor: pointer;  
-}
 
 /**********************FORM*******************************/
 .form-background {
@@ -158,64 +105,7 @@ html, body {
 }
 
 
-/**************************BURGER_MENU****************************/
-.rs-navbar {
-    background-color: #343a40;
-    border: none;
-  }
-  
-  .rs-navbar-brand {
-    color: #ffffff;
-  }
-  
-  .rs-navbar-nav .rs-nav-item {
-    padding: 10px;
-  }
-  
-  .rs-form-inline .rs-form-group {
-    margin-right: 20px;
-  }
-  
-  .rs-btn {
-    background-color: #008CBA;
-    color: white;
-  }
-  
-  .rs-btn:hover {
-    background-color: #006994;
-  }
-  /**********************ICON_BUTTON_FILTER************************************/
-  .menu-icon-button {
-    color: #6747dd;
-    width: 180px;
-    background-color: '#263444'
-  }    
-  .menu-icon-button:hover {
-    background-color: #28a745 !important; /* Зеленый цвет на фоне при наведении */
-    color: white !important; /* Белый текст при наведении */
-  }
-  .menu-icon-button:hover .rs-icon {
-    fill: white !important; /* Белая иконка при наведении */
-  }
-  /*****************************DRAWER******************************************/
-  .custom-drawer{
-    width: 100%;
-  }
-  .custom-drawer .rs-drawer-content{
-    width: 390px;
-  }
-  .custom-drawer .rs-drawer-body {
-    background-color: #2c4f5f;
-    padding:30px;
-    color: white;
-    width: 100%;
-  }
-  .custom-drawer .rs-drawer-header {
-    background-color: #dde2d2;
-    padding: 20px;
-    text-align: center;
-    color: #1d808f;
-    }
+
   /************************DATE_PICKER********************************************/
   .custom-date-picker .rs-picker-toggle, 
 .custom-select-picker .rs-picker-toggle, 
@@ -239,11 +129,7 @@ html, body {
   background-color: #2980b9;
 }
 
-.scrollable-dropdown-menu {
-  max-height: 200px;
-  overflow-y: auto;  
-  width: 200px;
-}
+
 
 /********************************STEPS_TUTORIAL****************************/
 .queryparamscomponentStyle {

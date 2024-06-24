@@ -1,0 +1,133 @@
+
+.qv-container {
+    padding: 0px;
+    margin: 10px 10px 0px 105px;
+    border-radius: 5px;
+    box-shadow: 0 0 0px rgba(0,0,0,0.3);
+    height: auto;
+    width: auto;
+}
+.qv-container .tableStyle {
+    max-height: 770px; 
+    max-width: 1850px;
+    overflow-y: auto; 
+  };
+  .h2{
+
+  }
+   .qv-title  {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2px;
+    text-align: center;
+    color: #f1ebec;
+    text-decoration: underline;
+    border: #116d74;
+}
+  .qv-header-cell .rs-table-cell-content{
+    background-color: #4CAF50;
+    color: rgb(180, 19, 19);
+    font-weight: bold;
+    padding: 4px 0 4px 10;
+    position: sticky;
+    top: 0;
+    z-index:-10 ;
+    font-size: 16px;
+}
+.qv-clickable-cell-table {
+    color: #12b9c5;
+    cursor: pointer;
+    background: rgba(55, 58, 71, 0.7);
+}
+.qv-cell-table{
+    padding:5px 0px 0px 5px;
+    text-align:left;
+    background: rgba(4, 73, 90, 0.85);
+    color: #caae0e;
+}
+.qv-cell-table:hover{
+    padding:5px 0px 0px 5px;
+    text-align:left;
+    background:rgba(4, 73, 90, 0.85);
+    color: #1d0424;
+}
+.qv-clickable-cell {
+    padding:5px 0px 0px 5px;
+    color: #1dd3e0;
+    cursor: pointer;
+}
+.qv-clickable-cell:hover {
+    padding:5px 0px 0px 5px;
+    color: #116d74;
+    cursor: pointer;
+}
+
+
+.qv-filter-count{
+   margin-left: 105px;
+   margin-right: 30px;
+   justify-content: space-between;
+   text-align: center;
+   color:rgb(228, 224, 15);
+   text-decoration: underline;
+   font-size: 20px;
+   border: 2px solid #f3f3f3;
+   background-color: rgba(55, 90, 90, 0.9);
+   width: 280px;
+   padding-right: 40px;
+}
+.qv-control-panel{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    margin-left:105px;
+}
+
+/**********************TABLE*******************************/
+  .rs-pagination-group {
+    align-items: center;
+    background-color: rgba(189,194,194, 0.7);
+    padding: 5px 0 0 15px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    display: flex;
+    color: #185ea3;
+    margin-left: 105px;
+    margin-right: 10px;
+}
+.rs-btn .rs-btn-subtle {
+    background-color: #2980b9;
+  }
+  .custom-button {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    width: 150px;
+    color: #f3f3f3;
+    padding-bottom: 10px;
+  }
+  .custom-button:hover, 
+  .custom-button:focus {
+    background-color: #28a745;
+    border-color: #1f618d;
+
+  }
+  .rs-loader {
+    border: 12px solid #f3f3f3; /* светлый серый цвет для внешнего круга */
+    border-top: 12px solid #3498db; /* цвет синего загрузчика */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite; /* непрерывная анимация */
+  }
+  .rs-loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* светло-серый фон */
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

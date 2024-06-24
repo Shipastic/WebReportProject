@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'rsuite';
+import config from '../../Utils/config';
 
 interface Props {
     dataviewid: number | null;  
@@ -37,7 +38,7 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
                     export: 'true',
                     
                 });
-            const response = await fetch(`https://localhost:7263/api/exceldata/${dataviewid}?${params.toString()}`);
+            const response = await fetch(`${config.ApiBaseUrlDev}/exceldata/${dataviewid}?${params.toString()}`);
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }

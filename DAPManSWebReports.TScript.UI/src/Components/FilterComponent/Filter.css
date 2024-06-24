@@ -1,0 +1,38 @@
+/*****************************DRAWER******************************************/
+.custom-drawer{
+    width: 100%;
+  }
+  .custom-drawer .rs-drawer-content{
+    width: 390px;
+  }
+  .custom-drawer .rs-drawer-body {
+    background-color: #2c4f5f;
+    padding:30px;
+    color: white;
+    width: 100%;
+  }
+  .custom-drawer .rs-drawer-header {
+    background-color: #dde2d2;
+    padding: 20px;
+    text-align: center;
+    color: #1d808f;
+    }
+/**********************ICON_BUTTON_FILTER************************************/
+.menu-icon-button {
+    color: #6747dd;
+    width: 180px;
+    background-color: '#263444'
+  }    
+  .menu-icon-button:hover {
+    background-color: #28a745 !important; /* Зеленый цвет на фоне при наведении */
+    color: white !important; /* Белый текст при наведении */
+  }
+  .menu-icon-button:hover .rs-icon {
+    fill: white !important; /* Белая иконка при наведении */
+  }
+  
+  .scrollable-dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;  
+    width: 200px;
+  }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { IconButton, ButtonToolbar, SelectPicker, InputNumber, Button, Form, Drawer, DateRangePicker, Message, FlexboxGrid } from 'rsuite';
 import SettingIcon from '@rsuite/icons/Setting';
-import '../App.css';
+import './QueryParams.css';
 import CalendarIcon from '@rsuite/icons/Calendar';
-import formatDateForOracle from '../Utils/formatDateForOracle';
+import formatDateForOracle from '../../Utils/formatDateForOracle';
 
 interface ViewParams {
     startDate: string;
@@ -126,7 +126,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
     return (
         <>
            <ButtonToolbar>
-                <IconButton icon={<SettingIcon className='menu-icon-button'/>} onClick={() => setDrawerOpen(true)} style={{ backgroundColor: '#4e6b8b', color: 'white' }} className='menu-icon-button'>
+                <IconButton icon={<SettingIcon className='menu-icon-button'/>} onClick={() => setDrawerOpen(true)}  className='text-icon-button'>
                     Параметры запроса
                 </IconButton>
             </ButtonToolbar>

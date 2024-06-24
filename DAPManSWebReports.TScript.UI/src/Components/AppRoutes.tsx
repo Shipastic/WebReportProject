@@ -6,7 +6,7 @@ import About                from '../pages/About';
 import NotFound             from '../pages/NotFound';
 import Settings             from '../pages/Settings';
 
-import ChildFolderComponent from './ChildFolderComponent';
+import ChildFolderComponent from './ChildFolderComponent/ChildFolderComponent';
 
 
 interface AppRoutesProps {
@@ -34,27 +34,15 @@ const AppRoutes: React.FC<AppRoutesProps> = ({
       />
       <Route 
         path="/login" 
-        element={<LogIn
-                    path="/login"
-                    updateBreadcrumbs={updateBreadcrumbs}
-                    breadcrumbs={breadcrumbs}
-                 />} 
+        element={<LogIn/>} 
       />
       <Route 
         path="/about" 
-        element={<About
-                    path="/about"
-                    updateBreadcrumbs={updateBreadcrumbs}
-                    breadcrumbs={breadcrumbs}
-                 />} 
+        element={<About />} 
       />
       <Route 
         path="*" 
-        element={<NotFound
-                    path="NotFoundPage"
-                    updateBreadcrumbs={updateBreadcrumbs}
-                    breadcrumbs={breadcrumbs}
-                 />} 
+        element={<NotFound/>} 
       />
       <Route 
         path="/" 
@@ -69,11 +57,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({
       />
       <Route 
         path="/settings" 
-        element={<Settings
-                    path=""
-                    updateBreadcrumbs={updateBreadcrumbs}
-                    breadcrumbs={breadcrumbs}
-                 />}
+        element={<Settings/>}
       />
     </Routes>
   );

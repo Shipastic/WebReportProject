@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sidenav, Nav, IconButton, Icon} from 'rsuite';
+import { Sidenav, Nav} from 'rsuite';
 import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
 import GroupIcon from '@rsuite/icons/legacy/Group';
 import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
 
-const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange, onExpand, ...navProps })=>{
+interface Props{
+    openKeys: string[],
+    expanded: boolean,
+    onOpenChange: () => void,
+    onExpand: () => void
+}
+const SideBarComponent: React.FC<Props>=({ openKeys, expanded, onOpenChange, onExpand, ...navProps })=>{
 
     const styles = {
       width:180,
@@ -17,21 +23,7 @@ const SideBarComponent: React.FC=({ appearance, openKeys, expanded, onOpenChange
         color: '#ecf0f1',
         height: 'auto',    
     };
-    const itemAppsStyles = {
-        backgroundColor: 'black',
-        marginTop: '2px',
-        marginLeft: '0px',
-        padding: '0px 10px 0 0px',
 
-    };
-    const itemProfileStyles = {
-        backgroundColor: 'black',
-        marginTop: '2px',
-        marginLeft: '0px',
-        padding: '0px 10px 0 0px',
-        
-
-    };
     const titleStyles = {
         color: '#ecf0f1',
         padding: '0px 2px 0px 2px',

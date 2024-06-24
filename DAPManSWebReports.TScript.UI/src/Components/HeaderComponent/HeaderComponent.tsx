@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Dropdown, Header} from 'rsuite';
 import { Link } from 'react-router-dom';
 import CharacterAuthorizeIcon from '@rsuite/icons/CharacterAuthorize';
-import '../App.css';
+import './Header.css';
 
 interface HeaderProps {
   className: string;
@@ -38,10 +38,10 @@ const HeaderComponent: React.FC<HeaderProps> = ({
           <img
             src={logo}
             alt="logo"
-            style={{ padding: '0px 0px 15px 5px', height: '30px' }}
+            className='imgHeader'
           />
         </Navbar.Brand>
-        <Nav onSelect={onSelect} activeKey={activeKey} style={{marginLeft:'115px'}}>
+        <Nav onSelect={onSelect} activeKey={activeKey} style={{marginLeft:'15px'}}>
           <Nav.Item onClick={handlePageClick} className="custom-nav-item">
             <Link to="/">Главная</Link>
           </Nav.Item>

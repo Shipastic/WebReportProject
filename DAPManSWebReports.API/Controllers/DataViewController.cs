@@ -57,11 +57,13 @@ namespace DAPManSWebReports.API.Controllers
         [HttpGet("{dataviewid}")]
         public async Task<IActionResult> GetDataViewById(int dataviewid)
         {
-            _logger.LogInformation($"{DateTime.Now}|\t GetDataViewById:{dataviewid}");
+            _logger.LogInformation($"{DateTime.Now}|\t GetDataViewById:{dataviewid} Start");
 
             DataViewModel dataView = await _dataviewDtoService.GetDtoById(dataviewid);
 
-            if(dataView != null)
+            _logger.LogInformation($"{DateTime.Now}|\t GetDataViewById:{dataviewid} End");
+
+            if (dataView != null)
                 return Ok(dataView);
             else
             {

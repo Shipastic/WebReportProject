@@ -1,11 +1,11 @@
 
 export const defaultColumns = [
     {
-        key: 'id',
-        label: 'ID',
+        key: 'name',
+        label: 'NAME',
         fixed: true,
-        width: 55,
-        height: 10
+        width: 470,
+        height: 20
     },
     {
         key: 'type',
@@ -15,18 +15,18 @@ export const defaultColumns = [
         height: 20
     },
     {
-        key: 'name',
-        label: 'NAME',
-        fixed: true,
-        width: 470,
-        height: 20
-    },
-    {
         key: 'dataviewNote',
         label: 'VIEW NOTE',
         fixed: true,
         width: 500,
         height: 20
+    },
+    {
+        key: 'id',
+        label: 'ID',
+        fixed: true,
+        width: 55,
+        height: 10
     },
     {
         key: 'edit',

@@ -2,7 +2,7 @@ import './Modal.css';
 import React, { useState, useEffect } from 'react';
 import { Modal, Form, Button, ButtonToolbar } from 'rsuite';
 
-
+//@ts-ignore
 const AddEditReportModal: React.FC<{ show: boolean, report: any, onSave: (report: any) => void, onClose: () => void }> = ({ show, report, onSave, onClose }) => {
     const [formValue, setFormValue] = useState<any>(report || {
         name: '',
@@ -22,8 +22,12 @@ const AddEditReportModal: React.FC<{ show: boolean, report: any, onSave: (report
         });
       }, [report]);
 
-      const handleChange = (value: any, name: string) => {
-        setFormValue({...formValue, [name]: value});
+      const handleChange = (value: any, event: React.SyntheticEvent<HTMLElement>) => {
+        const { name } = event.currentTarget as HTMLInputElement; 
+        setFormValue(prevState => ({
+          ...prevState,
+          [name]: value
+        }));
       };
 
     const handleSubmit = () => {

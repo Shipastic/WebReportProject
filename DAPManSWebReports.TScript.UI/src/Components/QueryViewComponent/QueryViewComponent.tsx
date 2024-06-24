@@ -1,11 +1,12 @@
 ﻿import React, { useEffect, useState, useRef } from 'react';
-import { QueryViewDTO } from '../Models/QueryViewDTO';
-import { Placeholder, Table, Pagination, Button, Row, Col, Grid, Stack, Message, Loader, CheckPicker, Checkbox} from 'rsuite';
-import QueryparamsComponent from './QueryParamsComponent';
-import FilterComponent from './FilterComponent';
-import ExcelDataComponent from './ExcelDataComponent';
-import 'rsuite-table/dist/css/rsuite-table.css';
-import '../App.css';
+import { QueryViewDTO } from '../../Models/QueryViewDTO';
+import { Table, Pagination, Button, Row, Col, Grid, Stack, Message, Loader, CheckPicker, Checkbox} from 'rsuite';
+import QueryparamsComponent from '../QueryParamsComponent/QueryParamsComponent';
+import FilterComponent from '../FilterComponent/FilterComponent';
+import ExcelDataComponent from '../ExcelDataComponent/ExcelDataComponent';
+import config from '../../Utils/config';
+import './QueryView.css';
+import 'rsuite/dist/rsuite.min.css';
 
 const { Column, HeaderCell, Cell } = Table;
 interface Props {
@@ -23,8 +24,10 @@ interface ViewParams {
     sortColumnNumber: number;
 }
 const CustomHeaderCell = ({ ...props }) => (
-    <HeaderCell {...props} style={{ backgroundColor: '#4CAF50', color: 'white', fontWeight: 'bold', padding: '4px 0 2px 0' }} />
+    <HeaderCell children={''} {...props} className='qv-header-cell' />
 );
+
+type CheckPickerInstance = React.ElementRef<typeof CheckPicker>;
 
 const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrumbs, breadcrumbs }) => {
     const [queryviews, setData                ] = useState<QueryViewDTO | null>(null);
@@ -60,7 +63,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
 
     const [queryparamsComponentCalls, setQueryparamsComponentCalls] = useState(0);
 
-    const picker = useRef();
+    const picker = useRef<CheckPickerInstance>(null);
 
     useEffect(() => {
         if (dataviewid) {
@@ -78,7 +81,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
 
     const checkColumnPresence = async (dataviewid: number | null) => {
         try {
-            const response = await fetch(`https://localhost:7263/api/dataview/${dataviewid}`);
+            const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`);
             const result = await response.json();
             setNeedsDateParams(result.startDateField !== '' && result.endDateField !== '');
         }
@@ -103,7 +106,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                 sortOrder: sortType,
                 sortColumnNumber: sortColumn,              
             });
-            const response = await fetch(`https://localhost:7263/api/query/${dataviewid}?${params.toString()}`);
+            const response = await fetch(`${config.ApiBaseUrlDev}/query/${dataviewid}?${params.toString()}`);
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
@@ -193,9 +196,9 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const availableColumns = headers.map(header => ({ label: header, value: header }));
 
     const footerButtonStyle = {
-        float: 'right',
         marginRight: 10,
-        marginTop: 2
+        marginTop: 2,
+        marginLeft: 130
     };
     return (
         <>
@@ -204,14 +207,13 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                     (<>
                         <Row>
                             <Col xs={12}>
-                                <Stack style={{ textAlign: 'left', marginTop: '20px' }}>
+                                <Stack style={{ textAlign: 'left', marginTop: '10px', marginLeft:'105px' }}>
                                     <Message type="info" bordered showIcon closable><strong>INFO!</strong> Необходимо настроить параметры запроса!</Message>
                                 </Stack>
                             </Col>
                         </Row>
-                        <Row style={{ marginBottom: '30px', alignItems: 'center' }}>
-                            <Col xs={4}>
-                                <Stack className='queryparamscomponentStyle' >                                
+                        <Row style={{ marginBottom: '20px', alignItems: 'center', marginTop:'10px' }}>
+                            <Col xs={4} className='qv-control-panel'>                              
                                 <QueryparamsComponent
                                         queryparams={viewParams}
                                         onParamsChange={handleParamsChange}
@@ -222,14 +224,13 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                         dataviewid={dataviewid}          
                                         offset={offset}              
                                         limit={limit}
-                                        />   
-                                </Stack>
+                                        /> 
                             </Col>
                         </Row>
                         {loadingTable === true ?
                             (
-                                <div className="loading-container">
-                                    <Loader center content="Загрузка отчета..." vertical size='lg' />
+                                <div className='rs-loader-wrapper'>
+                                    <Loader center content="Загрузка отчета..." vertical size='lg' className='rs-loader'/>
                                 </div>
                             ) :(<div></div>)
                         }
@@ -237,13 +238,11 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                     ) : (
                         <Row>
                             <Col xs={24}>
-                                <>
-                                    <h2 className="query-view-title">
+                                <h2 className="qv-title">
                                         {queryviews?.title}
                                         {viewParams.startDate && viewParams.endDate && ` с ${viewParams.startDate} по ${viewParams.endDate}`}
                                     </h2>
-                                    <Stack style={{ marginTop: 20, justifyContent: 'space-between', alignItems: 'center' }} >
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexGrow: 1 }}>
+                                        <div className='qv-control-panel'>
                                             <QueryparamsComponent
                                                 queryparams={viewParams}
                                                 onParamsChange={handleParamsChange}
@@ -287,7 +286,9 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                                                 appearance="primary"
                                                                 size="sm"
                                                                 onClick={() => {
-                                                                    picker.current.close();
+                                                                    if (picker.current) {
+                                                                        picker.current.close();
+                                                                    }
                                                                 }}
                                                             >
                                                                 Ok
@@ -302,12 +303,10 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                                 title={titleView }
                                             />
                                         </div>
-                                    </Stack>
-                                    <div style={{ margin: '0px 5px 0px 5px' }}>
                                         {isFilterApplied && (
-                                            <div style={{ margin: '10px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                <span>Найдено совпадений: {filteredData.length}</span>
-                                                <Button onClick={resetFilter}>Сбросить фильтр</Button>
+                                            <div >
+                                                <span className='qv-filter-count'>Найдено совпадений: {filteredData.length}</span>
+                                                <Button onClick={resetFilter} className='custom-button'>Сбросить фильтр</Button>
                                             </div>
                                         )}
                                         {data && data.length > 0 ?
@@ -322,13 +321,14 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                                     autoHeight
                                                     autoFocus={true}
                                                     autoCorrect="true"
+                                                    className='qv-container'
                                                 >
                                                     {headers
                                                         .filter(header => columnKeys.includes(header))
                                                         .map((header, index) => (
                                                             <Column key={index} width={200} align="center" resizable sortable>
                                                                 <CustomHeaderCell>{header}</CustomHeaderCell>
-                                                                <Cell dataKey={header}/>
+                                                                <Cell dataKey={header} className='qv-cell-table'/>
                                                             </Column>
                                                         ))}
                                                 </Table>
@@ -340,8 +340,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                                 </Row>
                                             )
                                         }
-                                    </div>
-                                    <div style={{ margin: '50px 10px 0px 15px' }}>
                                         <Pagination
                                             prev={prev}
                                             next={next}
@@ -350,18 +348,19 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                             ellipsis={ellipsis}
                                             boundaryLinks={boundaryLinks}
                                             maxButtons={maxButtons}
+                                            //@ts-ignore
                                             size={size}
+                                            //@ts-ignore
                                             layout={layout}
                                             total={totalCount}
                                             limitOptions={[12, 30, 50]}
                                             limit={limit}
                                             activePage={offset}
                                             onChangePage={handlePageChange}
-                                            onChangeLimit={handleChangeLimit}
+                                            onChangeLimit={handleChangeLimit}                                          
                                             style={{ marginTop: '10px' }}
+                                            className='rs-pagination-group'
                                         />
-                                    </div>
-                                </>
                             </Col>
                         </Row>
                     )

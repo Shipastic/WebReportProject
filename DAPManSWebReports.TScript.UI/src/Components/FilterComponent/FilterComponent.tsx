@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Accordion, InputPicker, Input, Button, IconButton, Drawer, Form } from 'rsuite';
+import { InputPicker, Input, Button, IconButton, Drawer, Form } from 'rsuite';
 import Filter from '@rsuite/icons/legacy/Filter';
-import '../App.css';
+import './Filter.css';
 
 
 interface FilterProps 
@@ -19,10 +19,6 @@ const initialFilterState = [{ column: '', value: '' }];
 
 const FilterComponent: React.FC<FilterProps>= ({
     headers,
-    selectedColumn,
-    setSelectedColumn,
-    filterValue,
-    setFilterValue,
     handleApplyFilter,
     resetFilter
 }) => {
@@ -55,12 +51,12 @@ const FilterComponent: React.FC<FilterProps>= ({
     };
 
     const footerButtonStyleConfirm = {
-        float: 'left',
+
         marginRight: 10,
         marginTop: 2
     };
     const footerButtonStyleCancel = {
-        float: 'right',
+
         marginRight: 10,
         marginTop: 2
     };

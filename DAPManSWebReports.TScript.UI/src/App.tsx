@@ -1,9 +1,10 @@
 import React, { useState, useEffect         } from 'react';
-import { Container, Content, Sidebar, Footer} from 'rsuite';
+import { Container, Content, Sidebar, Footer, FlexboxGrid} from 'rsuite';
 import { Outlet, BrowserRouter              } from 'react-router-dom';
 
 import SideBarComponent   from './Components/SidebarComponent';
-import HeaderComponent    from './Components/HeaderComponent';
+import HeaderComponent    from './Components/HeaderComponent/HeaderComponent';
+import BurgerMenuComponent from './Components/BurgerMenuComponent/BurgerMenuComponent';
 import AppRoutes          from './Components/AppRoutes';
 
 import Breadcrumbs        from './Models/Breadcrumbs';
@@ -11,9 +12,11 @@ import { FolderDetail }   from './Models/FolderDetail';
 
 import FooterPage         from './pages/FooterPage';
 
+import config from './Utils/config';
+
 import logo               from './assets/css/logo.jpg';
 
-import './App.css';
+//import './App.css';
 
 interface HomePageProps {
     onSelect?: (eventKey: any) => void;
@@ -35,7 +38,7 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
     const [expanded, setExpand] = useState(true);
 
     useEffect(() => {
-        fetch('https://localhost:7263/api/menu/parents')
+        fetch(`${config.ApiBaseUrlDev}/menu/parents`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -82,18 +85,13 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                             items={items} 
                             logo={logo}/>
                     <Container className='container'>
-                        <Sidebar className='sidebar' style={{flex:'0 1'}}>
-                            <SideBarComponent                            
-                                  activeKeySideBar={setActiveKey}
-                                  openKeys={openKeys}
-                                  onSelect={setActiveKey}
-                                  onOpenChange={setOpenKeys}
-                                  expanded={expanded}
-                                  onExpand={setExpand}
-                                appearance="inverse"/>
-                        </Sidebar>
+                        
                         <Content className="content" >
-                        <Breadcrumbs breadcrumbs={breadcrumbs} />
+                            <FlexboxGrid >
+                            <BurgerMenuComponent/>
+                            <Breadcrumbs breadcrumbs={breadcrumbs} />
+                            </FlexboxGrid>
+                       
                        <AppRoutes
                                 updateBreadcrumbs={updateBreadcrumbs}
                                 breadcrumbs={breadcrumbs}

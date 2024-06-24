@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
-import { FolderDetail       } from '../Models/FolderDetail';
-import { defaultColumns     } from '../constants/ColumnsBrowseTable';
-import { addItemType        } from '../Utils/addItemType';
-import { splitItemType      } from '../Utils/splitItemType';
-import { getSortedData } from '../Utils/sortUtils';
-import QueryViewComponent from '../Components/QueryViewComponent';
-import '../App.css';
-import AddEditReportModal from '../Modals/AddEditModalWindow';
+import { FolderDetail       } from '../../Models/FolderDetail';
+import { defaultColumns     } from '../../constants/ColumnsBrowseTable';
+import { addItemType        } from '../../Utils/addItemType';
+import { splitItemType      } from '../../Utils/splitItemType';
+import { getSortedData } from '../../Utils/sortUtils';
+import QueryViewComponent from '../QueryViewComponent/QueryViewComponent';
+import './ChildFolder.css';
+import AddEditReportModal from '../../Modals/AddEditModalWindow';
+import config from '../../Utils/config';
 interface Props
 {
     parentid: number | null;
@@ -17,7 +18,7 @@ interface Props
 }
 
 const CustomHeaderCell = ({ ...props }) => (
-    <HeaderCell children={undefined} {...props} style={{ backgroundColor: '#8B4513', color: 'white', fontWeight: 'bold', padding: '4px 0 4px 10', position: 'sticky', top: 0, zIndex: 10 }} />
+    <HeaderCell children={undefined} {...props} className='cf-header-cell' />
   );
   
 const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrumbs, breadcrumbs }) =>
@@ -26,7 +27,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [sortType, setSortType] = useState<'asc' | 'desc' | undefined>();
     const [sortColumn, setSortColumn] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
-    const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
+    //const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
 
     const [showModal, setShowModal] = useState(false);
@@ -40,7 +41,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
         setLoading(true);
         try
         {
-            const response = await fetch(`https://localhost:7263/api/menu/childrens/${parentid}`);
+            const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`);
             if (response.ok)
             {
                 const data = await response.json();
@@ -66,7 +67,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
             try 
             {
                 const dataviewid = rowData.id;                           
-                const response = await fetch(`https://localhost:7263/api/dataview/${dataviewid}`);            
+                const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`);            
               if (response.ok) 
                 {
                     console.log('Response Status:', response.status);
@@ -88,28 +89,22 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
       const handleSave = async (report) => 
         {
-            try 
-            {
-              const response = await fetch('/api/dataview/save', 
-                {
-                    method: 'POST',
+            try {
+                const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${currentReport.id}`, {
+                    method: 'PUT',
                     headers: {
-                    'Content-Type': 'application/json',
-                        },
-                    body: JSON.stringify(report),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(currentReport)
                 });
-              if (response.ok) 
-                {
+                if (response.ok || response.status === 204) {
+                    console.log('Update successful');
                     setShowModal(false);
-                } 
-                else 
-                {
-                    console.error('Error saving report:', response.statusText);
+                } else {
+                    console.error('Error updating report:', response.statusText);
                 }
-            } 
-            catch (error) 
-            {
-              console.error('Error saving report:', error);
+            } catch (error) {
+                console.error('Error updating report:', error);
             }
         };
 
@@ -155,8 +150,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                         const tempParentId = findFolderByName(rowData.name, combinedArray);
                         const res: FolderDetail = splitItemType(combinedArray);
                         setItems(res);
-                        parentid = tempParentId;                       
-                        setActiveFolderId(tempParentId); 
+                        parentid = tempParentId;      
                         updateUI();  
                     }                                    
                 }
@@ -210,7 +204,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
     const hasChildElements = async (parentid:number) =>
     {
-        const response = await fetch(`https://localhost:7263/api/menu/childrens/${parentid}`);
+        const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`);
         if (response.ok)
         {
             const data = await response.json();
@@ -240,14 +234,8 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
     const data = getSortedData(combinedArray, sortColumn, sortType);   
 
-    const tableStyle = {
-        maxHeight: '770px', //высота
-        maxWidth: '1850px',
-        overflowY: 'auto', // вертикальная прокрутка
-      };
-
     return (
-        <div style={{ margin: '10px 10px 0px 15px' }} className="query-view-container">
+        <div className="cf-folder-view-container">
             <Table
                     data={data}
                     bordered
@@ -259,7 +247,8 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                     autoHeight                  
                     autoFocus={true}
                     autoCorrect="true"
-                    style={tableStyle}
+                     //@ts-ignore
+                    className='tableStyle'
                     
                 >
                 {defaultColumns.map(column =>
@@ -267,29 +256,22 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                     <Column key={column.key} sortable resizable fullText flexGrow={1}>
                         <CustomHeaderCell >{column.label}</CustomHeaderCell >
                         <Cell
-                            className={column.key === 'name' ? "clickable-cell" : ''}
-                            dataKey={column.key}
-                            style={{ padding:'5px 0px 0px 5px' }}
+                            className={column.key === 'name' ? "cf-clickable-cell-table" : 'cf-cell-table'}
+                            dataKey={column.key}        
                         >
                             {rowData => {
                                 if (column.key === 'edit' && rowData.type === 'dataview')
                                 {
                                     return (
-                                        <a
-                                            onClick={() => handleEditClick({rowData})} // Добавить логику здесь
-                                            
-                                            style={{ padding: '5px 0px 0px 0px' , textAlign:'right'}}
-                                            href='#' 
-                                        >
-                                                Редактировать | Удалить
+                                        <a onClick={() => handleEditClick({rowData})} href='#' >
+                                            Редактировать | Удалить
                                         </a>                                       
                                 );}
                                 return (
                                     <div
-                                        className={column.key === 'name' ? "clickable-cell" : ''}
+                                        className={column.key === 'name' ? "cf-clickable-cell" : 'cf-cell'}
                                         onClick={() => handleCellClick({ rowData, dataKey: column.key })}
-                                    >
-                                        
+                                    >                                       
                                         {rowData[column.key]}
                                     </div>
                                 );
