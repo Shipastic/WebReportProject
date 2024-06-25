@@ -1,9 +1,15 @@
 export interface DataViewDTO {
-    id          : number;
-    name        : string;
-    parentid    : number;
-    dataviewNote: string;
+    id               : number;
+    name             : string;
+    parentid         : number;
+    dataviewNote     : string;
     startDateField   : string;
-    endDateField: string;
-    type: any;
+    endDateField     : string;
+    reportType       : string;
+    query            : string;
+    folderid         : number;
+    dataSourceID     : number;
+    remotePassword   : string;
+    remoteUser       : string;
+    reportFormat     : number;
 }

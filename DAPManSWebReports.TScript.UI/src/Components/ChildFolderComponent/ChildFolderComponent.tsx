@@ -7,8 +7,9 @@ import { splitItemType      } from '../../Utils/splitItemType';
 import { getSortedData } from '../../Utils/sortUtils';
 import QueryViewComponent from '../QueryViewComponent/QueryViewComponent';
 import './ChildFolder.css';
-import AddEditReportModal from '../../Modals/AddEditModalWindow';
+import AddEditReportModal from '../../Modals/AddEditModal/AddEditModalWindow';
 import config from '../../Utils/config';
+import { DataViewDTO } from '../../Models/DataViewDTO';
 interface Props
 {
     parentid: number | null;
@@ -31,7 +32,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
 
     const [showModal, setShowModal] = useState(false);
-    const [currentReport, setCurrentReport] = useState(null);
+    const [currentReport, setCurrentReport] = useState<DataViewDTO | null>(null);
 
     const pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
@@ -87,26 +88,20 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
             }
         };
 
-      const handleSave = async (report) => 
+      const handleSave = async (report: DataViewDTO) => 
         {
-            try {
-                const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${currentReport.id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(currentReport)
-                });
-                if (response.ok || response.status === 204) {
-                    console.log('Update successful');
-                    setShowModal(false);
-                } else {
-                    console.error('Error updating report:', response.statusText);
+            setItems(prev => {
+                if (prev) {
+                    return {
+                        ...prev,
+                        items: prev.dataviews.map(item => item.id === report.id ? report : item)
+                    };
                 }
-            } catch (error) {
-                console.error('Error updating report:', error);
-            }
+                return prev;
+            });
+            setShowModal(false);
         };
+    
 
     useEffect(() =>
     {
@@ -281,12 +276,14 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                 )
                 )}                               
             </Table>
+            {showModal && currentReport && (
             <AddEditReportModal
                 show={showModal}
                 report={currentReport}
                 onSave={handleSave}
                 onClose={() => setShowModal(false)}
-      />           
+      />
+            )}           
         </div>
     );
 };

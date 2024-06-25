@@ -2,6 +2,8 @@ using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.DI.Registration;
 using LoggingLibrary.Service;
 
+using System.Text.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging
            .ClearProviders()
@@ -26,13 +28,18 @@ foreach (var registration in serviceRegistration)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("https://localhost:5173") 
+        builder =>   builder.WithOrigins("https://localhost:5173") 
+                            .AllowAnyOrigin()
                             .AllowAnyMethod()
                             .AllowAnyHeader());
 });
+
 builder.Services.AddMemoryCache();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

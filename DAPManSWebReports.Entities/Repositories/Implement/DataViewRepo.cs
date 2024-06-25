@@ -1,12 +1,15 @@
 ﻿
 using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Entities.Repositories.Interfaces;
+using DAPManSWebReports.Entities.Services.Common;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 using Oracle.ManagedDataAccess.Client;
 
+using System.Configuration;
+using System.Data.Entity;
 using System.Data.SQLite;
 using System.Data.SqlTypes;
 
@@ -18,8 +21,11 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
 
         private readonly ILogger<DataViewRepo> _logger;
 
+        private readonly IConfiguration _configuration;
+
         public DataViewRepo(IConfiguration configuration, ILogger<DataViewRepo> logger)
         {
+            _configuration = configuration;
             _connectionString = configuration.GetConnectionString("LocalConnection");
             _logger = logger;
         }
@@ -218,45 +224,11 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             }
         }
 
-        public async Task<bool> UpdateDataAsync(DataView dataView)
+        public Task<bool> UpdateEntityAsync(DataView existingEntity, DataView newEntity, string tableName, string idColumnName)
         {
-            using (var connection = new SQLiteConnection(_connectionString))
-            {
-                await connection.OpenAsync();
-                using (var transaction = connection.BeginTransaction())
-                {
-                    try
-                    {
-                        // Проверка, существует ли DataView
-                        var selectCommand = new SQLiteCommand("SELECT Id FROM DataViews WHERE Id = @Id", connection, transaction);
-                        selectCommand.Parameters.AddWithValue("@Id", dataView.id);
+            UpdateEntityAsyncCommon updateEntityAsyncCommon = new UpdateEntityAsyncCommon(_configuration);
 
-                        var selectResult = await selectCommand.ExecuteScalarAsync();
-                        if (selectResult == null)
-                        {
-                            return false;
-                        }
-
-                        // Обновление DataView
-                        var updateCommand = new SQLiteCommand("UPDATE DATAVIEW SET DataSourceID = $datasourceId, FolderID = $folderId, Name = $name, Query = $query WHERE Id = $id", connection, transaction);
-                        selectCommand.Parameters.AddWithValue("$datasourceId", dataView.DataSourceId);
-                        selectCommand.Parameters.AddWithValue("$folderId", dataView.FolderId);
-                        selectCommand.Parameters.AddWithValue("$name", dataView.Name);
-                        selectCommand.Parameters.AddWithValue("$query", dataView.Query);
-                        selectCommand.Parameters.AddWithValue("$id", dataView.id);
-
-                        var rowsAffected = await updateCommand.ExecuteNonQueryAsync();
-
-                        transaction.Commit();
-                        return rowsAffected > 0;
-                    }
-                    catch
-                    {
-                        transaction.Rollback();
-                        throw;
-                    }
-                }                    
-            }
+            return updateEntityAsyncCommon.UpdateEntityAsync(existingEntity, newEntity, tableName, idColumnName);
         }
     }
 }

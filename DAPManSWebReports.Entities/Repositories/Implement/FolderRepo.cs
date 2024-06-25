@@ -160,7 +160,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateDataAsync(Folder obj)
+        public Task<bool> UpdateEntityAsync(Folder existingEntity, Folder newEntity, string tableName, string idColumnName)
         {
             throw new NotImplementedException();
         }

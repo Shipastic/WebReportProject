@@ -3,15 +3,13 @@ using DAPManSWebReports.Domain.Interfaces;
 using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Entities.Repositories.Interfaces;
 
-using System.Data;
-
 namespace DAPManSWebReports.Domain.Services
 {
     public class DataViewModelService : IMappingService<DataViewModel>, IMenuTreeService<DataViewModel>, IDataViewService<DataViewModel>
     {
-        private IBaseRepo<DAPManSWebReports.Entities.Models.DataView> _dataViewRepository;
-        private IDataViewRepo<DAPManSWebReports.Entities.Models.DataView> _viewRepo;
-        public DataViewModelService(IBaseRepo<DAPManSWebReports.Entities.Models.DataView> baseRepo, IDataViewRepo<DAPManSWebReports.Entities.Models.DataView> viewRepo)
+        private IBaseRepo<DataView> _dataViewRepository;
+        private IDataViewRepo<DataView> _viewRepo;
+        public DataViewModelService(IBaseRepo<DataView> baseRepo, IDataViewRepo<DataView> viewRepo)
         {
             _dataViewRepository = baseRepo;
             _viewRepo = viewRepo;
@@ -122,7 +120,23 @@ namespace DAPManSWebReports.Domain.Services
             {
                 return false;
             }
-            return await _dataViewRepository.UpdateDataAsync(existingDataView);
+            DataView dvUpdate = new DataView
+            {
+                id = dataViewModel.id,
+                Name = dataViewModel.Name,
+                Query = dataViewModel.Query,
+                DataSourceId = dataViewModel.DataSourceID,
+                DataViewNote = dataViewModel.DataviewNote,
+                FolderId = dataViewModel.Folderid,
+                ParentID = dataViewModel.Parentid,
+                RemotePassword = dataViewModel.RemotePassword,
+                RemoteUser = dataViewModel.RemoteUser,
+                ReportFormat = dataViewModel.ReportFormat,
+                ReportType = dataViewModel.ReportType,
+                StartDateField = dataViewModel.startDateField,
+                StopDateField = dataViewModel.endDateField
+            };
+            return await _dataViewRepository.UpdateEntityAsync(existingDataView, dvUpdate, "DATAVIEW", "id");
         }
     }
 }

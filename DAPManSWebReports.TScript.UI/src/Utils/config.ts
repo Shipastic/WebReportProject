@@ -1,7 +1,8 @@
 import configData from '..//../appsettings.json';
 
 interface Config {
-    ApiBaseUrl: string;
+    ApiBaseUrlDev: string;
+    ApiBaseUrlRelease: string;
 }
 
 const config: Config = configData;

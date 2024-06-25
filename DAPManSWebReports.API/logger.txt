@@ -9002,3 +9002,556 @@ sortColumnNumber - null
 
 24.06.2024 16:02:51|	 Column name for sorting:null| Sort order:undefined
 24.06.2024 16:02:51|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:727 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 16:39:08|	 GetDataViewById:335 Start
+24.06.2024 16:39:09|	 Get DataView by id:335
+24.06.2024 16:39:09|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:39:19|	 GetDataViewById:335 End
+24.06.2024 16:42:24|	 GetDataViewById:335 Start
+24.06.2024 16:42:24|	 Get DataView by id:335
+24.06.2024 16:42:24|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:42:24|	 GetDataViewById:335 End
+24.06.2024 16:43:25|	 GetDataViewById:335 Start
+24.06.2024 16:43:25|	 Get DataView by id:335
+24.06.2024 16:43:25|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:43:25|	 GetDataViewById:335 End
+24.06.2024 16:43:56|	 GetDataViewById:335 Start
+24.06.2024 16:43:56|	 Get DataView by id:335
+24.06.2024 16:43:56|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:43:56|	 GetDataViewById:335 End
+24.06.2024 16:43:58|	 GetDataViewById:335 Start
+24.06.2024 16:43:58|	 Get DataView by id:335
+24.06.2024 16:43:58|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:43:58|	 GetDataViewById:335 End
+24.06.2024 16:44:38|	 GetDataViewById:335 Start
+24.06.2024 16:44:38|	 Get DataView by id:335
+24.06.2024 16:44:38|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:44:38|	 GetDataViewById:335 End
+24.06.2024 16:45:27|	 GetDataViewById:335 Start
+24.06.2024 16:45:27|	 Get DataView by id:335
+24.06.2024 16:45:27|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 16:45:27|	 GetDataViewById:335 End
+24.06.2024 17:39:37|	 GetDataViewById:335 Start
+24.06.2024 17:39:37|	 Get DataView by id:335
+24.06.2024 17:39:37|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 17:39:37|	 GetDataViewById:335 End
+24.06.2024 18:04:52|	 GetDataViewById:335 Start
+24.06.2024 18:04:52|	 Get DataView by id:335
+24.06.2024 18:04:52|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 18:04:52|	 GetDataViewById:335 End
+24.06.2024 18:11:35|	 GetDataViewById:335 Start
+24.06.2024 18:11:35|	 Get DataView by id:335
+24.06.2024 18:11:35|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 18:11:35|	 GetDataViewById:335 End
+24.06.2024 18:14:04|	 GetDataViewById:335 Start
+24.06.2024 18:14:04|	 Get DataView by id:335
+24.06.2024 18:14:04|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 18:14:04|	 GetDataViewById:335 End
+24.06.2024 18:25:33|	 GetDataViewById:335 Start
+24.06.2024 18:25:33|	 Get DataView by id:335
+24.06.2024 18:25:33|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 18:25:33|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 18:36:14|	 GetDataViewById:335 Start
+24.06.2024 18:36:14|	 Get DataView by id:335
+24.06.2024 18:36:14|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 18:36:14|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 18:47:51|	 Get DataView by id:335
+24.06.2024 18:47:58|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 18:51:48|	 Get DataView by id:335
+24.06.2024 18:51:48|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 18:55:37|	 Get DataView by id:335
+24.06.2024 18:55:37|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 19:02:42|	 Get DataView by id:335
+24.06.2024 19:02:42|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 19:05:46|	 Get DataView by id:335
+24.06.2024 19:05:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 19:07:55|	 GetDataViewById:335 Start
+24.06.2024 19:07:55|	 Get DataView by id:335
+24.06.2024 19:07:55|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 19:07:55|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+24.06.2024 20:47:41|	 GetDataViewById:294 Start
+24.06.2024 20:47:41|	 Get DataView by id:294
+24.06.2024 20:47:41|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:47:41|	 GetDataViewById:294 End
+24.06.2024 20:47:47|	 GetDataViewById:294 Start
+24.06.2024 20:47:47|	 Get DataView by id:294
+24.06.2024 20:47:47|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:47:47|	 GetDataViewById:294 End
+24.06.2024 20:47:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:47:50|	Show params query:
+24.06.2024 20:47:50|	 Query params:
+limit - 12
+
+24.06.2024 20:47:50|	 Query params:
+offset - 1
+
+24.06.2024 20:47:50|	 Query params:
+startDate - 
+
+24.06.2024 20:47:50|	 Query params:
+endDate - 
+
+24.06.2024 20:47:50|	 Query params:
+presetDate - 
+
+24.06.2024 20:47:50|	 Query params:
+format - EXCEL
+
+24.06.2024 20:47:50|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:47:50|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:47:50|	 GetQueryViewWithParam dataviewId -294
+24.06.2024 20:47:51|	 Get DataView by id:294
+24.06.2024 20:47:51|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:47:51|	 Getting DB builder for datasource ID: 17
+24.06.2024 20:47:51|	 Executing query to get DB type for datasource ID: 17
+24.06.2024 20:47:51|	 Creating OracleDBBuilder for datasource ID: 17
+24.06.2024 20:47:51|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:47:51|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+24.06.2024 20:47:51|	  Create Query to db: select * from V_PPC_L2_INCORRECT
+24.06.2024 20:47:52|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:47:52|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:1921 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT
+24.06.2024 20:47:52|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:47:52|	Show params query:
+24.06.2024 20:47:52|	 Query params:
+limit - 12
+
+24.06.2024 20:47:52|	 Query params:
+offset - 1
+
+24.06.2024 20:47:52|	 Query params:
+startDate - 
+
+24.06.2024 20:47:52|	 Query params:
+endDate - 
+
+24.06.2024 20:47:52|	 Query params:
+presetDate - 
+
+24.06.2024 20:47:52|	 Query params:
+format - EXCEL
+
+24.06.2024 20:47:52|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:47:52|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:47:52|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:47:52|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:1921 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT
+24.06.2024 20:47:52|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:47:52|	Show params query:
+24.06.2024 20:47:52|	 Query params:
+limit - 12
+
+24.06.2024 20:47:52|	 Query params:
+offset - 1
+
+24.06.2024 20:47:52|	 Query params:
+startDate - 
+
+24.06.2024 20:47:52|	 Query params:
+endDate - 
+
+24.06.2024 20:47:52|	 Query params:
+presetDate - 
+
+24.06.2024 20:47:52|	 Query params:
+format - EXCEL
+
+24.06.2024 20:47:52|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:47:52|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:47:52|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:47:52|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:1921 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT
+24.06.2024 20:48:17|	 GetDataViewById:285 Start
+24.06.2024 20:48:17|	 Get DataView by id:285
+24.06.2024 20:48:17|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:48:17|	 GetDataViewById:285 End
+24.06.2024 20:48:19|	 GetDataViewById:285 Start
+24.06.2024 20:48:19|	 Get DataView by id:285
+24.06.2024 20:48:19|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:48:19|	 GetDataViewById:285 End
+24.06.2024 20:48:27|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:48:27|	Show params query:
+24.06.2024 20:48:27|	 Query params:
+limit - 12
+
+24.06.2024 20:48:27|	 Query params:
+offset - 1
+
+24.06.2024 20:48:27|	 Query params:
+startDate - 2024-06-01 20:48:22
+
+24.06.2024 20:48:27|	 Query params:
+endDate - 2024-06-24 20:48:22
+
+24.06.2024 20:48:27|	 Query params:
+presetDate - 
+
+24.06.2024 20:48:27|	 Query params:
+format - EXCEL
+
+24.06.2024 20:48:27|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:48:27|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:48:27|	 GetQueryViewWithParam dataviewId -285
+24.06.2024 20:48:27|	 Get DataView by id:285
+24.06.2024 20:48:27|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:48:27|	 Getting DB builder for datasource ID: 17
+24.06.2024 20:48:27|	 Executing query to get DB type for datasource ID: 17
+24.06.2024 20:48:27|	 Creating OracleDBBuilder for datasource ID: 17
+24.06.2024 20:48:27|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:48:27|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+24.06.2024 20:48:27|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+24.06.2024 20:48:35|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:48:35|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:25541 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+24.06.2024 20:48:35|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:48:35|	Show params query:
+24.06.2024 20:48:35|	 Query params:
+limit - 12
+
+24.06.2024 20:48:35|	 Query params:
+offset - 1
+
+24.06.2024 20:48:35|	 Query params:
+startDate - 2024-06-01 20:48:22
+
+24.06.2024 20:48:35|	 Query params:
+endDate - 2024-06-24 20:48:22
+
+24.06.2024 20:48:35|	 Query params:
+presetDate - 
+
+24.06.2024 20:48:35|	 Query params:
+format - EXCEL
+
+24.06.2024 20:48:35|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:48:35|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:48:35|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:48:35|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:25541 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+24.06.2024 20:48:35|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:48:35|	Show params query:
+24.06.2024 20:48:35|	 Query params:
+limit - 12
+
+24.06.2024 20:48:35|	 Query params:
+offset - 1
+
+24.06.2024 20:48:35|	 Query params:
+startDate - 2024-06-01 20:48:22
+
+24.06.2024 20:48:35|	 Query params:
+endDate - 2024-06-24 20:48:22
+
+24.06.2024 20:48:35|	 Query params:
+presetDate - 
+
+24.06.2024 20:48:35|	 Query params:
+format - EXCEL
+
+24.06.2024 20:48:35|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:48:35|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:48:35|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:48:35|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:25541 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+24.06.2024 20:48:48|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:48:48|	Show params query:
+24.06.2024 20:48:48|	 Query params:
+limit - 12
+
+24.06.2024 20:48:48|	 Query params:
+offset - 2
+
+24.06.2024 20:48:48|	 Query params:
+startDate - 2024-06-01 20:48:22
+
+24.06.2024 20:48:48|	 Query params:
+endDate - 2024-06-24 20:48:22
+
+24.06.2024 20:48:48|	 Query params:
+presetDate - 
+
+24.06.2024 20:48:48|	 Query params:
+format - EXCEL
+
+24.06.2024 20:48:48|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:48:48|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:48:48|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:48:48|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:25541 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+24.06.2024 20:48:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+24.06.2024 20:48:50|	Show params query:
+24.06.2024 20:48:50|	 Query params:
+limit - 12
+
+24.06.2024 20:48:50|	 Query params:
+offset - 3
+
+24.06.2024 20:48:50|	 Query params:
+startDate - 2024-06-01 20:48:22
+
+24.06.2024 20:48:50|	 Query params:
+endDate - 2024-06-24 20:48:22
+
+24.06.2024 20:48:50|	 Query params:
+presetDate - 
+
+24.06.2024 20:48:50|	 Query params:
+format - EXCEL
+
+24.06.2024 20:48:50|	 Query params:
+sortOrder - undefined
+
+24.06.2024 20:48:50|	 Query params:
+sortColumnNumber - null
+
+24.06.2024 20:48:50|	 Column name for sorting:null| Sort order:undefined
+24.06.2024 20:48:50|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:25541 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+24.06.2024 20:49:17|	 GetDataViewById:335 Start
+24.06.2024 20:49:17|	 Get DataView by id:335
+24.06.2024 20:49:17|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 20:49:17|	 GetDataViewById:335 End
+24.06.2024 22:08:55|	 GetDataViewById:335 Start
+24.06.2024 22:08:55|	 Get DataView by id:335
+24.06.2024 22:08:55|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 22:08:55|	 GetDataViewById:335 End
+24.06.2024 22:20:31|	 GetDataViewById:335 Start
+24.06.2024 22:20:31|	 Get DataView by id:335
+24.06.2024 22:20:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 22:20:31|	 GetDataViewById:335 End
+24.06.2024 22:21:59|	 GetDataViewById:335 Start
+24.06.2024 22:21:59|	 Get DataView by id:335
+24.06.2024 22:21:59|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+24.06.2024 22:21:59|	 GetDataViewById:335 End
+25.06.2024 7:51:16|	 GetDataViewById:335 Start
+25.06.2024 7:51:16|	 Get DataView by id:335
+25.06.2024 7:51:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 7:51:16|	 GetDataViewById:335 End
+25.06.2024 7:57:56|	 GetDataViewById:335 Start
+25.06.2024 7:57:56|	 Get DataView by id:335
+25.06.2024 7:57:56|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 7:57:56|	 GetDataViewById:335 End
+25.06.2024 8:03:23|	 GetDataViewById:335 Start
+25.06.2024 8:03:23|	 Get DataView by id:335
+25.06.2024 8:03:23|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 8:03:23|	 GetDataViewById:335 End
+25.06.2024 8:05:05|	 GetDataViewById:335 Start
+25.06.2024 8:05:05|	 Get DataView by id:335
+25.06.2024 8:05:05|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 8:05:05|	 GetDataViewById:335 End
+25.06.2024 8:06:25|	 GetDataViewById:335 Start
+25.06.2024 8:06:25|	 Get DataView by id:335
+25.06.2024 8:06:25|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 8:06:25|	 GetDataViewById:335 End
+25.06.2024 8:10:21|	 GetDataViewById:335 Start
+25.06.2024 8:10:21|	 Get DataView by id:335
+25.06.2024 8:10:21|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 8:10:21|	 GetDataViewById:335 End
+25.06.2024 8:33:03|	 GetDataViewById:335 Start
+25.06.2024 8:33:03|	 Get DataView by id:335
+25.06.2024 8:33:03|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 8:33:03|	 GetDataViewById:335 End
+25.06.2024 9:08:41|	 GetDataViewById:335 Start
+25.06.2024 9:08:41|	 Get DataView by id:335
+25.06.2024 9:08:41|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 9:08:41|	 GetDataViewById:335 End
+25.06.2024 9:29:51|	 GetDataViewById:335 Start
+25.06.2024 9:29:51|	 Get DataView by id:335
+25.06.2024 9:29:51|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 9:29:51|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+25.06.2024 11:10:12|	 GetDataViewById:335 Start
+25.06.2024 11:10:12|	 Get DataView by id:335
+25.06.2024 11:10:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 11:10:12|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+25.06.2024 11:25:55|	 GetDataViewById:335 Start
+25.06.2024 11:25:55|	 Get DataView by id:335
+25.06.2024 11:25:55|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 11:25:55|	 GetDataViewById:335 End
+25.06.2024 11:27:35|	 Get DataView by id:335
+25.06.2024 11:27:40|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 11:30:16|	 GetDataViewById:335 Start
+25.06.2024 11:30:16|	 Get DataView by id:335
+25.06.2024 11:30:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 11:30:16|	 GetDataViewById:335 End
+25.06.2024 11:30:31|	 Get DataView by id:335
+25.06.2024 11:30:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+25.06.2024 12:31:45|	 GetDataViewById:335 Start
+25.06.2024 12:31:45|	 Get DataView by id:335
+25.06.2024 12:31:45|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:31:45|	 GetDataViewById:335 End
+25.06.2024 12:32:11|	 Get DataView by id:335
+25.06.2024 12:32:11|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+25.06.2024 12:36:26|	 GetDataViewById:335 Start
+25.06.2024 12:36:26|	 Get DataView by id:335
+25.06.2024 12:36:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:36:26|	 GetDataViewById:335 End
+25.06.2024 12:36:35|	 Get DataView by id:335
+25.06.2024 12:36:35|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:38:39|	 GetDataViewById:335 Start
+25.06.2024 12:38:39|	 Get DataView by id:335
+25.06.2024 12:38:39|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:38:39|	 GetDataViewById:335 End
+25.06.2024 12:40:38|	 GetDataViewById:272 Start
+25.06.2024 12:40:38|	 Get DataView by id:272
+25.06.2024 12:40:38|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:40:38|	 GetDataViewById:272 End
+25.06.2024 12:44:06|	 GetDataViewById:335 Start
+25.06.2024 12:44:06|	 Get DataView by id:335
+25.06.2024 12:44:06|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:44:06|	 GetDataViewById:335 End
+25.06.2024 12:54:53|	 GetDataViewById:335 Start
+25.06.2024 12:54:53|	 Get DataView by id:335
+25.06.2024 12:54:53|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:54:53|	 GetDataViewById:335 End
+25.06.2024 12:56:14|	 GetDataViewById:335 Start
+25.06.2024 12:56:14|	 Get DataView by id:335
+25.06.2024 12:56:14|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 12:56:14|	 GetDataViewById:335 End
+25.06.2024 13:04:36|	 GetDataViewById:335 Start
+25.06.2024 13:04:36|	 Get DataView by id:335
+25.06.2024 13:04:36|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 13:04:36|	 GetDataViewById:335 End
+25.06.2024 13:06:31|	 GetDataViewById:285 Start
+25.06.2024 13:06:31|	 Get DataView by id:285
+25.06.2024 13:06:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 13:06:31|	 GetDataViewById:285 End
+25.06.2024 13:06:34|	 GetDataViewById:285 Start
+25.06.2024 13:06:34|	 Get DataView by id:285
+25.06.2024 13:06:34|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 13:06:34|	 GetDataViewById:285 End
+25.06.2024 13:06:44|	 GetDataViewById:285 Start
+25.06.2024 13:06:44|	 Get DataView by id:285
+25.06.2024 13:06:44|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 13:06:44|	 GetDataViewById:285 End
+25.06.2024 13:08:04|	 GetDataViewById:285 Start
+25.06.2024 13:08:04|	 Get DataView by id:285
+25.06.2024 13:08:04|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 13:08:04|	 GetDataViewById:285 End
+25.06.2024 13:12:54|	 GetDataViewById:285 Start
+25.06.2024 13:12:54|	 Get DataView by id:285
+25.06.2024 13:12:54|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+25.06.2024 13:12:54|	 GetDataViewById:285 End

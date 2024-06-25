@@ -1,4 +1,4 @@
-import Reactfrom from 'react';
+import React from 'react';
 import { Container, Content } from 'rsuite';
 import Breadcrumbs from '../Models/Breadcrumbs';
 import '../App.css';

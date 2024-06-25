@@ -2,25 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace DAPManSWebReports.Domain.Entities
 {
     public class QuerySettingsModel
     {
+        [JsonPropertyName("dataviewId")]
         public int DataviewId { get; set; }
+
+        [JsonPropertyName("filter")]
         public string Filter { get; set; }
+
+        [JsonPropertyName("sortColumnNumber")]
         public string sortColumnNumber { get; set; }
+
+        [JsonPropertyName("sortOrder")]
         public string SortOrder { get; set; }
+
+        [JsonPropertyName("startDate")]
         public string startDate { get; set; }
+
+        [JsonPropertyName("endDate")]
         public string endDate { get; set; }
+
+        [JsonPropertyName("limit")]
         public int limit { get; set; } = 10;
+
+        [JsonPropertyName("offset")]
         public int offset { get; set; }
 
+        [JsonPropertyName("maxPageSize")]
+
         const int maxPageSize = 50;
+
+        [JsonPropertyName("pageNumber")]
         public int PageNumber { get; set; } = 1;
 
         private int _pageSize = 10;
+
+        [JsonPropertyName("pageSize")]
         public int PageSize
         {
             get { return _pageSize; }
