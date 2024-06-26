@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace DAPManSWebReports.Domain.Entities
 {
     public class ReportError
     {
-        public string Description { get; set; }
-        public string Email { get; set; }
-        public IFormFile File { get; set; }
-        public string Url { get; set; }
+        [Required]
+        public string? description { get; set; }
+        [Required]
+        public string? email { get; set; }
+        [Required]
+        public IFormFile? file { get; set; }
+        [Required]
+        public string? url { get; set; }
     }
 }

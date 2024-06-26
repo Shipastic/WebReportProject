@@ -1,15 +1,11 @@
 ﻿using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
+
 using Microsoft.Extensions.Options;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+using System.Net.Http;
+using System.Net.Mail;
 
 namespace DAPManSWebReports.Domain.Services
 {
@@ -31,29 +27,29 @@ namespace DAPManSWebReports.Domain.Services
                 using var client = new SmtpClient(_smtpSettings.Server, _smtpSettings.Port)
                 {
                     Credentials = new NetworkCredential(_smtpSettings.UserName, _smtpSettings.Password),
-                    EnableSsl = true
+                    EnableSsl = true,
+                    Host = _smtpSettings.Server
                 };
 
                 var mailMessage = new MailMessage
                 {
                     From = new MailAddress(_smtpSettings.SenderEmail, _smtpSettings.SenderName),
                     Subject = "Error Report",
-                    Body = $@"Description: {reportError.Description}
-                              Email: {reportError.Email}
-                              URL: {reportError.Url}"
+                    Body = $@"Description: {reportError.description}
+                              Email: {reportError.email}
+                              URL: {reportError.url}"
                 };
 
                 mailMessage.To.Add(_receiverEmail);
 
-                if (reportError.File != null)
+                if (reportError.file != null)
                 {
                     var memoryStream = new MemoryStream();
-                    await reportError.File.CopyToAsync(memoryStream);
+                    await reportError.file.CopyToAsync(memoryStream);
                     memoryStream.Position = 0;
-                    var attachment = new Attachment(memoryStream, reportError.File.FileName);
+                    var attachment = new Attachment(memoryStream, reportError.file.FileName);
                     mailMessage.Attachments.Add(attachment);
                 }
-
                 await client.SendMailAsync(mailMessage);
             }
             catch (Exception ex)

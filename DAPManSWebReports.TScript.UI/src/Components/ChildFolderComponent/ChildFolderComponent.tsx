@@ -108,7 +108,6 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
         fetchData();      
     }, [parentid]);
 
-
     const updateUI = () =>
         {     
             fetchData();

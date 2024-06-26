@@ -100,7 +100,7 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                                 onSelect={onSelect}
                                 items={items} 
                                 logo={logo}/>
-                        <Container className='container'>
+                        
 
                             <Content className="content" style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center' }}>
                                 <FlexboxGrid >
@@ -116,14 +116,20 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                                          activeFolderId={activeFolderId}
                                          isFolderComponentVisible={isFolderComponentVisible}
                                  />   
+                                 
                                 <Outlet />
-                                <FlexboxGrid justify="end" style={{marginTop:'320px'}}> 
-                                    <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '10px', width:'400px' }}>
-                                        {showForm && <ReportErrorComponent />} 
+                                <FlexboxGrid justify="end" style={{marginTop:'260px'}} > 
+                                <div style={{ 
+                                     display: 'flex',
+                                     justifyContent: 'flex-end',
+                                     padding: '10px',
+                                     width: '400px',
+                                     height: 'auto'
+                                 }}>
+                                        {showForm && <ReportErrorComponent/>} 
                                     </div> 
                                 </FlexboxGrid>
-                            </Content>          
-                        </Container>                  
+                            </Content>                 
                         <Footer className='custom-footer'>
                             <FooterPage handleReportClick={handleReportClick}/>
                         </Footer>                   
