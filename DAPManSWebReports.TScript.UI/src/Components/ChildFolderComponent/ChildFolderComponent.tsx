@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState      } from 'react';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
-import { FolderDetail       } from '../../Models/FolderDetail';
-import { defaultColumns     } from '../../constants/ColumnsBrowseTable';
-import { addItemType        } from '../../Utils/addItemType';
-import { splitItemType      } from '../../Utils/splitItemType';
-import { getSortedData } from '../../Utils/sortUtils';
-import QueryViewComponent from '../QueryViewComponent/QueryViewComponent';
+import { FolderDetail                    } from '../../Models/FolderDetail';
+import { defaultColumns                  } from '../../constants/ColumnsBrowseTable';
+import { addItemType                     } from '../../Utils/addItemType';
+import { splitItemType                   } from '../../Utils/splitItemType';
+import { getSortedData                   } from '../../Utils/sortUtils';
+import { DataViewDTO                     } from '../../Models/DataViewDTO';
+import QueryViewComponent                  from '../QueryViewComponent/QueryViewComponent';
+import AddEditReportModal                  from '../../Modals/AddEditModal/AddEditModalWindow';
+import config                              from '../../Utils/config';
 import './ChildFolder.css';
-import AddEditReportModal from '../../Modals/AddEditModal/AddEditModalWindow';
-import config from '../../Utils/config';
-import { DataViewDTO } from '../../Models/DataViewDTO';
+
 interface Props
 {
     parentid: number | null;
@@ -18,21 +19,20 @@ interface Props
     breadcrumbs: string[];
 }
 
-const CustomHeaderCell = ({ ...props }) => (
-    <HeaderCell children={undefined} {...props} className='cf-header-cell' />
-  );
+const CustomHeaderCell = ({ ...props }) => 
+    (
+        <HeaderCell children={undefined} {...props} className='cf-header-cell' />
+    );
   
 const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrumbs, breadcrumbs }) =>
 {
-    const [childItems, setItems] = useState<FolderDetail | null>(null);
-    const [sortType, setSortType] = useState<'asc' | 'desc' | undefined>();
-    const [sortColumn, setSortColumn] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    //const [activeFolderId, setActiveFolderId] = useState<number | null>(null);
+    const [childItems, setItems                 ] = useState<FolderDetail | null>(null);
+    const [sortType, setSortType                ] = useState<'asc' | 'desc' | undefined>();
+    const [sortColumn, setSortColumn            ] = useState<string | null>(null);
+    const [loading, setLoading                  ] = useState<boolean>(false);
     const [activeDataviewId, setActiveDataviewId] = useState<number | null>(null);
-
-    const [showModal, setShowModal] = useState(false);
-    const [currentReport, setCurrentReport] = useState<DataViewDTO | null>(null);
+    const [showModal, setShowModal              ] = useState(false);
+    const [currentReport, setCurrentReport      ] = useState<DataViewDTO | null>(null);
 
     const pathArray     : string[] = [];
     let newBreadcrumbs: any[] = [];
@@ -88,142 +88,145 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
             }
         };
 
-      const handleSave = async (report: DataViewDTO) => 
+    const handleSave = async (report: DataViewDTO) => 
         {
-            setItems(prev => {
-                if (prev) {
-                    return {
-                        ...prev,
-                        items: prev.dataviews.map(item => item.id === report.id ? report : item)
-                    };
-                }
-                return prev;
-            });
-            setShowModal(false);
+          setItems(prev => {
+              if (prev) {
+                  return {
+                      ...prev,
+                      items: prev.dataviews.map(item => item.id === report.id ? report : item)
+                  };
+              }
+              return prev;
+          });
+          setShowModal(false);
         };
     
 
     useEffect(() =>
     {
-        fetchData();
-        
+        fetchData();      
     }, [parentid]);
 
 
     const updateUI = () =>
-    {     
-        fetchData();
-    };
+        {     
+            fetchData();
+        };
+
     const handleSortColumn = (sortColumn: string, sortType: 'asc' | 'desc') =>
-    {
-        setLoading(true);
-        setTimeout(() =>
         {
-            setLoading(false);
-            setSortColumn(sortColumn);
-            setSortType(sortType);
-        }, 500);
-    };
+            setLoading(true);
+            setTimeout(() =>
+                {
+                    setLoading(false);
+                    setSortColumn(sortColumn);
+                    setSortType(sortType);
+                }, 500);
+        };
 
     const handleCellClick = async ({ rowData, dataKey }) =>
-    {
-        const rowDataId = rowData.id;
-        const newPath = path ? `${path}/${rowData.name}` : rowData.name;
-        newBreadcrumbs = [...breadcrumbs, rowData.name];
-        pathArray.push(path, newPath);
-        updateBreadcrumbs(newBreadcrumbs);
-        try
         {
-            if (rowData.type === 'folder')
+            const rowDataId = rowData.id;
+            const newPath = path ? `${path}/${rowData.name}` : rowData.name;
+            newBreadcrumbs = [...breadcrumbs, rowData.name];
+            pathArray.push(path, newPath);
+            updateBreadcrumbs(newBreadcrumbs);
+            try
             {
-                const hasChildren = await hasChildElements(rowDataId);
-                if (hasChildren)
+                if (rowData.type === 'folder')
                 {
-                    setSampleParentid(rowDataId, rowData.id);
-                    if (dataKey === 'name')
+                    const hasChildren = await hasChildElements(rowDataId);
+                    if (hasChildren)
                     {
-                        const tempParentId = findFolderByName(rowData.name, combinedArray);
-                        const res: FolderDetail = splitItemType(combinedArray);
-                        setItems(res);
-                        parentid = tempParentId;      
-                        updateUI();  
-                    }                                    
+                        setSampleParentid(rowDataId, rowData.id);
+                        if (dataKey === 'name')
+                        {
+                            const tempParentId = findFolderByName(rowData.name, combinedArray);
+                            const res: FolderDetail = splitItemType(combinedArray);
+                            setItems(res);
+                            parentid = tempParentId;      
+                            updateUI();  
+                        }                                    
+                    }
+                    else
+                    {
+                        console.log(`Объект с id ${rowDataId} не имеет дочерних элементов.`);
+                    }
                 }
-                else
+                if (rowData.type === 'dataview')
                 {
-                    console.log(`Объект с id ${rowDataId} не имеет дочерних элементов.`);
+                    if (dataKey === 'name')
+                    {                  
+                        const tempDataViewId = findDataviewByName(rowData.name, combinedArray);
+
+                        setActiveDataviewId(tempDataViewId);                                
+                    }
                 }
             }
-            if (rowData.type === 'dataview')
+            catch (error)
             {
-                if (dataKey === 'name')
-                {                  
-                    const tempDataViewId = findDataviewByName(rowData.name, combinedArray);
-                    
-                    setActiveDataviewId(tempDataViewId);                                
-                }
+               console.error("Ошибка при проверке дочерних элементов:", error);
             }
-        }
-        catch (error)
-        {
-           console.error("Ошибка при проверке дочерних элементов:", error);
-        }
-    };
+        };
 
     const setSampleParentid = (id: number, newParentid: number) =>
-    {
-        const index = combinedArray.findIndex(item => item.id === id);
-        if (index !== -1)
         {
-        combinedArray[index].parentid = newParentid;
-        }
-        else
-        {
-        console.log(`Объект с id ${id} не найден.`);
-         }
-    };
+            const index = combinedArray.findIndex(item => item.id === id);
+            if (index !== -1)
+            {
+                combinedArray[index].parentid = newParentid;
+            }
+            else
+            {
+                console.log(`Объект с id ${id} не найден.`);
+            }
+        };
     
     const findFolderByName = (name:string, combinedArray: any[]) =>
-    {
-        const folder = combinedArray
+        {
+            const folder = combinedArray
                                 .find(item => item.type === 'folder' && item.name === name);
-        return folder ? folder.id : null;
-    };
+            return folder ? folder.id : null;
+        };
 
     const findDataviewByName = (name: string, combinedArray: any[]) =>
-    {
-        const dataview = combinedArray
-                                .find(item => item.type === 'dataview' && item.name === name);
-        return dataview ? dataview.id : null;
-    };
+        {
+            const dataview = combinedArray
+                                    .find(item => item.type === 'dataview' && item.name === name);
+            return dataview ? dataview.id : null;
+        };
 
     const hasChildElements = async (parentid:number) =>
-    {
-        const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`);
-        if (response.ok)
         {
-            const data = await response.json();
-            return data.childFolders.length > 0 || data.dataviews.length > 0;
+            const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`);
+            if (response.ok)
+            {
+                const data = await response.json();
+                return data.childFolders.length > 0 || data.dataviews.length > 0;
+            }
+            return false;
+        };
+
+    if (loading) 
+        {
+            return <div>Loading...</div>;
         }
-        return false;
-    };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    };
-
-    if (activeDataviewId) {
-        return <QueryViewComponent
+    if (activeDataviewId) 
+        {
+            return <QueryViewComponent
                     dataviewid={activeDataviewId}
                     path={pathArray[1]}
                     updateBreadcrumbs={updateBreadcrumbs}
                     breadcrumbs={newBreadcrumbs}               
-            />;       
-    };   
+                    />;       
+        }  
 
-    if (childItems === null) {
-        return <div>No data available</div>;
-    };
+    if (childItems === null) 
+        {
+            return <div>No data available</div>;
+        }
 
     const combinedArray = childItems ? addItemType(childItems) : [];
 
@@ -232,20 +235,19 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     return (
         <div className="cf-folder-view-container">
             <Table
-                    data={data}
-                    bordered
-                    cellBordered
-                    sortColumn={sortColumn}
-                    sortType={sortType}
-                    onSortColumn={handleSortColumn}
-                    loading={loading}
-                    autoHeight                  
-                    autoFocus={true}
-                    autoCorrect="true"
-                     //@ts-ignore
-                    className='tableStyle'
-                    
-                >
+                data={data}
+                bordered
+                cellBordered
+                sortColumn={sortColumn}
+                sortType={sortType}
+                onSortColumn={handleSortColumn}
+                loading={loading}
+                autoHeight                  
+                autoFocus={true}
+                autoCorrect="true"
+                 //@ts-ignore
+                className='tableStyle'                  
+            >
                 {defaultColumns.map(column =>
                 (
                     <Column key={column.key} sortable resizable fullText flexGrow={1}>
@@ -282,7 +284,7 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
                 report={currentReport}
                 onSave={handleSave}
                 onClose={() => setShowModal(false)}
-      />
+            />
             )}           
         </div>
     );

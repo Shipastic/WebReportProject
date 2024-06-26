@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState                                      } from 'react';
 import { InputPicker, Input, Button, IconButton, Drawer, Form } from 'rsuite';
-import Filter from '@rsuite/icons/legacy/Filter';
+import Filter                                                   from '@rsuite/icons/legacy/Filter';
 import './Filter.css';
 
 
@@ -17,53 +17,42 @@ interface FilterProps
 
 const initialFilterState = [{ column: '', value: '' }];
 
-const FilterComponent: React.FC<FilterProps>= ({
-    headers,
-    handleApplyFilter,
-    resetFilter
-}) => {
-    const [filters, setFilters] = useState(initialFilterState);
-
+const FilterComponent: React.FC<FilterProps>= ({headers,handleApplyFilter,resetFilter}) => {
+    const [filters, setFilters      ] = useState(initialFilterState);
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     const openDrawer = () => setDrawerOpen(true);
     const closeDrawer = () => setDrawerOpen(false);
-
     const addFilter = () => {
         setFilters([...filters, { column: '', value: '' }]);
       };
-
-      const updateFilter = (index, key, value) => {
-        const newFilters = filters.slice();
-        newFilters[index][key] = value;
-        setFilters(newFilters);
-      };
-
+    const updateFilter = (index, key, value) => {
+      const newFilters = filters.slice();
+      newFilters[index][key] = value;
+      setFilters(newFilters);
+    };
     const applyFilterAndClose = () => {
         handleApplyFilter(filters);
         closeDrawer();
     };
-
     const resetFilterAndClose = () => {
         setFilters(initialFilterState);
         resetFilter();
         closeDrawer();
     };
-
-    const footerButtonStyleConfirm = {
-
+    const footerButtonStyleConfirm = 
+    {
         marginRight: 10,
         marginTop: 2
     };
-    const footerButtonStyleCancel = {
-
+    const footerButtonStyleCancel = 
+    {
         marginRight: 10,
         marginTop: 2
     };
 
     return (
         <div>
-            <IconButton icon={<Filter className='menu-icon-button' />} onClick={openDrawer} style={{ backgroundColor: '#4e6b8b', color: 'white' }} className='menu-icon-button'>
+            <IconButton icon={<Filter className='menu-icon-button' />} onClick={openDrawer}  className='menu-icon-button'>
                 Фильтр
             </IconButton>
             <Drawer open={drawerOpen} onClose={closeDrawer} placement="right" className="custom-drawer" style={{ width:400 }}>

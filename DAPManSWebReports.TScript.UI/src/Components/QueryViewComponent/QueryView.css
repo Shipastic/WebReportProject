@@ -16,13 +16,23 @@
 
   }
    .qv-title  {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-top: 2px;
     text-align: center;
-    color: #f1ebec;
     text-decoration: underline;
-    border: #116d74;
+
+    background-color: rgba(189,194,194, 0.9);
+    border: 2px solid #116d74;
+    border-top: 2px solid #3498db;
+
+    color: #185ea3;
+    margin-left: 105px;
+    margin-right: 10px;
+    padding-left: 15px;
+}
+.qv-date{
+  color: rgb(180, 19, 19);
 }
   .qv-header-cell .rs-table-cell-content{
     background-color: #4CAF50;
@@ -112,22 +122,4 @@
     border-color: #1f618d;
 
   }
-  .rs-loader {
-    border: 12px solid #f3f3f3; /* светлый серый цвет для внешнего круга */
-    border-top: 12px solid #3498db; /* цвет синего загрузчика */
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    animation: spin 2s linear infinite; /* непрерывная анимация */
-  }
-  .rs-loader-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5; /* светло-серый фон */
-  }
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  

@@ -81,10 +81,6 @@ const handleSave = async () => {
   }
 };
 
-    const handleSubmit = () => {
-        onSave(formValue);
-    };
-
     return (
         <Modal open={show} onClose={onClose}>
           <Modal.Header>
@@ -92,81 +88,81 @@ const handleSave = async () => {
           </Modal.Header>
           <Modal.Body>
             <Form fluid>
-            <Tabs defaultActiveKey="1" appearance="subtle" className='tabStyle'>
-            <Tabs.Tab eventKey="1" title="Общая информация" >
-            <Form.Group>
-              <Form.ControlLabel>ID Представления</Form.ControlLabel>
-              <Form.Control
-                name="id"
-                type="number"
-                value={formValue.id}
-                onChange={(value) => handleChange(value, 'id')}
-              />
-           </Form.Group>
-           <Form.Group>
-              <Form.ControlLabel>Наименование</Form.ControlLabel>
-              <Form.Control
-                name="name"
-                type="string"
-                value={formValue.name}
-                onChange={(value: string) => handleChange(value, 'name')}
-              />
-          </Form.Group>
-          <Form.Group>
-            <Form.ControlLabel>ИД источника данных</Form.ControlLabel>
-            <Form.Control
-              name="dataSourceID"
-              type="number"
-              value={formValue.dataSourceID}
-              onChange={(value) => handleChange(value, 'dataSourceID')}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.ControlLabel>Описание</Form.ControlLabel>
-            <Input
-              as="textarea"
-              name="dataviewNote"
-              value={formValue.dataviewNote}
-              onChange={(value) => handleChange(value, 'dataviewNote')}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.ControlLabel>Родительский каталог</Form.ControlLabel>
-            <Form.Control
-              name="folderid"
-              type="number"
-              value={formValue.folderid}
-              onChange={(value) => handleChange(value, 'folderid')}
-            />
-          </Form.Group>
-          </Tabs.Tab>
-          <Tabs.Tab eventKey="2" title="Информация о запросе">
-          <Form.Group>
-            <Form.ControlLabel style={{textAlign:'center'}}>Параметры даты:</Form.ControlLabel> 
-            <Form.Group >
-            <Form.ControlLabel>Дата начала</Form.ControlLabel> 
-            <Input
-              name="startDateField"
-              value={formValue.startDateField}
-              onChange={(value) => handleChange(value, 'startDateField')}
-            />
-            <Form.ControlLabel>Дата окончания</Form.ControlLabel> 
-            <Input
-              name="endDateField"
-              value={formValue.endDateField}
-              onChange={(value) => handleChange(value, 'endDateField')}
-            />
-            </Form.Group>
-            <Form.ControlLabel style={{textAlign:'center'}}>Текст запроса:</Form.ControlLabel>
-            <Input
-              as="textarea"
-              name="query"
-              value={formValue.query}
-              onChange={(value) => handleChange(value, 'query')}
-        />
-          </Form.Group>
-          </Tabs.Tab>
-          </Tabs>
+              <Tabs defaultActiveKey="1" appearance="subtle" className='tabStyle'>
+                <Tabs.Tab eventKey="1" title="Общая информация" >
+                  <Form.Group>
+                    <Form.ControlLabel>ID Представления</Form.ControlLabel>
+                    <Form.Control
+                      name="id"
+                      type="number"
+                      value={formValue.id}
+                      onChange={(value) => handleChange(value, 'id')}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.ControlLabel>Наименование</Form.ControlLabel>
+                    <Form.Control
+                      name="name"
+                      type="string"
+                      value={formValue.name}
+                      onChange={(value: string) => handleChange(value, 'name')}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.ControlLabel>ИД источника данных</Form.ControlLabel>
+                    <Form.Control
+                      name="dataSourceID"
+                      type="number"
+                      value={formValue.dataSourceID}
+                      onChange={(value) => handleChange(value, 'dataSourceID')}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.ControlLabel>Описание</Form.ControlLabel>
+                    <Input
+                      as="textarea"
+                      name="dataviewNote"
+                      value={formValue.dataviewNote}
+                      onChange={(value) => handleChange(value, 'dataviewNote')}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.ControlLabel>Родительский каталог</Form.ControlLabel>
+                    <Form.Control
+                      name="folderid"
+                      type="number"
+                      value={formValue.folderid}
+                      onChange={(value) => handleChange(value, 'folderid')}
+                    />
+                  </Form.Group>
+                </Tabs.Tab>
+                <Tabs.Tab eventKey="2" title="Информация о запросе">
+                  <Form.Group>
+                    <Form.ControlLabel style={{textAlign:'center'}}>Названия параметров для выбора даты:</Form.ControlLabel> 
+                    <Form.Group >
+                    <Form.ControlLabel>Дата начала</Form.ControlLabel> 
+                      <Input
+                        name="startDateField"
+                        value={formValue.startDateField}
+                        onChange={(value) => handleChange(value, 'startDateField')}
+                      />
+                    <Form.ControlLabel>Дата окончания</Form.ControlLabel> 
+                    <Input
+                      name="endDateField"
+                      value={formValue.endDateField}
+                      onChange={(value) => handleChange(value, 'endDateField')}
+                    />
+                  </Form.Group>
+                  <Form.ControlLabel style={{textAlign:'center'}}>Текст запроса:</Form.ControlLabel>
+                  <Input
+                    as="textarea"
+                    name="query"
+                    value={formValue.query}
+                    onChange={(value) => handleChange(value, 'query')}
+                  />
+                  </Form.Group>
+                </Tabs.Tab>
+              </Tabs>
             </Form>
           </Modal.Body>
           <Modal.Footer>

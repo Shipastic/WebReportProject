@@ -76,11 +76,11 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                             DataSourceId   = reader.GetInt32(0),
                             FolderId       = reader.GetInt32(1),
                             id             = reader.GetInt32(2),
-                            Name           = reader.GetString(3),
-                            Query          = reader.GetString(4),
-                            StartDateField = reader.IsDBNull(5) ? null : reader.GetString(5),
-                            StopDateField  = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            DataViewNote   = reader.IsDBNull(7) ? null : reader.GetString(7)
+                            Name           = reader.IsDBNull(3) || string.IsNullOrWhiteSpace(reader.GetString(3)) ? null : reader.GetString(3),
+                            Query          = reader.IsDBNull(4) || string.IsNullOrWhiteSpace(reader.GetString(4)) ? null : reader.GetString(4),
+                            StartDateField = reader.IsDBNull(5) || string.IsNullOrWhiteSpace(reader.GetString(5)) ? null : reader.GetString(5),
+                            StopDateField  = reader.IsDBNull(6) || string.IsNullOrWhiteSpace(reader.GetString(6)) ? null : reader.GetString(6),
+                            DataViewNote   = reader.IsDBNull(7) || string.IsNullOrWhiteSpace(reader.GetString(7)) ? null : reader.GetString(7)
                         });
                     }
                 }
@@ -107,8 +107,8 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                             DataSourceId   = reader.GetInt32(0),
                             FolderId       = reader.GetInt32(1),
                             id             = reader.GetInt32(2),
-                            Name           = reader.GetString(3),
-                            Query          = reader.GetString(4),
+                            Name           = reader.IsDBNull(3) ? null : reader.GetString(3),
+                            Query          = reader.IsDBNull(4) ? null : reader.GetString(4),
                             StartDateField = reader.IsDBNull(5) ? null : reader.GetString(5),
                             StopDateField  = reader.IsDBNull(6) ? null : reader.GetString(6),
                             DataViewNote   = reader.IsDBNull(7) ? null : reader.GetString(7)
@@ -133,14 +133,14 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                     {
                         items.Add(new DataView()
                         {
-                            DataSourceId = reader.GetInt32(0),
-                            FolderId = reader.GetInt32(1),
-                            id = reader.GetInt32(2),
-                            Name = reader.GetString(3),
-                            Query = reader.GetString(4),
-                            StartDateField = reader.IsDBNull(5) ? null : reader.GetString(5),
-                            StopDateField = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            DataViewNote = reader.IsDBNull(7) ? null : reader.GetString(7)
+                            DataSourceId   = reader.GetInt32(0),
+                            FolderId       = reader.GetInt32(1),
+                            id             = reader.GetInt32(2),
+                            Name           = reader.IsDBNull(3) || string.IsNullOrWhiteSpace(reader.GetString(3)) ? null : reader.GetString(3),
+                            Query          = reader.IsDBNull(4) || string.IsNullOrWhiteSpace(reader.GetString(4)) ? null : reader.GetString(4),
+                            StartDateField = reader.IsDBNull(5) || string.IsNullOrWhiteSpace(reader.GetString(5)) ? null : reader.GetString(5),
+                            StopDateField  = reader.IsDBNull(6) || string.IsNullOrWhiteSpace(reader.GetString(6)) ? null : reader.GetString(6),
+                            DataViewNote   = reader.IsDBNull(7) || string.IsNullOrWhiteSpace(reader.GetString(7)) ? null : reader.GetString(7)
                         });
                     }
                 }
@@ -166,11 +166,13 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                         items.Add(new DataView
                         {
                             id           = reader.GetInt32(0),
-                            Name         = reader.GetString(1),
-                            Query        = reader.GetString(2),
                             DataSourceId = reader.GetInt32(3),
-                            DataViewNote = reader.GetString(4),
-                            FolderId     = reader.GetInt32(5)
+                            FolderId     = reader.GetInt32(5),
+
+                            Name         = reader.IsDBNull(1) || string.IsNullOrWhiteSpace(reader.GetString(1)) ? null : reader.GetString(1),
+                            Query        = reader.IsDBNull(2) || string.IsNullOrWhiteSpace(reader.GetString(2)) ? null : reader.GetString(2),                       
+                            DataViewNote = reader.IsDBNull(4) || string.IsNullOrWhiteSpace(reader.GetString(4)) ? null : reader.GetString(4),
+                            
                         });
                     }
                 }
@@ -193,14 +195,14 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                     {
                         items.Add(new DataView
                         {
-                            DataSourceId = reader.GetInt32(0),
-                            FolderId = reader.GetInt32(1),
-                            id = reader.GetInt32(2),
-                            Name = reader.GetString(3),
-                            Query = reader.GetString(4),
-                            StartDateField = reader.IsDBNull(5) ? null : reader.GetString(5),
-                            StopDateField = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            DataViewNote = reader.IsDBNull(7) ? null : reader.GetString(7)
+                            DataSourceId   = reader.GetInt32(0),
+                            FolderId       = reader.GetInt32(1),
+                            id             = reader.GetInt32(2),
+                            Name           = reader.IsDBNull(3) || string.IsNullOrWhiteSpace(reader.GetString(3)) ? null : reader.GetString(3),
+                            Query          = reader.IsDBNull(4) || string.IsNullOrWhiteSpace(reader.GetString(4)) ? null : reader.GetString(4),
+                            StartDateField = reader.IsDBNull(5) || string.IsNullOrWhiteSpace(reader.GetString(5)) ? null : reader.GetString(5),
+                            StopDateField  = reader.IsDBNull(6) || string.IsNullOrWhiteSpace(reader.GetString(6)) ? null : reader.GetString(6),
+                            DataViewNote   = reader.IsDBNull(7) || string.IsNullOrWhiteSpace(reader.GetString(7)) ? null : reader.GetString(7)
                         });
                     }
                 }

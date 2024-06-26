@@ -26,9 +26,10 @@
     background: rgba(55, 58, 71, 0.7);
 }
 .cf-cell-table{
-    padding:5px 0px 0px 5px;
+    padding:5px 0px 0px 0px;
     text-align:left;
     background: rgba(55, 58, 71, 0.7);
+    color: rgb(67, 236, 52);
 }
 .cf-clickable-cell {
     padding:5px 0px 0px 5px;
@@ -40,12 +41,8 @@
     color: #116d74;
     cursor: pointer;
 }
-.cf-cell{
-    padding:5px 0px 0px 5px;
-    text-align:left;
-    color: rgb(67, 236, 52);
-}
-.cf-cell:hover{
+
+.cf-cell-table:hover{
     padding:5px 0px 0px 5px;
     text-align:left;
     color: black;

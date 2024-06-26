@@ -19,17 +19,21 @@
     }
 /**********************ICON_BUTTON_FILTER************************************/
 .menu-icon-button {
-    color: #6747dd;
-    width: 180px;
-    background-color: '#263444'
-  }    
-  .menu-icon-button:hover {
-    background-color: #28a745 !important; /* Зеленый цвет на фоне при наведении */
-    color: white !important; /* Белый текст при наведении */
-  }
-  .menu-icon-button:hover .rs-icon {
-    fill: white !important; /* Белая иконка при наведении */
-  }
+  width: 180px;     
+  background-color:rgba(100,114,129, 0.6);
+  color: white ;
+}    
+.menu-icon-button:hover {
+  background-color: #28a745;
+}
+.text-icon-button{
+  color: aliceblue;
+  background-color:rgba(100,114,129, 0.8);
+}
+.text-icon-button:hover {
+  background-color: #28a745;
+  color:azure;
+}
   
   .scrollable-dropdown-menu {
     max-height: 200px;

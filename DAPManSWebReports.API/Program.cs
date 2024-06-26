@@ -1,10 +1,25 @@
 using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.DI.Registration;
+using DAPManSWebReports.Domain.Entities;
+using DAPManSWebReports.Domain.Interfaces;
+using DAPManSWebReports.Domain.Services;
+
 using LoggingLibrary.Service;
+
+using Microsoft.Extensions.Options;
 
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var configuration = builder.Configuration;
+builder.Services.AddTransient<IEmailService, EmailService>(provider =>
+{
+    var smtpSettings = provider.GetService<IOptions<SmtpSettings>>();
+    var receiverEmail = configuration.GetValue<string>("ReceiverEmail");
+    return new EmailService(smtpSettings, receiverEmail);
+});
+
 builder.Logging
            .ClearProviders()
            .AddConsole()
@@ -33,7 +48,7 @@ builder.Services.AddCors(options =>
                             .AllowAnyMethod()
                             .AllowAnyHeader());
 });
-
+builder.Services.Configure<SmtpSettings>(configuration.GetSection("SmtpSettings"));
 builder.Services.AddMemoryCache();
 
 builder.Services.AddControllers().AddJsonOptions(options =>

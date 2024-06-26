@@ -19,7 +19,7 @@
     }
     .menu-icon-button {
         width: 180px;     
-        background-color:rgba(100,114,129, 0.7);
+        background-color:rgba(100,114,129, 0.6);
         color: white ;
       }    
       .menu-icon-button:hover {
@@ -27,7 +27,7 @@
       }
       .text-icon-button{
         color: aliceblue;
-        background-color:rgba(100,114,129, 0.5);
+        background-color:rgba(100,114,129, 0.8);
       }
       .text-icon-button:hover {
         background-color: #28a745;

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { IconButton, ButtonToolbar, SelectPicker, InputNumber, Button, Form, Drawer, DateRangePicker, Message, FlexboxGrid } from 'rsuite';
 import SettingIcon from '@rsuite/icons/Setting';
-import './QueryParams.css';
 import CalendarIcon from '@rsuite/icons/Calendar';
 import formatDateForOracle from '../../Utils/formatDateForOracle';
+import './QueryParams.css';
 
-interface ViewParams {
+interface ViewParams 
+{
     startDate: string;
     endDate: string;
     presetDate: string;
@@ -13,7 +14,8 @@ interface ViewParams {
     sortOrder: string;
     sortColumnNumber: number;
 }
-interface Props {
+interface Props 
+{
     queryparams: ViewParams;
     onParamsChange: (params: ViewParams) => void;
     setLoadingTable: (loading: boolean) => void;
@@ -50,7 +52,7 @@ const getPresetDates = (preset: string) => {
         case 'month':
             startDate = new Date(today.getFullYear(), today.getMonth(), 1);
             startDate.setHours(0, 0, 0, 0);
-            endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+            endDate   = new Date(today.getFullYear(), today.getMonth() + 1, 0);
             endDate.setHours(23, 59, 59, 999);
             break;
         default:
@@ -59,7 +61,7 @@ const getPresetDates = (preset: string) => {
 
     return {
         startDate: formatDateForOracle(startDate.toISOString()),
-        endDate: formatDateForOracle(endDate.toISOString())
+        endDate:   formatDateForOracle(endDate.toISOString())
     };
 };
 

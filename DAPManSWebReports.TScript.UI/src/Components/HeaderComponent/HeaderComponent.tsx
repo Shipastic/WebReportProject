@@ -1,16 +1,19 @@
 import React from 'react';
 import { Navbar, Nav, Dropdown, Header} from 'rsuite';
-import { Link } from 'react-router-dom';
-import CharacterAuthorizeIcon from '@rsuite/icons/CharacterAuthorize';
+import { Link                         } from 'react-router-dom';
+import UserChangeIcon                   from '@rsuite/icons/UserChange';
+import {useUser                       } from '../UserContext/UserContext';
 import './Header.css';
 
-interface HeaderProps {
+interface HeaderProps 
+{
   className: string;
   props: any;
   activeKey: any;
   handlePageClick: (eventKey: any) => void;
   handleDropdownSelect: (eventKey: any) => void;
   handleItemClick: (itemId: any) => void;
+  handleItemClickName: (itemName: any) => void;
   updateBreadcrumbs: (breadcrumbs: string[]) => void;
   handleDataViewClick: (dataViewId: any) => void;
   onSelect: (eventKey: any) => void;
@@ -25,12 +28,14 @@ const HeaderComponent: React.FC<HeaderProps> = ({
   handlePageClick,
   handleDropdownSelect,
   handleItemClick,
+  handleItemClickName,
   updateBreadcrumbs,
   handleDataViewClick,
   onSelect,
   items,
   logo
 }) => {
+  const { user } = useUser();
   return (
     <Header className={className}>
       <Navbar {...props} appearance="subtle">
@@ -72,6 +77,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
                 onSelect={() =>
                   {
                     handleItemClick(childFolder.id);
+                    handleItemClickName(childFolder.name);
                     updateBreadcrumbs([childFolder.name]);
                   }
                 }
@@ -98,10 +104,16 @@ const HeaderComponent: React.FC<HeaderProps> = ({
           <Nav.Item
             onClick={handlePageClick}
             className="custom-nav-item"
-            icon={<CharacterAuthorizeIcon color="#1E90FF" />}
           >
             <Link to="/login" className="nav-link">
-              <span style={{ padding: '0 0 0 5px' }}>Вход</span>
+            {user ? (
+                        <>
+                            <UserChangeIcon style={{ marginRight: '5px' }} />
+                            {user}
+                        </>
+                    ) : (
+                        <span style={{ padding: '0 0 0 5px' }}>Вход</span>
+                    )}
             </Link>
           </Nav.Item>
         </Nav>

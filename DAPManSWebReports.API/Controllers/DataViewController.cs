@@ -4,10 +4,6 @@ using DAPManSWebReports.Domain.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
 
-using System.Security.Cryptography.Xml;
-using System.Text.Json;
-
-
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DAPManSWebReports.API.Controllers
@@ -84,42 +80,22 @@ namespace DAPManSWebReports.API.Controllers
 
         // PUT api/<DataViewController>/5
         [HttpPut("{dataviewid}")]
-        public async Task<IActionResult> Put(int dataviewid, [FromBody] JsonElement dataView)
+        public async Task<IActionResult> Put(int dataviewid, [FromBody] DataViewModel dataView)
         {
-            if (dataView.ValueKind == JsonValueKind.Undefined)
-            {
-                _logger.LogError($"{DateTime.Now}| \tInvalid JSON.");
-                return BadRequest("Invalid JSON.");
-            }
-
-            string jsonString = dataView.GetRawText();
-
-            if (!JsonValidator.IsValidJson(jsonString, out string validationError))
-            {
-                _logger.LogError($"{DateTime.Now}| \t{validationError}");
-                return BadRequest(validationError);
-            }
-
-            if (!JsonValidator.TryDeserialize(jsonString, out DataViewModel entity, out string deserializationError))
-            {
-                _logger.LogError($"{DateTime.Now}| \t{deserializationError}");
-                return BadRequest(deserializationError);
-            }
-
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if ( dataviewid != entity.id)
+            if ( dataviewid != dataView.id)
             {
-                _logger.LogError($"{DateTime.Now}| \tData View {entity.Name} not found!");
-                return BadRequest($"dataView: {entity.Name}  mismatch.");
+                _logger.LogError($"{DateTime.Now}| \tData View {dataView.Name} not found!");
+                return BadRequest($"dataView: {dataView.Name}  mismatch.");
             }
 
-            var updated = await _dataviewDtoService.UpdateDataAsync(entity);
+            var updated = await _dataviewDtoService.UpdateDataAsync(dataView);
             if (!updated)
             {
-                _logger.LogError($"{DateTime.Now}| \tData View {entity.Name} not found!");
+                _logger.LogError($"{DateTime.Now}| \tData View {dataView.Name} not found!");
                 return StatusCode(500, "A problem occurred while handling your request.");
             }
             return Ok(updated);

@@ -3,6 +3,10 @@ using DAPManSWebReports.Domain.Entities;
 using DAPManSWebReports.Domain.Interfaces;
 using DAPManSWebReports.Domain.Services;
 
+using Microsoft.Extensions.Options;
+
+using System.Configuration;
+
 namespace DAPManSWebReports.API.Services.DI.Registration
 {
     public class DomainRepoServiceRegistration : IServiceRegistration
@@ -21,7 +25,7 @@ namespace DAPManSWebReports.API.Services.DI.Registration
 
             services.AddScoped<IDataViewService<DataViewModel>, DataViewModelService>();
 
-            services.AddScoped<IExcelService, ExcelService> ();
+            services.AddScoped<IExcelService, ExcelService> ();          
         }
     }
 }

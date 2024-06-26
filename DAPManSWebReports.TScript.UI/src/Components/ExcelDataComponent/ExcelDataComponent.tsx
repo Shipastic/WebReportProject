@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { Button } from 'rsuite';
-import config from '../../Utils/config';
+import { Button          } from 'rsuite';
+import config              from '../../Utils/config';
 
-interface Props {
+interface Props 
+{
     dataviewid: number | null;  
     queryparams: ViewParams;
     title: string;
 }
-interface ViewParams {
+
+interface ViewParams 
+{
     startDate: string;
     endDate: string;
     presetDate: string;
@@ -15,7 +18,6 @@ interface ViewParams {
     sortOrder: string;
     sortColumnNumber: number;
 }
-
 
 const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title }) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -65,11 +67,15 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
             setIsLoading(false);
         }
     };
-    const handleGenerateExcelFile = () => {
-        if (dataviewid !== null) {
-            fetchdata(dataviewid, queryparams);
-        }
-    };
+
+    const handleGenerateExcelFile = () => 
+        {
+            if (dataviewid !== null) 
+                {
+                    fetchdata(dataviewid, queryparams);
+                }
+        };
+        
     return (
         <div style={{ marginLeft: 50, textAlign: 'center' }} >
             {error && <div style={{ color: 'red' }}>{error}</div>}

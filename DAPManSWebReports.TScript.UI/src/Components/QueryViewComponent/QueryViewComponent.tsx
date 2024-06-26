@@ -1,10 +1,10 @@
 ﻿import React, { useEffect, useState, useRef } from 'react';
-import { QueryViewDTO } from '../../Models/QueryViewDTO';
 import { Table, Pagination, Button, Row, Col, Grid, Stack, Message, Loader, CheckPicker, Checkbox} from 'rsuite';
-import QueryparamsComponent from '../QueryParamsComponent/QueryParamsComponent';
-import FilterComponent from '../FilterComponent/FilterComponent';
-import ExcelDataComponent from '../ExcelDataComponent/ExcelDataComponent';
-import config from '../../Utils/config';
+import { QueryViewDTO                       } from '../../Models/QueryViewDTO';
+import QueryparamsComponent                   from '../QueryParamsComponent/QueryParamsComponent';
+import FilterComponent                        from '../FilterComponent/FilterComponent';
+import ExcelDataComponent                     from '../ExcelDataComponent/ExcelDataComponent';
+import config                                 from '../../Utils/config';
 import './QueryView.css';
 import 'rsuite/dist/rsuite.min.css';
 
@@ -60,7 +60,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const [maxButtons, setMaxButtons          ] = useState(5);
     const [totalCount, setTotalCount          ] = useState(0);
     const [boundaryLinks, setBoundaryLinks    ] = useState(true);
-
     const [queryparamsComponentCalls, setQueryparamsComponentCalls] = useState(0);
 
     const picker = useRef<CheckPickerInstance>(null);
@@ -72,30 +71,37 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         }
     }, [dataviewid]);
     
-    useEffect(() => {
-       if(queryparamsComponentCalls > 0){
-        setLoading(true);
-        fetchdata(dataviewid, offset, limit, viewParams);
-       }
-}, [offset, limit, sortColumn, sortType, dataviewid, viewParams]);
+    useEffect(() => 
+        {
+            if(queryparamsComponentCalls > 0)
+                {
+                    setLoading(true);
+                    fetchdata(dataviewid, offset, limit, viewParams);
+                }
+        }, [offset, limit, sortColumn, sortType, dataviewid, viewParams]);
 
     const checkColumnPresence = async (dataviewid: number | null) => {
-        try {
+        try 
+        {
             const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`);
             const result = await response.json();
             setNeedsDateParams(result.startDateField !== '' && result.endDateField !== '');
         }
-        catch (error: any) {
+        catch (error: any) 
+        {
             setError(error.message);
         }
-        finally {
+        finally
+        {
             setLoading(false);
         }
     };
+
     const fetchdata = async (dataviewid: number | null, offset: number, limit: number, viewParams: ViewParams) =>
     {
         if (dataviewid === null) return;
-        try {
+        try 
+        {
             const params = new URLSearchParams({
                 limit: limit.toString(),
                 offset: offset.toString(),
@@ -122,10 +128,12 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             setFilteredData(result.pagedItems);
             setTitleView(result.title);
         }
-        catch (error: any) {
+        catch (error: any) 
+        {
             setError(error.message);
         }
-        finally {
+        finally 
+        {
             setLoading(false);
             setLoadingTable(false);
         }
@@ -139,30 +147,23 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         fetchdata(dataviewid, offset, limit, params);
 
     };
-
     const getData = () => {
         if (!queryviews || !filteredData) return [];
         return queryviews.result;
     };
-
     const data = getData();
-
     const headers = data.length > 0 ? Object.keys(data[0]) : [];
-
     const handleChangeLimit = (limit) => {
         setPage(offset );
         setLimit(limit);
     };
-
     const handleSortColumn = (sortColumn: string, sortType: 'asc' | 'desc') => {
         setSortColumn(sortColumn);
         setSortType(sortType);
 
     };
-  
     const handleApplyFilter = (filters) => {
-        let filtered = queryviews?.result;
-    
+        let filtered = queryviews?.result;  
         filters.forEach(filter => {
             if (filter.column && filter.value) {
                 filtered = filtered?.filter(item => {
@@ -173,8 +174,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                     return value !== undefined && value.toString().toLowerCase().includes(filter.value.toLowerCase());
                 });
             }
-        });
-    
+        }); 
         setFilteredData(filtered);
         setIsFilterApplied(true);
     };
@@ -182,7 +182,6 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         setFilteredData(queryviews?.pagedItems || []);
         setIsFilterApplied(false);
     };
-
     const toggleSelectAll = (checked: boolean) => {
         if (checked) {
             setColumnKeys(headers);
@@ -192,9 +191,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
             setIsAllSelected(false);
         }
     };
-
     const availableColumns = headers.map(header => ({ label: header, value: header }));
-
     const footerButtonStyle = {
         marginRight: 10,
         marginTop: 2,
@@ -229,117 +226,119 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                         </Row>
                         {loadingTable === true ?
                             (
-                                <div className='rs-loader-wrapper'>
-                                    <Loader center content="Загрузка отчета..." vertical size='lg' className='rs-loader'/>
+                                <div >
+                                    <Loader center content="Загрузка отчета..." vertical size='lg' style={{color:'white', borderRadius:'3px'}} inverse/>
                                 </div>
                             ) :(<div></div>)
                         }
                     </>
                     ) : (
                         <Row>
-                            <Col xs={24}>
+                            <Col xs={24} style={{textAlign:'center'}}>
                                 <h2 className="qv-title">
                                         {queryviews?.title}
-                                        {viewParams.startDate && viewParams.endDate && ` с ${viewParams.startDate} по ${viewParams.endDate}`}
-                                    </h2>
-                                        <div className='qv-control-panel'>
-                                            <QueryparamsComponent
-                                                queryparams={viewParams}
-                                                onParamsChange={handleParamsChange}
-                                                setLoadingTable={setLoadingTable}
-                                                needsDateParams={needsDateParams} 
-                                                queryTitle={titleView}
-                                                fetchdata={fetchdata}  
-                                                dataviewid={dataviewid}          
-                                                offset={offset}              
-                                                limit={limit}                                          
-                                            /> 
-                                            <FilterComponent
-                                                headers={headers}
-                                                selectedColumn={selectedColumn}
-                                                setSelectedColumn={setSelectedColumn}
-                                                filterValue={filterValue}
-                                                setFilterValue={setFilterValue}
-                                                handleApplyFilter={handleApplyFilter}
-                                                resetFilter={resetFilter}
-                                            />
-                                            <div>
-                                                <label style={{marginLeft:'20px', fontSize:'16px', color:'white'} }>Выбор отображаемых столбцов</label>
-                                                <CheckPicker
-                                                    value={columnKeys}
-                                                    onChange={setColumnKeys}
-                                                    block
-                                                    style={{ marginBottom: 20, width: 300 }}
-                                                    menuStyle={{ width: 300 }}
-                                                    placeholder="Выбор столбцлв для вывода в таблице"
-                                                    cleanable={false}
-                                                    data={availableColumns}
-                                                    searchable={true}
-                                                    ref={picker}
-                                                    renderExtraFooter={() => (
-                                                        <div style={{ marginBottom: 20 }}>
-                                                            <Checkbox onChange={(value, checked) => toggleSelectAll(checked)}>
-                                                                Select All
-                                                            </Checkbox>
-                                                            <Button
-                                                                style={footerButtonStyle}
-                                                                appearance="primary"
-                                                                size="sm"
-                                                                onClick={() => {
-                                                                    if (picker.current) {
-                                                                        picker.current.close();
-                                                                    }
-                                                                }}
-                                                            >
-                                                                Ok
-                                                            </Button>
-                                                        </div>
-                                                    )}
-                                                />
+                                        <span className='qv-date'>
+                                            {viewParams.startDate && viewParams.endDate && ` с ${viewParams.startDate} по ${viewParams.endDate}`}
+                                        </span>
+                                </h2>
+                                <div className='qv-control-panel'>
+                                    <QueryparamsComponent
+                                        queryparams={viewParams}
+                                        onParamsChange={handleParamsChange}
+                                        setLoadingTable={setLoadingTable}
+                                        needsDateParams={needsDateParams} 
+                                        queryTitle={titleView}
+                                        fetchdata={fetchdata}  
+                                        dataviewid={dataviewid}          
+                                        offset={offset}              
+                                        limit={limit}                                          
+                                    /> 
+                                    <FilterComponent
+                                        headers={headers}
+                                        selectedColumn={selectedColumn}
+                                        setSelectedColumn={setSelectedColumn}
+                                        filterValue={filterValue}
+                                        setFilterValue={setFilterValue}
+                                        handleApplyFilter={handleApplyFilter}
+                                        resetFilter={resetFilter}
+                                    />
+                                    <div>
+                                        <label style={{marginLeft:'20px', fontSize:'16px', color:'white'} }>Выбор отображаемых столбцов</label>
+                                        <CheckPicker
+                                            value={columnKeys}
+                                            onChange={setColumnKeys}
+                                            block
+                                            style={{ marginBottom: 20, width: 300 }}
+                                            menuStyle={{ width: 300 }}
+                                            placeholder="Выбор столбцлв для вывода в таблице"
+                                            cleanable={false}
+                                            data={availableColumns}
+                                            searchable={true}
+                                            ref={picker}
+                                            renderExtraFooter={() => (
+                                                <div style={{ marginBottom: 20 }}>
+                                                    <Checkbox onChange={(value, checked) => toggleSelectAll(checked)}>
+                                                        Select All
+                                                    </Checkbox>
+                                                    <Button
+                                                        style={footerButtonStyle}
+                                                        appearance="primary"
+                                                        size="sm"
+                                                        onClick={() => {
+                                                            if (picker.current) {
+                                                                picker.current.close();
+                                                            }
+                                                        }}
+                                                    >
+                                                        Ok
+                                                    </Button>
+                                                </div>
+                                            )}
+                                        />
+                                    </div>
+                                    <ExcelDataComponent
+                                        dataviewid={dataviewid}
+                                        queryparams={viewParams}
+                                        title={titleView }
+                                    />
+                                </div>
+                                {isFilterApplied && (
+                                    <div >
+                                        <span className='qv-filter-count'>Найдено совпадений: {filteredData.length}</span>
+                                        <Button onClick={resetFilter} className='custom-button'>Сбросить фильтр</Button>
+                                    </div>
+                                )}
+                                {data && data.length > 0 ?
+                                    (
+                                        <Table
+                                            height={500}
+                                            data={filteredData}
+                                            sortColumn={sortColumn}
+                                            sortType={sortType}
+                                            onSortColumn={handleSortColumn}
+                                            loading={loading}
+                                            autoHeight
+                                            autoFocus={true}
+                                            autoCorrect="true"
+                                            className='qv-container'
+                                        >
+                                            {headers
+                                                .filter(header => columnKeys.includes(header))
+                                                .map((header, index) => (
+                                                    <Column key={index} width={200} align="center" resizable sortable>
+                                                        <CustomHeaderCell>{header}</CustomHeaderCell>
+                                                        <Cell dataKey={header} className='qv-cell-table'/>
+                                                    </Column>
+                                                ))}
+                                        </Table>
+                                    ) : (
+                                        <Row>
+                                            <div className="loading-container">
+                                                <p>Нет данных для отображения</p>
                                             </div>
-                                            <ExcelDataComponent
-                                                dataviewid={dataviewid}
-                                                queryparams={viewParams}
-                                                title={titleView }
-                                            />
-                                        </div>
-                                        {isFilterApplied && (
-                                            <div >
-                                                <span className='qv-filter-count'>Найдено совпадений: {filteredData.length}</span>
-                                                <Button onClick={resetFilter} className='custom-button'>Сбросить фильтр</Button>
-                                            </div>
-                                        )}
-                                        {data && data.length > 0 ?
-                                            (
-                                                <Table
-                                                    height={500}
-                                                    data={filteredData}
-                                                    sortColumn={sortColumn}
-                                                    sortType={sortType}
-                                                    onSortColumn={handleSortColumn}
-                                                    loading={loading}
-                                                    autoHeight
-                                                    autoFocus={true}
-                                                    autoCorrect="true"
-                                                    className='qv-container'
-                                                >
-                                                    {headers
-                                                        .filter(header => columnKeys.includes(header))
-                                                        .map((header, index) => (
-                                                            <Column key={index} width={200} align="center" resizable sortable>
-                                                                <CustomHeaderCell>{header}</CustomHeaderCell>
-                                                                <Cell dataKey={header} className='qv-cell-table'/>
-                                                            </Column>
-                                                        ))}
-                                                </Table>
-                                            ) : (
-                                                <Row>
-                                                    <div className="loading-container">
-                                                        <p>Нет данных для отображения</p>
-                                                    </div>
-                                                </Row>
-                                            )
-                                        }
+                                        </Row>
+                                    )
+                                }
                                         <Pagination
                                             prev={prev}
                                             next={next}
