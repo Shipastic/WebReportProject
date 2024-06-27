@@ -1,9 +1,10 @@
 import React from 'react';
-import { Navbar, Nav, Dropdown, Header} from 'rsuite';
+import { Navbar, Nav, Dropdown, Header, FlexboxGrid} from 'rsuite';
 import { Link                         } from 'react-router-dom';
 import UserChangeIcon                   from '@rsuite/icons/UserChange';
 import {useUser                       } from '../UserContext/UserContext';
 import './Header.css';
+import BurgerMenuComponent from '../BurgerMenuComponent/BurgerMenuComponent';
 
 interface HeaderProps 
 {
@@ -39,7 +40,9 @@ const HeaderComponent: React.FC<HeaderProps> = ({
   return (
     <Header className={className}>
       <Navbar {...props} appearance="subtle">
-        <Navbar.Brand className="navbar-brand logo" href="https://omk-job.ru/">
+      <div style={{ display: 'flex', alignItems: 'center'}}>
+      <BurgerMenuComponent/>
+        <Navbar.Brand  href="https://omk-job.ru/" style={{marginBottom:'15px'}}>
           <img
             src={logo}
             alt="logo"
@@ -67,7 +70,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
             onSelect={handleDropdownSelect}
             className="custom-dropdown-title"
           >
-            <Dropdown.Item className="custom-dropdown-item-static">
+            <Dropdown.Item className="custom-dropdown-item-static" style={{backgroundColor:"black", color:"white"}}>
               Название Цеха:
             </Dropdown.Item>
             {items?.childFolders.map((childFolder: any) => (
@@ -86,8 +89,8 @@ const HeaderComponent: React.FC<HeaderProps> = ({
                 {childFolder.name}
               </Dropdown.Item>
             ))}
-            <Dropdown.Item className="custom-dropdown-item-static" style={{backgroundColor:"yellow", color:"black"}}>
-              Отчеты:
+            <Dropdown.Item className="custom-dropdown-item-static" style={{backgroundColor:"black", color:"white"}}>
+              Избранные Отчеты:
             </Dropdown.Item>
             {items?.dataviews.map((dataview: any) => (
               <Dropdown.Item
@@ -112,11 +115,12 @@ const HeaderComponent: React.FC<HeaderProps> = ({
                             {user}
                         </>
                     ) : (
-                        <span style={{ padding: '0 0 0 5px' }}>Вход</span>
+                        <span style={{ }}>Вход</span>
                     )}
             </Link>
           </Nav.Item>
         </Nav>
+        </div>
       </Navbar>
     </Header>
   );

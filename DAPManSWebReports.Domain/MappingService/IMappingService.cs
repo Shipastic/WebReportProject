@@ -1,4 +1,4 @@
-﻿namespace DAPManSWebReports.Domain.Interfaces
+﻿namespace DAPManSWebReports.Domain.MappingService
 {
     public interface IMappingService<T> where T : class
     {

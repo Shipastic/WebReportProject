@@ -1,7 +1,5 @@
 ﻿using DAPManSWebReports.API.Services.QueryParamService;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-
+using DAPManSWebReports.Domain.QueryService;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace DAPManSWebReports.API.Services.Caching

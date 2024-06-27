@@ -1,56 +1,55 @@
 .custom-nav-item{
     background-color:#116980 ;
     height: auto;
+    font-size: 20px;
 }
 .custom-nav-item .a {
     text-decoration: none;
 }
 .custom-nav-item a:hover {
   text-decoration: none;
+  
 }
-.custom-nav-item a .navbar-item:hover{
+
+.custom-header .custom-nav-item a .navbar-item:active{
 background-color:#1dc4ee ;
 }
 .custom-header .nav-link {
     color: none;
     text-decoration: none;
+    color: #c2c280e5 ;
+    margin-right: 10px;
 }
 .imgHeader {
-    padding: 0px 0px 15px 5px; 
-    height: 30px;
+    height: 40px;
 }
  /*****************************DROPDOWN_ITEM******************************/
  .custom-dropdown-title {
-    color: #1dc4ee; /* Белый цвет для заголовка */
+    color: #1dc4ee; 
+    font-size: 20px;
     
 }
 .custom-dropdown-title .rs-dropdown-menu{
-    background-color: rgba(14, 17, 22, 0.4);
+    background-color: rgba(49, 50, 51, 0.8);
   }
  .custom-header .custom-dropdown-item {
-    padding: 5px 20px; /* Отступы для элементов */
-    font-size: 14px; /* Размер текста */
+    padding: 5px 20px; 
+    font-size: 14px;
     color: #1abbe4; 
-
+    width: auto;
 }
 .custom-header .custom-dropdown-item:hover {
-  color: #fff;
-  background-color: #cde735; /* Фон при наведении */
   font-size: 18px;
 }
 
-.custom-header .custom-dropdown-item-static {
-  padding: 5px 150px; /* Отступы для элементов */
-  background-color: #2163cc;
-  font-size: 14px; /* Размер текста */
-  color: #ecf0f1; 
+.custom-header  .custom-dropdown-item-static {
+  padding: 5px 150px;
+  font-size: 14px;
   cursor:auto;
-
 }
 .custom-header .custom-dropdown-item-static:hover,
 .custom-header .custom-dropdown-item-static:active {
-  padding: 5px 150px; /* Отступы для элементов */
-  background-color: #14d3c3; 
+  padding: 5px 150px; 
   font-size: 14px; /* Размер текста */
   cursor:default;
 }

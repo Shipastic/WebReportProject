@@ -1,5 +1,5 @@
 ﻿using DAPManSWebReports.API.Services.DI.Interfaces;
-using DAPManSWebReports.Domain.Services;
+using DAPManSWebReports.Domain.QueryService;
 using DAPManSWebReports.Entities.Repositories.Implement;
 using DAPManSWebReports.Infrastructure.DbBuilder;
 using DAPManSWebReports.Infrastructure.Interfaces;

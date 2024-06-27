@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DAPManSWebReports.Domain.Entities
+﻿namespace DAPManSWebReports.Domain.ErrorReportService
 {
     public class SmtpSettings
     {

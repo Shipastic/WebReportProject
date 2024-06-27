@@ -1,6 +1,7 @@
 ﻿using DAPManSWebReports.API.Services.QueryParamService;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
+using DAPManSWebReports.Domain.CommonService.CommonInterface;
+using DAPManSWebReports.Domain.DataViewService;
+using DAPManSWebReports.Domain.FolderService;
 
 using Microsoft.AspNetCore.Mvc;
 

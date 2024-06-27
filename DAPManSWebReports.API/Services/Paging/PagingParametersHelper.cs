@@ -1,4 +1,4 @@
-﻿using DAPManSWebReports.Domain.Entities;
+﻿using DAPManSWebReports.Domain.QueryService;
 
 namespace DAPManSWebReports.API.Services.Paging
 {

@@ -1,15 +1,6 @@
-﻿using DAPManSWebReports.Domain.Interfaces; 
-using DAPManSWebReports.Entities.Repositories.Interfaces;
+﻿using System.Text.Json.Serialization;
 
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
-namespace DAPManSWebReports.Domain.Entities
+namespace DAPManSWebReports.Domain.DataViewService
 {
     public class DataViewModel
     {
@@ -46,10 +37,10 @@ namespace DAPManSWebReports.Domain.Entities
         public string DataviewNote { get; set; }
 
         [JsonPropertyName("startDateField")]
-        public string startDateField {  get; set; }
+        public string startDateField { get; set; }
 
         [JsonPropertyName("endDateField")]
         public string endDateField { get; set; }
-       
+
     }
 }

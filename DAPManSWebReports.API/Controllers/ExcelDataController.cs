@@ -1,8 +1,7 @@
 ﻿using DAPManSWebReports.API.Services.Caching;
 using DAPManSWebReports.API.Services.QueryParamService;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-
+using DAPManSWebReports.Domain.ExcelReportService;
+using DAPManSWebReports.Domain.QueryService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 

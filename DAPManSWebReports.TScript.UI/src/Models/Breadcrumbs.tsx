@@ -18,7 +18,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbs }) => {
     };
 
     return (
-        <Breadcrumb className="custom-breadcrumb" style={{ margin: '0px 10px 0px 5px', padding:'0px 0px 0px 10px' }} separator="→">
+        <Breadcrumb className="custom-breadcrumb" style={{ margin: '5px 0px 0px 200px', padding:'0px 0px 0px 10px' }} separator="/">
             {breadcrumbs.map((breadcrumb, index) => (
                 <Breadcrumb.Item
                     key={index}

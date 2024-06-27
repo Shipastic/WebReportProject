@@ -1,13 +1,6 @@
-﻿using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
+﻿using DAPManSWebReports.Domain.DataViewService;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DAPManSWebReports.Domain.Services
+namespace DAPManSWebReports.Domain.FolderService
 {
     public class FolderDetailService : IMenuService<FolderDetail, FolderModel, DataViewModel>
     {

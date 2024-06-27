@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import defaultImg from '..//../assets/main2.png';
+import defaultImg from '..//../assets/first.jpg';
 import tpcImg from '..//../assets/TPC.jpg';
 import tesc2Img from '..//../assets/TESC-2.jpg';
 import tesc1Img from '..//../assets/defaultImg.jpg';

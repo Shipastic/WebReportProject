@@ -2,9 +2,7 @@
 using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.QueryParamService;
 using DAPManSWebReports.API.Services.Sorting;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-using DAPManSWebReports.Domain.Services;
+using DAPManSWebReports.Domain.QueryService;
 
 namespace DAPManSWebReports.API.Services.DI.Registration
 {

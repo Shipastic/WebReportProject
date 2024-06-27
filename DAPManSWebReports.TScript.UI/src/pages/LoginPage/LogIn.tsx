@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, ButtonToolbar,  Panel, Button, FlexboxGrid } from 'rsuite';
-import { useUser } from '../Components/UserContext/UserContext';
+import { Form, ButtonToolbar,  Panel, Button, FlexboxGrid, Content } from 'rsuite';
+import { useUser } from '../../Components/UserContext/UserContext';
 interface LoginFormProps { }
 
 const Login: React.FC<LoginFormProps> = () => {
@@ -21,6 +21,7 @@ const Login: React.FC<LoginFormProps> = () => {
     };
 
     return (
+        <Content className='content'>
         <div className="login-page">
             <FlexboxGrid justify="center">
                 <FlexboxGrid.Item colspan={6}>
@@ -59,6 +60,7 @@ const Login: React.FC<LoginFormProps> = () => {
                 </FlexboxGrid.Item>
             </FlexboxGrid>
         </div>
+        </Content>
     );
 };
 

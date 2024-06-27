@@ -1,9 +1,9 @@
-﻿using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
+﻿using DAPManSWebReports.Domain.CommonService.CommonInterface;
+using DAPManSWebReports.Domain.MappingService;
 using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Entities.Repositories.Interfaces;
 
-namespace DAPManSWebReports.Domain.Services
+namespace DAPManSWebReports.Domain.FolderService
 {
     public class FolderModelService : IMappingService<FolderModel>, IMenuTreeService<FolderModel>
     {
@@ -21,17 +21,17 @@ namespace DAPManSWebReports.Domain.Services
             {
                 dtoList.Add(new FolderModel
                 {
-                    id             = folder.Id,
-                    Name           = folder.Name,
-                    Parentid       = folder.ParentID,
-                    Type           = folder.Type,
-                    LastUpdate     = folder.LastUpdate,
-                    LastUser       = folder.LastUser,
-                    Path           = folder.Path,
+                    id = folder.Id,
+                    Name = folder.Name,
+                    Parentid = folder.ParentID,
+                    Type = folder.Type,
+                    LastUpdate = folder.LastUpdate,
+                    LastUser = folder.LastUser,
+                    Path = folder.Path,
                     RemotePassword = folder.RemotePassword,
-                    RemoteUser     = folder.RemoteUser,
-                    System         = folder.System
-                   
+                    RemoteUser = folder.RemoteUser,
+                    System = folder.System
+
                 });
             }
             return dtoList;
@@ -44,16 +44,16 @@ namespace DAPManSWebReports.Domain.Services
                 return new FolderModel();
             return new FolderModel()
             {
-                id             = folder.Id,
-                System         = folder.System,
-                LastUpdate     = folder.LastUpdate,
-                LastUser       = folder.LastUser,
-                Name           = folder.Name,
-                Parentid       = folder.ParentID,
-                Path           = folder.Path,
+                id = folder.Id,
+                System = folder.System,
+                LastUpdate = folder.LastUpdate,
+                LastUser = folder.LastUser,
+                Name = folder.Name,
+                Parentid = folder.ParentID,
+                Path = folder.Path,
                 RemotePassword = folder.RemotePassword,
-                RemoteUser     = folder.RemoteUser,
-                Type           = folder.Type
+                RemoteUser = folder.RemoteUser,
+                Type = folder.Type
             };
         }
 
@@ -65,16 +65,16 @@ namespace DAPManSWebReports.Domain.Services
             {
                 dtoList.Add(new FolderModel
                 {
-                    id             = folder.Id,
-                    System         = folder.System,
-                    LastUpdate     = folder.LastUpdate,
-                    LastUser       = folder.LastUser,
-                    Name           = folder.Name,
-                    Parentid       = folder.ParentID,
-                    Path           = folder.Path,
+                    id = folder.Id,
+                    System = folder.System,
+                    LastUpdate = folder.LastUpdate,
+                    LastUser = folder.LastUser,
+                    Name = folder.Name,
+                    Parentid = folder.ParentID,
+                    Path = folder.Path,
                     RemotePassword = folder.RemotePassword,
-                    RemoteUser     = folder.RemoteUser,
-                    Type           = folder.Type
+                    RemoteUser = folder.RemoteUser,
+                    Type = folder.Type
                 });
             }
             return dtoList;
@@ -88,16 +88,16 @@ namespace DAPManSWebReports.Domain.Services
             {
                 dtoList.Add(new FolderModel
                 {
-                    id             = item.Id,
-                    Name           = item.Name,
-                    Parentid       = item.ParentID,
-                    System         = item.System,
-                    LastUpdate     = item.LastUpdate,
-                    RemoteUser     = item.RemoteUser,
+                    id = item.Id,
+                    Name = item.Name,
+                    Parentid = item.ParentID,
+                    System = item.System,
+                    LastUpdate = item.LastUpdate,
+                    RemoteUser = item.RemoteUser,
                     RemotePassword = item.RemotePassword,
-                    Path           = item.Path,
-                    LastUser       = item.LastUser,
-                    Type           = item.Type
+                    Path = item.Path,
+                    LastUser = item.LastUser,
+                    Type = item.Type
                 });
             }
             return dtoList;

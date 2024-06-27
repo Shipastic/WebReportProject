@@ -11,7 +11,7 @@ interface Props {
 
 const Home: React.FC<Props> = ({ path, updateBreadcrumbs, breadcrumbs }) =>
 {
-    let pathArray: string[] = [];
+    const pathArray: string[] = [];
     let newBreadcrumbs: any[] = [];
 
     const handleHomeClick = async () => {       
@@ -29,13 +29,13 @@ const Home: React.FC<Props> = ({ path, updateBreadcrumbs, breadcrumbs }) =>
     };
 
     return (            
-        <Container className="container">
+       
             <div onClick ={handleHomeClick}>
                   <Content className="content">
                     <p>Home Page Content!</p>
                 </Content>
             </div>
-            </Container>
+         
     );
 };
 export default Home;

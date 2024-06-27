@@ -1,4 +1,4 @@
-﻿namespace DAPManSWebReports.Domain.Interfaces
+﻿namespace DAPManSWebReports.Domain.CommonService.CommonInterface
 {
     public interface IMenuTreeService<T> where T : class
     {

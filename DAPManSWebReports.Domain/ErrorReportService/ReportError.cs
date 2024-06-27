@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
-
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
-namespace DAPManSWebReports.Domain.Entities
+namespace DAPManSWebReports.Domain.ErrorReportService
 {
     public class ReportError
     {

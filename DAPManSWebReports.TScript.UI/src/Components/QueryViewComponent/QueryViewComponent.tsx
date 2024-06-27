@@ -204,7 +204,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                     (<>
                         <Row>
                             <Col xs={12}>
-                                <Stack style={{ textAlign: 'left', marginTop: '10px', marginLeft:'105px' }}>
+                                <Stack style={{ textAlign: 'left', marginTop: '10px', marginLeft:'200px' }}>
                                     <Message type="info" bordered showIcon closable><strong>INFO!</strong> Необходимо настроить параметры запроса!</Message>
                                 </Stack>
                             </Col>

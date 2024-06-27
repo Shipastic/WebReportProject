@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace DAPManSWebReports.Domain.Entities
+namespace DAPManSWebReports.Domain.QueryService
 {
     public class QuerySettingsModel
     {
@@ -46,7 +46,7 @@ namespace DAPManSWebReports.Domain.Entities
         public int PageSize
         {
             get { return _pageSize; }
-            set { _pageSize = (value > maxPageSize) ? maxPageSize : value; }
+            set { _pageSize = value > maxPageSize ? maxPageSize : value; }
         }
 
     }

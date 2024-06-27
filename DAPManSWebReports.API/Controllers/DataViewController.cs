@@ -1,7 +1,6 @@
-﻿using DAPManSWebReports.API.Services.JsonHelper;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-
+﻿using DAPManSWebReports.Domain.CommonService.CommonInterface;
+using DAPManSWebReports.Domain.DataViewService;
+using DAPManSWebReports.Domain.MappingService;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

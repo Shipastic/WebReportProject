@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using DAPManSWebReports.Domain.DataViewService;
 
-namespace DAPManSWebReports.Domain.Entities
+using System.Text.Json.Serialization;
+
+namespace DAPManSWebReports.Domain.FolderService
 {
     public class FolderDetail
     {

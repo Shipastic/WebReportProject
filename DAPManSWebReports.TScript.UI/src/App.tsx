@@ -1,9 +1,7 @@
 import React, { useState, useEffect         } from 'react';
-import { Container, Content, Sidebar, Footer, FlexboxGrid} from 'rsuite';
+import { Container, Content,Footer, FlexboxGrid} from 'rsuite';
 import { Outlet, BrowserRouter              } from 'react-router-dom';
-import SideBarComponent    from './Components/SidebarComponent';
 import HeaderComponent     from './Components/HeaderComponent/HeaderComponent';
-import BurgerMenuComponent from './Components/BurgerMenuComponent/BurgerMenuComponent';
 import AppRoutes           from './Components/AppRoutes';
 import ContentComponent    from './Components/ContentComponent/ContentComponent';
 import { UserProvider } from './Components/UserContext/UserContext';
@@ -32,11 +30,7 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
 
     const [breadcrumbs, setBreadcrumbs] = useState<string[]>(['Main']);
 
-    const [activeKeySideBar, setActiveKey] = useState('1');
-    const [openKeys, setOpenKeys] = useState(['1', '2']);
-    const [expanded, setExpand] = useState(true);
-
-    const [backgroundImage, setBackgroundImage] = useState('./assets/main2.png');
+    const [backgroundImage, setBackgroundImage] = useState('./assets/first.jpg');
 
     const [showForm, setShowForm] = useState(false);
 
@@ -79,7 +73,7 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
         setBreadcrumbs(newBreadcrumb);
     };
     const handlePageClick = () => {
-        setBreadcrumbs(['Main']);
+        setBreadcrumbs(['Main/']);
     };
    
     return (
@@ -87,52 +81,50 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
             <BrowserRouter>     
              <div id="root">                     
                 <Container className='container'>          
-                         <HeaderComponent 
-                                className="custom-header"
-                                props={props}
-                                activeKey={activeKey}
-                                handlePageClick={handlePageClick}
-                                handleDropdownSelect={handleDropdownSelect}
-                                handleItemClick={handleItemClick}
-                                handleItemClickName={handleItemClickName}
-                                updateBreadcrumbs={updateBreadcrumbs}
-                                handleDataViewClick={handleDataViewClick}
-                                onSelect={onSelect}
-                                items={items} 
-                                logo={logo}/>
-                        
-
-                            <Content className="content" style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center' }}>
-                                <FlexboxGrid >
-                                <   BurgerMenuComponent/>
-                                    <Breadcrumbs breadcrumbs={breadcrumbs} />                   
-                                </FlexboxGrid>
-                                <FlexboxGrid >
-                                    <ContentComponent selectedItem={activeFolderName} updateBackgroundImage={updateBackgroundImage} />
-                                </FlexboxGrid>
-                                <AppRoutes
-                                         updateBreadcrumbs={updateBreadcrumbs}
-                                         breadcrumbs={breadcrumbs}
-                                         activeFolderId={activeFolderId}
-                                         isFolderComponentVisible={isFolderComponentVisible}
-                                 />   
-                                 
-                                <Outlet />
-                                <FlexboxGrid justify="end" style={{marginTop:'260px'}} > 
-                                <div style={{ 
-                                     display: 'flex',
-                                     justifyContent: 'flex-end',
-                                     padding: '10px',
-                                     width: '400px',
-                                     height: 'auto'
-                                 }}>
-                                        {showForm && <ReportErrorComponent/>} 
-                                    </div> 
-                                </FlexboxGrid>
-                            </Content>                 
-                        <Footer className='custom-footer'>
-                            <FooterPage handleReportClick={handleReportClick}/>
-                        </Footer>                   
+                    <HeaderComponent 
+                        className="custom-header"
+                        props={props}
+                        activeKey={activeKey}
+                        handlePageClick={handlePageClick}
+                        handleDropdownSelect={handleDropdownSelect}
+                        handleItemClick={handleItemClick}
+                        handleItemClickName={handleItemClickName}
+                        updateBreadcrumbs={updateBreadcrumbs}
+                        handleDataViewClick={handleDataViewClick}
+                        onSelect={onSelect}
+                        items={items} 
+                        logo={logo}
+                    />                 
+                    <Content className="content" style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center' }}>
+                        <FlexboxGrid >
+                            <Breadcrumbs breadcrumbs={breadcrumbs} />                   
+                        </FlexboxGrid>
+                        <FlexboxGrid >
+                            <ContentComponent selectedItem={activeFolderName} updateBackgroundImage={updateBackgroundImage} />
+                        </FlexboxGrid>
+                        <AppRoutes
+                                 updateBreadcrumbs={updateBreadcrumbs}
+                                 breadcrumbs={breadcrumbs}
+                                 activeFolderId={activeFolderId}
+                                 isFolderComponentVisible={isFolderComponentVisible}
+                         />   
+                         
+                        <Outlet />
+                        <FlexboxGrid justify="end" style={{marginTop:'360px'}} > 
+                        <div style={{ 
+                             display: 'flex',
+                             justifyContent: 'flex-end',
+                             padding: '10px',
+                             width: '400px',
+                             height: 'auto'
+                         }}>
+                                {showForm && <ReportErrorComponent/>} 
+                            </div> 
+                        </FlexboxGrid>
+                    </Content>                 
+                    <Footer className='custom-footer'>
+                        <FooterPage handleReportClick={handleReportClick}/>
+                    </Footer>                   
                 </Container> 
                 </div>                             
             </BrowserRouter>

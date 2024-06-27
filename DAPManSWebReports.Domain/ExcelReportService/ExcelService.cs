@@ -1,18 +1,8 @@
-﻿using DAPManSWebReports.Domain.Interfaces;
-
-using NPOI.SS.UserModel;
+﻿using NPOI.SS.UserModel;
+using NPOI.SS.Util;
 using NPOI.XSSF.UserModel;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.IO;
-using NPOI.SS.Util;
-
-namespace DAPManSWebReports.Domain.Services
+namespace DAPManSWebReports.Domain.ExcelReportService
 {
     public class ExcelService : IExcelService
     {
@@ -74,7 +64,7 @@ namespace DAPManSWebReports.Domain.Services
             {
                 var row = data[rowIndex];
                 // Создаем новую строку для каждого набора данных
-                IRow excelRow = sheet.CreateRow(rowIndex + 1);  
+                IRow excelRow = sheet.CreateRow(rowIndex + 1);
                 colIndex = 0;
 
 
@@ -116,7 +106,7 @@ namespace DAPManSWebReports.Domain.Services
                         Console.WriteLine($"{e.Message}\n{excelRow}\n{cellValue}\n{row}");
                     }
                 }
-               
+
             }
 
             return colIndex;

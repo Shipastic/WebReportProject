@@ -1,5 +1,4 @@
-﻿using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
+﻿using DAPManSWebReports.Domain.ErrorReportService;
 
 using Microsoft.AspNetCore.Mvc;
 

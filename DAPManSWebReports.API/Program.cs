@@ -1,16 +1,28 @@
 using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.DI.Registration;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-using DAPManSWebReports.Domain.Services;
+using DAPManSWebReports.Domain.ErrorReportService;
 
 using LoggingLibrary.Service;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Добавление аутентификации с использованием OpenID Connect (OIDC)
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme    = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.Authority = "https://your-keycloak-domain/auth/realms/your-realm";
+    options.Audience = "asp.net-core-api"; // client-id в Keycloak
+    options.RequireHttpsMetadata = false;  // Только для разработки, убедитесь что это выключено для продакшн окружения
+});
 
 var configuration = builder.Configuration;
 builder.Services.AddTransient<IEmailService, EmailService>(provider =>

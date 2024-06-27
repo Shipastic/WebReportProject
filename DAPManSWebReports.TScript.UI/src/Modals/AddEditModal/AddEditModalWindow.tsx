@@ -82,7 +82,7 @@ const handleSave = async () => {
 };
 
     return (
-        <Modal open={show} onClose={onClose}>
+        <Modal open={show} onClose={onClose} className='custom-modal'>
           <Modal.Header>
             <Modal.Title>{report ? 'Редактировать отчет' : 'Добавить отчет'}</Modal.Title>
           </Modal.Header>

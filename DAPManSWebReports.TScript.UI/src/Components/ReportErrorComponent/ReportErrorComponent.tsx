@@ -63,7 +63,6 @@ const ReportErrorComponent: React.FC= () => {
     <Panel header={<h3 style={{ textAlign: 'center', color: 'red' }}>Сообщить об ошибке</h3>} style={{ backgroundColor: 'rgba(31,97,141, 0.4)' }} bordered>
       <Form fluid>
         <Form.Group controlId="description">
-          <Form.ControlLabel>Описание ошибки</Form.ControlLabel>
           <Input
             as="textarea"
             value={description}
@@ -74,27 +73,31 @@ const ReportErrorComponent: React.FC= () => {
           />
         </Form.Group>
         <Form.Group controlId="email">
-          <Form.ControlLabel>Email (необязательно)</Form.ControlLabel>
           <Input
             type="email"
             value={email}
+            placeholder="Введите почту для обратной связи"
             onChange={value => setEmail(value)}
           />
         </Form.Group>
         <Form.Group controlId="file">
-          <Form.ControlLabel>Скриншот ошибки (необязательно)</Form.ControlLabel>
           <Uploader
             listType="picture-text"
             action="" 
             autoUpload={false}
+            appearance='primary'
             onChange={(fileList) => setFile(fileList[0]?.blobFile)}
-          />
+          >
+            <Button>Добавьте скрин ошибки...</Button>
+            </Uploader>
         </Form.Group>
         <Form.Group>
           <Button appearance="primary" onClick={handleSubmit} loading={loading}>Отправить</Button>
         </Form.Group>
       </Form>
-      {showSuccess && <Message type="success">Спасибо за обратную связь!</Message>}
+      <div style={{marginTop:'10px'}}>
+        {showSuccess && <Message showIcon header="Отправлено" type="success">Ваше обращение отправлено!</Message>}
+      </div>
       <div style={{marginTop:'10px'}}>
         {showError && <Message showIcon header="Ошибка!" type="error">Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.</Message>}
       </div>

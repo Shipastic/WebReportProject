@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAPManSWebReports.Domain.Interfaces
+namespace DAPManSWebReports.Domain.QueryService
 {
     public interface IQueryViewService<T> where T : class
     {

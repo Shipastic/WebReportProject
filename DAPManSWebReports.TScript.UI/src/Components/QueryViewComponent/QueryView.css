@@ -1,7 +1,6 @@
 
 .qv-container {
-    padding: 0px;
-    margin: 10px 10px 0px 105px;
+    margin: 0px 10px 0px 200px;
     border-radius: 5px;
     box-shadow: 0 0 0px rgba(0,0,0,0.3);
     height: auto;
@@ -22,12 +21,12 @@
     text-align: center;
     text-decoration: underline;
 
-    background-color: rgba(189,194,194, 0.9);
-    border: 2px solid #116d74;
-    border-top: 2px solid #3498db;
+    background-color: rgba(248, 250, 242, 0.9);
+    border: 2px  #116d74;
+    border-top: 2px  #3498db;
 
     color: #185ea3;
-    margin-left: 105px;
+    margin-left: 200px;
     margin-right: 10px;
     padding-left: 15px;
 }
@@ -74,7 +73,7 @@
 
 
 .qv-filter-count{
-   margin-left: 105px;
+   margin-left: 200px;
    margin-right: 30px;
    justify-content: space-between;
    text-align: center;
@@ -91,19 +90,19 @@
     align-items: center;
     gap: 10px;
     flex-grow: 1;
-    margin-left:105px;
+    margin-left:200px;
 }
 
 /**********************TABLE*******************************/
   .rs-pagination-group {
     align-items: center;
-    background-color: rgba(189,194,194, 0.7);
+    background-color: rgba(240, 245, 245, 0.85);
     padding: 5px 0 0 15px;
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #3498db;
+    border: 3px  #f3f3f3;
+    border-top: 3px  #031c2c;
     display: flex;
-    color: #185ea3;
-    margin-left: 105px;
+    color: #031c2c;
+    margin-left: 200px;
     margin-right: 10px;
 }
 .rs-btn .rs-btn-subtle {

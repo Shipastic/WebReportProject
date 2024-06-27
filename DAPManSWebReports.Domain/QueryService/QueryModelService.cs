@@ -1,6 +1,4 @@
-﻿using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-using DAPManSWebReports.Entities.Models;
+﻿using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Entities.Repositories.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -12,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAPManSWebReports.Domain.Services
+namespace DAPManSWebReports.Domain.QueryService
 {
     public class QueryModelService : IQueryViewService<QueryModel>
     {
@@ -26,30 +24,31 @@ namespace DAPManSWebReports.Domain.Services
         }
 
         public async Task<QueryModel> GetQueryView(int dataviewId, int limit = 10, int offset = 0)
-        {         
-            var queryView =await _queryRepository.ReadById(dataviewId, limit, offset);
-            return new QueryModel 
-                        { Name         = queryView.Name, 
-                          DataSourceId = queryView.DatasourceId, 
-                          Result       = ConvertDataTableToList(queryView.TableResultQuery),
-                          id           = queryView.Id,
-                          Title        = queryView.Title
+        {
+            var queryView = await _queryRepository.ReadById(dataviewId, limit, offset);
+            return new QueryModel
+            {
+                Name = queryView.Name,
+                DataSourceId = queryView.DatasourceId,
+                Result = ConvertDataTableToList(queryView.TableResultQuery),
+                id = queryView.Id,
+                Title = queryView.Title
             };
         }
 
         public async Task<QueryModel> GetQueryViewWithParam(int dataviewId, Dictionary<string, object> queryparams)
         {
             _logger.LogInformation($"{DateTime.Now}|\t GetQueryViewWithParam dataviewId -{dataviewId}");
-            var queryView    = await _queryRepository.ReadById(dataviewId, queryparams);
+            var queryView = await _queryRepository.ReadById(dataviewId, queryparams);
             return new QueryModel
             {
-                Name         = queryView.Name,
+                Name = queryView.Name,
                 DataSourceId = queryView.DatasourceId,
-                Result       = ConvertDataTableToList(queryView.TableResultQuery),
-                id           = queryView.Id,
-                Title        = queryView.Title,
-                TotalCount   = queryView.TotalCount,
-                QueryResult  = queryView.ResultQuery
+                Result = ConvertDataTableToList(queryView.TableResultQuery),
+                id = queryView.Id,
+                Title = queryView.Title,
+                TotalCount = queryView.TotalCount,
+                QueryResult = queryView.ResultQuery
             };
         }
 

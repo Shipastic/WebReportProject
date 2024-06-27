@@ -18,29 +18,31 @@ const BurgerMenuComponent: React.FC = () => {
     };
 
   return (
-    <div>
+    <div >
         <IconButton
-          icon={<MenuIcon />}
+          icon={<MenuIcon  style={{color:'white', fontSize:'22px'}}/>}
           onClick={toggleMenu}
-          appearance="ghost"
+          appearance="subtle"
         />
+        <div>
         <Menu
           isOpen={isOpen}
           onStateChange={(state) => handleStateChange(state)}
-          width={'auto'} // Ширина по ширине содержимого
+          width='auto'
           customBurgerIcon={false}
           customCrossIcon={false}  
         >
-          <a className="bm-item " href="/settings" onClick={toggleMenu}>
+          <a className="menu-item " href="/settings" onClick={toggleMenu}>
             Settings
           </a>
-          <a className="bm-item " href="/about" onClick={toggleMenu}>
+          <a className="menu-item " href="/about" onClick={toggleMenu}>
             Apps
           </a>
-          <a className="bm-item " href="/home" onClick={toggleMenu}>
+          <a className="menu-item--small " href="/home" onClick={toggleMenu}>
             Profile
           </a>
         </Menu>
+        </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
-﻿using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
+﻿using DAPManSWebReports.Domain.CommonService.CommonInterface;
+using DAPManSWebReports.Domain.FolderService;
+using DAPManSWebReports.Domain.MappingService;
 using DAPManSWebReports.Entities.Models;
 
 using Microsoft.AspNetCore.Mvc;

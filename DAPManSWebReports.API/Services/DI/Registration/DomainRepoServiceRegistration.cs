@@ -1,7 +1,10 @@
 ﻿using DAPManSWebReports.API.Services.DI.Interfaces;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-using DAPManSWebReports.Domain.Services;
+using DAPManSWebReports.Domain.CommonService.CommonInterface;
+using DAPManSWebReports.Domain.DataViewService;
+using DAPManSWebReports.Domain.ExcelReportService;
+using DAPManSWebReports.Domain.FolderService;
+using DAPManSWebReports.Domain.MappingService;
+using DAPManSWebReports.Domain.QueryService;
 
 using Microsoft.Extensions.Options;
 

@@ -2,9 +2,8 @@
 using DAPManSWebReports.API.Services.Paging;
 using DAPManSWebReports.API.Services.QueryParamService;
 using DAPManSWebReports.API.Services.Sorting;
-using DAPManSWebReports.Domain.Entities;
-using DAPManSWebReports.Domain.Interfaces;
-
+using DAPManSWebReports.Domain.ExcelReportService;
+using DAPManSWebReports.Domain.QueryService;
 using LoggingLibrary.Service;
 
 using Microsoft.AspNetCore.Mvc;

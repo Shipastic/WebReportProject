@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace DAPManSWebReports.Domain.Entities
+namespace DAPManSWebReports.Domain.QueryService
 {
     public class QueryModel
     {
@@ -22,7 +22,7 @@ namespace DAPManSWebReports.Domain.Entities
         public string? Title { get; set; }
 
         [JsonPropertyName("totalCount")]
-        public int TotalCount {  get; set; }
+        public int TotalCount { get; set; }
 
         [JsonPropertyName("queryResult")]
         public string QueryResult { get; set; }

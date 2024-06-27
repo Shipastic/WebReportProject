@@ -1,5 +1,4 @@
-﻿using DAPManSWebReports.Domain.Entities;
-
+﻿using DAPManSWebReports.Domain.QueryService;
 using Microsoft.Extensions.Primitives;
 
 using System.Collections.Generic;

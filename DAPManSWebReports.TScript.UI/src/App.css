@@ -10,47 +10,17 @@ html, body {
  
 /**********************HEADER/FOOTER*******************************/
 .custom-header{
-  background-color: #263444; /* Темный фон для заголовка */ 
-  color: #08d4f3;
-  width: auto;
-  height: auto;
+  background-color: #263444; 
 }
 .custom-footer {
-    background-color: rgba(27, 37, 48, 0.9); /* Темный фон для заголовка */ 
+    background-color: rgba(27, 37, 48, 0.9); 
     color: #08d4f3;
-    width: auto;
-    height: auto;
+    font-size: 16px;
 }
-
-    .custom-header .navbar-brand {
-        color: #08d4f3;
-        font-size: 24px;
-    }
-
-    .custom-header .nav-item {
-        color: #f5e9fc;
-    }
-
-        .custom-header .nav-item:hover {
-            color: #f8f9fa;
-            background-color: #495057; /* Фон при наведении */
-        }
-
-    
-
-        .custom-header .nav-link:hover {
-            color: #7ce2f1; /* Цвет ссылок при наведении */
-        }
-
-        
- 
-       
  /**********************CONTAINER*******************************/
 .container {
     display: flex;
-    flex-direction: column;
     flex: 1;
-    background-color:#eff3fa ; 
 }
 .login-container {
     display: flex;
@@ -60,29 +30,19 @@ html, body {
     background-color: rgba(45, 168, 32, 0.808);  
 }
 .rs-panel-bordered{
-  background-color: rgba(84, 65, 153, 0.25);
-  color: #1fb4be;
+  background-color: rgba(94, 78, 150, 0.2);
+  color: #191e68;
 }
 
-#outer-container {
-  width: 100%;
-  height: 100%;
+/**********************CONTENT*******************************/
+.content 
+{
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: auto;
 }
-
-#page-wrap {
-  text-align: center;
-  padding: 2em;
-}
-    /**********************CONTENT*******************************/
-    .content 
-    {
-        flex: 1;
-       /* background-image: url('assets/main2.png');*/
-        background-size: cover;
-        background-position: top;
-        height: auto;
-    }
-    /**********************SIDEBAR*******************************/
+/**********************SIDEBAR*******************************/
 .sidebar {
   background-color: black;
     height: auto;
@@ -91,22 +51,12 @@ html, body {
     margin-left: px;
 }
 
-
-
-/**********************FORM*******************************/
-.form-background {
-    background: #fff;
-    padding: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
 /**********************GRID*******************************/
 .query-grid {
     background: #3498ff;
   color: #fff;
   padding: 10px;
 }
-
 
 
   /************************DATE_PICKER********************************************/
@@ -128,10 +78,6 @@ html, body {
   background-color: #28a745 !important;
   border-color: #1f618d;
 }
-.rs-btn .rs-btn-subtle {
-  background-color: #2980b9;
-}
-
 
 
 /********************************STEPS_TUTORIAL****************************/
