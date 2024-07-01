@@ -9,6 +9,7 @@ import { DataViewDTO                     } from '../../Models/DataViewDTO';
 import QueryViewComponent                  from '../QueryViewComponent/QueryViewComponent';
 import AddEditReportModal                  from '../../Modals/AddEditModal/AddEditModalWindow';
 import config                              from '../../Utils/config';
+import tokenService                        from '../../Services/tokenService';
 import './ChildFolder.css';
 
 interface Props
@@ -40,9 +41,10 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
     const fetchData = async () =>
     {
         setLoading(true);
+        const headers = tokenService.getAuthHeaders();
         try
         {
-            const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`);
+            const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`, {headers: headers});
             if (response.ok)
             {
                 const data = await response.json();
@@ -65,10 +67,11 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
     const handleEditClick = async ({rowData}) => 
         {
+            const headers = tokenService.getAuthHeaders();
             try 
             {
                 const dataviewid = rowData.id;                           
-                const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`);            
+                const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`, {headers:headers});            
               if (response.ok) 
                 {
                     console.log('Response Status:', response.status);

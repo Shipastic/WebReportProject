@@ -2,13 +2,14 @@ import React, { useState, useEffect         } from 'react';
 import { Container, Content,Footer, FlexboxGrid} from 'rsuite';
 import { Outlet, BrowserRouter              } from 'react-router-dom';
 import HeaderComponent     from './Components/HeaderComponent/HeaderComponent';
-import AppRoutes           from './Components/AppRoutes';
+import AppRoutes           from './Components/Routes/AppRoutes';
 import ContentComponent    from './Components/ContentComponent/ContentComponent';
-import { UserProvider } from './Components/UserContext/UserContext';
+import { UserProvider, useUser} from './Components/UserContext/UserContext';
 import Breadcrumbs         from './Models/Breadcrumbs';
 import { FolderDetail }    from './Models/FolderDetail';
 import FooterPage          from './pages/FooterPage';
 import config from './Utils/config';
+import tokenService  from './Services/tokenService';
 import logo               from './assets/css/logo.jpg';
 
 import './App.css';
@@ -30,25 +31,36 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
 
     const [breadcrumbs, setBreadcrumbs] = useState<string[]>(['Main']);
 
+    const { user } = useUser() ?? {};
+
     const [backgroundImage, setBackgroundImage] = useState('./assets/first.jpg');
 
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false); 
+
 
     const handleReportClick = () => {
         setShowForm(!showForm); 
     };
+    const fetchItems = async () => {
+        const headers = tokenService.getAuthHeaders();
+        try {
+            const response = await fetch(`${config.ApiBaseUrlDev}/menu/parents`, { headers:headers });
+            if (response.ok) {
+                const data = await response.json();
+                setItems(data);
+            } else {
+                throw new Error('Network response was not ok.');
+            }
+        } catch (error) {
+            console.error("There was an error fetching the reports: ", error);
+        }
+    };
 
     useEffect(() => {
-        fetch(`${config.ApiBaseUrlDev}/menu/parents`)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Network response was not ok.');
-            })
-            .then(data => setItems(data))
-            .catch(error => console.error("There was an error fetching the reports: ", error));
-    }, []);
+        if (user) { 
+          fetchItems();
+        }
+      }, [user]);
    
     const handleDropdownSelect = () => {
         setActiveFolderId(null);  
@@ -77,10 +89,9 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
     };
    
     return (
-        <UserProvider>
             <BrowserRouter>     
              <div id="root">                     
-                <Container className='container'>          
+                <Container className='container'>    
                     <HeaderComponent 
                         className="custom-header"
                         props={props}
@@ -94,7 +105,7 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                         onSelect={onSelect}
                         items={items} 
                         logo={logo}
-                    />                 
+                    />        
                     <Content className="content" style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center' }}>
                         <FlexboxGrid >
                             <Breadcrumbs breadcrumbs={breadcrumbs} />                   
@@ -128,7 +139,6 @@ const App: React.FC<HomePageProps> = ({ onSelect, activeKey, ...props }) =>
                 </Container> 
                 </div>                             
             </BrowserRouter>
-        </UserProvider>
     );
 }
 export default App;

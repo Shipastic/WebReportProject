@@ -2,7 +2,6 @@
 using MailKit.Net.Smtp;
 using MimeKit;
 
-
 namespace DAPManSWebReports.Domain.ErrorReportService
 {
     public class EmailService : IEmailService

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Dropdown, Header, FlexboxGrid} from 'rsuite';
+import { useNavigate } from 'react-router-dom';
+import { Navbar, Nav, Dropdown, Header} from 'rsuite';
 import { Link                         } from 'react-router-dom';
 import UserChangeIcon                   from '@rsuite/icons/UserChange';
 import {useUser                       } from '../UserContext/UserContext';
 import './Header.css';
 import BurgerMenuComponent from '../BurgerMenuComponent/BurgerMenuComponent';
+import { UserResponse } from '../../Models/UserResponse';
 
 interface HeaderProps 
 {
@@ -36,7 +38,14 @@ const HeaderComponent: React.FC<HeaderProps> = ({
   items,
   logo
 }) => {
-  const { user } = useUser();
+  const { user , logout} =  useUser() ?? {};
+  
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <Header className={className}>
       <Navbar {...props} appearance="subtle">
@@ -65,6 +74,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
           >
             <Link to="/about">О портале</Link>
           </Nav.Item>
+          {user && user.role === 'admin'? (
           <Dropdown
             title={"Выбор цеха"}
             onSelect={handleDropdownSelect}
@@ -72,7 +82,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
           >
             <Dropdown.Item className="custom-dropdown-item-static" style={{backgroundColor:"black", color:"white"}}>
               Название Цеха:
-            </Dropdown.Item>
+            </Dropdown.Item> 
             {items?.childFolders.map((childFolder: any) => (
               <Dropdown.Item
                 key={childFolder.id}
@@ -102,24 +112,24 @@ const HeaderComponent: React.FC<HeaderProps> = ({
               </Dropdown.Item>
             ))}
           </Dropdown>
+            ) :(<></>)}
         </Nav>
         <Nav pullRight>
-          <Nav.Item
-            onClick={handlePageClick}
-            className="custom-nav-item"
-          >
-            <Link to="/login" className="nav-link">
-            {user ? (
-                        <>
-                            <UserChangeIcon style={{ marginRight: '5px' }} />
-                            {user}
-                        </>
-                    ) : (
-                        <span style={{ }}>Вход</span>
-                    )}
-            </Link>
-          </Nav.Item>
-        </Nav>
+        <Nav.Item onClick={handlePageClick} className="custom-nav-item">
+        {user ? (
+              <>
+                <UserChangeIcon/> {user.username}
+                <Nav.Item onClick={handleLogout} className="custom-nav-item">
+                  Выйти
+                </Nav.Item>
+              </>
+            ) : (
+              <Link to="/login" className="nav-link">
+                Войти
+              </Link>
+            )}
+            </Nav.Item>
+          </Nav>
         </div>
       </Navbar>
     </Header>

@@ -12596,3 +12596,220 @@ sortColumnNumber - null
 27.06.2024 23:27:58|	 Get DataView by id:335
 27.06.2024 23:27:58|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
 27.06.2024 23:27:58|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+28.06.2024 12:40:35|	 GetDataViewById:285 Start
+28.06.2024 12:40:35|	 Get DataView by id:285
+28.06.2024 12:40:35|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+28.06.2024 12:40:35|	 GetDataViewById:285 End
+28.06.2024 12:40:35|	 GetDataViewById:285 Start
+28.06.2024 12:40:35|	 Get DataView by id:285
+28.06.2024 12:40:35|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+28.06.2024 12:40:35|	 GetDataViewById:285 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+28.06.2024 15:18:05|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+28.06.2024 15:18:05|	Show params query:
+28.06.2024 15:18:05|	 Query params:
+limit - 12
+
+28.06.2024 15:18:05|	 Query params:
+offset - 1
+
+28.06.2024 15:18:05|	 Query params:
+startDate - 
+
+28.06.2024 15:18:05|	 Query params:
+endDate - 
+
+28.06.2024 15:18:05|	 Query params:
+presetDate - 
+
+28.06.2024 15:18:05|	 Query params:
+format - EXCEL
+
+28.06.2024 15:18:05|	 Query params:
+sortOrder - undefined
+
+28.06.2024 15:18:05|	 Query params:
+sortColumnNumber - null
+
+28.06.2024 15:18:05|	 GetQueryViewWithParam dataviewId -285
+28.06.2024 15:18:06|	 Get DataView by id:285
+28.06.2024 15:18:06|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+28.06.2024 15:18:06|	 Getting DB builder for datasource ID: 17
+28.06.2024 15:18:06|	 Executing query to get DB type for datasource ID: 17
+28.06.2024 15:18:06|	 Creating OracleDBBuilder for datasource ID: 17
+28.06.2024 15:18:06|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+28.06.2024 15:18:06|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+28.06.2024 15:18:06|	  Create Query to db: select * from V_PPC_L2_L3_CMP
+28.06.2024 15:18:13|	 Column name for sorting:null| Sort order:undefined
+28.06.2024 15:18:13|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:29713 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP
+28.06.2024 15:18:13|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+28.06.2024 15:18:13|	Show params query:
+28.06.2024 15:18:13|	 Query params:
+limit - 12
+
+28.06.2024 15:18:13|	 Query params:
+offset - 1
+
+28.06.2024 15:18:13|	 Query params:
+startDate - 
+
+28.06.2024 15:18:13|	 Query params:
+endDate - 
+
+28.06.2024 15:18:13|	 Query params:
+presetDate - 
+
+28.06.2024 15:18:13|	 Query params:
+format - EXCEL
+
+28.06.2024 15:18:13|	 Query params:
+sortOrder - undefined
+
+28.06.2024 15:18:13|	 Query params:
+sortColumnNumber - null
+
+28.06.2024 15:18:13|	 Column name for sorting:null| Sort order:undefined
+28.06.2024 15:18:13|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:29713 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP
+28.06.2024 15:18:13|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+28.06.2024 15:18:13|	Show params query:
+28.06.2024 15:18:13|	 Query params:
+limit - 12
+
+28.06.2024 15:18:13|	 Query params:
+offset - 1
+
+28.06.2024 15:18:13|	 Query params:
+startDate - 
+
+28.06.2024 15:18:13|	 Query params:
+endDate - 
+
+28.06.2024 15:18:13|	 Query params:
+presetDate - 
+
+28.06.2024 15:18:13|	 Query params:
+format - EXCEL
+
+28.06.2024 15:18:13|	 Query params:
+sortOrder - undefined
+
+28.06.2024 15:18:13|	 Query params:
+sortColumnNumber - null
+
+28.06.2024 15:18:13|	 Column name for sorting:null| Sort order:undefined
+28.06.2024 15:18:13|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:29713 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API

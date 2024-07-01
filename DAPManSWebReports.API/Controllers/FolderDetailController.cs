@@ -3,6 +3,7 @@ using DAPManSWebReports.Domain.CommonService.CommonInterface;
 using DAPManSWebReports.Domain.DataViewService;
 using DAPManSWebReports.Domain.FolderService;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace DAPManSWebReports.API.Controllers
             _dataViewService = dataViewService;
         }
 
+        [Authorize]
         [HttpGet("parents")]
         public async Task<FolderDetail> GetParentMenuItens()
         {

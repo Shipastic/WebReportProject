@@ -28,14 +28,12 @@ const Home: React.FC<Props> = ({ path, updateBreadcrumbs, breadcrumbs }) =>
         }
     };
 
-    return (            
-       
+    return (  
             <div onClick ={handleHomeClick}>
                   <Content className="content">
                     <p>Home Page Content!</p>
                 </Content>
-            </div>
-         
+            </div>  
     );
 };
 export default Home;

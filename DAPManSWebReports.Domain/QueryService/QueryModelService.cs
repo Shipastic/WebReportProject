@@ -3,12 +3,7 @@ using DAPManSWebReports.Entities.Repositories.Interfaces;
 
 using Microsoft.Extensions.Logging;
 
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAPManSWebReports.Domain.QueryService
 {

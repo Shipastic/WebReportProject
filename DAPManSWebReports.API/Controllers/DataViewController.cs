@@ -1,6 +1,8 @@
 ﻿using DAPManSWebReports.Domain.CommonService.CommonInterface;
 using DAPManSWebReports.Domain.DataViewService;
 using DAPManSWebReports.Domain.MappingService;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -25,14 +27,14 @@ namespace DAPManSWebReports.API.Controllers
             _dataViewService = dataViewService;
             _logger = logger;
         }
-
+        [Authorize(Roles = "user")]
         [HttpGet]
         public async Task<IEnumerable<DataViewModel>> Get()
         {
             var dataViews = await _dataViewRepository.GetDtoList();
             return dataViews;
         }
-
+        [Authorize(Roles = "user")]
         [HttpGet("parents")]
         public async Task<IEnumerable<DataViewModel>> GetParentFolders()
         {
@@ -40,7 +42,7 @@ namespace DAPManSWebReports.API.Controllers
             return dataviews;
 
         }
-
+        [Authorize(Roles = "user")]
         [HttpGet("childrens/{parentid}")]
         public IActionResult GetChildFoldersById(int parentid)
         {
@@ -53,7 +55,7 @@ namespace DAPManSWebReports.API.Controllers
             }
         }
 
-        // GET api/<DataViewController>/5
+        [Authorize(Roles = "user")]
         [HttpGet("{dataviewid}")]
         public async Task<IActionResult> GetDataViewById(int dataviewid)
         {

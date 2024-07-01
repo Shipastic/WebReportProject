@@ -2,6 +2,7 @@ import '../Modal.css';
 import React, { useState, useEffect } from 'react';
 import { Modal, Form, Button, ButtonToolbar, Input, Tabs, FlexboxGrid } from 'rsuite';
 import { DataViewDTO } from '../../Models/DataViewDTO';
+import tokenService  from '..//../Services/tokenService';
 import config from '../../Utils/config';
 
 interface AddEitReportModalProps {
@@ -58,11 +59,10 @@ const handleChange = (value: any, name: string) => {
 const handleSave = async () => {
   if (formValue) {
       try {
+        const headers = tokenService.getAuthHeaders();
           const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${formValue.id}`, {
               method: 'PUT',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
+              headers: headers,
               body: JSON.stringify(formValue)
           });
 

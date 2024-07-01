@@ -6,23 +6,12 @@ using LoggingLibrary.Service;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
+using System.Text;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Добавление аутентификации с использованием OpenID Connect (OIDC)
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme    = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.Authority = "https://your-keycloak-domain/auth/realms/your-realm";
-    options.Audience = "asp.net-core-api"; // client-id в Keycloak
-    options.RequireHttpsMetadata = false;  // Только для разработки, убедитесь что это выключено для продакшн окружения
-});
 
 var configuration = builder.Configuration;
 builder.Services.AddTransient<IEmailService, EmailService>(provider =>
@@ -61,6 +50,7 @@ builder.Services.AddCors(options =>
                             .AllowAnyHeader());
 });
 builder.Services.Configure<SmtpSettings>(configuration.GetSection("SmtpSettings"));
+
 builder.Services.AddMemoryCache();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -68,9 +58,34 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
 });
 
+// Добавление аутентификации с использованием OpenID Connect (OIDC)
+// JWT Configuration
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var secretKey = Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(secretKey)
+    };
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddResponseCaching();
+builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -84,11 +99,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("AllowSpecificOrigin");
+app.UseAuthentication();
 app.UseAuthorization();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
-//app.MapControllers();
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllers();
+//});
+app.MapControllers();
 //app.UseResponseCaching();
 app.Run();

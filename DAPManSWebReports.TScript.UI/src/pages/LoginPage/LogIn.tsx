@@ -2,24 +2,57 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, ButtonToolbar,  Panel, Button, FlexboxGrid, Content } from 'rsuite';
 import { useUser } from '../../Components/UserContext/UserContext';
+import config                              from '..//../Utils/config';
+//import tokenService from '..//../Services/tokenService';
+
 interface LoginFormProps { }
 
-const Login: React.FC<LoginFormProps> = () => {
-    const [email, setEmail      ] = useState('');
-    const [password, setPassword] = useState('');
+interface LoginRequest{
+    username: string;
+    password: string;
+}
 
-    const { setUser } = useUser();
+const LoginPage: React.FC<LoginFormProps> = () => {
+    const [username, setEmail      ] = useState('');
+    const [password, setPassword] = useState('');
+    const [credentials, setCredentials] = useState<LoginRequest>();
+    const { login, setUser} = useUser();
     const navigate = useNavigate();
 
-    const handleSubmit = () => {
-        console.log('Email:', email);
-        console.log('Password:', password);
-        // Устанавливаем логин как текущего пользователя
-        setUser(email);
-        // Перенаправляем на главную страницу  
-        navigate('/');  
+    const handleSubmit =  () => {
+        try{
+            const credentials: LoginRequest = { username, password };
+            handleLogin(credentials);
+        }
+        catch (error) {
+            console.error('Login failed:', error);
+        }
     };
 
+    const handleLogin = async (credentials: LoginRequest) => 
+        {
+            const response = await fetch(`${config.ApiBaseUrlDev}/account/Login`, {
+                method: 'POST',
+                body: JSON.stringify(credentials),
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              });
+              if (response.ok) {
+                  const data = await response.json();
+                  if (data) {
+                      //tokenService.saveUserResponse(data);
+                      login(data);
+                      setUser(data);
+                      navigate('/');  
+                  }
+                  else {
+                      alert('Login failed');
+                    }
+              }
+        };
+
+    
     return (
         <Content className='content'>
         <div className="login-page">
@@ -31,8 +64,8 @@ const Login: React.FC<LoginFormProps> = () => {
                                 <Form.ControlLabel>Почта</Form.ControlLabel>
                                 <Form.Control
                                     name="email"
-                                    type="email"
-                                    value={email}
+                                    //type="email"
+                                    value={username}
                                     onChange={value => setEmail(value)}
                                 />
                                 <Form.HelpText>Обязательно</Form.HelpText>
@@ -55,7 +88,7 @@ const Login: React.FC<LoginFormProps> = () => {
                                     <Button appearance="default">Отмена</Button>
                                 </ButtonToolbar>
                             </Form.Group>
-                        </Form>
+                        </Form>                        
                     </Panel>
                 </FlexboxGrid.Item>
             </FlexboxGrid>
@@ -64,4 +97,4 @@ const Login: React.FC<LoginFormProps> = () => {
     );
 };
 
-export default Login;
+export default LoginPage;

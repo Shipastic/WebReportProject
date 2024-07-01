@@ -1,77 +1,53 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.Data;
+﻿using DAPManSWebReports.Domain.IdentityService;
+using DAPManSWebReports.Domain.IdentityService.TokenServise;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DAPManSWebReports.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/account")]
     [ApiController]
     public class AccountController : ControllerBase
     {
-        //private readonly ModelContext _context;
-        //private readonly UserManager<ApplicationUser> _userManager;
-        //private readonly JwtHandler _jwtHandler;
+        private readonly IConfiguration _configuration;
 
-        //public AccountController(ModelContext context, UserManager<ApplicationUser> userManager, JwtHandler jwtHandler)
-        //{
-        //    _context = context;
-        //    _userManager = userManager;
-        //    _jwtHandler = jwtHandler;
-        //}
+        private readonly JwtHandler _jwtHandler;
 
-        // GET: api/<AccountController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public AccountController(IConfiguration configuration)
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<AccountController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
+           _configuration = configuration ?? throw new ArgumentNullException(nameof(_configuration));
+            _jwtHandler = new JwtHandler();
         }
 
         // POST api/<AccountController>
-        //[HttpPost("Login")]
-        //public async Task<IActionResult> Login([FromBody]LoginRequest loginRequest)
-        //{
-        //    var user = await _userManager.FindByNameAsync(loginRequest.Email);
-        //    if (user == null
-        //    || !await _userManager.CheckPasswordAsync(user, loginRequest.
-        //   Password))
-        //        ///Выдаем результат в случае неуспешного входа
-        //        return Unauthorized(new LoginResult()
-        //        {
-        //            Success = false,
-        //            Message = "Invalid Email or Password."
-        //        });
-
-        //    var secToken = await _jwtHandler.GetTokenAsync(user);
-        //    //создаем json-представление токена
-        //    var jwt = new JwtSecurityTokenHandler().WriteToken(secToken);
-        //    //Выдаем результат в случае успеха
-        //    return Ok(new LoginResult()
-        //    {
-        //        Success = true,
-        //        Message = "Login successful",
-        //        Token = jwt
-        //    });
-        //}
-
-        // PUT api/<AccountController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] UserLogin userLogin)
         {
-        }
+            if (userLogin.Username is not null && userLogin.Password is not null)
+            {
+                var jwtSettings = _configuration.GetSection("JwtSettings");
+                var secretKey   = jwtSettings["SecretKey"];
+                var role        = userLogin.Username;
+                try
+                {
+                    var token   = await _jwtHandler.GetTokenAsync(userLogin.Username, secretKey, jwtSettings["Issuer"], jwtSettings["Audience"], role);
+                    var response = new UserResponse
+                    {
+                        Username = userLogin.Username,
+                        Role     = role,
+                        Token    = token
+                    };
+                    return Ok(response);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                    return BadRequest(ex);
+                }
 
-        // DELETE api/<AccountController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            }
+            return Unauthorized();
         }
     }
 }

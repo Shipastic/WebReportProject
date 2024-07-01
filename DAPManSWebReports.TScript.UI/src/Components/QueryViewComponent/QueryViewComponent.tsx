@@ -5,6 +5,7 @@ import QueryparamsComponent                   from '../QueryParamsComponent/Quer
 import FilterComponent                        from '../FilterComponent/FilterComponent';
 import ExcelDataComponent                     from '../ExcelDataComponent/ExcelDataComponent';
 import config                                 from '../../Utils/config';
+import tokenService                           from '../../Services/tokenService';     
 import './QueryView.css';
 import 'rsuite/dist/rsuite.min.css';
 
@@ -81,9 +82,11 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
         }, [offset, limit, sortColumn, sortType, dataviewid, viewParams]);
 
     const checkColumnPresence = async (dataviewid: number | null) => {
+        setLoading(true);
         try 
         {
-            const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`);
+            const headers = tokenService.getAuthHeaders();
+            const response = await fetch(`${config.ApiBaseUrlDev}/dataview/${dataviewid}`, {headers: headers});
             const result = await response.json();
             setNeedsDateParams(result.startDateField !== '' && result.endDateField !== '');
         }
@@ -112,18 +115,19 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                 sortOrder: sortType,
                 sortColumnNumber: sortColumn,              
             });
-            const response = await fetch(`${config.ApiBaseUrlDev}/query/${dataviewid}?${params.toString()}`);
+            const headers = tokenService.getAuthHeaders();
+            const response = await fetch(`${config.ApiBaseUrlDev}/query/${dataviewid}?${params.toString()}`, {headers:headers});
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
             const result = await response.json();
-            const headers = result.result.length > 0 ? Object.keys(result.result[0]) : [];
+            const headersResult = result.result.length > 0 ? Object.keys(result.result[0]) : [];
             setData(result);
             setTotalCount(result.totalCount);
             setPage(result.offset);
             setLimit(result.pageSize);
             setqueryResult(result.queryResult);
-            setColumnKeys(headers);
+            setColumnKeys(headersResult);
             setShowTable(result.result.length > 0);
             setFilteredData(result.pagedItems);
             setTitleView(result.title);

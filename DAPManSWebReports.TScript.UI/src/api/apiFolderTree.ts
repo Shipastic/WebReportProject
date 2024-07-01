@@ -1,7 +1,7 @@
 import config from '../Utils/config';
 import { FolderDetail } from '../Models/FolderDetail';
 
-const ApiBaseUrl = config.ApiBaseUrl;
+const ApiBaseUrl = config.ApiBaseUrlDev;
 
 export const fetchChildItems = async (parentid: number | null): Promise<FolderDetail | null> => {
 
