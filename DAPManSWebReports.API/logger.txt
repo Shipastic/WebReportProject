@@ -12813,3 +12813,8 @@ Now listening on: http://localhost:5240
 Application started. Press Ctrl+C to shut down.
 Hosting environment: Development
 Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API

@@ -2,6 +2,8 @@
 using DAPManSWebReports.API.Services.QueryParamService;
 using DAPManSWebReports.Domain.ExcelReportService;
 using DAPManSWebReports.Domain.QueryService;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -32,6 +34,7 @@ namespace DAPManSWebReports.API.Controllers
             _cacheService = cacheService;
         }
 
+        [Authorize]
         [HttpGet("{dataviewId}")]
         public async Task<IActionResult> ExportData(int dataviewId)
         {

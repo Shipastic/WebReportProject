@@ -20,7 +20,6 @@ namespace DAPManSWebReports.API.Controllers
             _jwtHandler = new JwtHandler();
         }
 
-        // POST api/<AccountController>
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] UserLogin userLogin)
         {
@@ -28,14 +27,16 @@ namespace DAPManSWebReports.API.Controllers
             {
                 var jwtSettings = _configuration.GetSection("JwtSettings");
                 var secretKey   = jwtSettings["SecretKey"];
+                var issuer      = jwtSettings["Issuer"];
+                var audience    = jwtSettings["Audience"];
                 var role        = userLogin.Username;
                 try
                 {
-                    var token   = await _jwtHandler.GetTokenAsync(userLogin.Username, secretKey, jwtSettings["Issuer"], jwtSettings["Audience"], role);
+                    var token   = await _jwtHandler.GetTokenAsync(userLogin.Username, secretKey, issuer, audience, role);
                     var response = new UserResponse
                     {
                         Username = userLogin.Username,
-                        Role     = role,
+                        Role     = TokenDecoder.GetRoleFromToken(token, secretKey, issuer, audience),
                         Token    = token
                     };
                     return Ok(response);
@@ -48,6 +49,34 @@ namespace DAPManSWebReports.API.Controllers
 
             }
             return Unauthorized();
+        }
+
+        [HttpPost("token")]
+        public async Task<IActionResult> GetTokenKeyCloak([FromBody] UserLogin userLogin)
+        {
+            var jwtSettings  = _configuration.GetSection("KeyCloakSettings");
+            var clientId     = jwtSettings["client_id"];
+            var clientSecret = jwtSettings["client_secret"];
+            var issuer       = jwtSettings["Issuer"];
+            var audience     = jwtSettings["Audience"];
+            try
+            {
+                var token    = await _jwtHandler.GetTokenAsync(userLogin.Username, userLogin.Password, clientId, clientSecret);
+                var claims   = TokenUtility.ValidateToken(token, clientSecret, issuer, audience);
+                var response = new UserResponse
+                {
+                    Username = userLogin.Username,
+                    Role     = TokenDecoder.GetRoleFromToken(token, clientSecret, issuer, audience),
+                    Token    = token
+                };
+                return Ok(response);
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return BadRequest(ex);
+            }
         }
     }
 }

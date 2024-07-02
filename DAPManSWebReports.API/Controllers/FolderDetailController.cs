@@ -43,6 +43,7 @@ namespace DAPManSWebReports.API.Controllers
             FolderDetail items                    = await _menuService.GetListDtos(folderList, viewList);
             return items;
         }
+        [Authorize]
         [HttpGet("childrens/{parentid}")]
         public async Task<IActionResult> GetChildFoldersViewsById(int parentid)
         {

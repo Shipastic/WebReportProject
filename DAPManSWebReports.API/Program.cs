@@ -1,14 +1,11 @@
 using DAPManSWebReports.API.Services.DI.Interfaces;
 using DAPManSWebReports.API.Services.DI.Registration;
 using DAPManSWebReports.Domain.ErrorReportService;
-
+using DAPManSWebReports.Domain.IdentityService.TokenServise;
 using LoggingLibrary.Service;
 
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
 
-using System.Text;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -58,28 +55,26 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
 });
 
-// Добавление аутентификации с использованием OpenID Connect (OIDC)
-// JWT Configuration
-var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-var secretKey = Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]);
+// Добавляем настройки аутентификации для собственного JWT
+builder.Services.AddCustomJwtAuthentication(builder.Configuration);
 
-builder.Services.AddAuthentication(options =>
+// Добавляем настройки аутентификации для Keycloak
+builder.Services.AddKeycloakAuthentication(builder.Configuration);
+
+// Добавляем политику аутентификации для  собственной схемы
+builder.Services.AddAuthorization(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = jwtSettings["Issuer"],
-        ValidAudience = jwtSettings["Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(secretKey)
-    };
+    // Политика для использования собственного JWT
+    options.AddPolicy("CustomPolicy", policy =>
+                                                policy.RequireAuthenticatedUser()
+                                                      .AddAuthenticationSchemes("CustomScheme")
+                                                      .RequireAuthenticatedUser());
+
+    // Политика для использования Keycloak
+    options.AddPolicy("KeycloakPolicy", policy =>
+                                                policy.RequireAuthenticatedUser()
+                                                      .AddAuthenticationSchemes("KeycloakScheme")
+                                                      .RequireAuthenticatedUser());
 });
 
 builder.Services.AddEndpointsApiExplorer();

@@ -6,6 +6,7 @@ using DAPManSWebReports.Domain.ExcelReportService;
 using DAPManSWebReports.Domain.QueryService;
 using LoggingLibrary.Service;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -40,7 +41,7 @@ namespace DAPManSWebReports.API.Controllers
             _sortingService = sortingService;
             _logger = logger;
         }
-
+        [Authorize]
         [HttpGet("{dataviewId}")]
         public async Task<IActionResult> Get(int dataviewId, 
                                              [FromQuery] int limit = 10, 

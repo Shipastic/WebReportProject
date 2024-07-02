@@ -27,14 +27,14 @@ namespace DAPManSWebReports.API.Controllers
             _dataViewService = dataViewService;
             _logger = logger;
         }
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "admin", Policy = "CustomPolicy")]
         [HttpGet]
         public async Task<IEnumerable<DataViewModel>> Get()
         {
             var dataViews = await _dataViewRepository.GetDtoList();
             return dataViews;
         }
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "admin", Policy = "CustomPolicy")]
         [HttpGet("parents")]
         public async Task<IEnumerable<DataViewModel>> GetParentFolders()
         {
@@ -42,7 +42,7 @@ namespace DAPManSWebReports.API.Controllers
             return dataviews;
 
         }
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "admin", Policy = "CustomPolicy")]
         [HttpGet("childrens/{parentid}")]
         public IActionResult GetChildFoldersById(int parentid)
         {
@@ -55,7 +55,7 @@ namespace DAPManSWebReports.API.Controllers
             }
         }
 
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "admin", Policy = "CustomPolicy")]
         [HttpGet("{dataviewid}")]
         public async Task<IActionResult> GetDataViewById(int dataviewid)
         {
@@ -79,7 +79,7 @@ namespace DAPManSWebReports.API.Controllers
         {
         }
 
-        // PUT api/<DataViewController>/5
+        [Authorize(Roles = "admin", Policy = "CustomPolicy")]
         [HttpPut("{dataviewid}")]
         public async Task<IActionResult> Put(int dataviewid, [FromBody] DataViewModel dataView)
         {
