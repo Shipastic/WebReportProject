@@ -7,21 +7,24 @@ using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using LoggingLibrary.Service;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using DAPManSWebReports.Entities.Services.QueryBuilder;
 
 namespace DAPManSWebReports.Entities.Repositories.Implement
 {
     public class QueryViewRepo: IQueryRepo<QueryView>
     {
         private readonly IBaseConBuilder _baseConBuilder;
-
+        private readonly IConfiguration _configuration;
         private readonly IBaseRepo<Models.DataView> _dataViewRepo;
         private readonly ILogger<QueryViewRepo> _logger;
 
-        public QueryViewRepo(IBaseConBuilder baseConBuilder, IBaseRepo<Models.DataView> dataViewRepo, ILogger<QueryViewRepo> logger)
+        public QueryViewRepo(IBaseConBuilder baseConBuilder, IBaseRepo<Models.DataView> dataViewRepo, ILogger<QueryViewRepo> logger, IConfiguration configuration)
         {
             _baseConBuilder = baseConBuilder ?? throw new ArgumentNullException(nameof(baseConBuilder));
             _dataViewRepo   = dataViewRepo   ?? throw new ArgumentNullException(nameof(dataViewRepo));
             _logger         = logger ?? throw new ArgumentNullException(nameof(logger));
+            _configuration  = configuration;
         }
 
         public async Task<QueryView> ReadById(int dataviewId, int limit, int offset)
@@ -100,81 +103,57 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         }
         public async Task<QueryView> ReadById(int dataviewId, Dictionary<string, object> queryparams)
         {
-            DataTable dt = new DataTable();
-            int totalCount = 0;
-            string query = "";
-            var dvRes = await _dataViewRepo.ReadById(dataviewId);
+            var queryContext = new QueryBuilderContext();
+            var userInput    = "1";
+            DataTable dt     = new DataTable();
+            int totalCount   = 0;
+            string query     = "";
+            string connectionDbString = "";
+            var dvRes        = await _dataViewRepo.ReadById(dataviewId);
+            dvRes.SetQueryParameters(queryparams);
             if (dvRes == null)
             {
                 _logger.LogError($"{DateTime.Now}|\t DataView with ID {dataviewId} not found.");
-
                 throw new KeyNotFoundException($"DataView with ID {dataviewId} not found.");               
             }
-            var dtSource = await _baseConBuilder.GetDbBuilder(dvRes.DataSourceId);
-
+            var dtSource  = await _baseConBuilder.GetDbBuilder(dvRes.DataSourceId);
+            string dbType = await dtSource.GetTypeDb(dvRes.DataSourceId); 
+            
             if (dtSource is OracleDBBuilder builder)
             {
-                string dbOrclstring = builder.GetConnectionStringDb();
+                connectionDbString = builder.GetConnectionStringDb();
 
-                _logger.LogInformation($"{DateTime.Now}|\t  Create connection string  to db: {dbOrclstring}");
-
-                using (OracleConnection con = new OracleConnection(dbOrclstring))
-                {
-                    try
-                    {
-                        await con.OpenAsync();
-                        
-                        using (OracleCommand cmd = con.CreateCommand())
-                        {
-                            QueryBuilder queryBuilder = new QueryBuilder(dvRes.Query);
-                            if (!string.IsNullOrEmpty(dvRes.StartDateField) && !string.IsNullOrEmpty(dvRes.StopDateField)
-                                && queryparams.TryGetValue("startDate", out var startDate)
-                                && queryparams.TryGetValue("endDate", out var endDate) 
-                                && !string.IsNullOrEmpty(Convert.ToString(startDate)) 
-                                && !string.IsNullOrEmpty(Convert.ToString(endDate)))
-                            {
-                                queryBuilder.AddDateFilter(dvRes.StartDateField, dvRes.StopDateField, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate));
-                            }
-
-                            query = queryBuilder.BuildQuery();
-
-                            cmd.CommandText = query;
-                            _logger.LogInformation($"{DateTime.Now}|\t  Create Query to db: {query}");
-
-                            var parameters = queryBuilder.GetParameters();
-                            foreach (var parameter in parameters)
-                            {
-                                cmd.Parameters.Add(parameter);
-                            }
-
-                            using var adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
-                            try
-                            {
-                                adapter.Fill(dt);
-                                totalCount = dt.Rows.Count;
-                            }
-                            catch (InvalidCastException ex)
-                            {
-                               _logger.LogError($"{DateTime.Now}|\t An error occurred during mapping: {ex.Message}");
-
-                                foreach (var er in dt.GetErrors())
-                                {
-                                    _logger.LogError($"{er.GetType()}");
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                _logger.LogError($"{DateTime.Now}|\t {ex.Message}\t{ex.InnerException}");
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.LogError($"{DateTime.Now}|\t An error occurred: {ex.Message}");
-                        throw new Exception($"An error occurred while reading data: {ex.Message}", ex);
-                    }
-                }
+                _logger.LogInformation($"{DateTime.Now}|\t  Create connection string  to db: {connectionDbString}");
             }
+
+            if (userInput.Equals("1"))
+            {
+                queryContext.SetQueryBuilderStrategy(new QueryBuilder(dvRes, connectionDbString)
+                                                                            .AddDateFilter(dvRes.StartDateField,
+                                                                                           dvRes.StopDateField,
+                                                                                           Convert.ToDateTime(dvRes.parameters
+                                                                                                                    .Where(p => p.Name
+                                                                                                                    .Equals("startDate"))
+                                                                                                                    .Select(v => v.Value)
+                                                                                                                    .SingleOrDefault()),
+                                                                                           Convert.ToDateTime(dvRes.parameters
+                                                                                                                    .Where(p => p.Name
+                                                                                                                    .Equals("stopDate"))
+                                                                                                                    .Select(v => v.Value)
+                                                                                                                    .SingleOrDefault())));
+            }
+            else
+            {
+                queryContext.SetQueryBuilderStrategy(new QueryBuilderIntel(dvRes, dbType, connectionDbString));
+            }
+            
+            query = queryContext.BuildQuery();
+
+            dt = await queryContext.ExecuteQuery(query);
+         
+            _logger.LogInformation($"{DateTime.Now}|\t  Create Query to db: {query}");
+            totalCount = dt.Rows.Count;
+
             return new QueryView(dvRes)
             {
                 TableResultQuery = dt,
@@ -182,6 +161,43 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                 ResultQuery = query,
                 TotalCount = totalCount
             };
+        }
+
+        /// <summary>
+        /// Метод возвращает кортеж из названий столбцов и значений
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public (List<object> objectList1, List<object> objectList2) DataTableToDataviewData(DataTable dt)
+        {
+            List<object> objectList1 = new List<object>();
+            List<object> objectList2 = new List<object>();
+            //
+            foreach (DataColumn column in (InternalDataCollectionBase)dt.Columns)
+            {
+                Dictionary<string, string> dictionary1 = new Dictionary<string, string>();
+                int ordinal;
+
+                Dictionary<string, string> dictionary2 = dictionary1;
+                ordinal = column.Ordinal;
+                string key = "data" + ordinal.ToString();
+                string columnName = column.ColumnName;
+                dictionary2.Add(key, columnName);
+                objectList2.Add((object)dictionary1);
+
+            }
+            //
+            foreach (DataRow row in (InternalDataCollectionBase)dt.Rows)
+            {
+                Dictionary<string, object> dictionary = new Dictionary<string, object>();
+                foreach (DataColumn column in (InternalDataCollectionBase)dt.Columns)
+                {
+                    dictionary.Add("data" + column.Ordinal.ToString(), row[column].ToString());
+                }
+                objectList1.Add((object)dictionary);
+            }
+
+            return (objectList1, objectList2);
         }
     }
 }

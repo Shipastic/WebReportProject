@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button          } from 'rsuite';
 import config              from '../../Utils/config';
+import tokenService from '../../Services/tokenService';
 
 interface Props 
 {
@@ -12,7 +13,7 @@ interface Props
 interface ViewParams 
 {
     startDate: string;
-    endDate: string;
+    stopDate: string;
     presetDate: string;
     format: string;
     sortOrder: string;
@@ -32,7 +33,7 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
             const params = new URLSearchParams(
                 {
                     startDate: viewParams.startDate,
-                    endDate: viewParams.endDate,
+                    stopDate: viewParams.stopDate,
                     presetDate: viewParams.presetDate,
                     format: viewParams.format,
                     sortOrder: viewParams.sortOrder,
@@ -40,7 +41,8 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
                     export: 'true',
                     
                 });
-            const response = await fetch(`${config.ApiBaseUrlDev}/exceldata/${dataviewid}?${params.toString()}`);
+            const headers = tokenService.getAuthHeaders();
+            const response = await fetch(`${config.ApiBaseUrlDev}/exceldata/${dataviewid}?${params.toString()}`,{headers:headers});
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
@@ -49,8 +51,8 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
             const link = document.createElement('a');
             link.href = url;
             const fileName = title + 
-            (viewParams.startDate && viewParams.endDate ? 
-                ` с ${viewParams.startDate} по ${viewParams.endDate}` : 
+            (viewParams.startDate && viewParams.stopDate ? 
+                ` с ${viewParams.startDate} по ${viewParams.stopDate}` : 
                 '');
 
             link.setAttribute('download', `${fileName}.xlsx`);

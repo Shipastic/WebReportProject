@@ -12818,3 +12818,3235 @@ Now listening on: http://localhost:5240
 Application started. Press Ctrl+C to shut down.
 Hosting environment: Development
 Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:16:40|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:20:44|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:23:52|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:24:11|	Show params query:
+03.07.2024 10:26:21|	 Query params:
+limit - 10
+
+03.07.2024 10:26:23|	 Query params:
+offset - 0
+
+03.07.2024 10:26:24|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 10:26:28|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 10:27:14|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 10:30:23|	 Get DataView by id:294
+03.07.2024 10:30:23|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 10:30:23|	 Getting DB builder for datasource ID: 17
+03.07.2024 10:30:23|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:30:23|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 10:30:23|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:30:23|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:30:23|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 10:36:23|	 An error occurred: Object reference not set to an instance of an object.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:41:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:41:37|	Show params query:
+03.07.2024 10:41:37|	 Query params:
+limit - 10
+
+03.07.2024 10:41:37|	 Query params:
+offset - 0
+
+03.07.2024 10:41:37|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 10:41:37|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 10:41:40|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 10:41:44|	 Get DataView by id:294
+03.07.2024 10:41:44|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 10:41:44|	 Getting DB builder for datasource ID: 17
+03.07.2024 10:41:44|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:41:44|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 10:41:44|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:41:44|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:41:44|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:45:27|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:45:29|	Show params query:
+03.07.2024 10:45:29|	 Query params:
+limit - 10
+
+03.07.2024 10:45:29|	 Query params:
+offset - 0
+
+03.07.2024 10:45:29|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 10:45:29|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 10:45:32|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 10:45:33|	 Get DataView by id:294
+03.07.2024 10:45:33|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 10:45:33|	 Getting DB builder for datasource ID: 17
+03.07.2024 10:45:33|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:45:33|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 10:45:33|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:45:33|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:45:33|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 10:46:54|	 An error occurred: Unsupported database type
+An unhandled exception has occurred while executing the request.
+03.07.2024 10:48:04|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:48:07|	Show params query:
+03.07.2024 10:48:07|	 Query params:
+limit - 10
+
+03.07.2024 10:48:07|	 Query params:
+offset - 0
+
+03.07.2024 10:48:07|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 10:48:07|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 10:48:08|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 10:48:09|	 Get DataView by id:294
+03.07.2024 10:48:09|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 10:48:09|	 Getting DB builder for datasource ID: 17
+03.07.2024 10:48:09|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:48:09|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 10:48:09|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:48:09|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:48:09|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:50:38|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:50:40|	Show params query:
+03.07.2024 10:50:40|	 Query params:
+limit - 10
+
+03.07.2024 10:50:40|	 Query params:
+offset - 0
+
+03.07.2024 10:50:40|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 10:50:40|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 10:50:41|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 10:50:43|	 Get DataView by id:294
+03.07.2024 10:50:43|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 10:50:43|	 Getting DB builder for datasource ID: 17
+03.07.2024 10:50:43|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:50:43|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 10:50:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:50:43|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:50:43|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 10:54:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:54:04|	Show params query:
+03.07.2024 10:54:04|	 Query params:
+limit - 10
+
+03.07.2024 10:54:04|	 Query params:
+offset - 0
+
+03.07.2024 10:54:04|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 10:54:04|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 10:54:04|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 10:54:05|	 Get DataView by id:294
+03.07.2024 10:54:05|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 10:54:05|	 Getting DB builder for datasource ID: 17
+03.07.2024 10:54:05|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:54:05|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 10:54:05|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 10:54:05|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 10:54:05|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 11:03:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 11:03:53|	Show params query:
+03.07.2024 11:03:53|	 Query params:
+limit - 10
+
+03.07.2024 11:03:53|	 Query params:
+offset - 0
+
+03.07.2024 11:03:53|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 11:03:53|	 Query params:
+endDate - 01.07.2024
+
+03.07.2024 11:03:54|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 11:03:55|	 Get DataView by id:294
+03.07.2024 11:03:55|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 11:03:55|	 Getting DB builder for datasource ID: 17
+03.07.2024 11:03:55|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 11:03:55|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 11:03:55|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 11:03:55|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 11:03:55|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 11:22:04|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 11:22:07|	Show params query:
+03.07.2024 11:22:07|	 Query params:
+limit - 10
+
+03.07.2024 11:22:07|	 Query params:
+offset - 0
+
+03.07.2024 11:22:07|	 Query params:
+startDate - 01.07.24
+
+03.07.2024 11:22:07|	 Query params:
+endDate - 03.07.24
+
+03.07.2024 11:22:08|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 11:22:10|	 Get DataView by id:294
+03.07.2024 11:22:10|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 11:22:10|	 Getting DB builder for datasource ID: 17
+03.07.2024 11:22:10|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 11:22:10|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 11:22:10|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 11:22:10|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 11:22:10|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 11:31:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 11:31:49|	Show params query:
+03.07.2024 11:31:49|	 Query params:
+limit - 10
+
+03.07.2024 11:31:49|	 Query params:
+offset - 0
+
+03.07.2024 11:31:49|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 11:31:49|	 Query params:
+endDate - 01.07.2024
+
+03.07.2024 11:31:50|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 11:31:51|	 Get DataView by id:294
+03.07.2024 11:31:51|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 11:31:51|	 Getting DB builder for datasource ID: 17
+03.07.2024 11:31:51|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 11:31:51|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 11:31:51|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 11:31:51|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 11:31:51|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 12:40:36|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 12:40:39|	Show params query:
+03.07.2024 12:40:39|	 Query params:
+limit - 10
+
+03.07.2024 12:40:39|	 Query params:
+offset - 0
+
+03.07.2024 12:40:39|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 12:40:39|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 12:40:40|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 12:40:42|	 Get DataView by id:294
+03.07.2024 12:40:42|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 12:40:42|	 Getting DB builder for datasource ID: 17
+03.07.2024 12:40:42|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 12:40:42|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 12:40:42|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 12:40:42|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 12:40:42|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 12:49:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 12:49:55|	Show params query:
+03.07.2024 12:49:55|	 Query params:
+limit - 10
+
+03.07.2024 12:49:55|	 Query params:
+offset - 0
+
+03.07.2024 12:49:55|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 12:49:55|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 12:49:58|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 12:50:02|	 Get DataView by id:294
+03.07.2024 12:50:02|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 12:50:02|	 Getting DB builder for datasource ID: 17
+03.07.2024 12:50:02|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 12:50:02|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 12:50:02|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 12:50:02|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 12:50:02|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 13:16:44|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:16:46|	Show params query:
+03.07.2024 13:16:46|	 Query params:
+limit - 10
+
+03.07.2024 13:16:46|	 Query params:
+offset - 0
+
+03.07.2024 13:16:46|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 13:16:46|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 13:17:05|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 13:17:16|	 Get DataView by id:294
+03.07.2024 13:17:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 13:29:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:29:02|	Show params query:
+03.07.2024 13:29:02|	 Query params:
+limit - 10
+
+03.07.2024 13:29:02|	 Query params:
+offset - 0
+
+03.07.2024 13:29:02|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 13:29:02|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 13:29:03|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 13:29:09|	 Get DataView by id:294
+03.07.2024 13:29:09|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 13:29:36|	 Getting DB builder for datasource ID: 17
+03.07.2024 13:29:36|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 13:29:36|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 13:29:36|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:29:37|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 13:29:40|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 13:37:47|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:37:50|	Show params query:
+03.07.2024 13:37:50|	 Query params:
+limit - 10
+
+03.07.2024 13:37:50|	 Query params:
+offset - 0
+
+03.07.2024 13:37:50|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 13:37:50|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 13:37:53|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 13:37:55|	 Get DataView by id:294
+03.07.2024 13:37:55|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 13:37:56|	 Getting DB builder for datasource ID: 17
+03.07.2024 13:37:56|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 13:37:56|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 13:37:56|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:37:56|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 13:37:56|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 13:43:31|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:43:34|	Show params query:
+03.07.2024 13:43:34|	 Query params:
+limit - 10
+
+03.07.2024 13:43:34|	 Query params:
+offset - 0
+
+03.07.2024 13:43:34|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 13:43:34|	 Query params:
+endDate - 03.07.2024
+
+03.07.2024 13:43:35|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 13:43:38|	 Get DataView by id:294
+03.07.2024 13:43:38|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 13:43:38|	 Getting DB builder for datasource ID: 17
+03.07.2024 13:43:38|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 13:43:38|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 13:43:38|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 13:43:38|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 13:43:38|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 13:50:55|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 14:01:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 14:04:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 14:04:56|	Show params query:
+03.07.2024 14:04:56|	 Query params:
+limit - 10
+
+03.07.2024 14:04:56|	 Query params:
+offset - 0
+
+03.07.2024 14:04:56|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 14:04:56|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 14:04:57|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 14:04:58|	 Get DataView by id:294
+03.07.2024 14:04:58|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 14:04:59|	 Getting DB builder for datasource ID: 17
+03.07.2024 14:04:59|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 14:04:59|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 14:04:59|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 14:04:59|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 14:04:59|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 14:49:44|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= ? AND "дата послойной резки" <= ? 
+03.07.2024 14:50:02|	 An error occurred: ORA-00911: неверный символ
+https://docs.oracle.com/error-help/db/ora-00911/
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 14:52:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 14:52:10|	Show params query:
+03.07.2024 14:52:10|	 Query params:
+limit - 10
+
+03.07.2024 14:52:10|	 Query params:
+offset - 0
+
+03.07.2024 14:52:10|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 14:52:10|	 Query params:
+stopDate - 2024-07-03
+
+03.07.2024 14:52:11|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 14:52:13|	 Get DataView by id:294
+03.07.2024 14:52:13|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 15:00:18|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:00:30|	Show params query:
+03.07.2024 15:00:30|	 Query params:
+limit - 10
+
+03.07.2024 15:00:30|	 Query params:
+offset - 0
+
+03.07.2024 15:00:30|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 15:00:30|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 15:00:39|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 15:00:49|	 Get DataView by id:294
+03.07.2024 15:00:49|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 15:19:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:19:18|	Show params query:
+03.07.2024 15:19:18|	 Query params:
+limit - 10
+
+03.07.2024 15:19:18|	 Query params:
+offset - 0
+
+03.07.2024 15:19:18|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 15:19:18|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 15:19:20|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 15:19:21|	 Get DataView by id:294
+03.07.2024 15:19:21|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 15:20:01|	 Getting DB builder for datasource ID: 17
+03.07.2024 15:20:01|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 15:20:01|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 15:20:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:20:01|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 15:20:01|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 15:27:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:27:43|	Show params query:
+03.07.2024 15:27:43|	 Query params:
+limit - 10
+
+03.07.2024 15:27:43|	 Query params:
+offset - 0
+
+03.07.2024 15:27:43|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 15:27:43|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 15:27:44|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 15:27:46|	 Get DataView by id:294
+03.07.2024 15:27:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 15:35:37|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:35:49|	Show params query:
+03.07.2024 15:35:49|	 Query params:
+limit - 10
+
+03.07.2024 15:35:49|	 Query params:
+offset - 0
+
+03.07.2024 15:35:49|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 15:35:49|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 15:35:50|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 15:35:52|	 Get DataView by id:294
+03.07.2024 15:35:52|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 15:37:19|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:37:26|	Show params query:
+03.07.2024 15:37:26|	 Query params:
+limit - 10
+
+03.07.2024 15:37:26|	 Query params:
+offset - 0
+
+03.07.2024 15:37:26|	 Query params:
+startDate - 2024-07-01
+
+03.07.2024 15:37:26|	 Query params:
+stopDate - 2024-07-03
+
+03.07.2024 15:37:27|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 15:37:32|	 Get DataView by id:294
+03.07.2024 15:37:32|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 15:44:30|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:44:40|	Show params query:
+03.07.2024 15:44:40|	 Query params:
+limit - 10
+
+03.07.2024 15:44:40|	 Query params:
+offset - 0
+
+03.07.2024 15:44:40|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 15:44:40|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 15:44:41|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 15:44:49|	 Get DataView by id:294
+03.07.2024 15:44:50|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 15:45:50|	 Getting DB builder for datasource ID: 17
+03.07.2024 15:45:50|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 15:45:50|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 15:45:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 15:45:50|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 15:45:50|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 16:19:14|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 16:19:18|	Show params query:
+03.07.2024 16:19:18|	 Query params:
+limit - 10
+
+03.07.2024 16:19:18|	 Query params:
+offset - 0
+
+03.07.2024 16:19:18|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 16:19:18|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 16:19:20|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 16:19:24|	 Get DataView by id:294
+03.07.2024 16:19:24|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 16:19:32|	 Getting DB builder for datasource ID: 17
+03.07.2024 16:19:32|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 16:19:32|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 16:19:32|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 16:19:32|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 16:19:32|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 16:23:03|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 16:23:05|	Show params query:
+03.07.2024 16:23:05|	 Query params:
+limit - 10
+
+03.07.2024 16:23:05|	 Query params:
+offset - 0
+
+03.07.2024 16:23:05|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 16:23:05|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 16:23:06|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 16:23:08|	 Get DataView by id:294
+03.07.2024 16:23:08|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 16:23:08|	 Getting DB builder for datasource ID: 17
+03.07.2024 16:23:08|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 16:23:08|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 16:23:08|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 16:23:08|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 16:23:08|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 16:25:09|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= 01.07.2024 0:00:00 AND "дата послойной резки" <= 03.07.2024 0:00:00 
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 16:38:16|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 16:38:18|	Show params query:
+03.07.2024 16:38:19|	 Query params:
+limit - 10
+
+03.07.2024 16:38:19|	 Query params:
+offset - 0
+
+03.07.2024 16:38:19|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 16:38:19|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 16:38:23|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 16:38:25|	 Get DataView by id:294
+03.07.2024 16:38:25|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 16:38:25|	 Getting DB builder for datasource ID: 17
+03.07.2024 16:38:25|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 16:38:25|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 16:38:25|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 16:38:25|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 16:38:25|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 16:40:45|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= "01.07.2024 0:00:00" AND "дата послойной резки" <= "03.07.2024 0:00:00" 
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 17:31:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 17:31:43|	Show params query:
+03.07.2024 17:31:43|	 Query params:
+limit - 10
+
+03.07.2024 17:31:43|	 Query params:
+offset - 0
+
+03.07.2024 17:31:43|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 17:31:43|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 17:31:44|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 17:31:49|	 Get DataView by id:294
+03.07.2024 17:31:49|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 17:31:49|	 Getting DB builder for datasource ID: 17
+03.07.2024 17:31:49|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 17:31:49|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 17:31:49|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 17:31:49|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 17:31:49|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 17:32:58|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= "01.07.2024 0:00:00" AND "дата послойной резки" <= "03.07.2024 0:00:00" 
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+03.07.2024 17:43:25|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 17:43:27|	Show params query:
+03.07.2024 17:43:28|	 Query params:
+limit - 10
+
+03.07.2024 17:43:28|	 Query params:
+offset - 0
+
+03.07.2024 17:43:28|	 Query params:
+startDate - 01.07.2024
+
+03.07.2024 17:43:28|	 Query params:
+stopDate - 03.07.2024
+
+03.07.2024 17:43:29|	 GetQueryViewWithParam dataviewId -294
+03.07.2024 17:43:37|	 Get DataView by id:294
+03.07.2024 17:43:37|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+03.07.2024 17:43:37|	 Getting DB builder for datasource ID: 17
+03.07.2024 17:43:37|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 17:43:37|	 Creating OracleDBBuilder for datasource ID: 17
+03.07.2024 17:43:37|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+03.07.2024 17:43:37|	 Executing query to get DB type for datasource ID: 17
+03.07.2024 17:43:37|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+03.07.2024 17:44:43|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(01.07.2024 0:00:00, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(03.07.2024 0:00:00, 'YYYY-MM-DD HH24:MI:SS') 
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 11:23:54|	 GetDataViewById:335 Start
+04.07.2024 11:23:54|	 Get DataView by id:335
+04.07.2024 11:23:54|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 11:23:54|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 11:35:12|	 GetDataViewById:335 Start
+04.07.2024 11:35:12|	 Get DataView by id:335
+04.07.2024 11:35:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 11:35:12|	 GetDataViewById:335 End
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 13:30:03|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 13:30:22|	Show params query:
+04.07.2024 13:30:27|	 Query params:
+limit - 10
+
+04.07.2024 13:30:27|	 Query params:
+offset - 0
+
+04.07.2024 13:30:27|	 Query params:
+startDate - 01.07.2024
+
+04.07.2024 13:30:27|	 Query params:
+stopDate - 03.07.2024
+
+04.07.2024 13:30:32|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 13:30:40|	 Get DataView by id:294
+04.07.2024 13:30:40|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 13:39:33|	 Getting DB builder for datasource ID: 17
+04.07.2024 13:39:33|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 13:39:34|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 13:39:34|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 13:39:47|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 13:40:15|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 13:47:49|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 13:47:53|	Show params query:
+04.07.2024 13:47:53|	 Query params:
+limit - 10
+
+04.07.2024 13:47:53|	 Query params:
+offset - 0
+
+04.07.2024 13:47:53|	 Query params:
+startDate - 01.07.2024
+
+04.07.2024 13:47:53|	 Query params:
+stopDate - 03.07.2024
+
+04.07.2024 13:47:55|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 13:47:59|	 Get DataView by id:294
+04.07.2024 13:47:59|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 13:47:59|	 Getting DB builder for datasource ID: 17
+04.07.2024 13:47:59|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 13:47:59|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 13:47:59|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 13:47:59|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 13:47:59|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 13:56:02|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 13:56:04|	Show params query:
+04.07.2024 13:56:04|	 Query params:
+limit - 10
+
+04.07.2024 13:56:04|	 Query params:
+offset - 0
+
+04.07.2024 13:56:04|	 Query params:
+startDate - 01.07.2024
+
+04.07.2024 13:56:04|	 Query params:
+stopDate - 03.07.2024
+
+04.07.2024 13:56:05|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 13:56:06|	 Get DataView by id:294
+04.07.2024 13:56:06|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 13:56:06|	 Getting DB builder for datasource ID: 17
+04.07.2024 13:56:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 13:56:06|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 13:56:06|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 13:56:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 13:56:06|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 13:57:09|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 13:58:31|	 Column name for sorting:| Sort order:
+04.07.2024 13:59:06|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:26 | limit:10| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 14:00:03|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:00:05|	Show params query:
+04.07.2024 14:00:05|	 Query params:
+limit - 10
+
+04.07.2024 14:00:05|	 Query params:
+offset - 0
+
+04.07.2024 14:00:05|	 Query params:
+startDate - 01.07.2024
+
+04.07.2024 14:00:05|	 Query params:
+stopDate - 03.07.2024
+
+04.07.2024 14:00:05|	 Column name for sorting:| Sort order:
+04.07.2024 14:00:05|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:26 | limit:10| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 14:00:20|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:00:22|	Show params query:
+04.07.2024 14:00:22|	 Query params:
+limit - 10
+
+04.07.2024 14:00:22|	 Query params:
+offset - 0
+
+04.07.2024 14:00:22|	 Query params:
+startDate - 01.07.2024
+
+04.07.2024 14:00:22|	 Query params:
+stopDate - 04.07.2024
+
+04.07.2024 14:00:23|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:00:34|	 Get DataView by id:294
+04.07.2024 14:00:34|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:00:34|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:00:34|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:00:34|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:00:34|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:00:34|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:00:34|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:08:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:08:19|	Show params query:
+04.07.2024 14:08:19|	 Query params:
+limit - 10
+
+04.07.2024 14:08:19|	 Query params:
+offset - 0
+
+04.07.2024 14:08:19|	 Query params:
+startDate - 2024-07-01
+
+04.07.2024 14:08:19|	 Query params:
+stopDate - 2024-07-03
+
+04.07.2024 14:08:58|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:09:01|	 Get DataView by id:294
+04.07.2024 14:09:01|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:09:01|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:09:01|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:09:01|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:09:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:09:01|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:09:01|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:15:44|	 GetDataViewById:294 Start
+04.07.2024 14:15:44|	 Get DataView by id:294
+04.07.2024 14:15:44|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:15:44|	 GetDataViewById:294 End
+04.07.2024 14:15:45|	 GetDataViewById:294 Start
+04.07.2024 14:15:45|	 Get DataView by id:294
+04.07.2024 14:15:45|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:15:45|	 GetDataViewById:294 End
+04.07.2024 14:16:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:16:10|	Show params query:
+04.07.2024 14:16:10|	 Query params:
+limit - 12
+
+04.07.2024 14:16:10|	 Query params:
+offset - 1
+
+04.07.2024 14:16:10|	 Query params:
+startDate - 2024-07-01 14:15:49
+
+04.07.2024 14:16:10|	 Query params:
+stopDate - 2024-07-03 14:15:49
+
+04.07.2024 14:16:10|	 Query params:
+presetDate - 
+
+04.07.2024 14:16:10|	 Query params:
+format - EXCEL
+
+04.07.2024 14:16:10|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:16:10|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:16:11|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:16:16|	 Get DataView by id:294
+04.07.2024 14:16:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:16:16|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:16:16|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:16:16|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:16:16|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:16:16|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:16:16|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:16:21|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:16:21|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:16:31|	Show params query:
+04.07.2024 14:16:31|	 Query params:
+limit - 12
+
+04.07.2024 14:16:31|	 Query params:
+offset - 1
+
+04.07.2024 14:16:31|	Show params query:
+04.07.2024 14:16:31|	 Query params:
+startDate - 2024-07-01 14:15:49
+
+04.07.2024 14:16:33|	 Query params:
+limit - 12
+
+04.07.2024 14:16:33|	 Query params:
+stopDate - 2024-07-03 14:15:49
+
+04.07.2024 14:16:33|	 Query params:
+presetDate - 
+
+04.07.2024 14:16:33|	 Query params:
+offset - 1
+
+04.07.2024 14:16:34|	 Query params:
+format - EXCEL
+
+04.07.2024 14:16:34|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:16:34|	 Query params:
+startDate - 2024-07-01 14:15:49
+
+04.07.2024 14:16:35|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:16:35|	 Query params:
+stopDate - 2024-07-03 14:15:49
+
+04.07.2024 14:16:36|	 Query params:
+presetDate - 
+
+04.07.2024 14:16:39|	 Query params:
+format - EXCEL
+
+04.07.2024 14:16:39|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:16:39|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:16:39|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:16:42|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:16:42|	 Get DataView by id:294
+04.07.2024 14:16:42|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:16:43|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:16:43|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:16:43|	 Get DataView by id:294
+04.07.2024 14:16:43|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:16:43|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:16:43|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:16:43|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:16:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:16:43|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:16:43|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:16:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:16:43|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:16:44|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:16:45|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:20:20|	 GetDataViewById:294 Start
+04.07.2024 14:20:20|	 Get DataView by id:294
+04.07.2024 14:20:20|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:20:20|	 GetDataViewById:294 End
+04.07.2024 14:20:20|	 GetDataViewById:294 Start
+04.07.2024 14:20:20|	 Get DataView by id:294
+04.07.2024 14:20:20|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:20:20|	 GetDataViewById:294 End
+04.07.2024 14:20:28|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:20:34|	Show params query:
+04.07.2024 14:20:34|	 Query params:
+limit - 12
+
+04.07.2024 14:20:34|	 Query params:
+offset - 1
+
+04.07.2024 14:20:34|	 Query params:
+startDate - 2024-07-01 14:20:24
+
+04.07.2024 14:20:34|	 Query params:
+stopDate - 2024-07-03 14:20:24
+
+04.07.2024 14:20:34|	 Query params:
+presetDate - 
+
+04.07.2024 14:20:34|	 Query params:
+format - EXCEL
+
+04.07.2024 14:20:34|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:20:34|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:20:35|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:20:37|	 Get DataView by id:294
+04.07.2024 14:20:37|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:20:37|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:20:37|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:20:37|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:20:37|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:20:37|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:20:37|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:20:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:20:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:20:55|	Show params query:
+04.07.2024 14:20:56|	 Query params:
+limit - 12
+
+04.07.2024 14:20:56|	 Query params:
+offset - 1
+
+04.07.2024 14:20:56|	 Query params:
+startDate - 2024-07-01 14:20:24
+
+04.07.2024 14:20:56|	 Query params:
+stopDate - 2024-07-03 14:20:24
+
+04.07.2024 14:20:56|	 Query params:
+presetDate - 
+
+04.07.2024 14:20:56|	 Query params:
+format - EXCEL
+
+04.07.2024 14:21:00|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:21:00|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:21:00|	Show params query:
+04.07.2024 14:21:03|	 Query params:
+limit - 12
+
+04.07.2024 14:21:03|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:21:03|	 Query params:
+offset - 1
+
+04.07.2024 14:21:04|	 Query params:
+startDate - 2024-07-01 14:20:24
+
+04.07.2024 14:21:04|	 Query params:
+stopDate - 2024-07-03 14:20:24
+
+04.07.2024 14:21:04|	 Query params:
+presetDate - 
+
+04.07.2024 14:21:04|	 Get DataView by id:294
+04.07.2024 14:21:04|	 Query params:
+format - EXCEL
+
+04.07.2024 14:21:04|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:21:04|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:21:04|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:21:05|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:21:05|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:21:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:21:06|	 Get DataView by id:294
+04.07.2024 14:21:06|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:21:06|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:21:06|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:21:06|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:21:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:21:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:21:06|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:21:07|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:21:07|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:21:07|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:21:07|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:29:29|	 GetDataViewById:294 Start
+04.07.2024 14:29:29|	 Get DataView by id:294
+04.07.2024 14:29:29|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:29:29|	 GetDataViewById:294 End
+04.07.2024 14:29:30|	 GetDataViewById:294 Start
+04.07.2024 14:29:30|	 Get DataView by id:294
+04.07.2024 14:29:30|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:29:30|	 GetDataViewById:294 End
+04.07.2024 14:29:36|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:29:38|	Show params query:
+04.07.2024 14:29:38|	 Query params:
+limit - 12
+
+04.07.2024 14:29:38|	 Query params:
+offset - 1
+
+04.07.2024 14:29:38|	 Query params:
+startDate - 2024-07-01 14:29:32
+
+04.07.2024 14:29:38|	 Query params:
+stopDate - 2024-07-03 14:29:32
+
+04.07.2024 14:29:38|	 Query params:
+presetDate - 
+
+04.07.2024 14:29:38|	 Query params:
+format - EXCEL
+
+04.07.2024 14:29:38|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:29:38|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:29:39|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:29:40|	 Get DataView by id:294
+04.07.2024 14:29:40|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:29:40|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:29:40|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:29:40|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:29:40|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:29:40|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:29:40|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:29:56|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:29:56|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:30:10|	Show params query:
+04.07.2024 14:30:10|	Show params query:
+04.07.2024 14:30:20|	 Query params:
+limit - 12
+
+04.07.2024 14:30:21|	 Query params:
+limit - 12
+
+04.07.2024 14:30:21|	 Query params:
+offset - 1
+
+04.07.2024 14:30:21|	 Query params:
+offset - 1
+
+04.07.2024 14:30:21|	 Query params:
+startDate - 2024-07-01 14:29:32
+
+04.07.2024 14:30:21|	 Query params:
+startDate - 2024-07-01 14:29:32
+
+04.07.2024 14:30:21|	 Query params:
+stopDate - 2024-07-03 14:29:32
+
+04.07.2024 14:30:21|	 Query params:
+stopDate - 2024-07-03 14:29:32
+
+04.07.2024 14:30:21|	 Query params:
+presetDate - 
+
+04.07.2024 14:30:21|	 Query params:
+presetDate - 
+
+04.07.2024 14:30:21|	 Query params:
+format - EXCEL
+
+04.07.2024 14:30:21|	 Query params:
+format - EXCEL
+
+04.07.2024 14:30:21|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:30:21|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:30:21|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:30:21|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:30:22|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:30:23|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:30:26|	 Get DataView by id:294
+04.07.2024 14:30:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:30:26|	 Get DataView by id:294
+04.07.2024 14:30:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:30:26|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:30:26|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:30:26|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:30:26|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:30:26|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:30:26|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:30:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:30:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:30:26|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:30:26|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:30:26|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:30:26|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:36:52|	 GetDataViewById:294 Start
+04.07.2024 14:36:52|	 Get DataView by id:294
+04.07.2024 14:36:52|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:36:52|	 GetDataViewById:294 End
+04.07.2024 14:36:53|	 GetDataViewById:294 Start
+04.07.2024 14:36:53|	 Get DataView by id:294
+04.07.2024 14:36:53|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:36:53|	 GetDataViewById:294 End
+04.07.2024 14:37:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:37:04|	Show params query:
+04.07.2024 14:37:04|	 Query params:
+limit - 12
+
+04.07.2024 14:37:04|	 Query params:
+offset - 1
+
+04.07.2024 14:37:04|	 Query params:
+startDate - 2024-07-01 14:36:56
+
+04.07.2024 14:37:04|	 Query params:
+stopDate - 2024-07-03 14:36:56
+
+04.07.2024 14:37:04|	 Query params:
+presetDate - 
+
+04.07.2024 14:37:04|	 Query params:
+format - EXCEL
+
+04.07.2024 14:37:04|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:37:04|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:37:05|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:37:06|	 Get DataView by id:294
+04.07.2024 14:37:06|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:37:06|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:37:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:37:06|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:37:06|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:37:06|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:37:06|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:37:10|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:37:11|	Show params query:
+04.07.2024 14:37:11|	 Query params:
+limit - 12
+
+04.07.2024 14:37:11|	 Query params:
+offset - 1
+
+04.07.2024 14:37:11|	 Query params:
+startDate - 2024-07-01 14:36:56
+
+04.07.2024 14:37:11|	 Query params:
+stopDate - 2024-07-03 14:36:56
+
+04.07.2024 14:37:11|	 Query params:
+presetDate - 
+
+04.07.2024 14:37:11|	 Query params:
+format - EXCEL
+
+04.07.2024 14:37:11|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:37:11|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:37:12|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:37:13|	 Get DataView by id:294
+04.07.2024 14:37:13|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:37:13|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:37:13|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:37:13|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:37:13|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:37:13|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:37:13|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:37:16|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:37:17|	Show params query:
+04.07.2024 14:37:17|	 Query params:
+limit - 12
+
+04.07.2024 14:37:17|	 Query params:
+offset - 1
+
+04.07.2024 14:37:17|	 Query params:
+startDate - 2024-07-01 14:36:56
+
+04.07.2024 14:37:17|	 Query params:
+stopDate - 2024-07-03 14:36:56
+
+04.07.2024 14:37:17|	 Query params:
+presetDate - 
+
+04.07.2024 14:37:17|	 Query params:
+format - EXCEL
+
+04.07.2024 14:37:17|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:37:17|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:37:17|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:37:18|	 Get DataView by id:294
+04.07.2024 14:37:18|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:37:18|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:37:18|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:37:18|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:37:18|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:37:18|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:37:18|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:39:02|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:39:04|	Show params query:
+04.07.2024 14:39:04|	 Query params:
+limit - 12
+
+04.07.2024 14:39:04|	 Query params:
+offset - 1
+
+04.07.2024 14:39:04|	 Query params:
+startDate - 2024-07-01 14:36:56
+
+04.07.2024 14:39:04|	 Query params:
+stopDate - 2024-07-03 14:36:56
+
+04.07.2024 14:39:04|	 Query params:
+presetDate - 
+
+04.07.2024 14:39:04|	 Query params:
+format - EXCEL
+
+04.07.2024 14:39:04|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:39:04|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:39:09|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:39:09|	 Get DataView by id:294
+04.07.2024 14:39:09|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:39:09|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:39:09|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:39:09|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:39:09|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:39:09|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:39:09|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:41:53|	 GetDataViewById:294 Start
+04.07.2024 14:41:53|	 Get DataView by id:294
+04.07.2024 14:41:53|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:41:53|	 GetDataViewById:294 End
+04.07.2024 14:41:54|	 GetDataViewById:294 Start
+04.07.2024 14:41:54|	 Get DataView by id:294
+04.07.2024 14:41:54|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:41:54|	 GetDataViewById:294 End
+04.07.2024 14:42:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:42:01|	Show params query:
+04.07.2024 14:42:01|	 Query params:
+limit - 12
+
+04.07.2024 14:42:01|	 Query params:
+offset - 1
+
+04.07.2024 14:42:01|	 Query params:
+startDate - 2024-07-01 14:41:56
+
+04.07.2024 14:42:01|	 Query params:
+stopDate - 2024-07-03 14:41:56
+
+04.07.2024 14:42:01|	 Query params:
+presetDate - 
+
+04.07.2024 14:42:01|	 Query params:
+format - EXCEL
+
+04.07.2024 14:42:01|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:42:01|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:42:01|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:42:01|	 Get DataView by id:294
+04.07.2024 14:42:01|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:42:01|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:42:01|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:42:01|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:42:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:42:01|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:42:01|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 14:42:20|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 14:42:22|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:42:22|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:42:23|	Show params query:
+04.07.2024 14:42:23|	 Query params:
+limit - 12
+
+04.07.2024 14:42:23|	 Query params:
+offset - 1
+
+04.07.2024 14:42:23|	 Query params:
+startDate - 2024-07-01 14:41:56
+
+04.07.2024 14:42:23|	 Query params:
+stopDate - 2024-07-03 14:41:56
+
+04.07.2024 14:42:23|	 Query params:
+presetDate - 
+
+04.07.2024 14:42:23|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 14:42:23|	 Query params:
+format - EXCEL
+
+04.07.2024 14:42:23|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:42:23|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:42:23|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 14:42:24|	Show params query:
+04.07.2024 14:42:24|	 Query params:
+limit - 12
+
+04.07.2024 14:42:24|	 Query params:
+offset - 1
+
+04.07.2024 14:42:24|	 Query params:
+startDate - 2024-07-01 14:41:56
+
+04.07.2024 14:42:24|	 Query params:
+stopDate - 2024-07-03 14:41:56
+
+04.07.2024 14:42:24|	 Query params:
+presetDate - 
+
+04.07.2024 14:42:24|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:40 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 14:42:24|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:40 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 14:42:24|	 Query params:
+format - EXCEL
+
+04.07.2024 14:42:24|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:42:24|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:42:24|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 14:42:24|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:40 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 14:43:23|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:43:25|	Show params query:
+04.07.2024 14:43:25|	 Query params:
+limit - 12
+
+04.07.2024 14:43:25|	 Query params:
+offset - 2
+
+04.07.2024 14:43:25|	 Query params:
+startDate - 2024-07-01 14:41:56
+
+04.07.2024 14:43:25|	 Query params:
+stopDate - 2024-07-03 14:41:56
+
+04.07.2024 14:43:25|	 Query params:
+presetDate - 
+
+04.07.2024 14:43:25|	 Query params:
+format - EXCEL
+
+04.07.2024 14:43:25|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:43:25|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:43:25|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 14:43:25|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:40 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 14:54:17|	 GetDataViewById:294 Start
+04.07.2024 14:54:17|	 Get DataView by id:294
+04.07.2024 14:54:17|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:54:17|	 GetDataViewById:294 End
+04.07.2024 14:54:19|	 GetDataViewById:294 Start
+04.07.2024 14:54:19|	 Get DataView by id:294
+04.07.2024 14:54:19|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:54:19|	 GetDataViewById:294 End
+04.07.2024 14:54:24|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:54:26|	Show params query:
+04.07.2024 14:54:26|	 Query params:
+limit - 12
+
+04.07.2024 14:54:26|	 Query params:
+offset - 1
+
+04.07.2024 14:54:26|	 Query params:
+startDate - 2024-07-01 14:54:21
+
+04.07.2024 14:54:26|	 Query params:
+stopDate - 2024-07-03 14:54:21
+
+04.07.2024 14:54:26|	 Query params:
+presetDate - 
+
+04.07.2024 14:54:26|	 Query params:
+format - EXCEL
+
+04.07.2024 14:54:26|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:54:26|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:54:26|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:54:26|	 Get DataView by id:294
+04.07.2024 14:54:26|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:54:26|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:54:26|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:54:26|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:54:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:54:26|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:54:26|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:54:27|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:54:29|	Show params query:
+04.07.2024 14:54:29|	 Query params:
+limit - 12
+
+04.07.2024 14:54:29|	 Query params:
+offset - 1
+
+04.07.2024 14:54:29|	 Query params:
+startDate - 2024-07-01 14:54:21
+
+04.07.2024 14:54:29|	 Query params:
+stopDate - 2024-07-03 14:54:21
+
+04.07.2024 14:54:29|	 Query params:
+presetDate - 
+
+04.07.2024 14:54:29|	 Query params:
+format - EXCEL
+
+04.07.2024 14:54:29|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:54:29|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:54:29|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:54:29|	 Get DataView by id:294
+04.07.2024 14:54:29|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:54:29|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:54:29|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:54:29|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:54:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:54:29|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:54:29|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:54:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:54:30|	Show params query:
+04.07.2024 14:54:30|	 Query params:
+limit - 12
+
+04.07.2024 14:54:30|	 Query params:
+offset - 1
+
+04.07.2024 14:54:30|	 Query params:
+startDate - 2024-07-01 14:54:21
+
+04.07.2024 14:54:30|	 Query params:
+stopDate - 2024-07-03 14:54:21
+
+04.07.2024 14:54:30|	 Query params:
+presetDate - 
+
+04.07.2024 14:54:30|	 Query params:
+format - EXCEL
+
+04.07.2024 14:54:30|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:54:30|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:54:31|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:54:31|	 Get DataView by id:294
+04.07.2024 14:54:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:54:31|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:54:31|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:54:31|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:54:31|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:54:31|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:54:31|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:55:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:55:17|	Show params query:
+04.07.2024 14:55:17|	 Query params:
+limit - 12
+
+04.07.2024 14:55:17|	 Query params:
+offset - 1
+
+04.07.2024 14:55:17|	 Query params:
+startDate - 2024-07-01 14:54:21
+
+04.07.2024 14:55:17|	 Query params:
+stopDate - 2024-07-03 14:54:21
+
+04.07.2024 14:55:17|	 Query params:
+presetDate - 
+
+04.07.2024 14:55:17|	 Query params:
+format - EXCEL
+
+04.07.2024 14:55:17|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:55:17|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:55:17|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:55:17|	 Get DataView by id:294
+04.07.2024 14:55:17|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:55:17|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:55:17|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:55:17|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:55:17|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:55:17|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:55:17|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 14:55:19|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:55:20|	Show params query:
+04.07.2024 14:55:20|	 Query params:
+limit - 12
+
+04.07.2024 14:55:20|	 Query params:
+offset - 1
+
+04.07.2024 14:55:20|	 Query params:
+startDate - 2024-07-01 14:54:21
+
+04.07.2024 14:55:20|	 Query params:
+stopDate - 2024-07-03 14:54:21
+
+04.07.2024 14:55:20|	 Query params:
+presetDate - 
+
+04.07.2024 14:55:20|	 Query params:
+format - EXCEL
+
+04.07.2024 14:55:20|	 Query params:
+sortOrder - undefined
+
+04.07.2024 14:55:20|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 14:55:20|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 14:55:20|	 Get DataView by id:294
+04.07.2024 14:55:20|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 14:55:20|	 Getting DB builder for datasource ID: 17
+04.07.2024 14:55:20|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:55:20|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 14:55:20|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 14:55:20|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 14:55:20|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 15:03:30|	 GetDataViewById:294 Start
+04.07.2024 15:03:30|	 Get DataView by id:294
+04.07.2024 15:03:30|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:03:30|	 GetDataViewById:294 End
+04.07.2024 15:03:31|	 GetDataViewById:294 Start
+04.07.2024 15:03:31|	 Get DataView by id:294
+04.07.2024 15:03:31|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:03:31|	 GetDataViewById:294 End
+04.07.2024 15:03:37|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:03:41|	Show params query:
+04.07.2024 15:03:41|	 Query params:
+limit - 12
+
+04.07.2024 15:03:41|	 Query params:
+offset - 1
+
+04.07.2024 15:03:41|	 Query params:
+startDate - 2024-07-01 15:03:34
+
+04.07.2024 15:03:41|	 Query params:
+stopDate - 2024-07-03 15:03:34
+
+04.07.2024 15:03:41|	 Query params:
+presetDate - 
+
+04.07.2024 15:03:41|	 Query params:
+format - EXCEL
+
+04.07.2024 15:03:41|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:03:41|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:03:41|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:03:41|	 Get DataView by id:294
+04.07.2024 15:03:41|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:03:41|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:03:41|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:03:41|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:03:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:03:41|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:03:41|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 15:11:16|	 GetDataViewById:294 Start
+04.07.2024 15:11:16|	 Get DataView by id:294
+04.07.2024 15:11:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:11:16|	 GetDataViewById:294 End
+04.07.2024 15:11:17|	 GetDataViewById:294 Start
+04.07.2024 15:11:17|	 Get DataView by id:294
+04.07.2024 15:11:17|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:11:17|	 GetDataViewById:294 End
+04.07.2024 15:11:23|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:11:25|	Show params query:
+04.07.2024 15:11:25|	 Query params:
+limit - 12
+
+04.07.2024 15:11:25|	 Query params:
+offset - 1
+
+04.07.2024 15:11:25|	 Query params:
+startDate - 2024-07-01 15:11:19
+
+04.07.2024 15:11:25|	 Query params:
+stopDate - 2024-07-03 15:11:19
+
+04.07.2024 15:11:25|	 Query params:
+presetDate - 
+
+04.07.2024 15:11:25|	 Query params:
+format - EXCEL
+
+04.07.2024 15:11:25|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:11:25|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:11:25|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:11:25|	 Get DataView by id:294
+04.07.2024 15:11:25|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:11:25|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:11:25|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:11:25|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:11:25|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:11:25|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:11:25|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 15:11:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:11:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:11:59|	Show params query:
+04.07.2024 15:11:59|	Show params query:
+04.07.2024 15:11:59|	 Query params:
+limit - 12
+
+04.07.2024 15:12:14|	 Query params:
+limit - 12
+
+04.07.2024 15:12:14|	 Query params:
+offset - 1
+
+04.07.2024 15:12:14|	 Query params:
+offset - 1
+
+04.07.2024 15:12:14|	 Query params:
+startDate - 2024-07-01 15:11:19
+
+04.07.2024 15:12:14|	 Query params:
+startDate - 2024-07-01 15:11:19
+
+04.07.2024 15:12:21|	 Query params:
+stopDate - 2024-07-03 15:11:19
+
+04.07.2024 15:12:35|	 Query params:
+stopDate - 2024-07-03 15:11:19
+
+04.07.2024 15:12:50|	 Query params:
+presetDate - 
+
+04.07.2024 15:13:13|	 Query params:
+presetDate - 
+
+04.07.2024 15:13:13|	 Query params:
+format - EXCEL
+
+04.07.2024 15:13:20|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:13:14|	 Query params:
+format - EXCEL
+
+04.07.2024 15:13:20|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:13:20|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:13:21|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:13:21|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:13:21|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:13:22|	 Get DataView by id:294
+04.07.2024 15:13:22|	 Get DataView by id:294
+04.07.2024 15:13:22|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:13:22|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:13:22|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:13:22|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:13:24|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:13:24|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:13:24|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:13:24|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:13:24|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:13:24|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 15:13:24|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:13:24|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:13:24|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:13:24|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 15:17:51|	 GetDataViewById:294 Start
+04.07.2024 15:17:51|	 Get DataView by id:294
+04.07.2024 15:17:51|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:17:51|	 GetDataViewById:294 End
+04.07.2024 15:17:51|	 GetDataViewById:294 Start
+04.07.2024 15:17:51|	 Get DataView by id:294
+04.07.2024 15:17:51|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:17:51|	 GetDataViewById:294 End
+04.07.2024 15:17:57|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:17:59|	Show params query:
+04.07.2024 15:17:59|	 Query params:
+limit - 12
+
+04.07.2024 15:17:59|	 Query params:
+offset - 1
+
+04.07.2024 15:17:59|	 Query params:
+startDate - 2024-07-01 15:17:54
+
+04.07.2024 15:17:59|	 Query params:
+stopDate - 2024-07-03 15:17:54
+
+04.07.2024 15:17:59|	 Query params:
+presetDate - 
+
+04.07.2024 15:17:59|	 Query params:
+format - EXCEL
+
+04.07.2024 15:17:59|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:17:59|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:17:59|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:17:59|	 Get DataView by id:294
+04.07.2024 15:17:59|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:17:59|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:17:59|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:17:59|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:17:59|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:17:59|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:17:59|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 15:18:19|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:18:20|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:18:25|	Show params query:
+04.07.2024 15:18:26|	 Query params:
+limit - 12
+
+04.07.2024 15:18:26|	 Query params:
+offset - 1
+
+04.07.2024 15:18:26|	 Query params:
+startDate - 2024-07-01 15:17:54
+
+04.07.2024 15:18:27|	 Query params:
+stopDate - 2024-07-03 15:17:54
+
+04.07.2024 15:18:28|	 Query params:
+presetDate - 
+
+04.07.2024 15:18:28|	Show params query:
+04.07.2024 15:18:29|	 Query params:
+format - EXCEL
+
+04.07.2024 15:18:30|	 Query params:
+limit - 12
+
+04.07.2024 15:18:30|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:18:30|	 Query params:
+offset - 1
+
+04.07.2024 15:18:30|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:19:15|	 Query params:
+startDate - 2024-07-01 15:17:54
+
+04.07.2024 15:19:15|	 Query params:
+stopDate - 2024-07-03 15:17:54
+
+04.07.2024 15:19:15|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:19:15|	 Query params:
+presetDate - 
+
+04.07.2024 15:19:15|	 Query params:
+format - EXCEL
+
+04.07.2024 15:19:15|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:19:15|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:19:15|	 Get DataView by id:294
+04.07.2024 15:19:15|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:19:15|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:19:15|	 Get DataView by id:294
+04.07.2024 15:19:15|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:19:15|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:19:15|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:19:15|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:19:15|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:19:15|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:19:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:19:15|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:19:15|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:19:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:19:15|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 15:19:15|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:19:17|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 15:24:44|	 GetDataViewById:294 Start
+04.07.2024 15:24:44|	 Get DataView by id:294
+04.07.2024 15:24:44|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:24:44|	 GetDataViewById:294 End
+04.07.2024 15:24:45|	 GetDataViewById:294 Start
+04.07.2024 15:24:45|	 Get DataView by id:294
+04.07.2024 15:24:45|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:24:45|	 GetDataViewById:294 End
+04.07.2024 15:24:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:24:52|	Show params query:
+04.07.2024 15:24:52|	 Query params:
+limit - 12
+
+04.07.2024 15:24:52|	 Query params:
+offset - 1
+
+04.07.2024 15:24:52|	 Query params:
+startDate - 2024-07-01 15:24:47
+
+04.07.2024 15:24:52|	 Query params:
+stopDate - 2024-07-03 15:24:47
+
+04.07.2024 15:24:52|	 Query params:
+presetDate - 
+
+04.07.2024 15:24:52|	 Query params:
+format - EXCEL
+
+04.07.2024 15:24:52|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:24:52|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:24:52|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:24:52|	 Get DataView by id:294
+04.07.2024 15:24:52|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:24:52|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:24:52|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:24:52|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:24:52|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:24:52|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:24:52|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 15:25:09|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:25:11|	Show params query:
+04.07.2024 15:25:11|	 Query params:
+limit - 12
+
+04.07.2024 15:25:11|	 Query params:
+offset - 1
+
+04.07.2024 15:25:11|	 Query params:
+startDate - 2024-07-01 15:24:47
+
+04.07.2024 15:25:11|	 Query params:
+stopDate - 2024-07-03 15:24:47
+
+04.07.2024 15:25:11|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:25:11|	 Query params:
+presetDate - 
+
+04.07.2024 15:25:11|	 Query params:
+format - EXCEL
+
+04.07.2024 15:25:11|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:25:11|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:25:12|	Show params query:
+04.07.2024 15:25:12|	 Query params:
+limit - 12
+
+04.07.2024 15:25:12|	 Query params:
+offset - 1
+
+04.07.2024 15:25:12|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:25:12|	 Query params:
+startDate - 2024-07-01 15:24:47
+
+04.07.2024 15:25:12|	 Query params:
+stopDate - 2024-07-03 15:24:47
+
+04.07.2024 15:25:12|	 Get DataView by id:294
+04.07.2024 15:25:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:25:12|	 Query params:
+presetDate - 
+
+04.07.2024 15:25:12|	 Query params:
+format - EXCEL
+
+04.07.2024 15:25:12|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:25:12|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:25:12|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:25:12|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:25:12|	 Get DataView by id:294
+04.07.2024 15:25:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:25:12|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:25:12|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:25:12|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:25:12|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:25:12|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:25:12|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:25:12|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 15:25:12|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:25:12|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:25:17|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:25:23|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 15:27:37|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:27:39|	Show params query:
+04.07.2024 15:27:39|	 Query params:
+limit - 12
+
+04.07.2024 15:27:39|	 Query params:
+offset - 1
+
+04.07.2024 15:27:39|	 Query params:
+startDate - 2024-07-01 15:24:47
+
+04.07.2024 15:27:39|	 Query params:
+stopDate - 2024-07-04 15:24:47
+
+04.07.2024 15:27:39|	 Query params:
+presetDate - 
+
+04.07.2024 15:27:39|	 Query params:
+format - EXCEL
+
+04.07.2024 15:27:39|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:27:39|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:27:39|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:27:39|	 Get DataView by id:294
+04.07.2024 15:27:39|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:27:39|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:27:39|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:27:39|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:27:39|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:27:39|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:27:39|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 15:27:56|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:28:01|	Show params query:
+04.07.2024 15:28:01|	 Query params:
+limit - 12
+
+04.07.2024 15:28:01|	 Query params:
+offset - 1
+
+04.07.2024 15:28:01|	 Query params:
+startDate - 2024-07-01 15:24:47
+
+04.07.2024 15:28:01|	 Query params:
+stopDate - 2024-07-04 15:24:47
+
+04.07.2024 15:28:01|	 Query params:
+presetDate - 
+
+04.07.2024 15:28:01|	 Query params:
+format - EXCEL
+
+04.07.2024 15:28:01|	 Query params:
+sortOrder - undefined
+
+04.07.2024 15:28:01|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 15:28:01|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 15:28:01|	 Get DataView by id:294
+04.07.2024 15:28:01|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 15:28:01|	 Getting DB builder for datasource ID: 17
+04.07.2024 15:28:01|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:28:01|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 15:28:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 15:28:01|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 15:28:01|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 16:11:54|	 GetDataViewById:294 Start
+04.07.2024 16:11:54|	 Get DataView by id:294
+04.07.2024 16:11:54|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:11:54|	 GetDataViewById:294 End
+04.07.2024 16:11:55|	 GetDataViewById:294 Start
+04.07.2024 16:11:55|	 Get DataView by id:294
+04.07.2024 16:11:55|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:11:55|	 GetDataViewById:294 End
+04.07.2024 16:12:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:12:04|	Show params query:
+04.07.2024 16:12:04|	 Query params:
+limit - 12
+
+04.07.2024 16:12:04|	 Query params:
+offset - 1
+
+04.07.2024 16:12:04|	 Query params:
+startDate - 2024-07-01 16:11:57
+
+04.07.2024 16:12:04|	 Query params:
+stopDate - 2024-07-03 16:11:57
+
+04.07.2024 16:12:04|	 Query params:
+presetDate - 
+
+04.07.2024 16:12:04|	 Query params:
+format - EXCEL
+
+04.07.2024 16:12:04|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:12:04|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:12:04|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:12:04|	 Get DataView by id:294
+04.07.2024 16:12:04|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:13:15|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:13:15|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:13:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:13:15|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:13:44|	Show params query:
+04.07.2024 16:13:45|	 Query params:
+limit - 12
+
+04.07.2024 16:13:45|	Show params query:
+04.07.2024 16:13:45|	 Query params:
+offset - 1
+
+04.07.2024 16:13:45|	 Query params:
+limit - 12
+
+04.07.2024 16:13:45|	 Query params:
+startDate - 2024-07-01 16:11:57
+
+04.07.2024 16:13:45|	 Query params:
+offset - 1
+
+04.07.2024 16:13:45|	 Query params:
+stopDate - 2024-07-03 16:11:57
+
+04.07.2024 16:13:45|	 Query params:
+startDate - 2024-07-01 16:11:57
+
+04.07.2024 16:13:45|	 Query params:
+stopDate - 2024-07-03 16:11:57
+
+04.07.2024 16:13:45|	 Query params:
+presetDate - 
+
+04.07.2024 16:13:45|	 Query params:
+format - EXCEL
+
+04.07.2024 16:13:45|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:13:45|	 Query params:
+presetDate - 
+
+04.07.2024 16:13:45|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:13:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:13:45|	 Query params:
+format - EXCEL
+
+04.07.2024 16:13:45|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:13:45|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:13:45|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:13:46|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:13:46|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:13:46|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:13:46|	 Get DataView by id:294
+04.07.2024 16:13:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:13:46|	 Get DataView by id:294
+04.07.2024 16:13:46|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:13:46|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:13:53|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:13:58|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:13:58|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:13:58|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:14:00|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:14:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:14:00|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:14:00|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:14:02|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:14:02|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:14:02|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:14:02|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:14:53|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:14:53|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:14:53|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:14:56|	 queryViewById:DAPManSWebReports.Domain.QueryService.QueryModel| TotalCount = 0
+04.07.2024 16:14:56|	 queryViewById:DAPManSWebReports.Domain.QueryService.QueryModel| TotalCount = 0
+04.07.2024 16:14:56|	 queryViewById:DAPManSWebReports.Domain.QueryService.QueryModel| TotalCount = 0
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 16:23:54|	 GetDataViewById:294 Start
+04.07.2024 16:23:54|	 Get DataView by id:294
+04.07.2024 16:23:54|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:23:54|	 GetDataViewById:294 End
+04.07.2024 16:23:56|	 GetDataViewById:294 Start
+04.07.2024 16:23:56|	 Get DataView by id:294
+04.07.2024 16:23:56|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:23:56|	 GetDataViewById:294 End
+04.07.2024 16:24:02|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:24:04|	Show params query:
+04.07.2024 16:24:04|	 Query params:
+limit - 12
+
+04.07.2024 16:24:04|	 Query params:
+offset - 1
+
+04.07.2024 16:24:04|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:24:04|	 Query params:
+stopDate - 2024-07-03 16:23:58
+
+04.07.2024 16:24:04|	 Query params:
+presetDate - 
+
+04.07.2024 16:24:04|	 Query params:
+format - EXCEL
+
+04.07.2024 16:24:04|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:24:04|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:24:04|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:24:04|	 Get DataView by id:294
+04.07.2024 16:24:04|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:24:27|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:24:28|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:24:28|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:24:28|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:24:30|	Show params query:
+04.07.2024 16:24:30|	Show params query:
+04.07.2024 16:24:30|	 Query params:
+limit - 12
+
+04.07.2024 16:24:30|	 Query params:
+offset - 1
+
+04.07.2024 16:24:30|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:24:30|	 Query params:
+limit - 12
+
+04.07.2024 16:24:30|	 Query params:
+offset - 1
+
+04.07.2024 16:24:30|	 Query params:
+stopDate - 2024-07-03 16:23:58
+
+04.07.2024 16:24:30|	 Query params:
+presetDate - 
+
+04.07.2024 16:24:30|	 Query params:
+format - EXCEL
+
+04.07.2024 16:24:30|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:24:30|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:24:30|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:24:30|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:24:30|	 Query params:
+stopDate - 2024-07-03 16:23:58
+
+04.07.2024 16:24:30|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:24:30|	 Query params:
+presetDate - 
+
+04.07.2024 16:24:30|	 Query params:
+format - EXCEL
+
+04.07.2024 16:24:30|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:24:30|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:24:30|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:24:30|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:24:30|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:24:30|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:24:38|	 Get DataView by id:294
+04.07.2024 16:24:38|	 Get DataView by id:294
+04.07.2024 16:24:38|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:24:38|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:24:41|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:24:42|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:24:43|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:24:43|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:24:43|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:24:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:24:43|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:24:43|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:24:45|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:24:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:24:56|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:24:57|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:26:54|	  Create Query to db: 
+04.07.2024 16:27:07|	  Create Query to db: 
+04.07.2024 16:27:12|	 queryViewById:DAPManSWebReports.Domain.QueryService.QueryModel| TotalCount = 0
+04.07.2024 16:27:12|	 queryViewById:DAPManSWebReports.Domain.QueryService.QueryModel| TotalCount = 0
+04.07.2024 16:27:12|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:27:13|	 queryViewById:DAPManSWebReports.Domain.QueryService.QueryModel| TotalCount = 0
+04.07.2024 16:27:34|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:27:36|	Show params query:
+04.07.2024 16:27:36|	 Query params:
+limit - 12
+
+04.07.2024 16:27:36|	 Query params:
+offset - 1
+
+04.07.2024 16:27:36|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:27:36|	 Query params:
+stopDate - 2024-07-03 16:23:58
+
+04.07.2024 16:27:36|	 Query params:
+presetDate - 
+
+04.07.2024 16:27:36|	 Query params:
+format - EXCEL
+
+04.07.2024 16:27:36|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:27:36|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:27:36|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:27:36|	 Get DataView by id:294
+04.07.2024 16:27:36|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:27:36|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:27:36|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:27:36|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:27:36|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:27:37|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:27:37|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:27:41|	  Create Query to db: select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:27:43|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 16:27:43|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:40 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:27:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:27:44|	Show params query:
+04.07.2024 16:27:44|	 Query params:
+limit - 12
+
+04.07.2024 16:27:44|	 Query params:
+offset - 1
+
+04.07.2024 16:27:44|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:27:44|	 Query params:
+stopDate - 2024-07-03 16:23:58
+
+04.07.2024 16:27:44|	 Query params:
+presetDate - 
+
+04.07.2024 16:27:44|	 Query params:
+format - EXCEL
+
+04.07.2024 16:27:44|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:27:44|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:27:44|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 16:27:44|	  ID:294| Name:select * from V_PPC_L2_INCORRECT| Title:_УСГП некорректные результаты учета труб в L2 - трубы без связи с билетами (на основе данных L2 в пределах последних 30 суток)| TotalCount:40 | limit:12| Query Result:select * from V_PPC_L2_INCORRECT WHERE "дата послойной резки" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата послойной резки" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 16:28:25|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:28:27|	Show params query:
+04.07.2024 16:28:27|	 Query params:
+limit - 12
+
+04.07.2024 16:28:27|	 Query params:
+offset - 1
+
+04.07.2024 16:28:27|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:28:27|	 Query params:
+stopDate - 2024-07-04 16:23:58
+
+04.07.2024 16:28:27|	 Query params:
+presetDate - 
+
+04.07.2024 16:28:27|	 Query params:
+format - EXCEL
+
+04.07.2024 16:28:27|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:28:27|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:28:27|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:28:27|	 Get DataView by id:294
+04.07.2024 16:28:27|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:28:30|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:28:30|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:28:30|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:28:30|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:28:30|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:28:30|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:28:48|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:28:49|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:28:52|	Show params query:
+04.07.2024 16:28:56|	Show params query:
+04.07.2024 16:28:59|	 Query params:
+limit - 12
+
+04.07.2024 16:29:01|	 Query params:
+limit - 12
+
+04.07.2024 16:29:02|	 Query params:
+offset - 1
+
+04.07.2024 16:29:02|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:29:02|	 Query params:
+offset - 1
+
+04.07.2024 16:29:02|	 Query params:
+stopDate - 2024-07-04 16:23:58
+
+04.07.2024 16:29:07|	 Query params:
+presetDate - 
+
+04.07.2024 16:29:07|	 Query params:
+startDate - 2024-07-01 16:23:58
+
+04.07.2024 16:29:07|	 Query params:
+stopDate - 2024-07-04 16:23:58
+
+04.07.2024 16:29:07|	 Query params:
+presetDate - 
+
+04.07.2024 16:29:07|	 Query params:
+format - EXCEL
+
+04.07.2024 16:29:07|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:29:07|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:29:07|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:29:07|	 Query params:
+format - EXCEL
+
+04.07.2024 16:29:07|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:29:07|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:29:07|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:29:07|	 Get DataView by id:294
+04.07.2024 16:29:07|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:29:07|	 Get DataView by id:294
+04.07.2024 16:29:08|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:29:08|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:29:11|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:29:11|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:29:11|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:29:11|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:29:11|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:29:11|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:29:11|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:29:11|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:29:11|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:29:11|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:29:20|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+04.07.2024 16:30:43|	 GetDataViewById:294 Start
+04.07.2024 16:30:43|	 Get DataView by id:294
+04.07.2024 16:30:43|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:30:43|	 GetDataViewById:294 End
+04.07.2024 16:30:44|	 GetDataViewById:294 Start
+04.07.2024 16:30:44|	 Get DataView by id:294
+04.07.2024 16:30:44|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:30:44|	 GetDataViewById:294 End
+04.07.2024 16:31:01|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:31:02|	Show params query:
+04.07.2024 16:31:02|	 Query params:
+limit - 12
+
+04.07.2024 16:31:02|	 Query params:
+offset - 1
+
+04.07.2024 16:31:02|	 Query params:
+startDate - 2024-06-07 16:30:46
+
+04.07.2024 16:31:02|	 Query params:
+stopDate - 2024-06-27 16:30:46
+
+04.07.2024 16:31:02|	 Query params:
+presetDate - 
+
+04.07.2024 16:31:02|	 Query params:
+format - EXCEL
+
+04.07.2024 16:31:02|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:31:02|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:31:02|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:31:02|	 Get DataView by id:294
+04.07.2024 16:31:02|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:31:04|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:31:04|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:31:04|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:31:04|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:31:04|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:31:04|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 16:31:14|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:31:16|	Show params query:
+04.07.2024 16:31:16|	 Query params:
+limit - 12
+
+04.07.2024 16:31:16|	 Query params:
+offset - 1
+
+04.07.2024 16:31:16|	 Query params:
+startDate - 2024-06-07 16:30:46
+
+04.07.2024 16:31:16|	 Query params:
+stopDate - 2024-06-27 16:30:46
+
+04.07.2024 16:31:16|	 Query params:
+presetDate - 
+
+04.07.2024 16:31:16|	 Query params:
+format - EXCEL
+
+04.07.2024 16:31:16|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:31:16|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:31:16|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:31:16|	 Get DataView by id:294
+04.07.2024 16:31:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:31:18|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:31:18|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:31:18|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:31:18|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:31:18|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:31:18|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 16:31:22|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:31:23|	Show params query:
+04.07.2024 16:31:23|	 Query params:
+limit - 12
+
+04.07.2024 16:31:23|	 Query params:
+offset - 1
+
+04.07.2024 16:31:23|	 Query params:
+startDate - 2024-06-07 16:30:46
+
+04.07.2024 16:31:23|	 Query params:
+stopDate - 2024-06-27 16:30:46
+
+04.07.2024 16:31:23|	 Query params:
+presetDate - 
+
+04.07.2024 16:31:23|	 Query params:
+format - EXCEL
+
+04.07.2024 16:31:23|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:31:23|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:31:23|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:31:23|	 Get DataView by id:294
+04.07.2024 16:31:23|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+An unhandled exception has occurred while executing the request.
+04.07.2024 16:31:29|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:31:29|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:31:29|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:31:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:31:29|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:31:29|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+04.07.2024 16:33:10|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:33:12|	Show params query:
+04.07.2024 16:33:12|	 Query params:
+limit - 12
+
+04.07.2024 16:33:12|	 Query params:
+offset - 1
+
+04.07.2024 16:33:12|	 Query params:
+startDate - 2024-06-07 16:30:46
+
+04.07.2024 16:33:12|	 Query params:
+stopDate - 2024-06-27 16:30:46
+
+04.07.2024 16:33:12|	 Query params:
+presetDate - 
+
+04.07.2024 16:33:12|	 Query params:
+format - EXCEL
+
+04.07.2024 16:33:12|	 Query params:
+sortOrder - undefined
+
+04.07.2024 16:33:12|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 16:33:12|	 GetQueryViewWithParam dataviewId -294
+04.07.2024 16:33:12|	 Get DataView by id:294
+04.07.2024 16:33:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 16:33:13|	 Getting DB builder for datasource ID: 17
+04.07.2024 16:33:13|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:33:13|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 16:33:13|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 16:33:13|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 16:33:13|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 23:13:04|	 GetDataViewById:285 Start
+04.07.2024 23:13:04|	 Get DataView by id:285
+04.07.2024 23:13:04|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:13:04|	 GetDataViewById:285 End
+04.07.2024 23:13:05|	 GetDataViewById:285 Start
+04.07.2024 23:13:05|	 Get DataView by id:285
+04.07.2024 23:13:05|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:13:05|	 GetDataViewById:285 End
+04.07.2024 23:13:19|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:13:25|	Show params query:
+04.07.2024 23:13:25|	 Query params:
+limit - 12
+
+04.07.2024 23:13:25|	 Query params:
+offset - 1
+
+04.07.2024 23:13:25|	 Query params:
+startDate - 2024-07-01 23:13:07
+
+04.07.2024 23:13:25|	 Query params:
+stopDate - 2024-07-04 23:13:07
+
+04.07.2024 23:13:25|	 Query params:
+presetDate - 
+
+04.07.2024 23:13:25|	 Query params:
+format - EXCEL
+
+04.07.2024 23:13:25|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:13:25|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:13:25|	 GetQueryViewWithParam dataviewId -285
+04.07.2024 23:13:25|	 Get DataView by id:285
+04.07.2024 23:13:25|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:13:29|	 Getting DB builder for datasource ID: 17
+04.07.2024 23:13:29|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:13:29|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 23:13:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:13:29|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:13:29|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 23:13:39|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:13:42|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:13:42|	Show params query:
+04.07.2024 23:13:42|	 Query params:
+limit - 12
+
+04.07.2024 23:13:42|	 Query params:
+offset - 1
+
+04.07.2024 23:13:42|	 Query params:
+startDate - 2024-07-01 23:13:07
+
+04.07.2024 23:13:42|	 Query params:
+stopDate - 2024-07-04 23:13:07
+
+04.07.2024 23:13:42|	 Query params:
+presetDate - 
+
+04.07.2024 23:13:42|	 Query params:
+format - EXCEL
+
+04.07.2024 23:13:42|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:13:42|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:13:43|	Show params query:
+04.07.2024 23:13:43|	 GetQueryViewWithParam dataviewId -285
+04.07.2024 23:13:43|	 Query params:
+limit - 12
+
+04.07.2024 23:13:43|	 Query params:
+offset - 1
+
+04.07.2024 23:13:43|	 Query params:
+startDate - 2024-07-01 23:13:07
+
+04.07.2024 23:13:43|	 Query params:
+stopDate - 2024-07-04 23:13:07
+
+04.07.2024 23:13:43|	 Get DataView by id:285
+04.07.2024 23:13:43|	 Query params:
+presetDate - 
+
+04.07.2024 23:13:43|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:13:43|	 Query params:
+format - EXCEL
+
+04.07.2024 23:13:43|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:13:43|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:13:43|	 GetQueryViewWithParam dataviewId -285
+04.07.2024 23:13:45|	 Getting DB builder for datasource ID: 17
+04.07.2024 23:13:45|	 Get DataView by id:285
+04.07.2024 23:13:45|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:13:45|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:13:46|	 Getting DB builder for datasource ID: 17
+04.07.2024 23:13:46|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:13:46|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 23:13:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:13:46|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:13:46|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 23:13:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:13:46|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 23:13:48|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:13:48|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 23:13:50|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:13:50|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:13:50|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:14:02|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:14:02|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:14:02|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:14:02|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:14:02|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:14:02|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+04.07.2024 23:16:02|	 GetDataViewById:285 Start
+04.07.2024 23:16:02|	 Get DataView by id:285
+04.07.2024 23:16:02|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:16:02|	 GetDataViewById:285 End
+04.07.2024 23:16:03|	 GetDataViewById:285 Start
+04.07.2024 23:16:03|	 Get DataView by id:285
+04.07.2024 23:16:03|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:16:03|	 GetDataViewById:285 End
+04.07.2024 23:16:10|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:16:12|	Show params query:
+04.07.2024 23:16:12|	 Query params:
+limit - 12
+
+04.07.2024 23:16:12|	 Query params:
+offset - 1
+
+04.07.2024 23:16:12|	 Query params:
+startDate - 2024-07-01 23:16:06
+
+04.07.2024 23:16:12|	 Query params:
+stopDate - 2024-07-04 23:16:06
+
+04.07.2024 23:16:12|	 Query params:
+presetDate - 
+
+04.07.2024 23:16:12|	 Query params:
+format - EXCEL
+
+04.07.2024 23:16:12|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:16:12|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:16:12|	 GetQueryViewWithParam dataviewId -285
+04.07.2024 23:16:12|	 Get DataView by id:285
+04.07.2024 23:16:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:16:14|	 Getting DB builder for datasource ID: 17
+04.07.2024 23:16:14|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:16:14|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 23:16:14|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:16:14|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:16:14|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 23:16:24|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:16:24|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:16:24|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:16:24|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:16:25|	Show params query:
+04.07.2024 23:16:25|	 Query params:
+limit - 12
+
+04.07.2024 23:16:25|	 Query params:
+offset - 1
+
+04.07.2024 23:16:25|	 Query params:
+startDate - 2024-07-01 23:16:06
+
+04.07.2024 23:16:25|	 Query params:
+stopDate - 2024-07-04 23:16:06
+
+04.07.2024 23:16:25|	 Query params:
+presetDate - 
+
+04.07.2024 23:16:25|	 Query params:
+format - EXCEL
+
+04.07.2024 23:16:25|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:16:25|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:16:25|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:16:25|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:16:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:16:26|	Show params query:
+04.07.2024 23:16:26|	 Query params:
+limit - 12
+
+04.07.2024 23:16:26|	 Query params:
+offset - 1
+
+04.07.2024 23:16:26|	 Query params:
+startDate - 2024-07-01 23:16:06
+
+04.07.2024 23:16:26|	 Query params:
+stopDate - 2024-07-04 23:16:06
+
+04.07.2024 23:16:26|	 Query params:
+presetDate - 
+
+04.07.2024 23:16:26|	 Query params:
+format - EXCEL
+
+04.07.2024 23:16:26|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:16:26|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:16:26|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:16:26|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:17:50|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:20:35|	 GetDataViewById:285 Start
+04.07.2024 23:20:35|	 Get DataView by id:285
+04.07.2024 23:20:35|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:20:35|	 GetDataViewById:285 End
+04.07.2024 23:20:36|	 GetDataViewById:285 Start
+04.07.2024 23:20:36|	 Get DataView by id:285
+04.07.2024 23:20:36|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:20:36|	 GetDataViewById:285 End
+04.07.2024 23:20:43|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:20:45|	Show params query:
+04.07.2024 23:20:45|	 Query params:
+limit - 12
+
+04.07.2024 23:20:45|	 Query params:
+offset - 1
+
+04.07.2024 23:20:45|	 Query params:
+startDate - 2024-07-01 23:20:38
+
+04.07.2024 23:20:45|	 Query params:
+stopDate - 2024-07-04 23:20:38
+
+04.07.2024 23:20:45|	 Query params:
+presetDate - 
+
+04.07.2024 23:20:45|	 Query params:
+format - EXCEL
+
+04.07.2024 23:20:45|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:20:45|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:20:45|	 GetQueryViewWithParam dataviewId -285
+04.07.2024 23:20:45|	 Get DataView by id:285
+04.07.2024 23:20:45|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+04.07.2024 23:20:45|	 Getting DB builder for datasource ID: 17
+04.07.2024 23:20:45|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:20:45|	 Creating OracleDBBuilder for datasource ID: 17
+04.07.2024 23:20:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:20:45|	 Executing query to get DB type for datasource ID: 17
+04.07.2024 23:20:45|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+04.07.2024 23:20:54|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:20:54|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:20:54|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:20:54|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:20:59|	Show params query:
+04.07.2024 23:20:59|	 Query params:
+limit - 12
+
+04.07.2024 23:20:59|	 Query params:
+offset - 1
+
+04.07.2024 23:20:59|	 Query params:
+startDate - 2024-07-01 23:20:38
+
+04.07.2024 23:20:59|	 Query params:
+stopDate - 2024-07-04 23:20:38
+
+04.07.2024 23:20:59|	 Query params:
+presetDate - 
+
+04.07.2024 23:20:59|	 Query params:
+format - EXCEL
+
+04.07.2024 23:20:59|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:20:59|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:20:59|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:20:59|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:21:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:21:00|	Show params query:
+04.07.2024 23:21:00|	 Query params:
+limit - 12
+
+04.07.2024 23:21:00|	 Query params:
+offset - 1
+
+04.07.2024 23:21:00|	 Query params:
+startDate - 2024-07-01 23:20:38
+
+04.07.2024 23:21:00|	 Query params:
+stopDate - 2024-07-04 23:20:38
+
+04.07.2024 23:21:00|	 Query params:
+presetDate - 
+
+04.07.2024 23:21:00|	 Query params:
+format - EXCEL
+
+04.07.2024 23:21:00|	 Query params:
+sortOrder - undefined
+
+04.07.2024 23:21:00|	 Query params:
+sortColumnNumber - null
+
+04.07.2024 23:21:00|	 Column name for sorting:null| Sort order:undefined
+04.07.2024 23:21:00|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+04.07.2024 23:21:06|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+04.07.2024 23:22:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3

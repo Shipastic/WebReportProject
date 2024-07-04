@@ -2,6 +2,7 @@
 
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace DAPManSWebReports.Domain.IdentityService.TokenServise
 {
@@ -10,7 +11,7 @@ namespace DAPManSWebReports.Domain.IdentityService.TokenServise
         public static ClaimsPrincipal ValidateToken(string token, string secretKey, string issuer, string audience)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Convert.FromBase64String(secretKey);
+            var key = Encoding.UTF8.GetBytes(secretKey);
 
             var validationParameters = new TokenValidationParameters
             {

@@ -34,7 +34,7 @@ namespace DAPManSWebReports.API.Controllers
             _cacheService = cacheService;
         }
 
-        [Authorize]
+        [Authorize(Policy = "CustomPolicy")]
         [HttpGet("{dataviewId}")]
         public async Task<IActionResult> ExportData(int dataviewId)
         {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Form, ButtonToolbar,  Panel, Button, FlexboxGrid, Content } from 'rsuite';
 import { useUser } from '../../Components/UserContext/UserContext';
 import config                              from '..//../Utils/config';
@@ -55,10 +55,10 @@ const LoginPage: React.FC<LoginFormProps> = () => {
     
     return (
         <Content className='content'>
-        <div className="login-page">
-            <FlexboxGrid justify="center">
+        <div className="login-page" >
+            <FlexboxGrid justify="center" >
                 <FlexboxGrid.Item colspan={6}>
-                    <Panel header={<h3>Вход</h3>} bordered>
+                    <Panel header={<h3 style={{textAlign:'center'}}>Вход</h3>} bordered >
                         <Form fluid onSubmit={handleSubmit}>
                             <Form.Group controlId="email">
                                 <Form.ControlLabel>Почта</Form.ControlLabel>
@@ -85,7 +85,7 @@ const LoginPage: React.FC<LoginFormProps> = () => {
                                 <ButtonToolbar>
                                     <Button appearance="primary" onClick={handleSubmit}>Войти</Button>
                                     <Button appearance="link">Забыли пароль?</Button>
-                                    <Button appearance="default">Отмена</Button>
+                                    <Button appearance="default" style={{marginLeft:'20px'}}> <Link to="/">Отмена</Link></Button>
                                 </ButtonToolbar>
                             </Form.Group>
                         </Form>                        

@@ -24,8 +24,9 @@ html, body {
 }
 
 .rs-panel-bordered{
-  background-color: rgba(94, 78, 150, 0.2);
-  color: #191e68;
+  background-color: rgba(2, 0, 0, 0.692);
+  color: #dddde4;
+  width: 350px;
 }
 
 /**********************CONTENT*******************************/

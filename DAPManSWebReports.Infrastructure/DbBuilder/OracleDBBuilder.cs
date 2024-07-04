@@ -3,6 +3,10 @@ using LoggingLibrary.Service;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
+using Oracle.ManagedDataAccess.Client;
+
+using System.Data;
+
 namespace DAPManSWebReports.Infrastructure.DbBuilder
 {
     public class OracleDBBuilder : BaseConBuilder
@@ -27,6 +31,5 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
 
             return oracleConnString;           
         }
-        
     }
 }

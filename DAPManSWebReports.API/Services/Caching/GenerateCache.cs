@@ -13,13 +13,13 @@ namespace DAPManSWebReports.API.Services.Caching
         }
         public string GenerateCacheKey(int dataviewId, QuerySettingsModel settingsModel)
         {
-            if (string.IsNullOrEmpty(settingsModel.startDate) && string.IsNullOrEmpty(settingsModel.endDate))
+            if (string.IsNullOrEmpty(settingsModel.startDate) && string.IsNullOrEmpty(settingsModel.stopDate))
             {
                 return $"QueryData_{dataviewId}_FullResult";
             }
             else
             {
-                return $"QueryData_{dataviewId}_{settingsModel.startDate}_{settingsModel.endDate}_FullResult";
+                return $"QueryData_{dataviewId}_{settingsModel.startDate}_{settingsModel.stopDate}_FullResult";
             }
         }
 

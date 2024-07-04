@@ -7,7 +7,7 @@ import './BurgerMenu.css';
 
 const BurgerMenuComponent: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { role } = useUser();
+  const { user } = useUser();
   const handleStateChange = (state) => { setIsOpen(state.isOpen);};
   const toggleMenu = () => { setIsOpen(!isOpen); };
 
@@ -27,22 +27,22 @@ const BurgerMenuComponent: React.FC = () => {
           customCrossIcon={false}  
         >
           <a className="menu-item " href="/settings"    onClick={toggleMenu}>
-            Settings
+            Настройки
           </a>
           <a className="menu-item " href="/about"       onClick={toggleMenu}>
-            Apps
+            Приложение
           </a>
           <a className="menu-item--small " href="/home" onClick={toggleMenu}>
-            Profile
+            Профиль
           </a>
-          {role ==='admin' && (
+          {user && user.role ==='admin' && (
           <a className="menu-item" href="/admin"        onClick={toggleMenu}>
-            Admin Panel
+            Админ Панель
           </a>
           )}
-          {role === 'user' && (
+          {user && user.role === 'user' && (
           <a className="menu-item" href="/user"         onClick={toggleMenu}>
-            User Dashboard
+            Дашборд
           </a>
           )}
         </Menu>

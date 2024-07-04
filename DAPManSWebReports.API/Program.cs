@@ -5,6 +5,7 @@ using DAPManSWebReports.Domain.IdentityService.TokenServise;
 using LoggingLibrary.Service;
 
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 
 using System.Text.Json;
 
@@ -54,7 +55,11 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
 });
-
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = "CustomScheme";
+    options.DefaultChallengeScheme    = "CustomScheme";
+});
 // Добавляем настройки аутентификации для собственного JWT
 builder.Services.AddCustomJwtAuthentication(builder.Configuration);
 
@@ -78,7 +83,35 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Web Report API", Version = "v1" });
+
+    // Определите схему безопасности
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Пожалуйста, введите ваш JWT токен, используя это поле (пример: 'Bearer 12345abcdef')",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+           {
+               {
+                   new OpenApiSecurityScheme
+                   {
+                       Reference = new OpenApiReference
+                       {
+                           Type = ReferenceType.SecurityScheme,
+                           Id = "Bearer"
+                       }
+                   },
+                   new string[] { }
+               }
+           });
+});
 //builder.Services.AddResponseCaching();
 builder.Services.AddAuthorization();
 var app = builder.Build();

@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(45, 168, 32, 0.808);  
+    background-color: rgba(163, 165, 163, 0.808);  
 }
 .content{
     background-image: url('/src/assets/LogoPortal.png');

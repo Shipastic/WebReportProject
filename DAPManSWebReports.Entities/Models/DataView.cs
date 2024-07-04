@@ -25,6 +25,35 @@ namespace DAPManSWebReports.Entities.Models
         public string LastUser { get; set; }
         public int id { get; set; }
         public int ParentID { get; set; }
+        public DateTime StartDate {  get; set; }
+        public DateTime StopDate {  get; set; }
+        public SpParameter[] parameters {  get; set; }
+        public void SetQueryParameters(Dictionary<string, object> queryParams)
+        {
+            if (queryParams == null)
+            {
+                throw new ArgumentNullException(nameof(queryParams));
+            }
 
+            parameters = queryParams.Select(param => 
+            {
+               if (param.Key == "startDate" || param.Key == "stopDate")
+            {
+                return new SpParameter
+                {
+                    Name = param.Key,
+                    Value = Convert.ToDateTime(param.Value)
+                };
+            }
+            else
+            {
+                return new SpParameter
+                {
+                    Name = param.Key,
+                    Value = param.Value
+                };
+            }
+        }).ToArray();
+        }
     }
 }

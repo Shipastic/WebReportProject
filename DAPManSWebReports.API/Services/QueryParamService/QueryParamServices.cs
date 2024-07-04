@@ -1,9 +1,8 @@
 ﻿using DAPManSWebReports.Domain.QueryService;
+
 using Microsoft.Extensions.Primitives;
 
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.Entity.Infrastructure;
 using System.Reflection;
 
 namespace DAPManSWebReports.API.Services.QueryParamService

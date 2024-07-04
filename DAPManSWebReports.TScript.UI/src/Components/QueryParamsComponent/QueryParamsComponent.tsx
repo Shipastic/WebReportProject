@@ -8,7 +8,7 @@ import './QueryParams.css';
 interface ViewParams 
 {
     startDate: string;
-    endDate: string;
+    stopDate: string;
     presetDate: string;
     format: string;
     sortOrder: string;
@@ -30,30 +30,30 @@ interface Props
 const getPresetDates = (preset: string) => {
     const today = new Date();
     let startDate = today;
-    let endDate = today;
+    let stopDate = today;
 
     switch (preset) {
         case 'today':
             startDate.setHours(0, 0, 0, 0);
-            endDate.setHours(23, 59, 59, 999);
+            stopDate.setHours(23, 59, 59, 999);
             break;
         case 'yesterday':
             startDate.setDate(today.getDate() - 1);
             startDate.setHours(0, 0, 0, 0);
-            endDate.setDate(today.getDate() - 1);
-            endDate.setHours(23, 59, 59, 999);
+            stopDate.setDate(today.getDate() - 1);
+            stopDate.setHours(23, 59, 59, 999);
             break;
         case 'week':
             startDate.setDate(today.getDate() - today.getDay() + 1);
             startDate.setHours(0, 0, 0, 0);
-            endDate.setDate(startDate.getDate() + 6);
-            endDate.setHours(23, 59, 59, 999);
+            stopDate.setDate(startDate.getDate() + 6);
+            stopDate.setHours(23, 59, 59, 999);
             break;
         case 'month':
             startDate = new Date(today.getFullYear(), today.getMonth(), 1);
             startDate.setHours(0, 0, 0, 0);
-            endDate   = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-            endDate.setHours(23, 59, 59, 999);
+            stopDate   = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+            stopDate.setHours(23, 59, 59, 999);
             break;
         default:
             break;
@@ -61,7 +61,7 @@ const getPresetDates = (preset: string) => {
 
     return {
         startDate: formatDateForOracle(startDate.toISOString()),
-        endDate:   formatDateForOracle(endDate.toISOString())
+        stopDate:   formatDateForOracle(stopDate.toISOString())
     };
 };
 
@@ -75,7 +75,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
             setParams((prevParams) => ({
                 ...prevParams,
                 startDate: '',
-                endDate: '',
+                stopDate: '',
             }));
         }
     }, [needsDateParams]);
@@ -86,7 +86,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
         setParams({
             ...params,
             startDate: needsDateParams ? formatDateForOracle(value[0].toISOString()) : '',
-            endDate: needsDateParams ? formatDateForOracle(value[1].toISOString()) : ''
+            stopDate: needsDateParams ? formatDateForOracle(value[1].toISOString()) : ''
         });
     };
 
@@ -103,8 +103,8 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
     };
 
     const handlePresetDateChange = (value: string) => {
-        const { startDate, endDate } = getPresetDates(value);
-        setParams({ ...params, presetDate: value, startDate, endDate });
+        const { startDate, stopDate } = getPresetDates(value);
+        setParams({ ...params, presetDate: value, startDate, stopDate });
     };
 
     const presetDates = [
@@ -154,7 +154,7 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                                     <Form.ControlLabel>Диапазон дат:</Form.ControlLabel>
                                     <DateRangePicker
                                         className="custom-date-picker"
-                                        value={[new Date(params.startDate), new Date(params.endDate)]}
+                                        value={[new Date(params.startDate), new Date(params.stopDate)]}
                                         onChange={handleDateRangeChange}
                                         format="yyyy-MM-dd'T'HH:mm:ssXXX"
                                         caretAs={CalendarIcon}

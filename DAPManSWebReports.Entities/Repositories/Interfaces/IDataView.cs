@@ -27,6 +27,9 @@ namespace DAPManSWebReports.Entities.Repositories.Interfaces
         bool IsStoredProcedure { get; set; }
         DateTime LastUpdate { get; set; }
         string LastUser { get; set; }
-       
+        SpParameter[] parameters {  get; set; }
+        public DateTime StartDate {  get; set; }
+        public DateTime StopDate {  get; set; }
+
     }
 }

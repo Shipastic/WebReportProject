@@ -31,7 +31,7 @@ namespace DAPManSWebReports.API.Controllers
             _dataViewService = dataViewService;
         }
 
-        [Authorize]
+        [Authorize(Policy = "CustomPolicy")]
         [HttpGet("parents")]
         public async Task<FolderDetail> GetParentMenuItens()
         {
@@ -43,7 +43,7 @@ namespace DAPManSWebReports.API.Controllers
             FolderDetail items                    = await _menuService.GetListDtos(folderList, viewList);
             return items;
         }
-        [Authorize]
+        [Authorize(Policy = "CustomPolicy")]
         [HttpGet("childrens/{parentid}")]
         public async Task<IActionResult> GetChildFoldersViewsById(int parentid)
         {
@@ -56,20 +56,7 @@ namespace DAPManSWebReports.API.Controllers
             {
                 return BadRequest();
             }
-        }
-        // GET: api/<FolderDetailController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<FolderDetailController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        } 
 
         // POST api/<FolderDetailController>
         [HttpPost]

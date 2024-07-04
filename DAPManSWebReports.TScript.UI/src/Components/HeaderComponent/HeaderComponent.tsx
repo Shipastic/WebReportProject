@@ -6,7 +6,6 @@ import UserChangeIcon                   from '@rsuite/icons/UserChange';
 import {useUser                       } from '../UserContext/UserContext';
 import './Header.css';
 import BurgerMenuComponent from '../BurgerMenuComponent/BurgerMenuComponent';
-import { UserResponse } from '../../Models/UserResponse';
 
 interface HeaderProps 
 {
@@ -115,20 +114,20 @@ const HeaderComponent: React.FC<HeaderProps> = ({
             ) :(<></>)}
         </Nav>
         <Nav pullRight>
-        <Nav.Item onClick={handlePageClick} className="custom-nav-item">
         {user ? (
-              <>
-                <UserChangeIcon/> {user.username}
-                <Nav.Item onClick={handleLogout} className="custom-nav-item">
-                  Выйти
-                </Nav.Item>
-              </>
-            ) : (
-              <Link to="/login" className="nav-link">
-                Войти
-              </Link>
-            )}
-            </Nav.Item>
+        <Dropdown title={<><UserChangeIcon /> {user.username}</>} className="custom-dropdown-title">
+          <Dropdown.Item onClick={handlePageClick} className="custom-dropdown-item-login">Профиль</Dropdown.Item>
+          <Dropdown.Item onClick={handleLogout} className="custom-dropdown-item-login">
+            Выйти
+          </Dropdown.Item>
+        </Dropdown>
+      ) : (
+        <Nav.Item onClick={handlePageClick} className="custom-nav-item">
+          <Link to="/login" className="nav-link">
+            Войти
+          </Link>
+        </Nav.Item>
+      )}
           </Nav>
         </div>
       </Navbar>

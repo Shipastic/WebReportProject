@@ -201,7 +201,8 @@ const ChildFolderComponent: React.FC<Props> = ({ parentid, path, updateBreadcrum
 
     const hasChildElements = async (parentid:number) =>
         {
-            const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`);
+            const headers = tokenService.getAuthHeaders();
+            const response = await fetch(`${config.ApiBaseUrlDev}/menu/childrens/${parentid}`, {headers:headers});
             if (response.ok)
             {
                 const data = await response.json();

@@ -18,7 +18,7 @@ interface Props {
 }
 interface ViewParams {
     startDate: string;
-    endDate: string;
+    stopDate: string;
     presetDate: string;
     format: string;
     sortOrder: string;
@@ -38,7 +38,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const [sortType, setSortType              ] = useState<'asc' | 'desc' | undefined>();
     const [error, setError                    ] = useState<string | null>(null);
     const [columnKeys, setColumnKeys          ] = useState<string[]>([]);
-    const [viewParams, setViewParams          ] = useState<ViewParams>({ startDate: '', endDate: '', presetDate: '', format: 'EXCEL', sortOrder: 'asc', sortColumnNumber: 1});
+    const [viewParams, setViewParams          ] = useState<ViewParams>({ startDate: '', stopDate: '', presetDate: '', format: 'EXCEL', sortOrder: 'asc', sortColumnNumber: 1});
     const [showTable, setShowTable            ] = useState<boolean>(false);
     const [titleView, setTitleView            ] = useState<string | null>('report');
     const [filterValue, setFilterValue        ] = useState('');
@@ -109,7 +109,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                 limit: limit.toString(),
                 offset: offset.toString(),
                 startDate: viewParams.startDate,
-                endDate: viewParams.endDate,
+                stopDate: viewParams.stopDate,
                 presetDate: viewParams.presetDate,
                 format: viewParams.format,
                 sortOrder: sortType,
@@ -242,7 +242,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                                 <h2 className="qv-title">
                                         {queryviews?.title}
                                         <span className='qv-date'>
-                                            {viewParams.startDate && viewParams.endDate && ` с ${viewParams.startDate} по ${viewParams.endDate}`}
+                                            {viewParams.startDate && viewParams.stopDate && ` с ${viewParams.startDate} по ${viewParams.stopDate}`}
                                         </span>
                                 </h2>
                                 <div className='qv-control-panel'>

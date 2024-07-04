@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using System.Data.SQLite;
 using Microsoft.Extensions.Logging;
 using LoggingLibrary.Service;
+using System.Data.Common;
+using System.Data;
+using System.Security.AccessControl;
 
 namespace DAPManSWebReports.Infrastructure.DbBuilder
 {
@@ -28,7 +31,7 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
 
             _logger.LogInformation($"{DateTime.Now}|\t BaseConBuilder initialized with connection string:{_connectionString}");
         }
-        private async Task<string> GetTypeDb(int datasourceId)
+        public async Task<string> GetTypeDb(int datasourceId)
         {
             if (datasourceId <= 0)
             {
@@ -124,6 +127,8 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
                         return new OracleDBBuilder(source, _configuration, _logger);
                     case "postgresql":
                         return new PostgreSqlDbBuilder(source, _configuration, _logger);
+                    case "sqlite":
+                        return new SQLiteDBBuilder(source, _configuration, _logger);
                     default:
                         return new BaseConBuilder(_configuration, _logger);
                 }
@@ -134,5 +139,6 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
                 throw;
             }
         }
+
     }
 }
