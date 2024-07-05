@@ -15,11 +15,11 @@ namespace DAPManSWebReports.API.Services.Caching
         {
             if (string.IsNullOrEmpty(settingsModel.startDate) && string.IsNullOrEmpty(settingsModel.stopDate))
             {
-                return $"QueryData_{dataviewId}_FullResult";
+                return $"QueryData_{settingsModel.buildQuery}_{dataviewId}_FullResult";
             }
             else
             {
-                return $"QueryData_{dataviewId}_{settingsModel.startDate}_{settingsModel.stopDate}_FullResult";
+                return $"QueryData_{settingsModel.buildQuery}_{dataviewId}_{settingsModel.startDate}_{settingsModel.stopDate}_FullResult";
             }
         }
 

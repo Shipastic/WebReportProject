@@ -104,7 +104,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         public async Task<QueryView> ReadById(int dataviewId, Dictionary<string, object> queryparams)
         {
             var queryContext = new QueryBuilderContext();
-            var userInput    = "1";
+            var userInput    = queryparams["buildQuery"];
             DataTable dt     = new DataTable();
             int totalCount   = 0;
             string query     = "";
@@ -126,7 +126,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                 _logger.LogInformation($"{DateTime.Now}|\t  Create connection string  to db: {connectionDbString}");
             }
 
-            if (userInput.Equals("1"))
+            if (userInput.Equals("NASOUP"))
             {
                 queryContext.SetQueryBuilderStrategy(new QueryBuilder(dvRes, connectionDbString)
                                                                             .AddDateFilter(dvRes.StartDateField,
@@ -143,6 +143,7 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
                                                                                                                     .SingleOrDefault())));
             }
             else
+            if (userInput.Equals("Q3INTEL"))
             {
                 queryContext.SetQueryBuilderStrategy(new QueryBuilderIntel(dvRes, dbType, connectionDbString));
             }
@@ -152,7 +153,14 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             dt = await queryContext.ExecuteQuery(query);
          
             _logger.LogInformation($"{DateTime.Now}|\t  Create Query to db: {query}");
-            totalCount = dt.Rows.Count;
+            if (dt != null)
+            {
+                totalCount = dt.Rows.Count;
+            }
+            else
+            {
+                totalCount = 0;
+            }
 
             return new QueryView(dvRes)
             {

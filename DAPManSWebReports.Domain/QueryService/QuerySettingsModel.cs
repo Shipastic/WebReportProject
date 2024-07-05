@@ -43,6 +43,8 @@ namespace DAPManSWebReports.Domain.QueryService
             get { return _pageSize; }
             set { _pageSize = value > maxPageSize ? maxPageSize : value; }
         }
+        [JsonPropertyName("buildQuery")]
+        public string buildQuery { get; set; }
 
     }
 }

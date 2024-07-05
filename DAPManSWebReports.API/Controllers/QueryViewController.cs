@@ -44,11 +44,12 @@ namespace DAPManSWebReports.API.Controllers
         [Authorize(Policy = "CustomPolicy")]
         [HttpGet("{dataviewId}")]
         public async Task<IActionResult> Get(int dataviewId, 
-                                             [FromQuery] int limit         = 10, 
-                                             [FromQuery] int offset        = 0,
-                                             [FromQuery] string sortColumn = null,
+                                             [FromQuery] int limit           = 10, 
+                                             [FromQuery] int offset          = 0,
+                                             [FromQuery] string sortColumn   = null,
                                              [FromQuery] DateTime? startDate = null,
-                                             [FromQuery] DateTime? stopDate = null)
+                                             [FromQuery] DateTime? stopDate  = null,
+                                             [FromQuery] string buildQuery = null)
         {
             if (limit <= 0 || offset < 0)
             {

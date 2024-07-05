@@ -23,6 +23,7 @@ interface ViewParams {
     format: string;
     sortOrder: string;
     sortColumnNumber: number;
+    buildQuery: string;
 }
 const CustomHeaderCell = ({ ...props }) => (
     <HeaderCell children={''} {...props} className='qv-header-cell' />
@@ -38,7 +39,7 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
     const [sortType, setSortType              ] = useState<'asc' | 'desc' | undefined>();
     const [error, setError                    ] = useState<string | null>(null);
     const [columnKeys, setColumnKeys          ] = useState<string[]>([]);
-    const [viewParams, setViewParams          ] = useState<ViewParams>({ startDate: '', stopDate: '', presetDate: '', format: 'EXCEL', sortOrder: 'asc', sortColumnNumber: 1});
+    const [viewParams, setViewParams          ] = useState<ViewParams>({ startDate: '', stopDate: '', presetDate: '', format: 'EXCEL', sortOrder: 'asc', sortColumnNumber: 1, buildQuery:'NASOUP'});
     const [showTable, setShowTable            ] = useState<boolean>(false);
     const [titleView, setTitleView            ] = useState<string | null>('report');
     const [filterValue, setFilterValue        ] = useState('');
@@ -113,7 +114,8 @@ const QueryViewComponent: React.FC<Props> = ({ dataviewid, path, updateBreadcrum
                 presetDate: viewParams.presetDate,
                 format: viewParams.format,
                 sortOrder: sortType,
-                sortColumnNumber: sortColumn,              
+                sortColumnNumber: sortColumn,
+                buildQuery: viewParams.buildQuery              
             });
             const headers = tokenService.getAuthHeaders();
             const response = await fetch(`${config.ApiBaseUrlDev}/query/${dataviewid}?${params.toString()}`, {headers:headers});

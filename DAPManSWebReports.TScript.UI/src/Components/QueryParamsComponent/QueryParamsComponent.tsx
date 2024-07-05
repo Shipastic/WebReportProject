@@ -13,6 +13,7 @@ interface ViewParams
     format: string;
     sortOrder: string;
     sortColumnNumber: number;
+    buildQuery: string;
 }
 interface Props 
 {
@@ -125,6 +126,11 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
         { label: 'По убыванию', value: 'Descending' },
     ];
 
+    const buildQuery = [
+        { label: 'Вариант от Danieli', value: 'Q3INTEL' },
+        { label: 'Вариант НАСОУП', value: 'NASOUP' },
+    ];
+
     return (
         <>
            <ButtonToolbar>
@@ -187,7 +193,8 @@ const QueryparamsComponent: React.FC<Props> = ({ queryparams, onParamsChange, se
                                 </FlexboxGrid>
                         </Form.Group>
                         <Form.Group>
-                          
+                                <Form.ControlLabel>Вариант построения запроса к представлению:</Form.ControlLabel>
+                                <SelectPicker data={buildQuery} value={params.buildQuery} onChange={(value) => handleChange('buildQuery', value)} />
                         </Form.Group>
                         <Form.Group>
                             <Form.ControlLabel>Столбец для сортировки:</Form.ControlLabel>

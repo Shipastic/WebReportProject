@@ -131,14 +131,17 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
             catch(OracleException ora)
             {
                 Console.WriteLine(ora.Message);
+                return null;
             }
             catch(InvalidCastException ice)
             {
                 Console.WriteLine(ice.Message);
+                return null;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return null;
             }
             _dbComand.Parameters.Clear();
             return dataSet.Tables[dataSet.Tables.Count - 1];

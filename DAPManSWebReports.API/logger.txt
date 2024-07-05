@@ -16050,3 +16050,738 @@ sortColumnNumber - null
 04.07.2024 23:21:00|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2633 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
 04.07.2024 23:21:06|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
 04.07.2024 23:22:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:20:52|	 GetDataViewById:285 Start
+05.07.2024 8:20:50|	 GetDataViewById:285 Start
+05.07.2024 8:20:52|	 Get DataView by id:285
+05.07.2024 8:20:52|	 Get DataView by id:285
+05.07.2024 8:20:52|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:20:52|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:20:52|	 GetDataViewById:285 End
+05.07.2024 8:20:52|	 GetDataViewById:285 End
+05.07.2024 8:21:18|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:22:46|	Show params query:
+05.07.2024 8:22:46|	 Query params:
+limit - 12
+
+05.07.2024 8:22:46|	 Query params:
+offset - 1
+
+05.07.2024 8:22:46|	 Query params:
+startDate - 2024-07-01 08:21:01
+
+05.07.2024 8:22:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:22:46|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:22:46|	 Query params:
+stopDate - 2024-07-02 08:21:01
+
+05.07.2024 8:22:46|	 Query params:
+presetDate - 
+
+05.07.2024 8:22:46|	 Query params:
+format - EXCEL
+
+05.07.2024 8:22:52|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:22:53|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:22:54|	 Query params:
+buildQuery - NASOUP
+
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:40:41|	 GetDataViewById:285 Start
+05.07.2024 8:40:41|	 Get DataView by id:285
+05.07.2024 8:40:41|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:40:41|	 GetDataViewById:285 End
+05.07.2024 8:40:43|	 GetDataViewById:285 Start
+05.07.2024 8:40:43|	 Get DataView by id:285
+05.07.2024 8:40:43|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:40:43|	 GetDataViewById:285 End
+05.07.2024 8:41:04|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:41:45|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:43:50|	Show params query:
+05.07.2024 8:43:53|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:44:32|	 GetDataViewById:285 Start
+05.07.2024 8:44:32|	 Get DataView by id:285
+05.07.2024 8:44:32|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:44:32|	 GetDataViewById:285 End
+05.07.2024 8:44:33|	 GetDataViewById:285 Start
+05.07.2024 8:44:33|	 Get DataView by id:285
+05.07.2024 8:44:33|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:44:33|	 GetDataViewById:285 End
+05.07.2024 8:44:41|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:47:48|	 GetDataViewById:285 Start
+05.07.2024 8:47:48|	 Get DataView by id:285
+05.07.2024 8:47:48|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:47:48|	 GetDataViewById:285 End
+05.07.2024 8:47:50|	 GetDataViewById:285 Start
+05.07.2024 8:47:50|	 Get DataView by id:285
+05.07.2024 8:47:50|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:47:50|	 GetDataViewById:285 End
+05.07.2024 8:47:59|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:52:14|	 GetDataViewById:285 Start
+05.07.2024 8:52:14|	 Get DataView by id:285
+05.07.2024 8:52:14|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:52:14|	 GetDataViewById:285 End
+05.07.2024 8:52:16|	 GetDataViewById:285 Start
+05.07.2024 8:52:16|	 Get DataView by id:285
+05.07.2024 8:52:16|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:52:16|	 GetDataViewById:285 End
+05.07.2024 8:52:25|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:52:38|	Show params query:
+05.07.2024 8:52:38|	 Query params:
+limit - 12
+
+05.07.2024 8:52:38|	 Query params:
+offset - 1
+
+05.07.2024 8:52:38|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:52:38|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:52:38|	 Query params:
+presetDate - 
+
+05.07.2024 8:52:39|	 Query params:
+format - EXCEL
+
+05.07.2024 8:52:39|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:52:39|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:52:39|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 8:52:39|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 8:53:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:53:00|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:53:06|	Show params query:
+05.07.2024 8:53:06|	 Query params:
+limit - 12
+
+05.07.2024 8:53:06|	 Query params:
+offset - 1
+
+05.07.2024 8:53:07|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:53:07|	Show params query:
+05.07.2024 8:53:07|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:53:07|	 Get DataView by id:285
+05.07.2024 8:53:07|	 Query params:
+limit - 12
+
+05.07.2024 8:53:07|	 Query params:
+presetDate - 
+
+05.07.2024 8:53:07|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:53:07|	 Query params:
+offset - 1
+
+05.07.2024 8:53:07|	 Query params:
+format - EXCEL
+
+05.07.2024 8:53:07|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:53:07|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:53:07|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:53:07|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 8:53:07|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:53:07|	 Query params:
+presetDate - 
+
+05.07.2024 8:53:07|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 8:53:07|	 Getting DB builder for datasource ID: 17
+05.07.2024 8:53:07|	 Query params:
+format - EXCEL
+
+05.07.2024 8:53:08|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:53:08|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:53:08|	 Get DataView by id:285
+05.07.2024 8:53:08|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:53:08|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 8:53:08|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:53:08|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 8:53:08|	 Getting DB builder for datasource ID: 17
+05.07.2024 8:53:12|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:53:12|	 Get DataView by id:285
+05.07.2024 8:53:12|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:53:12|	 Getting DB builder for datasource ID: 17
+05.07.2024 8:53:12|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:53:12|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 8:53:12|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 8:53:12|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:53:12|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:53:12|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:53:12|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:53:12|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 8:53:12|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 8:53:21|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 8:53:26|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:53:26|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:53:26|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 8:53:49|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:53:49|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:53:49|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:53:49|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:53:49|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:53:49|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:53:49|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:53:49|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:53:49|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:54:12|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:54:17|	Show params query:
+05.07.2024 8:54:17|	 Query params:
+limit - 12
+
+05.07.2024 8:54:17|	 Query params:
+offset - 1
+
+05.07.2024 8:54:17|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:54:17|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:54:17|	 Query params:
+presetDate - 
+
+05.07.2024 8:54:17|	 Query params:
+format - EXCEL
+
+05.07.2024 8:54:17|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:54:17|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:54:17|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 8:54:17|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:54:17|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:54:17|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:54:18|	Show params query:
+05.07.2024 8:54:18|	 Query params:
+limit - 12
+
+05.07.2024 8:54:18|	 Query params:
+offset - 1
+
+05.07.2024 8:54:18|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:54:18|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:54:18|	 Query params:
+presetDate - 
+
+05.07.2024 8:54:18|	 Query params:
+format - EXCEL
+
+05.07.2024 8:54:18|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:54:18|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:54:18|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 8:54:18|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:54:18|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:54:18|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:54:22|	Show params query:
+05.07.2024 8:54:22|	 Query params:
+limit - 12
+
+05.07.2024 8:54:22|	 Query params:
+offset - 1
+
+05.07.2024 8:54:22|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:54:22|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:54:22|	 Query params:
+presetDate - 
+
+05.07.2024 8:54:22|	 Query params:
+format - EXCEL
+
+05.07.2024 8:54:22|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:54:22|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:54:22|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 8:54:22|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:54:22|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:54:39|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:55:42|	Show params query:
+05.07.2024 8:55:42|	 Query params:
+limit - 12
+
+05.07.2024 8:55:42|	 Query params:
+offset - 1
+
+05.07.2024 8:55:42|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:55:42|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:55:42|	 Query params:
+presetDate - 
+
+05.07.2024 8:55:42|	 Query params:
+format - EXCEL
+
+05.07.2024 8:55:42|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:55:42|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:55:42|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 8:55:42|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:55:42|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:55:42|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:55:44|	Show params query:
+05.07.2024 8:55:44|	 Query params:
+limit - 12
+
+05.07.2024 8:55:44|	 Query params:
+offset - 1
+
+05.07.2024 8:55:44|	 Query params:
+startDate - 2024-07-01 08:52:20
+
+05.07.2024 8:55:44|	 Query params:
+stopDate - 2024-07-03 08:52:20
+
+05.07.2024 8:55:44|	 Query params:
+presetDate - 
+
+05.07.2024 8:55:44|	 Query params:
+format - EXCEL
+
+05.07.2024 8:55:44|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:55:44|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:55:44|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 8:55:44|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:55:44|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 8:58:02|	 GetDataViewById:285 Start
+05.07.2024 8:58:02|	 Get DataView by id:285
+05.07.2024 8:58:02|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:58:02|	 GetDataViewById:285 End
+05.07.2024 8:58:03|	 GetDataViewById:285 Start
+05.07.2024 8:58:03|	 Get DataView by id:285
+05.07.2024 8:58:03|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:58:03|	 GetDataViewById:285 End
+05.07.2024 8:58:11|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:58:17|	Show params query:
+05.07.2024 8:58:17|	 Query params:
+limit - 12
+
+05.07.2024 8:58:17|	 Query params:
+offset - 1
+
+05.07.2024 8:58:17|	 Query params:
+startDate - 2024-07-01 08:58:06
+
+05.07.2024 8:58:17|	 Query params:
+stopDate - 2024-07-03 08:58:06
+
+05.07.2024 8:58:17|	 Query params:
+presetDate - 
+
+05.07.2024 8:58:17|	 Query params:
+format - EXCEL
+
+05.07.2024 8:58:17|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:58:17|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:58:17|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 8:58:17|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 8:58:17|	 Get DataView by id:285
+05.07.2024 8:58:17|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 8:58:17|	 Getting DB builder for datasource ID: 17
+05.07.2024 8:58:17|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:58:17|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 8:58:17|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:58:17|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 8:58:17|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 8:58:25|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:58:25|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:58:25|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:58:25|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:58:29|	Show params query:
+05.07.2024 8:58:29|	 Query params:
+limit - 12
+
+05.07.2024 8:58:29|	 Query params:
+offset - 1
+
+05.07.2024 8:58:29|	 Query params:
+startDate - 2024-07-01 08:58:06
+
+05.07.2024 8:58:29|	 Query params:
+stopDate - 2024-07-03 08:58:06
+
+05.07.2024 8:58:29|	 Query params:
+presetDate - 
+
+05.07.2024 8:58:29|	 Query params:
+format - EXCEL
+
+05.07.2024 8:58:29|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:58:29|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:58:29|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 8:58:29|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:58:29|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 8:58:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 8:58:31|	Show params query:
+05.07.2024 8:58:31|	 Query params:
+limit - 12
+
+05.07.2024 8:58:31|	 Query params:
+offset - 1
+
+05.07.2024 8:58:31|	 Query params:
+startDate - 2024-07-01 08:58:06
+
+05.07.2024 8:58:31|	 Query params:
+stopDate - 2024-07-03 08:58:06
+
+05.07.2024 8:58:31|	 Query params:
+presetDate - 
+
+05.07.2024 8:58:31|	 Query params:
+format - EXCEL
+
+05.07.2024 8:58:31|	 Query params:
+sortOrder - undefined
+
+05.07.2024 8:58:31|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 8:58:31|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 8:58:31|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 8:58:31|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+Now listening on: https://localhost:7263
+Now listening on: http://localhost:5240
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\source\repos\GitLab\DAPManSWebReports.API
+05.07.2024 9:01:27|	 GetDataViewById:285 Start
+05.07.2024 9:01:27|	 Get DataView by id:285
+05.07.2024 9:01:27|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 9:01:27|	 GetDataViewById:285 End
+05.07.2024 9:01:28|	 GetDataViewById:285 Start
+05.07.2024 9:01:28|	 Get DataView by id:285
+05.07.2024 9:01:28|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 9:01:28|	 GetDataViewById:285 End
+05.07.2024 9:01:35|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:01:39|	Show params query:
+05.07.2024 9:01:39|	 Query params:
+limit - 12
+
+05.07.2024 9:01:39|	 Query params:
+offset - 1
+
+05.07.2024 9:01:39|	 Query params:
+startDate - 2024-07-01 09:01:31
+
+05.07.2024 9:01:39|	 Query params:
+stopDate - 2024-07-03 09:01:31
+
+05.07.2024 9:01:39|	 Query params:
+presetDate - 
+
+05.07.2024 9:01:39|	 Query params:
+format - EXCEL
+
+05.07.2024 9:01:39|	 Query params:
+sortOrder - undefined
+
+05.07.2024 9:01:39|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 9:01:39|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 9:01:39|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 9:01:39|	 Get DataView by id:285
+05.07.2024 9:01:39|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 9:01:39|	 Getting DB builder for datasource ID: 17
+05.07.2024 9:01:39|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:01:39|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 9:01:39|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:01:39|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:01:39|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 9:01:48|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 9:01:48|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 9:01:48|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 9:01:48|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:01:52|	Show params query:
+05.07.2024 9:01:52|	 Query params:
+limit - 12
+
+05.07.2024 9:01:52|	 Query params:
+offset - 1
+
+05.07.2024 9:01:52|	 Query params:
+startDate - 2024-07-01 09:01:31
+
+05.07.2024 9:01:52|	 Query params:
+stopDate - 2024-07-03 09:01:31
+
+05.07.2024 9:01:52|	 Query params:
+presetDate - 
+
+05.07.2024 9:01:52|	 Query params:
+format - EXCEL
+
+05.07.2024 9:01:52|	 Query params:
+sortOrder - undefined
+
+05.07.2024 9:01:52|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 9:01:52|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 9:01:52|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 9:01:52|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 9:01:52|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:01:54|	Show params query:
+05.07.2024 9:01:54|	 Query params:
+limit - 12
+
+05.07.2024 9:01:54|	 Query params:
+offset - 1
+
+05.07.2024 9:01:54|	 Query params:
+startDate - 2024-07-01 09:01:31
+
+05.07.2024 9:01:54|	 Query params:
+stopDate - 2024-07-03 09:01:31
+
+05.07.2024 9:01:54|	 Query params:
+presetDate - 
+
+05.07.2024 9:01:54|	 Query params:
+format - EXCEL
+
+05.07.2024 9:01:54|	 Query params:
+sortOrder - undefined
+
+05.07.2024 9:01:54|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 9:01:54|	 Query params:
+buildQuery - NASOUP
+
+05.07.2024 9:01:54|	 Column name for sorting:null| Sort order:undefined
+05.07.2024 9:01:54|	  ID:285| Name:select * from V_PPC_L2_L3_CMP| Title:_УСГП Результаты учета производства в L2 и L3 (на основе данных L2 в пределах последних 30 суток)| TotalCount:2101 | limit:12| Query Result:select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(:stopDate, 'YYYY-MM-DD HH24:MI:SS')
+05.07.2024 9:02:07|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:02:10|	Show params query:
+05.07.2024 9:02:10|	 Query params:
+limit - 12
+
+05.07.2024 9:02:10|	 Query params:
+offset - 1
+
+05.07.2024 9:02:10|	 Query params:
+startDate - 2024-07-01 09:01:31
+
+05.07.2024 9:02:10|	 Query params:
+stopDate - 2024-07-03 09:01:31
+
+05.07.2024 9:02:10|	 Query params:
+presetDate - 
+
+05.07.2024 9:02:10|	 Query params:
+format - EXCEL
+
+05.07.2024 9:02:10|	 Query params:
+sortOrder - undefined
+
+05.07.2024 9:02:10|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 9:02:10|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 9:02:10|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 9:02:10|	 Get DataView by id:285
+05.07.2024 9:02:10|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 9:02:10|	 Getting DB builder for datasource ID: 17
+05.07.2024 9:02:10|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:02:10|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 9:02:10|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:02:10|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:02:10|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 9:02:29|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:02:31|	Show params query:
+05.07.2024 9:02:31|	 Query params:
+limit - 12
+
+05.07.2024 9:02:31|	 Query params:
+offset - 1
+
+05.07.2024 9:02:31|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:02:31|	 Query params:
+startDate - 2024-07-01 09:01:31
+
+05.07.2024 9:02:31|	 Query params:
+stopDate - 2024-07-03 09:01:31
+
+05.07.2024 9:02:31|	 Query params:
+presetDate - 
+
+05.07.2024 9:02:32|	 Query params:
+format - EXCEL
+
+05.07.2024 9:02:32|	Show params query:
+05.07.2024 9:02:32|	 Query params:
+sortOrder - undefined
+
+05.07.2024 9:02:32|	 Query params:
+limit - 12
+
+05.07.2024 9:02:32|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 9:02:32|	 Query params:
+offset - 1
+
+05.07.2024 9:02:32|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 9:02:32|	 Query params:
+startDate - 2024-07-01 09:01:31
+
+05.07.2024 9:02:32|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 9:02:32|	 Query params:
+stopDate - 2024-07-03 09:01:31
+
+05.07.2024 9:02:32|	 Query params:
+presetDate - 
+
+05.07.2024 9:02:32|	 Query params:
+format - EXCEL
+
+05.07.2024 9:02:32|	 Query params:
+sortOrder - undefined
+
+05.07.2024 9:02:32|	 Query params:
+sortColumnNumber - null
+
+05.07.2024 9:02:32|	 Get DataView by id:285
+05.07.2024 9:02:32|	 Query params:
+buildQuery - Q3INTEL
+
+05.07.2024 9:02:32|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 9:02:32|	 GetQueryViewWithParam dataviewId -285
+05.07.2024 9:02:32|	 Getting DB builder for datasource ID: 17
+05.07.2024 9:02:32|	 Get DataView by id:285
+05.07.2024 9:02:32|	 With SQL QUERY: SELECT DataSourceID, FolderID, Id, Name, Query, StartDateField, StopDateField, Dataviewnote FROM DATAVIEW WHERE Id = $id
+05.07.2024 9:02:32|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:02:32|	 Getting DB builder for datasource ID: 17
+05.07.2024 9:02:32|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:02:32|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 9:02:32|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:02:32|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:02:32|	 Creating OracleDBBuilder for datasource ID: 17
+05.07.2024 9:02:32|	 BaseConBuilder initialized with connection string:Data Source=database.dat;Version=3
+05.07.2024 9:02:32|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+05.07.2024 9:02:34|	 Executing query to get DB type for datasource ID: 17
+05.07.2024 9:02:34|	  Create connection string  to db: Data Source=MES-DB-PROD-TPC.d0.vsw.ru/tpc;User ID=Q3MET_WS6;Password=q3met_ws6
+An unhandled exception has occurred while executing the request.
+05.07.2024 9:03:01|	  Create Query to db: select * from V_PPC_L2_L3_CMP WHERE "дата загрузки в печь" >= TO_DATE(0001-01-01 00:00:00, 'YYYY-MM-DD HH24:MI:SS') AND "дата загрузки в печь" <= TO_DATE(0001-01-01 00:00:00, 'YYYY-MM-DD HH24:MI:SS') 
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
