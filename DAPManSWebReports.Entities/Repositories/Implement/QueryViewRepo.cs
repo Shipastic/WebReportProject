@@ -18,7 +18,6 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
         private readonly IConfiguration _configuration;
         private readonly IBaseRepo<Models.DataView> _dataViewRepo;
         private readonly ILogger<QueryViewRepo> _logger;
-
         public QueryViewRepo(IBaseConBuilder baseConBuilder, IBaseRepo<Models.DataView> dataViewRepo, ILogger<QueryViewRepo> logger, IConfiguration configuration)
         {
             _baseConBuilder = baseConBuilder ?? throw new ArgumentNullException(nameof(baseConBuilder));
@@ -26,7 +25,6 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
             _logger         = logger ?? throw new ArgumentNullException(nameof(logger));
             _configuration  = configuration;
         }
-
         public async Task<QueryView> ReadById(int dataviewId, int limit, int offset)
         {
             DataTable dt = new DataTable();
@@ -125,27 +123,22 @@ namespace DAPManSWebReports.Entities.Repositories.Implement
 
                 _logger.LogInformation($"{DateTime.Now}|\t  Create connection string  to db: {connectionDbString}");
             }
-
-            if (userInput.Equals("NASOUP"))
+            DateTime StartDate = Convert.ToDateTime(dvRes.parameters.Where(p => p.Name.Equals("startDate"))
+                                                                    .Select(v => v.Value)
+                                                                    .SingleOrDefault());
+            DateTime StopDate  = Convert.ToDateTime(dvRes.parameters.Where(p => p.Name
+                                                                    .Equals("stopDate"))
+                                                                    .Select(v => v.Value)
+                                                                    .SingleOrDefault());
+            if (userInput.Equals("NASOUP")) 
             {
                 queryContext.SetQueryBuilderStrategy(new QueryBuilder(dvRes, connectionDbString)
-                                                                            .AddDateFilter(dvRes.StartDateField,
-                                                                                           dvRes.StopDateField,
-                                                                                           Convert.ToDateTime(dvRes.parameters
-                                                                                                                    .Where(p => p.Name
-                                                                                                                    .Equals("startDate"))
-                                                                                                                    .Select(v => v.Value)
-                                                                                                                    .SingleOrDefault()),
-                                                                                           Convert.ToDateTime(dvRes.parameters
-                                                                                                                    .Where(p => p.Name
-                                                                                                                    .Equals("stopDate"))
-                                                                                                                    .Select(v => v.Value)
-                                                                                                                    .SingleOrDefault())));
+                                                                            .AddDateFilter(dvRes.StartDateField,dvRes.StopDateField,StartDate,StopDate));
             }
             else
             if (userInput.Equals("Q3INTEL"))
             {
-                queryContext.SetQueryBuilderStrategy(new QueryBuilderIntel(dvRes, dbType, connectionDbString));
+                queryContext.SetQueryBuilderStrategy(new QueryBuilderIntel(dvRes, dbType, connectionDbString, StartDate, StopDate));
             }
             
             query = queryContext.BuildQuery();

@@ -2,10 +2,14 @@
 
 using Microsoft.Extensions.Configuration;
 
+using Npgsql;
+
 using Oracle.ManagedDataAccess.Client;
 
 using System.Data;
 using System.Data.Common;
+using System.Linq;
+using System.Windows.Input;
 
 namespace DAPManSWebReports.Infrastructure.DbBuilder
 {
@@ -17,19 +21,20 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
     }
     public class DatabaseConnection : IDatabaseConnection
     {
-        private static bool _isInitialized = false;
-        private static readonly object LockObj = new();
-        private readonly DbConnection _dbConn;
-        private readonly DbCommand _dbComand;
-        private readonly DbProviderFactory _dbFactory = (DbProviderFactory)null;
-        private DbTransaction _dbTransaction;
-        private DbDataAdapter _dbAdapter;
-        private readonly DatabaseType _dbSourceType;
-        public DatabaseType DbSourceType{get;} 
-
-        private IConfiguration _configuration;
-        private readonly string _connectionString;
-        private readonly string _provider;
+        private static bool                 _isInitialized = false;
+        private static readonly object      LockObj = new();
+        private readonly DbConnection       _dbConn;
+        private readonly DbCommand          _dbCommand;
+        private readonly DbProviderFactory  _dbFactory = (DbProviderFactory)null;
+        private List<OracleParameter>       _parametersOracle;
+        private List<NpgsqlParameter>       _parametersPostgresql;
+        private DbTransaction               _dbTransaction;
+        private DbDataAdapter               _dbAdapter;
+        private readonly DatabaseType       _dbSourceType;
+        public DatabaseType                 DbSourceType{get;} 
+        private IConfiguration              _configuration;
+        private readonly string             _connectionString;
+        private readonly string             _provider;
 
         static DatabaseConnection()
         {
@@ -68,19 +73,33 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
             _dbSourceType            = GetProviderType(_provider);                               
             _connectionString        = connectionString ?? throw new ArgumentException("Connection string cannot be null or empty");
             _dbConn.ConnectionString = _connectionString;
-            _dbComand                = _dbConn.CreateCommand();
+            _dbCommand               = _dbConn.CreateCommand();
+            _parametersOracle        = new List<OracleParameter>();
+            _parametersPostgresql    = new List<NpgsqlParameter>();
         }
 
+        /// <summary>
+        /// Возвращает символ для параметра, в зависимости от бд
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotSupportedException"></exception>
         private string GetParamNameSymbol()
         {
             return _dbSourceType switch
             {
-                DatabaseType.oracle => ":",
+                DatabaseType.oracle     => ":",
                 DatabaseType.postgresql => "@",
-                DatabaseType.sqlite => "@",
-                _ => throw new NotSupportedException("Unsupported database type")
+                DatabaseType.sqlite     => "@",
+                _                       => throw new NotSupportedException("Unsupported database type")
             };
         }
+        
+        /// <summary>
+        /// Добавляет параметр в команду бд
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
+        /// <param name="type"></param>
         public void AddParameter(string name, object value, DbType type)
         {
             string paramNameSymbol  = GetParamNameSymbol();
@@ -89,9 +108,25 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
             parameter.DbType        = type;
             parameter.Value         = value;
             parameter.ParameterName = name;
-            _dbComand.Parameters.Add(parameter);
+            if (_dbSourceType == DatabaseType.oracle)
+            {
+                if (!_parametersOracle.Any(n => n.ParameterName == parameter.ParameterName)) 
+                {
+                    _parametersOracle.Add(new OracleParameter(parameter.ParameterName, parameter.Value));
+                }
+            }
+            else if(_dbSourceType == DatabaseType.postgresql)
+            {
+                _parametersPostgresql.Add(new NpgsqlParameter(parameter.ParameterName, parameter.Value));
+            }
         }
 
+        /// <summary>
+        /// Возвращает название провайдера бд
+        /// </summary>
+        /// <param name="dbType"></param>
+        /// <returns></returns>
+        /// <exception cref="NotSupportedException"></exception>
         private string GetProviderName(string dbType)
         {
             return dbType.ToLower() switch
@@ -103,6 +138,12 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
             };
         }
 
+        /// <summary>
+        /// Возвращает тип бд
+        /// </summary>
+        /// <param name="dbType"></param>
+        /// <returns></returns>
+        /// <exception cref="NotSupportedException"></exception>
         private DatabaseType GetProviderType(string dbType)
         {
             return dbType.ToLower() switch
@@ -113,22 +154,47 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
                 _ => throw new NotSupportedException("Unsupported database type")
             };
         }
+        /// <summary>
+        /// Выполняет запрос и возвращает результат
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public async Task<DataTable> ExecuteQuery(string query)
         {
-            string paramNameSymbol = GetParamNameSymbol();
-            query = query.Replace("@", paramNameSymbol);
-            _dbComand.Connection = _dbConn;
-            _dbComand.CommandText = query;
-            if (_dbTransaction != null)
-                _dbComand.Transaction = _dbTransaction;
-            DataTable dt = new DataTable();
-            DataSet dataSet = new DataSet();
+            _dbCommand.Connection = _dbConn;
+            _dbCommand.CommandText = query.TrimEnd();
+            DataTable dataTable = new DataTable();
             try
             {
-                _dbAdapter.SelectCommand = _dbComand ;
-                _dbAdapter.Fill(dataSet);
+                Console.WriteLine("Final Query: " + _dbCommand.CommandText);
+                if (_parametersPostgresql.Count != 0)
+                {
+                    foreach (var param in _parametersPostgresql)
+                    {
+                        Console.WriteLine($"Parameter Name: {param.ParameterName}, Value: {param.Value}, Type: {param.DbType}, Oracle Type: {param.NpgsqlDbType}");
+                        _dbCommand.Parameters.Add(param);
+                    }
+                }
+                else
+                    if (_parametersOracle.Count != 0)
+                {
+                    foreach (var param in _parametersOracle)
+                    {
+                        Console.WriteLine($"Parameter Name: {param.ParameterName}, Value: {param.Value}, Type: {param.DbType}, Oracle Type: {param.OracleDbType}");
+                        _dbCommand.Parameters.Add(param);
+                    }
+                    using var adapter = new OracleDataAdapter((OracleCommand)_dbCommand) { SuppressGetDecimalInvalidCastException = true };
+
+                    adapter.Fill(dataTable);
+                }             
             }
-            catch(OracleException ora)
+            catch (FormatException ex)
+            {
+                // Логирование ошибки формата
+                Console.WriteLine("FormatException: " + ex.Message);
+                Console.WriteLine("StackTrace: " + ex.StackTrace);
+            }
+            catch (OracleException ora)
             {
                 Console.WriteLine(ora.Message);
                 return null;
@@ -143,8 +209,12 @@ namespace DAPManSWebReports.Infrastructure.DbBuilder
                 Console.WriteLine(ex.Message);
                 return null;
             }
-            _dbComand.Parameters.Clear();
-            return dataSet.Tables[dataSet.Tables.Count - 1];
+            finally
+            {
+                _dbCommand.Parameters.Clear();
+            }
+            
+            return dataTable;
         }
     }
 }

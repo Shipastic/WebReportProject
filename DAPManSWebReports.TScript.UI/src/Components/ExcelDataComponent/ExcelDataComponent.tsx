@@ -18,6 +18,7 @@ interface ViewParams
     format: string;
     sortOrder: string;
     sortColumnNumber: number;
+    buildQuery: string;
 }
 
 const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title }) => {
@@ -38,6 +39,7 @@ const ExcelDataComponent: React.FC<Props> = ({ dataviewid, queryparams, title })
                     format: viewParams.format,
                     sortOrder: viewParams.sortOrder,
                     sortColumnNumber: viewParams.sortColumnNumber.toString(),
+                    buildQuery: viewParams.buildQuery,
                     export: 'true',
                     
                 });

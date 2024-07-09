@@ -49,25 +49,33 @@ namespace DAPManSWebReports.Domain.QueryService
 
         private List<Dictionary<string, object>> ConvertDataTableToList(DataTable dt)
         {
-            var columns = dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
-
-            var result = dt.AsEnumerable().Select(row =>
+            if (dt != null)
             {
-                var dictionary = columns.ToDictionary(column => column,
-                                                       column => row[column] is DBNull ? null : row[column]);
-                // Проверка на пустой объект
-                foreach (var key in dictionary.Keys.ToList())
+
+                var columns = dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
+
+                var result = dt.AsEnumerable().Select(row =>
                 {
-                    if (dictionary[key] is Dictionary<string, object> dict && dict.Count == 0)
+                    var dictionary = columns.ToDictionary(column => column,
+                                                           column => row[column] is DBNull ? null : row[column]);
+                    // Проверка на пустой объект
+                    foreach (var key in dictionary.Keys.ToList())
                     {
-                        dictionary[key] = null;
+                        if (dictionary[key] is Dictionary<string, object> dict && dict.Count == 0)
+                        {
+                            dictionary[key] = null;
+                        }
                     }
-                }
 
-                return dictionary;
-            }).ToList();
+                    return dictionary;
+                }).ToList();
 
-            return result;
+                return result;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

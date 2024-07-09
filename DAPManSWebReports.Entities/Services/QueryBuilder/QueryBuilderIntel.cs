@@ -3,8 +3,6 @@ using DAPManSWebReports.Entities.Models;
 using DAPManSWebReports.Infrastructure.DbBuilder;
 using DAPManSWebReports.Infrastructure.Interfaces;
 
-using Oracle.ManagedDataAccess.Client;
-
 using System.Data;
 using System.Data.Common;
 
@@ -16,28 +14,33 @@ namespace DAPManSWebReports.Entities.Services.QueryBuilder
     {
         private string _baseQuery;
         private DataView _dv;
-        private readonly DatabaseConnection _conn;
+        private DatabaseConnection _conn;
         private readonly IDatabaseConnection _dbConnection;
         private List<DbParameter> _parameters;
-        public QueryBuilderIntel(DataView dv, string dbType, string dbString)
+        
+        private DateTime _starDate;
+        private DateTime _stopDate;
+        public QueryBuilderIntel(DataView dv, string dbType, string dbString, DateTime StartDate, DateTime StopDate)
         {
-            _dv = dv;
-            _baseQuery = _dv.Query;          
-            _conn = new DatabaseConnection(dbType, dbString);
+            _dv         = dv;
+            _baseQuery  = _dv.Query;          
+            _conn       = new DatabaseConnection(dbType, dbString);
             _parameters = new List<DbParameter>();
+            
+            _starDate   = StartDate;
+            _stopDate   = StopDate; 
         }
         private bool CheckQuery()
         {
-            string str = _baseQuery.ToUpper().Trim();
+            string str  = _baseQuery.ToUpper().Trim();
             return str.IndexOf("SELECT") == 0 || str.IndexOf("WITH") == 0;
         }
         private string ConvertDateTime(string paramName, DateTime date)
         {
-
-            if (_conn.DbSourceType.ToString().ToLower().Equals("oracle"))
+            if (_conn.DbSourceType == DatabaseType.oracle)
             {
-                _conn.AddParameter(paramName, date.ToString("yyyy-MM-dd HH:mm:ss"), DbType.DateTime);
-                return date.ToString("yyyy-MM-dd HH:mm:ss");
+                _conn.AddParameter(paramName, date, DbType.DateTime);
+                return $"?";
             }
             if (_conn.DbSourceType.ToString().ToLower().Equals("sqlite"))
             {
@@ -55,18 +58,17 @@ namespace DAPManSWebReports.Entities.Services.QueryBuilder
             {
                 if (parameter.Name.ToUpper() == "STARTDATE")
                 {
-                    string newValue = ConvertDateTime("startDate", fromDate);
-                    sqlQuery = sqlQuery.Replace("?" + parameter.Name + ";", newValue);
+                    sqlQuery = sqlQuery.Replace("?" + parameter.Name + ";", ":startDate");
+                    _conn.AddParameter("startDate", fromDate, DbType.DateTime);
                 }
                 else if (parameter.Name.ToUpper() == "STOPDATE")
                 {
-                    string newValue = ConvertDateTime("stopDate", toDate);
-                    sqlQuery = sqlQuery.Replace("?" + parameter.Name + ";", newValue);
+                    sqlQuery = sqlQuery.Replace("?" + parameter.Name + ";", ":stopDate");
+                    _conn.AddParameter("stopDate", toDate, DbType.DateTime);
                 }
-                else if (parameter.Name != "")
+                else if (parameter.Name.ToUpper() != "")
                 {
-                    sqlQuery = sqlQuery.Replace("?" + parameter.Name + ";", "?");
-                    _conn.AddParameter("@" + parameter.Name, parameter.Value, DbType.String);
+                    string paramName = ":" + parameter.Name;
                 }
             }
         }
@@ -76,34 +78,33 @@ namespace DAPManSWebReports.Entities.Services.QueryBuilder
             string upper = sqlQuery.ToUpper();
             int num1 = upper.IndexOf("ORDER BY");
             int num2 = upper.IndexOf("GROUP BY");
-            int num3 = upper.IndexOf("WHERE");
+            int num3 = upper.IndexOf("WHERE"   );
+
             if (num2 > -1 && num1 > -1)
             {
-                str1 = sqlQuery.Substring(num2);
+                str1     = sqlQuery.Substring(num2);
                 sqlQuery = sqlQuery.Substring(0, num2);
             }
             else if (num1 > -1)
             {
-                str1 = sqlQuery.Substring(num1);
+                str1     = sqlQuery.Substring(num1);
                 sqlQuery = sqlQuery.Substring(0, num1);
             }
             if (_dv.StartDateField != "")
             {
-                string str2 = ConvertDateTime("startDate", fromDate);
                 if (num3 > -1)
                 {
-                    sqlQuery = $"{sqlQuery} AND {_dv.StartDateField} >= TO_DATE({str2}, 'YYYY-MM-DD HH24:MI:SS')";
+                    sqlQuery = $"{sqlQuery} AND {_dv.StartDateField} >= :startDate";
                 }
                 else
                 {
-                    sqlQuery = $"{sqlQuery} WHERE {_dv.StartDateField} >= TO_DATE({str2}, 'YYYY-MM-DD HH24:MI:SS')";
-                    num3 = sqlQuery.IndexOf("WHERE");
+                    sqlQuery = $"{sqlQuery} WHERE {_dv.StartDateField} >= :startDate";
+                    num3     = sqlQuery.IndexOf("WHERE");
                 }
             }
             if (_dv.StopDateField != "")
             {
-                string str3 = ConvertDateTime("stopDate", toDate);
-                sqlQuery = num3 <= -1 ? $"{sqlQuery} WHERE {_dv.StartDateField} <= TO_DATE({str3}, 'YYYY-MM-DD HH24:MI:SS')" : $"{sqlQuery} AND {_dv.StartDateField} <= TO_DATE({str3}, 'YYYY-MM-DD HH24:MI:SS')";
+                sqlQuery = num3 <= -1 ? $"{sqlQuery} WHERE {_dv.StartDateField} <= :stopDate" : $"{sqlQuery} AND {_dv.StartDateField} <= :stopDate";
             }
             sqlQuery = sqlQuery + " " + str1;
         }
@@ -111,21 +112,18 @@ namespace DAPManSWebReports.Entities.Services.QueryBuilder
         {
             if (!CheckQuery())
                 return ReportMessageCodes.CheckQuery.ID.ToString();
+
             _baseQuery = _dv.Query;
-            ReplaceParameters(ref _baseQuery, _dv.StartDate, _dv.StopDate);
-            SetAdditionalQuery(ref _baseQuery, _dv.StartDate, _dv.StopDate);
-            _baseQuery = _baseQuery.Replace('\n', ' ');
-            _baseQuery = _baseQuery.Replace('\r', ' ');
+
+            ReplaceParameters(ref _baseQuery,  _starDate, _stopDate);
+
+            SetAdditionalQuery(ref _baseQuery, _starDate, _stopDate);
+
             return _baseQuery;
         }
         public async Task<DataTable> ExecuteQuery(string query)
-        {
-           return await _conn.ExecuteQuery(query);
-        }
-
-        public IEnumerable<DbParameter> GetParameters()
-        {
-            return _parameters;
+        {        
+            return await _conn.ExecuteQuery(query);
         }
     }
 }
