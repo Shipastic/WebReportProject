@@ -13,7 +13,6 @@ namespace DAPManSWebReports.API.Services.Sorting
             {
                 return source;
             }
-
             // Лямбда-выражение для доступа к значению словаря по ключу
             var parameter = Expression.Parameter(typeof(Dictionary<string, object>), "x");
             var propertyAccess = Expression.Property(parameter, "Item", Expression.Constant(sortColumn));

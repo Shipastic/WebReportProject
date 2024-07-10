@@ -113,7 +113,7 @@ builder.Services.AddSwaggerGen(c =>
            });
 });
 //builder.Services.AddResponseCaching();
-builder.Services.AddAuthorization();
+//builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
